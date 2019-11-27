@@ -37,6 +37,53 @@ namespace DoAnCK_TTA.DAL
             }
 
         }
+        public int XoaKhuVuc(string ID)
+        {
+           
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete [dbo].[CUSTOMER_GROUP] where Customer_Group_ID= N'" + ID + "'";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+        public int CapNhatKhuVuc(DTO_CUSTOMER_GROUP kv)
+        {
+            int active;
+            if (kv.Active)
+                active = 1;
+            else
+                active = 0;
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Update [dbo].[CUSTOMER_GROUP] set Customer_Group_Name = N'"+kv.Customer_Group_Name+"' , Description = N'"+kv.Description+"'  , Active = "+active+" where Customer_Group_ID = '"+kv.Customer_Group_ID+"'";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
         public DataTable LayDanhSachKhuVuc()
         {
             DataTable dt = new DataTable();
@@ -44,7 +91,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM CUSTOMER_GROUP ";
+            cmd.CommandText = "SELECT * FROM CUSTOMER_GROUP";
             try
             {
                 OpenConnection();

@@ -17,5 +17,10 @@ namespace DoAnCK_TTA.GUI
         {
             InitializeComponent();
         }
+
+        private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

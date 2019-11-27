@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
+using DoAnCK_TTA.DTO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -17,36 +18,59 @@ namespace DoAnCK_TTA.GUI
         public frmThongTinKhuVuc()
         {
             InitializeComponent();
+            Sender = new SendMessage(GetMessage);
         }
-
-        bool isAdd;
-        public bool Message//Thêm true,cập nhật false
+        private void GetMessage(string ma,string ten,string mota,bool quanly)
         {
-            get { return isAdd; }
-            set { isAdd = value; }
+            txtMa.Text = ma;
+            txtTen.Text = ten;
+            txtGhiChu.Text = mota;
+            checkQuanLy.Checked = quanly;
+            if (ten == "")
+                isAdd = true;
         }
-        string DoiMa(string chuoi)
-        {
-            if (chuoi.Length > 3)
-            {
-                chuoi = chuoi.Remove(0, 2);
-
-                chuoi = (int.Parse(chuoi) + 1).ToString();
-
-            }
-            return chuoi;
-        }
-        DataTable _dt = new DataTable();
+        bool isAdd=false;
+        public delegate void SendMessage(string ma, string ten, string mota, bool quanly);
+        public SendMessage Sender;
+        
+       
         private void frmThongTinKhuVuc_Load(object sender, EventArgs e)
         {
-            //BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
-            //_dt = bus.LayDanhSachKhuVuc();
+           
 
-            //if (Message == true)
-            //{
-            //    txtMa.Text = DoiMa(_dt.Rows[_dt.Rows.Count - 1][0].ToString());
-            //}
+        }
 
+        private void frmThongTinKhuVuc_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+            DTO_CUSTOMER_GROUP kv = new DTO_CUSTOMER_GROUP();
+            kv.Customer_Group_ID = txtMa.Text;
+            kv.Customer_Group_Name = txtTen.Text;
+            kv.Description = txtGhiChu.Text;
+            kv.Active = checkQuanLy.Checked;
+
+            BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
+            if (isAdd == true)
+            {
+                int kt = bus.ThemKhuVuc(kv);
+               
+            }
+            else
+            {
+                int kt = bus.CapNhatKhuVuc(kv);
+                
+            }
+            this.Close();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

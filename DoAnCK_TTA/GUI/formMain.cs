@@ -106,5 +106,22 @@ namespace DoAnCK_TTA.GUI
                 form.Activate();
             }
         }
+
+        private void btnKhachHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmKhachHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmKhachHang f = new frmKhachHang();
+                f.MdiParent = this;
+                f.Text = "Khách Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
     }
 }

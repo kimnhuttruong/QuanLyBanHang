@@ -17,6 +17,18 @@ namespace DoAnCK_TTA.BUS
             return dAL.ThemKhuVuc(dTO_Customer);
 
         }
+        public int CapNhatKhuVuc(DTO_CUSTOMER_GROUP dTO_Customer)
+        {
+            DAL_CUSTOMER_GROUP dAL = new DAL_CUSTOMER_GROUP();
+            return dAL.CapNhatKhuVuc(dTO_Customer);
+
+        }
+        public int XoaKhuVuc(string id)
+        {
+            DAL_CUSTOMER_GROUP dAL = new DAL_CUSTOMER_GROUP();
+            return dAL.XoaKhuVuc(id);
+
+        }
         public DataTable LayThongTinKhuVuc(string id)
         {
             DAL_CUSTOMER_GROUP dAL = new DAL_CUSTOMER_GROUP();

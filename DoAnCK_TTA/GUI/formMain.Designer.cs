@@ -456,6 +456,7 @@
             this.btnKhachHang.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.khachhang;
             this.btnKhachHang.LargeWidth = 80;
             this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachHang_ItemClick);
             // 
             // btnNhaCungCap
             // 
