@@ -101,21 +101,36 @@
     <Compile Include="BUS\BUS_CUSTOMER_GROUP.cs" />
     <Compile Include="BUS\BUS_EMPLOYEE.cs" />
     <Compile Include="BUS\BUS_GROUP.cs" />
+    <Compile Include="BUS\BUS_PRODUCT.cs" />
+    <Compile Include="BUS\BUS_PRODUCT_GROUP.cs" />
+    <Compile Include="BUS\BUS_STOCK.cs" />
     <Compile Include="BUS\BUS_SYS_USER.cs" />
     <Compile Include="BUS\BUS_SYS_USER_RULE.cs" />
+    <Compile Include="BUS\BUS_UNIT.cs" />
+    <Compile Include="BUS\DAL_DEPARTMENT.cs" />
     <Compile Include="DAL\DAL_CUSTOMER.cs" />
     <Compile Include="DAL\DAL_CUSTOMER_GROUP.cs" />
+    <Compile Include="DAL\DAL_DEPARTMENT.cs" />
     <Compile Include="DAL\DAL_EMPLOYEE.cs" />
     <Compile Include="DAL\DAL_GROUP.cs" />
+    <Compile Include="DAL\DAL_PRODUCT.cs" />
+    <Compile Include="DAL\DAL_PRODUCT_GROUP.cs" />
+    <Compile Include="DAL\DAL_STOCK.cs" />
     <Compile Include="DAL\DAL_SYS_USER.cs" />
     <Compile Include="DAL\DAL_SYS_USER_RULE.cs" />
+    <Compile Include="DAL\DAL_UNIT.cs" />
     <Compile Include="DAL\DB_Connect.cs" />
     <Compile Include="DTO\DTO_CUSTOMER.cs" />
     <Compile Include="DTO\DTO_CUSTOMER_GROUP.cs" />
+    <Compile Include="DTO\DTO_DEPARTMENT.cs" />
     <Compile Include="DTO\DTO_EMPLOYEE.cs" />
     <Compile Include="DTO\DTO_GROUP.cs" />
+    <Compile Include="DTO\DTO_PRODUCT.cs" />
+    <Compile Include="DTO\DTO_PRODUCT_GROUP.cs" />
+    <Compile Include="DTO\DTO_STOCK.cs" />
     <Compile Include="DTO\DTO_SYS_USER.cs" />
     <Compile Include="DTO\DTO_SYS_USER_RULE.cs" />
+    <Compile Include="DTO\DTO_UNIT.cs" />
     <Compile Include="GUI\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -17,5 +17,10 @@ namespace DoAnCK_TTA.GUI
         {
             InitializeComponent();
         }
+
+        private void FrmThongTinDonViTinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

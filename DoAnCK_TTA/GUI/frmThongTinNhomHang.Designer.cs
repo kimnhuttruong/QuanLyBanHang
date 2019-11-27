@@ -147,6 +147,7 @@
             this.MinimizeBox = false;
             this.Name = "frmThongTinNhomHang";
             this.Text = "Thông Tin Nhóm Hàng";
+            this.Load += new System.EventHandler(this.frmThongTinNhomHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

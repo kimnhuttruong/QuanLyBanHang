@@ -22,5 +22,10 @@ namespace DoAnCK_TTA.GUI
         {
 
         }
+
+        private void frmThongTinNhomHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

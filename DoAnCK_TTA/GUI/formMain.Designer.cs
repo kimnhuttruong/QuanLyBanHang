@@ -473,6 +473,7 @@
             this.btnKhoHang.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.khohang;
             this.btnKhoHang.LargeWidth = 80;
             this.btnKhoHang.Name = "btnKhoHang";
+            this.btnKhoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoHang_ItemClick);
             // 
             // btnDonViTinh
             // 
@@ -481,6 +482,7 @@
             this.btnDonViTinh.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.donvitinh;
             this.btnDonViTinh.LargeWidth = 80;
             this.btnDonViTinh.Name = "btnDonViTinh";
+            this.btnDonViTinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonViTinh_ItemClick);
             // 
             // btnNhomHang
             // 
@@ -489,6 +491,7 @@
             this.btnNhomHang.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.nhomhang;
             this.btnNhomHang.LargeWidth = 80;
             this.btnNhomHang.Name = "btnNhomHang";
+            this.btnNhomHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhomHang_ItemClick);
             // 
             // btnHangHoa
             // 
@@ -497,6 +500,7 @@
             this.btnHangHoa.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.hanghoa;
             this.btnHangHoa.LargeWidth = 80;
             this.btnHangHoa.Name = "btnHangHoa";
+            this.btnHangHoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHangHoa_ItemClick);
             // 
             // btnInMaVach
             // 
@@ -522,6 +526,7 @@
             this.btnNhanVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.ImageOptions.LargeImage")));
             this.btnNhanVien.LargeWidth = 80;
             this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
             // barSubItem1
             // 
@@ -735,8 +740,9 @@
             // 
             // barSubItem3
             // 
-            this.barSubItem3.Caption = "barSubItem3";
+            this.barSubItem3.Caption = "Bộ Phận";
             this.barSubItem3.Id = 83;
+            this.barSubItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem3.ImageOptions.Image")));
             this.barSubItem3.Name = "barSubItem3";
             // 
             // barMdiChildrenListItem1
@@ -991,6 +997,7 @@
             // 
             // ribbonPageGroup11
             // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.barSubItem3);
             this.ribbonPageGroup11.ItemLinks.Add(this.btnNhanVien);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Tổ Chức";

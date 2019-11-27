@@ -123,5 +123,78 @@ namespace DoAnCK_TTA.GUI
                 form.Activate();
             }
         }
+
+        private void btnKhoHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmKhoHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmKhoHang f = new frmKhoHang();
+                f.MdiParent = this;
+                f.Text = "Kho Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmDonViTinh));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmDonViTinh f = new frmDonViTinh();
+                f.MdiParent = this;
+                f.Text = "Đơn Vị Tính";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnNhomHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmNhomHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmNhomHang f = new frmNhomHang();
+                f.MdiParent = this;
+                f.Text = "Nhóm Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnHangHoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmHangHoa));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmHangHoa f = new frmHangHoa();
+                f.MdiParent = this;
+                f.Text = "Hàng Hóa";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnNhanVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

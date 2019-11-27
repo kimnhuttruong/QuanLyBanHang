@@ -344,6 +344,7 @@
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhoHang";
             this.Text = "Thông Tin Kho";
+            this.Load += new System.EventHandler(this.frmThongTinKhoHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

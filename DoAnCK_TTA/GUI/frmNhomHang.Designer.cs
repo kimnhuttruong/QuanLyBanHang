@@ -240,6 +240,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmNhomHang";
             this.Text = "Nhóm Hàng";
+            this.Load += new System.EventHandler(this.frmNhomHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeNhomHang)).EndInit();
             this.ResumeLayout(false);
