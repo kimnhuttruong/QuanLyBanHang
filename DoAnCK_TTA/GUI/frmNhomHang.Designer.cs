@@ -105,6 +105,7 @@
             this.btnSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSuaChua.ImageOptions.LargeImage")));
             this.btnSuaChua.Name = "btnSuaChua";
             this.btnSuaChua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaChua_ItemClick);
             // 
             // btnXoa
             // 
@@ -114,6 +115,7 @@
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnNapLai
             // 
@@ -123,6 +125,7 @@
             this.btnNapLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNapLai.ImageOptions.LargeImage")));
             this.btnNapLai.Name = "btnNapLai";
             this.btnNapLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnNapLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNapLai_ItemClick);
             // 
             // btnXuat
             // 
@@ -132,6 +135,7 @@
             this.btnXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuat.ImageOptions.LargeImage")));
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuat_ItemClick);
             // 
             // btnNhap
             // 
@@ -141,6 +145,7 @@
             this.btnNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhap.ImageOptions.LargeImage")));
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhap_ItemClick);
             // 
             // btnDong
             // 
@@ -150,6 +155,7 @@
             this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.LargeImage")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick_1);
             // 
             // barDockControlTop
             // 
@@ -195,11 +201,12 @@
             this.treeNhomHang.Name = "treeNhomHang";
             this.treeNhomHang.Size = new System.Drawing.Size(1361, 495);
             this.treeNhomHang.TabIndex = 4;
+            this.treeNhomHang.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeNhomHang_FocusedNodeChanged);
             // 
             // treeListColumn1
             // 
             this.treeListColumn1.Caption = "Mã";
-            this.treeListColumn1.FieldName = "Mã";
+            this.treeListColumn1.FieldName = "ProductGroup_ID";
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
@@ -207,7 +214,7 @@
             // treeListColumn2
             // 
             this.treeListColumn2.Caption = "Tên";
-            this.treeListColumn2.FieldName = "Tên";
+            this.treeListColumn2.FieldName = "ProductGroup_Name";
             this.treeListColumn2.Name = "treeListColumn2";
             this.treeListColumn2.Visible = true;
             this.treeListColumn2.VisibleIndex = 1;
@@ -215,7 +222,7 @@
             // treeListColumn3
             // 
             this.treeListColumn3.Caption = "Ghi Chú";
-            this.treeListColumn3.FieldName = "Ghi Chú";
+            this.treeListColumn3.FieldName = "Description";
             this.treeListColumn3.Name = "treeListColumn3";
             this.treeListColumn3.Visible = true;
             this.treeListColumn3.VisibleIndex = 2;
@@ -223,7 +230,7 @@
             // treeListColumn4
             // 
             this.treeListColumn4.Caption = "Còn Quản Lý";
-            this.treeListColumn4.FieldName = "Còn Quản Lý";
+            this.treeListColumn4.FieldName = "Active";
             this.treeListColumn4.Name = "treeListColumn4";
             this.treeListColumn4.Visible = true;
             this.treeListColumn4.VisibleIndex = 3;

@@ -1,4 +1,5 @@
 ﻿using DoAnCK_TTA.DAL;
+using DoAnCK_TTA.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,45 +12,35 @@ namespace DoAnCK_TTA.BUS
     public class BUS_EMPLOYEE
     {
 
-        DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
-        public DataTable LayThongTinNhanVien()
+        public int ThemNhanVien(DTO_EMPLOYEE dTO_EMPLOYEE)
         {
             DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
-            return dAL.LayThongTinNhanVien();
+            return dAL.ThemNhanVien(dTO_EMPLOYEE);
 
         }
-        public DataTable LayDanhSachQuanLy()
+        public int CapNhatNhanVien(DTO_EMPLOYEE dTO_EMPLOYEE)
         {
             DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
-            return dAL.LayDanhSachQuanLy();
+            return dAL.CapNhatNhanVien(dTO_EMPLOYEE);
 
         }
-        public DataTable Detail(string id)
+        public int XoaNhanVien(string id)
         {
-
-            return dAL.Detail(id);
+            DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
+            return dAL.XoaNhanVien(id);
 
         }
-        public int Delete(string id)
+        public DataTable LayThongTinNhanVien(string id)
         {
+            DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
+            return dAL.LayThongTinNhanVien(id);
 
-            return dAL.Exec("DELETE FROM dbo.EMPLOYEE WHERE Employee_ID ='" + id + "'");
         }
-        public DataTable getManger()
+        public DataTable LayDanhSachNhanVien()
         {
+            DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
+            return dAL.LayDanhSachNhanVien();
 
-            return dAL.GetData("SELECT Employee_Name,Employee_ID FROM dbo.EMPLOYEE");
-        }
-
-        public DataTable getDEPARTMENT()
-        {
-            return dAL.GetData("SELECT Department_ID,Department_Name FROM dbo.DEPARTMENT");
-        }
-
-        public int Insert(DTO.DTO_EMPLOYEE _EMPLOYEE)
-        {
-
-            return dAL.Insert(_EMPLOYEE);
         }
 
     }

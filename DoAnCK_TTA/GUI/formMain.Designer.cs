@@ -89,7 +89,6 @@
             this.repositoryItemPageNumberEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPageNumberEdit();
             this.barEditItem5 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
             this.barListItem1 = new DevExpress.XtraBars.BarListItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
@@ -148,6 +147,10 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.xtraTabbedMdiManager2 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
+            this.barButtonGroup4 = new DevExpress.XtraBars.BarButtonGroup();
+            this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
@@ -188,7 +191,7 @@
             this.t.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.t.Name = "t";
             this.t.Ribbon = this.ribbon;
-            this.t.Size = new System.Drawing.Size(1028, 23);
+            this.t.Size = new System.Drawing.Size(1320, 23);
             // 
             // barStaticItem2
             // 
@@ -294,7 +297,6 @@
             this.barEditItem3,
             this.barEditItem4,
             this.barEditItem5,
-            this.barSubItem3,
             this.barMdiChildrenListItem1,
             this.barListItem1,
             this.barCheckItem1,
@@ -319,10 +321,14 @@
             this.lbDataBase,
             this.lbTime,
             this.lbDate,
-            this.barStaticItem3});
+            this.barStaticItem3,
+            this.barButtonItem1,
+            this.barButtonGroup3,
+            this.barButtonGroup4,
+            this.btnBoPhan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbon.MaxItemId = 110;
+            this.ribbon.MaxItemId = 115;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -352,7 +358,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemTimeEdit2});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbon.Size = new System.Drawing.Size(1028, 135);
+            this.ribbon.Size = new System.Drawing.Size(1320, 135);
             this.ribbon.StatusBar = this.t;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -465,6 +471,7 @@
             this.btnNhaCungCap.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.nhacungcap;
             this.btnNhaCungCap.LargeWidth = 60;
             this.btnNhaCungCap.Name = "btnNhaCungCap";
+            this.btnNhaCungCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhaCungCap_ItemClick);
             // 
             // btnKhoHang
             // 
@@ -517,6 +524,7 @@
             this.btnTyGia.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.tygia;
             this.btnTyGia.LargeWidth = 80;
             this.btnTyGia.Name = "btnTyGia";
+            this.btnTyGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTyGia_ItemClick);
             // 
             // btnNhanVien
             // 
@@ -737,13 +745,6 @@
             // 
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // barSubItem3
-            // 
-            this.barSubItem3.Caption = "Bộ Phận";
-            this.barSubItem3.Id = 83;
-            this.barSubItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem3.ImageOptions.Image")));
-            this.barSubItem3.Name = "barSubItem3";
             // 
             // barMdiChildrenListItem1
             // 
@@ -997,7 +998,7 @@
             // 
             // ribbonPageGroup11
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barSubItem3);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnBoPhan);
             this.ribbonPageGroup11.ItemLinks.Add(this.btnNhanVien);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Tổ Chức";
@@ -1160,12 +1161,44 @@
             // 
             this.xtraTabbedMdiManager2.MdiParent = this;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 110;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonGroup3
+            // 
+            this.barButtonGroup3.Caption = "barButtonGroup3";
+            this.barButtonGroup3.Id = 112;
+            this.barButtonGroup3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup3.ImageOptions.Image")));
+            this.barButtonGroup3.Name = "barButtonGroup3";
+            // 
+            // barButtonGroup4
+            // 
+            this.barButtonGroup4.Caption = "barButtonGroup4";
+            this.barButtonGroup4.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barButtonGroup4.Id = 113;
+            this.barButtonGroup4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup4.ImageOptions.Image")));
+            this.barButtonGroup4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonGroup4.ImageOptions.LargeImage")));
+            this.barButtonGroup4.Name = "barButtonGroup4";
+            this.barButtonGroup4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // btnBoPhan
+            // 
+            this.btnBoPhan.Caption = "Bộ Phận";
+            this.btnBoPhan.Id = 114;
+            this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
+            this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
+            this.btnBoPhan.Name = "btnBoPhan";
+            this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
+            // 
             // formMain
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 10F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 528);
+            this.ClientSize = new System.Drawing.Size(1320, 528);
             this.Controls.Add(this.t);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1294,7 +1327,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPageNumberEdit repositoryItemPageNumberEdit1;
         private DevExpress.XtraBars.BarEditItem barEditItem8;
         private DevExpress.XtraBars.Ribbon.Internal.RepositoryItemRibbonSearchEdit repositoryItemRibbonSearchEdit1;
-        private DevExpress.XtraBars.BarSubItem barSubItem3;
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem1;
         private DevExpress.XtraBars.BarListItem barListItem1;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
@@ -1328,5 +1360,9 @@
         private DevExpress.XtraBars.PopupMenu popupMenu2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem3;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup3;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnBoPhan;
     }
 }

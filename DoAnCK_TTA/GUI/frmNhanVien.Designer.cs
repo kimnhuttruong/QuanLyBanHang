@@ -51,6 +51,7 @@
             this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -93,55 +94,61 @@
             // 
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 0;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem1.ImageOptions.Image")));
-            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem1.ImageOptions.LargeImage")));
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnSuaChua
             // 
             this.btnSuaChua.Caption = "Sửa Chữa";
             this.btnSuaChua.Id = 1;
-            this.btnSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem2.ImageOptions.Image")));
-            this.btnSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem2.ImageOptions.LargeImage")));
+            this.btnSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaChua.ImageOptions.Image")));
+            this.btnSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSuaChua.ImageOptions.LargeImage")));
             this.btnSuaChua.Name = "btnSuaChua";
             this.btnSuaChua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaChua_ItemClick);
             // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.Id = 2;
-            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem3.ImageOptions.Image")));
-            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem3.ImageOptions.LargeImage")));
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnNapLai
             // 
             this.btnNapLai.Caption = "Nạp Lại";
             this.btnNapLai.Id = 3;
-            this.btnNapLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.Image")));
-            this.btnNapLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.LargeImage")));
+            this.btnNapLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNapLai.ImageOptions.Image")));
+            this.btnNapLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNapLai.ImageOptions.LargeImage")));
             this.btnNapLai.Name = "btnNapLai";
             this.btnNapLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnNapLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNapLai_ItemClick);
             // 
             // btnXuat
             // 
             this.btnXuat.Caption = "Xuất";
             this.btnXuat.Id = 4;
-            this.btnXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.Image")));
-            this.btnXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.LargeImage")));
+            this.btnXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.ImageOptions.Image")));
+            this.btnXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuat.ImageOptions.LargeImage")));
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuat_ItemClick);
             // 
             // btnDong
             // 
             this.btnDong.Caption = "Đóng";
             this.btnDong.Id = 6;
-            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.Image")));
-            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.LargeImage")));
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.LargeImage")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -198,11 +205,12 @@
             this.treeNhanVien.Name = "treeNhanVien";
             this.treeNhanVien.Size = new System.Drawing.Size(1361, 498);
             this.treeNhanVien.TabIndex = 4;
+            this.treeNhanVien.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeNhanVien_FocusedNodeChanged);
             // 
             // treeListColumn1
             // 
             this.treeListColumn1.Caption = "Mã";
-            this.treeListColumn1.FieldName = "Mã";
+            this.treeListColumn1.FieldName = "Employee_ID";
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
@@ -210,7 +218,7 @@
             // treeListColumn2
             // 
             this.treeListColumn2.Caption = "Tên";
-            this.treeListColumn2.FieldName = "Tên";
+            this.treeListColumn2.FieldName = "Employee_Name";
             this.treeListColumn2.Name = "treeListColumn2";
             this.treeListColumn2.Visible = true;
             this.treeListColumn2.VisibleIndex = 1;
@@ -218,7 +226,7 @@
             // treeListColumn3
             // 
             this.treeListColumn3.Caption = "Địa Chỉ";
-            this.treeListColumn3.FieldName = "Địa Chỉ";
+            this.treeListColumn3.FieldName = "Adress";
             this.treeListColumn3.Name = "treeListColumn3";
             this.treeListColumn3.Visible = true;
             this.treeListColumn3.VisibleIndex = 2;
@@ -226,7 +234,7 @@
             // treeListColumn4
             // 
             this.treeListColumn4.Caption = "Điện Thoại";
-            this.treeListColumn4.FieldName = "Điện Thoại";
+            this.treeListColumn4.FieldName = "O_Tel";
             this.treeListColumn4.Name = "treeListColumn4";
             this.treeListColumn4.Visible = true;
             this.treeListColumn4.VisibleIndex = 3;
@@ -234,7 +242,7 @@
             // treeListColumn5
             // 
             this.treeListColumn5.Caption = "Di Động";
-            this.treeListColumn5.FieldName = "Di Động";
+            this.treeListColumn5.FieldName = "Mobile";
             this.treeListColumn5.Name = "treeListColumn5";
             this.treeListColumn5.Visible = true;
             this.treeListColumn5.VisibleIndex = 4;
@@ -250,10 +258,18 @@
             // treeListColumn7
             // 
             this.treeListColumn7.Caption = "Còn Quản Lý";
-            this.treeListColumn7.FieldName = "Còn Quản Lý";
+            this.treeListColumn7.FieldName = "Active";
             this.treeListColumn7.Name = "treeListColumn7";
             this.treeListColumn7.Visible = true;
             this.treeListColumn7.VisibleIndex = 6;
+            // 
+            // treeListColumn8
+            // 
+            this.treeListColumn8.Caption = "Mã";
+            this.treeListColumn8.FieldName = "Mã";
+            this.treeListColumn8.Name = "treeListColumn8";
+            this.treeListColumn8.Visible = true;
+            this.treeListColumn8.VisibleIndex = 0;
             // 
             // frmNhanVien
             // 
@@ -267,6 +283,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmNhanVien";
             this.Text = "Nhân Viên";
+            this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeNhanVien)).EndInit();
             this.ResumeLayout(false);
@@ -297,5 +314,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
     }
 }

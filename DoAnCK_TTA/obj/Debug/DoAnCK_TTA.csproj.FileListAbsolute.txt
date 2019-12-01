@@ -205,7 +205,6 @@ E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHan
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
-E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.csprojAssemblyReference.cache
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.csproj.ResolveComReference.cache
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.Login.resources
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.GUI.formMain.resources
@@ -246,3 +245,4 @@ E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHan
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.csproj.CopyComplete
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.exe
 E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.pdb
+E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\obj\Debug\DoAnCK_TTA.csprojAssemblyReference.cache

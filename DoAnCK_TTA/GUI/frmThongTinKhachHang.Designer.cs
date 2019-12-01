@@ -70,6 +70,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lookKhuVuc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.calcGioiHanNo = new DevExpress.XtraEditors.CalcEdit();
             this.calcChiecKhau = new DevExpress.XtraEditors.CalcEdit();
             this.calcNoHienTai = new DevExpress.XtraEditors.CalcEdit();
@@ -484,6 +486,7 @@
             // 
             // lookKhuVuc
             // 
+            this.lookKhuVuc.EditValue = "222222";
             this.lookKhuVuc.Location = new System.Drawing.Point(375, 20);
             this.lookKhuVuc.Name = "lookKhuVuc";
             this.lookKhuVuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -494,14 +497,35 @@
             this.lookKhuVuc.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookKhuVuc.Size = new System.Drawing.Size(175, 20);
             this.lookKhuVuc.TabIndex = 8;
+            this.lookKhuVuc.Popup += new System.EventHandler(this.lookKhuVuc_Popup);
             this.lookKhuVuc.EditValueChanged += new System.EventHandler(this.lookKhuVuc_EditValueChanged);
+            this.lookKhuVuc.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.lookKhuVuc_CustomDisplayText);
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã";
+            this.gridColumn1.FieldName = "Customer_Group_ID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên Khu Vực";
+            this.gridColumn2.FieldName = "Customer_Group_Name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // calcGioiHanNo
             // 
@@ -645,5 +669,7 @@
         private DevExpress.XtraEditors.CalcEdit calcGioiHanNo;
         private DevExpress.XtraEditors.CalcEdit calcChiecKhau;
         private DevExpress.XtraEditors.CalcEdit calcNoHienTai;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

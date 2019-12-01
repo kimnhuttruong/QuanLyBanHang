@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
 using DevExpress.XtraGrid;
 using DoAnCK_TTA.DTO;
+using System.IO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -58,17 +59,78 @@ namespace DoAnCK_TTA.GUI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+          
+            BUS_CUSTOMER bus = new BUS_CUSTOMER();
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int a = bus.XoaKhachHang(c.Customer_ID);
+                formLoad();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                ;
+            }
+
 
         }
 
         private void btnNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            formLoad();
         }
 
         private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    string exportFilePath = saveDialog.FileName;
+                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
 
+                    switch (fileExtenstion)
+                    {
+                        case ".xls":
+                            treeKhachHang.ExportToXls(exportFilePath);
+                            break;
+                        case ".xlsx":
+                            treeKhachHang.ExportToXlsx(exportFilePath);
+                            break;
+                        case ".rtf":
+                            treeKhachHang.ExportToRtf(exportFilePath);
+                            break;
+                        case ".pdf":
+                            treeKhachHang.ExportToPdf(exportFilePath);
+                            break;
+                        case ".html":
+                            treeKhachHang.ExportToHtml(exportFilePath);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            //Try to open the file and let windows decide how to open it.
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -78,7 +140,7 @@ namespace DoAnCK_TTA.GUI
 
         private void bntDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Close();
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)

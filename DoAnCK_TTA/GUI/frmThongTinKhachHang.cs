@@ -20,6 +20,7 @@ namespace DoAnCK_TTA.GUI
             InitializeComponent();
             Sender = new SendMessage(GetMessage);
         }
+        string id_group="KV";
         private void GetMessage(DTO_CUSTOMER c)
         {
             txtMa.Text = c.Customer_ID;
@@ -39,6 +40,7 @@ namespace DoAnCK_TTA.GUI
             calcNoHienTai.Text = c.Contry;
             txtFacebook.Text = c.NickYM;
             txtZalo.Text = c.NickSky;
+            id_group = c.Customer_Group_ID;
             radioDaiLyBanLe.Properties.Items[1].Value = c.Customer_Type_ID;
            
             checkQuanLy.Checked = c.Active;
@@ -73,7 +75,16 @@ namespace DoAnCK_TTA.GUI
             lookKhuVuc.Properties.DisplayMember = "Customer_Group_Name";
             lookKhuVuc.Properties.ValueMember = "Customer_Group_ID";
 
+            if(id_group !=null)
+            lookKhuVuc.EditValue= lookKhuVuc.Properties.GetKeyValue(int.Parse(id_group.Remove(0,2))-1) ;
+ 
         }
+
+        private void LookKhuVuc_Click(object sender, EventArgs e)
+        {
+            ; ;
+        }
+
         private void frmThongTinKhachHang_Load(object sender, EventArgs e)
         {
             formLoad();
@@ -104,12 +115,53 @@ namespace DoAnCK_TTA.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             BUS_CUSTOMER bus = new BUS_CUSTOMER();
+            DTO_CUSTOMER c = new DTO_CUSTOMER();
+            c.Customer_ID = txtMa.Text;
+            c.CustomerName = txtTen.Text;
+            c.CustomerAddress = txtDiaChi.Text;
+            c.Tax = txtMaSoThue.Text;
+            c.Tel = txtSoDienThoai.Text;
+            c.Email = txtEmail.Text;
+            c.BankAccount = txtTaiKhoan.Text;
+            c.CreditLimit = calcGioiHanNo.Text;
+            c.Discount = calcChiecKhau.Text;
+            c.Contact = txtNguoiLienHe.Text;
+            c.Fax = txtFax.Text;
+            c.Mobile = txtMobile.Text;
+            c.Website = txtWebsite.Text;
+            c.BankName = txtNganHang.Text;
+            c.Contry = calcNoHienTai.Text;
+            c.NickYM = txtFacebook.Text;
+            c.NickSky = txtZalo.Text;
+            //c.Customer_Type_ID = radioDaiLyBanLe.Properties.Items[1].Value("");
 
+            c.Active = checkQuanLy.Checked;
+            if (isAdd == true)
+            {
+                int kt = bus.ThemKhachHang(c);
+
+            }
+            else
+            {
+                int kt = bus.CapNhatKhachHang(c);
+
+            }
+            this.Close();
         }
 
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lookKhuVuc_Popup(object sender, EventArgs e)
+        {
+            //lookKhuVuc.Properties.View.FocusedRowHandle = 0;
+        }
+
+        private void lookKhuVuc_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DoAnCK_TTA.BUS
 {
-    class BUS_CUSTOMER
+    public class BUS_CUSTOMER
     {
         public int ThemKhachHang(DTO_CUSTOMER dTO_Customer)
         {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
+using DoAnCK_TTA.DTO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -18,12 +19,45 @@ namespace DoAnCK_TTA.GUI
         public frmThongTinKhoHang()
         {
             InitializeComponent();
+            Sender = new SendMessage(GetMessage);
         }
-
-        public class cEmployee
+        string id_group = "KV1";
+        private void GetMessage(DTO_STOCK c)
         {
-            public string Id { get; set; }
-            public string Name { get; set; }
+             txtMa.Text = c.Stock_ID;
+             txtTen.Text= c.Stock_Name;
+             txtDiaChi.Text= c.Address;
+             txtDienThoai.Text= c.Telephone;
+             txtEmail.Text= c.Email;
+             txtNguoiLienHe.Text= c.Contact;
+             lookNguoiQuanLy.Text = c.Manager;
+             txtNguoiLienHe.Text = c.Contact;
+             txtFax.Text= c.Fax;
+             txtDienGiai.Text= c.Description;
+            //id_group = c.Customer_Group_ID;
+            //radioDaiLyBanLe.Properties.Items[1].Value = c.Customer_Type_ID;
+
+            checkQuanLy.Checked = c.Active;
+
+            if (c.Stock_Name == "")
+                isAdd = true;
+        }
+        bool isAdd = false;
+        public delegate void SendMessage(DTO_STOCK c);
+        public SendMessage Sender;
+        DataTable _dt = new DataTable();
+        void formLoad()
+        {
+            BUS_EMPLOYEE bus = new BUS_EMPLOYEE();
+            _dt = bus.LayDanhSachNhanVien();
+
+            lookNguoiQuanLy.Properties.DataSource = _dt;
+            lookNguoiQuanLy.Properties.DisplayMember = "Employee_Name";
+            lookNguoiQuanLy.Properties.ValueMember = "Employee_ID";
+
+            if (id_group != null)
+                lookNguoiQuanLy.EditValue = lookNguoiQuanLy.Properties.GetKeyValue(int.Parse(id_group.Remove(0, 2)) - 1);
+
         }
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
@@ -37,7 +71,32 @@ namespace DoAnCK_TTA.GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            BUS_STOCK bus = new BUS_STOCK();
+            DTO_STOCK c = new DTO_STOCK();
+            c.Stock_ID = txtMa.Text;
+            c.Stock_Name = txtTen.Text;
+            c.Address = txtDiaChi.Text;
+            c.Telephone = txtDienThoai.Text;
+            c.Email = txtEmail.Text;
+            c.Contact = txtNguoiLienHe.Text;
+            c.Manager = lookNguoiQuanLy.Text;
+            c.Contact = txtNguoiLienHe.Text;
+            c.Fax = txtFax.Text;
+            c.Description = txtDienGiai.Text;
+            //c.Customer_Type_ID = radioDaiLyBanLe.Properties.Items[1].Value("");
 
+            c.Active = checkQuanLy.Checked;
+            if (isAdd == true)
+            {
+                int kt = bus.ThemKhoHang(c);
+
+            }
+            else
+            {
+                int kt = bus.CapNhatKhoHang(c);
+
+            }
+            this.Close();
         }
 
         private void labelControl13_Click(object sender, EventArgs e)
@@ -50,29 +109,9 @@ namespace DoAnCK_TTA.GUI
             this.Close();
         }
 
-        List<cEmployee> _dsEmployee = new List<cEmployee>();
         private void frmThongTinKhoHang_Load(object sender, EventArgs e)
         {
-            BUS_EMPLOYEE bus = new BUS_EMPLOYEE();
-
-            DataTable dt = new DataTable();
-
-
-            dt = bus.LayDanhSachQuanLy();
-
-
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                cEmployee employee = new cEmployee();
-                employee.Id = dt.Rows[i]["Employee_ID"].ToString();
-                employee.Name = dt.Rows[i]["Employee_Name"].ToString();
-                _dsEmployee.Add(employee);
-            }
-
-
-            lookNguoiQuanLy.Properties.DataSource = _dsEmployee;
-            lookNguoiQuanLy.Properties.DisplayMember = "Name";
-            lookNguoiQuanLy.Properties.ValueMember = "Id";
+            formLoad();
         }
 
         private void lookNguoiQuanLy_EditValueChanged(object sender, EventArgs e)

@@ -143,7 +143,7 @@
             // 
             // btnKhuVuc
             // 
-            this.btnKhuVuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnKhuVuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKhuVuc.ImageOptions.Image")));
             this.btnKhuVuc.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.CommonPalette;
             this.btnKhuVuc.Location = new System.Drawing.Point(549, 20);
             this.btnKhuVuc.LookAndFeel.SkinName = "Office 2019 Colorful";
@@ -151,6 +151,7 @@
             this.btnKhuVuc.Name = "btnKhuVuc";
             this.btnKhuVuc.Size = new System.Drawing.Size(20, 20);
             this.btnKhuVuc.TabIndex = 9;
+            this.btnKhuVuc.Click += new System.EventHandler(this.btnKhuVuc_Click);
             // 
             // txtChucVu
             // 
@@ -473,6 +474,7 @@
             this.btnDong.Size = new System.Drawing.Size(75, 30);
             this.btnDong.TabIndex = 9;
             this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnLuu
             // 
@@ -482,6 +484,7 @@
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
             this.btnLuu.TabIndex = 10;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // checkQuanLy
             // 
@@ -503,6 +506,7 @@
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinNhaCungCap";
             this.Text = "Thông Tin Nhà Cung Cấp";
+            this.Load += new System.EventHandler(this.frmThongTinNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

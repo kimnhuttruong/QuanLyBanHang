@@ -194,7 +194,70 @@ namespace DoAnCK_TTA.GUI
 
         private void btnNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
+            Form form = IsActive(typeof(frmNhanVien));//kiểm tra có show hay không
 
+            if (form == null)
+            {
+                frmNhanVien f = new frmNhanVien();
+                f.MdiParent = this;
+                f.Text = "Nhân Viên";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmNhaCungCap));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmNhaCungCap f = new frmNhaCungCap();
+                f.MdiParent = this;
+                f.Text = "Nhà Cung Cấp";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnTyGia_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmTyGia));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmTyGia f = new frmTyGia();
+                f.MdiParent = this;
+                f.Text = "Tỷ Giá";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnBoPhan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmBoPhan));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmBoPhan f = new frmBoPhan();
+                f.MdiParent = this;
+                f.Text = "Bộ Phận";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
         }
     }
 }
