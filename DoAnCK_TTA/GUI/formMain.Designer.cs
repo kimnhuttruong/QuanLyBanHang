@@ -115,6 +115,10 @@
             this.barEditItem12 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTimeEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
+            this.barButtonGroup4 = new DevExpress.XtraBars.BarButtonGroup();
+            this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -147,10 +151,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.xtraTabbedMdiManager2 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
-            this.barButtonGroup4 = new DevExpress.XtraBars.BarButtonGroup();
-            this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
@@ -550,6 +550,7 @@
             this.btnMuaHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMuaHang.ImageOptions.Image")));
             this.btnMuaHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMuaHang.ImageOptions.LargeImage")));
             this.btnMuaHang.Name = "btnMuaHang";
+            this.btnMuaHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMuaHang_ItemClick);
             // 
             // btnBanHang
             // 
@@ -558,6 +559,7 @@
             this.btnBanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBanHang.ImageOptions.Image")));
             this.btnBanHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBanHang.ImageOptions.LargeImage")));
             this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBanHang_ItemClick);
             // 
             // btnTonKho
             // 
@@ -565,6 +567,7 @@
             this.btnTonKho.Id = 60;
             this.btnTonKho.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.tonkho;
             this.btnTonKho.Name = "btnTonKho";
+            this.btnTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonKho_ItemClick);
             // 
             // btnChuyenKho
             // 
@@ -572,6 +575,7 @@
             this.btnChuyenKho.Id = 61;
             this.btnChuyenKho.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.chuyenkho;
             this.btnChuyenKho.Name = "btnChuyenKho";
+            this.btnChuyenKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChuyenKho_ItemClick);
             // 
             // btnNhapSoDuDauKy
             // 
@@ -586,6 +590,7 @@
             this.btnThuTien.Id = 63;
             this.btnThuTien.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.thutien;
             this.btnThuTien.Name = "btnThuTien";
+            this.btnThuTien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuTien_ItemClick);
             // 
             // btnTraTien
             // 
@@ -593,6 +598,7 @@
             this.btnTraTien.Id = 64;
             this.btnTraTien.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.thutien;
             this.btnTraTien.Name = "btnTraTien";
+            this.btnTraTien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraTien_ItemClick);
             // 
             // btnBaoCaoKhoHang
             // 
@@ -922,6 +928,38 @@
             this.barStaticItem3.Id = 109;
             this.barStaticItem3.Name = "barStaticItem3";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 110;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonGroup3
+            // 
+            this.barButtonGroup3.Caption = "barButtonGroup3";
+            this.barButtonGroup3.Id = 112;
+            this.barButtonGroup3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup3.ImageOptions.Image")));
+            this.barButtonGroup3.Name = "barButtonGroup3";
+            // 
+            // barButtonGroup4
+            // 
+            this.barButtonGroup4.Caption = "barButtonGroup4";
+            this.barButtonGroup4.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barButtonGroup4.Id = 113;
+            this.barButtonGroup4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup4.ImageOptions.Image")));
+            this.barButtonGroup4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonGroup4.ImageOptions.LargeImage")));
+            this.barButtonGroup4.Name = "barButtonGroup4";
+            this.barButtonGroup4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // btnBoPhan
+            // 
+            this.btnBoPhan.Caption = "Bộ Phận";
+            this.btnBoPhan.Id = 114;
+            this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
+            this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
+            this.btnBoPhan.Name = "btnBoPhan";
+            this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
@@ -1160,38 +1198,6 @@
             // xtraTabbedMdiManager2
             // 
             this.xtraTabbedMdiManager2.MdiParent = this;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 110;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonGroup3
-            // 
-            this.barButtonGroup3.Caption = "barButtonGroup3";
-            this.barButtonGroup3.Id = 112;
-            this.barButtonGroup3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup3.ImageOptions.Image")));
-            this.barButtonGroup3.Name = "barButtonGroup3";
-            // 
-            // barButtonGroup4
-            // 
-            this.barButtonGroup4.Caption = "barButtonGroup4";
-            this.barButtonGroup4.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.barButtonGroup4.Id = 113;
-            this.barButtonGroup4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup4.ImageOptions.Image")));
-            this.barButtonGroup4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonGroup4.ImageOptions.LargeImage")));
-            this.barButtonGroup4.Name = "barButtonGroup4";
-            this.barButtonGroup4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            // 
-            // btnBoPhan
-            // 
-            this.btnBoPhan.Caption = "Bộ Phận";
-            this.btnBoPhan.Id = 114;
-            this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
-            this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
-            this.btnBoPhan.Name = "btnBoPhan";
-            this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
             // 
             // formMain
             // 

@@ -259,5 +259,107 @@ namespace DoAnCK_TTA.GUI
                 form.Activate();
             }
         }
+
+        private void btnMuaHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmMuaHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmMuaHang f = new frmMuaHang();
+                f.MdiParent = this;
+                f.Text = "Mua Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnBanHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmBanHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmBanHang f = new frmBanHang();
+                f.MdiParent = this;
+                f.Text = "Bán Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnTonKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmTonKho));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmTonKho f = new frmTonKho();
+                f.MdiParent = this;
+                f.Text = "Tồn Kho";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnChuyenKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmChuyenKho));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmChuyenKho f = new frmChuyenKho();
+                f.MdiParent = this;
+                f.Text = "Chuyển Kho";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnThuTien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmThuTien));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmThuTien f = new frmThuTien();
+                f.MdiParent = this;
+                f.Text = "Thu Tiền";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnTraTien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //Form form = IsActive(typeof());//kiểm tra có show hay không
+
+            //if (form == null)
+            //{
+            //    frmThuTien f = new frmThuTien();
+            //    f.MdiParent = this;
+            //    f.Text = "Thu Tiền";
+            //    f.Show();
+            //}
+            //else
+            //{
+            //    form.Activate();
+            //}
+        }
     }
 }

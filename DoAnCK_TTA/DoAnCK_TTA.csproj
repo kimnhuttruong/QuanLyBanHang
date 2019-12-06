@@ -97,46 +97,150 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_CASH_METHOD.cs" />
+    <Compile Include="BUS\BUS_CASH_TERM.cs" />
     <Compile Include="BUS\BUS_CURRENCY.cs" />
     <Compile Include="BUS\BUS_CUSTOMER.cs" />
     <Compile Include="BUS\BUS_CUSTOMER_GROUP.cs" />
     <Compile Include="BUS\BUS_DEPARTMENT.cs" />
     <Compile Include="BUS\BUS_EMPLOYEE.cs" />
     <Compile Include="BUS\BUS_GROUP.cs" />
+    <Compile Include="BUS\BUS_INVENTORY_DETAIL.cs" />
     <Compile Include="BUS\BUS_PRODUCT.cs" />
     <Compile Include="BUS\BUS_PRODUCT_GROUP.cs" />
     <Compile Include="BUS\BUS_PROVIDER.cs" />
     <Compile Include="BUS\BUS_STOCK.cs" />
+    <Compile Include="BUS\BUS_STOCK_INWARD.cs" />
     <Compile Include="BUS\BUS_SYS_USER.cs" />
     <Compile Include="BUS\BUS_SYS_USER_RULE.cs" />
     <Compile Include="BUS\BUS_UNIT.cs" />
+    <Compile Include="DAL\DAL_CASH_METHOD.cs" />
+    <Compile Include="DAL\DAL_CASH_TERM.cs" />
     <Compile Include="DAL\DAL_CURRENCY.cs" />
     <Compile Include="DAL\DAL_CUSTOMER.cs" />
     <Compile Include="DAL\DAL_CUSTOMER_GROUP.cs" />
     <Compile Include="DAL\DAL_DEPARTMENT.cs" />
     <Compile Include="DAL\DAL_EMPLOYEE.cs" />
     <Compile Include="DAL\DAL_GROUP.cs" />
+    <Compile Include="DAL\DAL_INVENTORY.cs" />
+    <Compile Include="DAL\DAL_INVENTORY_DETAIL.cs" />
     <Compile Include="DAL\DAL_PRODUCT.cs" />
     <Compile Include="DAL\DAL_PRODUCT_GROUP.cs" />
     <Compile Include="DAL\DAL_PROVIDER.cs" />
     <Compile Include="DAL\DAL_STOCK.cs" />
+    <Compile Include="DAL\DAL_STOCK_INWARD.cs" />
     <Compile Include="DAL\DAL_SYS_USER.cs" />
     <Compile Include="DAL\DAL_SYS_USER_RULE.cs" />
     <Compile Include="DAL\DAL_UNIT.cs" />
     <Compile Include="DAL\DB_Connect.cs" />
+    <Compile Include="DTO\DTO_CASH_METHOD.cs" />
+    <Compile Include="DTO\DTO_CASH_TERM.cs" />
     <Compile Include="DTO\DTO_CURRENCY.cs" />
     <Compile Include="DTO\DTO_CUSTOMER.cs" />
     <Compile Include="DTO\DTO_CUSTOMER_GROUP.cs" />
     <Compile Include="DTO\DTO_DEPARTMENT.cs" />
     <Compile Include="DTO\DTO_EMPLOYEE.cs" />
     <Compile Include="DTO\DTO_GROUP.cs" />
+    <Compile Include="DTO\DTO_INVENTORY.cs" />
+    <Compile Include="DTO\DTO_INVENTORY_DETAIL.cs" />
     <Compile Include="DTO\DTO_PRODUCT.cs" />
     <Compile Include="DTO\DTO_PRODUCT_GROUP.cs" />
     <Compile Include="DTO\DTO_PROVIDER.cs" />
     <Compile Include="DTO\DTO_STOCK.cs" />
+    <Compile Include="DTO\DTO_STOCK_INWARD.cs" />
     <Compile Include="DTO\DTO_SYS_USER.cs" />
     <Compile Include="DTO\DTO_SYS_USER_RULE.cs" />
     <Compile Include="DTO\DTO_UNIT.cs" />
+    <Compile Include="GUI\frBaoCaoBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frBaoCaoBanHang.Designer.cs">
+      <DependentUpon>frBaoCaoBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBangKePhieuThanhToanNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBangKePhieuThanhToanNgay.Designer.cs">
+      <DependentUpon>frmBangKePhieuThanhToanNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoChiPhiMuaHangTheoNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoChiPhiMuaHangTheoNgay.Designer.cs">
+      <DependentUpon>frmBaoCaoChiPhiMuaHangTheoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoChiPhiMuaHangTheoTheoNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoChiPhiMuaHangTheoTheoNhaCungCap.Designer.cs">
+      <DependentUpon>frmBaoCaoChiPhiMuaHangTheoTheoNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoHangHoa.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhSoTheoHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoKhachHang.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhSoTheoKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoNgay.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhSoTheoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoDoanhSoTheoNhanVien.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhSoTheoNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoKhoHang.Designer.cs">
+      <DependentUpon>frmBaoCaoKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoLoiNhuanTheoChungTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoLoiNhuanTheoChungTu.Designer.cs">
+      <DependentUpon>frmBaoCaoLoiNhuanTheoChungTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoLoiNhuanTheoHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoLoiNhuanTheoHangHoa.Designer.cs">
+      <DependentUpon>frmBaoCaoLoiNhuanTheoHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChungTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChungTu.Designer.cs">
+      <DependentUpon>frmChungTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoPhaiChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoPhaiChi.Designer.cs">
+      <DependentUpon>frmDanhSachCongNoPhaiChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoTongHop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoTongHop.Designer.cs">
+      <DependentUpon>frmDanhSachCongNoTongHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoChiTiet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoChiTiet.Designer.cs">
+      <DependentUpon>frmDanhSachCongNoChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,11 +253,59 @@
     <Compile Include="GUI\formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmBangKeChiTiet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBangKeChiTiet.Designer.cs">
+      <DependentUpon>frmBangKeChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBangKeTongHop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBangKeTongHop.Designer.cs">
+      <DependentUpon>frmBangKeTongHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBanHang.Designer.cs">
+      <DependentUpon>frmBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmBoPhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmBoPhan.Designer.cs">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChuyenKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChuyenKho.Designer.cs">
+      <DependentUpon>frmChuyenKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoTongHop_PhieuChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachCongNoTongHop_PhieuChi.Designer.cs">
+      <DependentUpon>frmDanhSachCongNoTongHop_PhieuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachPhieuChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachPhieuChi.Designer.cs">
+      <DependentUpon>frmDanhSachPhieuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachPhieuThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachPhieuThu.Designer.cs">
+      <DependentUpon>frmDanhSachPhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachPhieuTraNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachPhieuTraNgay.Designer.cs">
+      <DependentUpon>frmDanhSachPhieuTraNgay.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FrmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -203,6 +355,12 @@
     <Compile Include="GUI\frmKhuVuc.Designer.cs">
       <DependentUpon>frmKhuVuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmLichSuHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLichSuHangHoa.Designer.cs">
+      <DependentUpon>frmLichSuHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +372,12 @@
     </Compile>
     <Compile Include="GUI\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNhapXuatTon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNhapXuatTon.Designer.cs">
+      <DependentUpon>frmNhapXuatTon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FrmNhatKyHeThong.cs">
       <SubType>Form</SubType>
@@ -233,6 +397,24 @@
     <Compile Include="GUI\frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmPhieuChuyenKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPhieuChuyenKho.Designer.cs">
+      <DependentUpon>frmPhieuChuyenKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmPhieuNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPhieuNhapHang.Designer.cs">
+      <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmPhieuXuatHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPhieuXuatHang.Designer.cs">
+      <DependentUpon>frmPhieuXuatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmPhucHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,11 +427,23 @@
     <Compile Include="GUI\frmSaoLuu.Designer.cs">
       <DependentUpon>frmSaoLuu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmSoChiTietHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmSoChiTietHangHoa.Designer.cs">
+      <DependentUpon>frmSoChiTietHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmSuaChua.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmSuaChua.Designer.cs">
       <DependentUpon>frmSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTheKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTheKho.Designer.cs">
+      <DependentUpon>frmTheKho.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmThemBoPhan.cs">
       <SubType>Form</SubType>
@@ -268,6 +462,18 @@
     </Compile>
     <Compile Include="GUI\frmThemVaiTro.Designer.cs">
       <DependentUpon>frmThemVaiTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTheoDoiCongNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTheoDoiCongNo.Designer.cs">
+      <DependentUpon>frmTheoDoiCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTheoDoiCongNo_PhieuChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTheoDoiCongNo_PhieuChi.Designer.cs">
+      <DependentUpon>frmTheoDoiCongNo_PhieuChi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmThongTinCongTy.cs">
       <SubType>Form</SubType>
@@ -329,22 +535,122 @@
     <Compile Include="GUI\frmThongTinTyGia.Designer.cs">
       <DependentUpon>frmThongTinTyGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThuTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThuTien.Designer.cs">
+      <DependentUpon>frmThuTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTonKho.Designer.cs">
+      <DependentUpon>frmTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTonKhoTongHop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTonKhoTongHop.Designer.cs">
+      <DependentUpon>frmTonKhoTongHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTraTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTraTien.Designer.cs">
+      <DependentUpon>frmTraTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmTyGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmTyGia.Designer.cs">
       <DependentUpon>frmTyGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMuaHang.Designer.cs">
+      <DependentUpon>frmMuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\XtraReport1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frBaoCaoBanHang.resx">
+      <DependentUpon>frBaoCaoBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBangKePhieuThanhToanNgay.resx">
+      <DependentUpon>frmBangKePhieuThanhToanNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoChiPhiMuaHangTheoNgay.resx">
+      <DependentUpon>frmBaoCaoChiPhiMuaHangTheoNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoChiPhiMuaHangTheoTheoNhaCungCap.resx">
+      <DependentUpon>frmBaoCaoChiPhiMuaHangTheoTheoNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoDoanhSoTheoHangHoa.resx">
+      <DependentUpon>frmBaoCaoDoanhSoTheoHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoDoanhSoTheoKhachHang.resx">
+      <DependentUpon>frmBaoCaoDoanhSoTheoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoDoanhSoTheoNgay.resx">
+      <DependentUpon>frmBaoCaoDoanhSoTheoNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoDoanhSoTheoNhanVien.resx">
+      <DependentUpon>frmBaoCaoDoanhSoTheoNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoKhoHang.resx">
+      <DependentUpon>frmBaoCaoKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoLoiNhuanTheoChungTu.resx">
+      <DependentUpon>frmBaoCaoLoiNhuanTheoChungTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoLoiNhuanTheoHangHoa.resx">
+      <DependentUpon>frmBaoCaoLoiNhuanTheoHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChungTu.resx">
+      <DependentUpon>frmChungTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachCongNoPhaiChi.resx">
+      <DependentUpon>frmDanhSachCongNoPhaiChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachCongNoTongHop.resx">
+      <DependentUpon>frmDanhSachCongNoTongHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachCongNoChiTiet.resx">
+      <DependentUpon>frmDanhSachCongNoChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBangKeChiTiet.resx">
+      <DependentUpon>frmBangKeChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBangKeTongHop.resx">
+      <DependentUpon>frmBangKeTongHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBanHang.resx">
+      <DependentUpon>frmBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBoPhan.resx">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChuyenKho.resx">
+      <DependentUpon>frmChuyenKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachCongNoTongHop_PhieuChi.resx">
+      <DependentUpon>frmDanhSachCongNoTongHop_PhieuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachPhieuChi.resx">
+      <DependentUpon>frmDanhSachPhieuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachPhieuThu.resx">
+      <DependentUpon>frmDanhSachPhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachPhieuTraNgay.resx">
+      <DependentUpon>frmDanhSachPhieuTraNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmDoiMatKhau.resx">
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
@@ -370,11 +676,17 @@
     <EmbeddedResource Include="GUI\frmKhuVuc.resx">
       <DependentUpon>frmKhuVuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLichSuHangHoa.resx">
+      <DependentUpon>frmLichSuHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNhapXuatTon.resx">
+      <DependentUpon>frmNhapXuatTon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmNhatKyHeThong.resx">
       <DependentUpon>FrmNhatKyHeThong.cs</DependentUpon>
@@ -386,14 +698,29 @@
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPhieuChuyenKho.resx">
+      <DependentUpon>frmPhieuChuyenKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPhieuNhapHang.resx">
+      <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPhieuXuatHang.resx">
+      <DependentUpon>frmPhieuXuatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmPhucHoi.resx">
       <DependentUpon>frmPhucHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmSaoLuu.resx">
       <DependentUpon>frmSaoLuu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmSoChiTietHangHoa.resx">
+      <DependentUpon>frmSoChiTietHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmSuaChua.resx">
       <DependentUpon>frmSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTheKho.resx">
+      <DependentUpon>frmTheKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThemBoPhan.resx">
       <DependentUpon>frmThemBoPhan.cs</DependentUpon>
@@ -403,6 +730,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThemVaiTro.resx">
       <DependentUpon>frmThemVaiTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTheoDoiCongNo.resx">
+      <DependentUpon>frmTheoDoiCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTheoDoiCongNo_PhieuChi.resx">
+      <DependentUpon>frmTheoDoiCongNo_PhieuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThongTinCongTy.resx">
       <DependentUpon>frmThongTinCongTy.cs</DependentUpon>
@@ -434,8 +767,23 @@
     <EmbeddedResource Include="GUI\frmThongTinTyGia.resx">
       <DependentUpon>frmThongTinTyGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThuTien.resx">
+      <DependentUpon>frmThuTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTonKho.resx">
+      <DependentUpon>frmTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTonKhoTongHop.resx">
+      <DependentUpon>frmTonKhoTongHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTraTien.resx">
+      <DependentUpon>frmTraTien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmTyGia.resx">
       <DependentUpon>frmTyGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMuaHang.resx">
+      <DependentUpon>frmMuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
