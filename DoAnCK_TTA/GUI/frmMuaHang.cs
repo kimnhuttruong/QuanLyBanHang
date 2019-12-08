@@ -26,11 +26,16 @@ namespace DoAnCK_TTA.GUI
             InitializeComponent();
             employeesUserControl = CreateUserControl("Employees");
             customersUserControl = CreateUserControl("Customers");
+            Sender = new SendMessage(GetMessage);
 
 
-           
             //    accordionControl.SelectedElement = employeesAccordionControlElement;
         }
+        string ma1 = "";
+        private void GetMessage(string ma)
+        { ma1 = ma; }
+        public delegate void SendMessage(string ma);
+        public SendMessage Sender;
         XtraUserControl CreateUserControl(string text)
         {
             XtraUserControl result = new XtraUserControl();
@@ -136,6 +141,7 @@ namespace DoAnCK_TTA.GUI
        
             f.Text = "Phiếu Nhập Hàng";
             f.Tag = "frmPhieuNhapHang";
+            f.Sender(ma1);
             tabbedView.AddDocument(f);
            
         }
@@ -192,6 +198,11 @@ namespace DoAnCK_TTA.GUI
         {
             Form khohang = new frmThongTinKhoHang();
             khohang.ShowDialog();
+        }
+
+        private void frmMuaHang_Shown(object sender, EventArgs e)
+        {
+            this.btnPhieuNhapHang_Click(null, null);
         }
     }
 }

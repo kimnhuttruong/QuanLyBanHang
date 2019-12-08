@@ -231,6 +231,7 @@
             this.Controls.Add(this.dockPanel);
             this.Name = "frmMuaHang";
             this.Load += new System.EventHandler(this.frmMuaHang_Load);
+            this.Shown += new System.EventHandler(this.frmMuaHang_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

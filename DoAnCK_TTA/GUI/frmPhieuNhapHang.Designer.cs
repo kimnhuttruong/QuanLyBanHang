@@ -881,6 +881,7 @@
             this.gridView5.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView5_CellValueChanged_1);
             this.gridView5.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView5_CellValueChanging_1);
             this.gridView5.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView5_RowUpdated);
+            this.gridView5.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView5_CustomUnboundColumnData);
             this.gridView5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView5_KeyPress);
             this.gridView5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView5_MouseUp);
             this.gridView5.Click += new System.EventHandler(this.gridView5_Click);

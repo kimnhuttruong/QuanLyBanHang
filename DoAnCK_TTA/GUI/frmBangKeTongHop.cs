@@ -17,5 +17,15 @@ namespace DoAnCK_TTA.GUI
         {
             InitializeComponent();
         }
+
+        private void frmBangKeTongHop_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void load ()
+        {
+            DataTable dt = new DataTable();
+
+        }
     }
 }
