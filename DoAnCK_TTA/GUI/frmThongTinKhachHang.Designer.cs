@@ -70,8 +70,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lookKhuVuc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.calcGioiHanNo = new DevExpress.XtraEditors.CalcEdit();
             this.calcChiecKhau = new DevExpress.XtraEditors.CalcEdit();
             this.calcNoHienTai = new DevExpress.XtraEditors.CalcEdit();
@@ -118,8 +116,8 @@
             this.radioDaiLyBanLe.Properties.Appearance.Options.UseBackColor = true;
             this.radioDaiLyBanLe.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioDaiLyBanLe.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Đại lý"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("0", "Khách lẻ")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Đại lý"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Khách lẻ")});
             this.radioDaiLyBanLe.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
             this.radioDaiLyBanLe.Size = new System.Drawing.Size(131, 31);
             this.radioDaiLyBanLe.TabIndex = 5;
@@ -174,7 +172,7 @@
             // 
             // btnKhuVuc
             // 
-            this.btnKhuVuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKhuVuc.ImageOptions.Image")));
+            this.btnKhuVuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.btnKhuVuc.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.CommonPalette;
             this.btnKhuVuc.Location = new System.Drawing.Point(549, 20);
             this.btnKhuVuc.LookAndFeel.SkinName = "Office 2019 Colorful";
@@ -182,7 +180,6 @@
             this.btnKhuVuc.Name = "btnKhuVuc";
             this.btnKhuVuc.Size = new System.Drawing.Size(20, 20);
             this.btnKhuVuc.TabIndex = 9;
-            this.btnKhuVuc.Click += new System.EventHandler(this.btnKhuVuc_Click);
             // 
             // txtZalo
             // 
@@ -486,7 +483,6 @@
             // 
             // lookKhuVuc
             // 
-            this.lookKhuVuc.EditValue = "222222";
             this.lookKhuVuc.Location = new System.Drawing.Point(375, 20);
             this.lookKhuVuc.Name = "lookKhuVuc";
             this.lookKhuVuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -497,35 +493,13 @@
             this.lookKhuVuc.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookKhuVuc.Size = new System.Drawing.Size(175, 20);
             this.lookKhuVuc.TabIndex = 8;
-            this.lookKhuVuc.Popup += new System.EventHandler(this.lookKhuVuc_Popup);
-            this.lookKhuVuc.EditValueChanged += new System.EventHandler(this.lookKhuVuc_EditValueChanged);
-            this.lookKhuVuc.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.lookKhuVuc_CustomDisplayText);
             // 
             // gridLookUpEdit1View
             // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã";
-            this.gridColumn1.FieldName = "Customer_Group_ID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên Khu Vực";
-            this.gridColumn2.FieldName = "Customer_Group_Name";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
             // 
             // calcGioiHanNo
             // 
@@ -565,7 +539,6 @@
             this.btnDong.Size = new System.Drawing.Size(75, 30);
             this.btnDong.TabIndex = 7;
             this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnLuu
             // 
@@ -575,7 +548,6 @@
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmThongTinKhachHang
             // 
@@ -592,7 +564,6 @@
             this.MinimizeBox = false;
             this.Name = "frmThongTinKhachHang";
             this.Text = "Thông Tin Khách Hàng";
-            this.Load += new System.EventHandler(this.frmThongTinKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checkQuanLy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioDaiLyBanLe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -669,7 +640,5 @@
         private DevExpress.XtraEditors.CalcEdit calcGioiHanNo;
         private DevExpress.XtraEditors.CalcEdit calcChiecKhau;
         private DevExpress.XtraEditors.CalcEdit calcNoHienTai;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

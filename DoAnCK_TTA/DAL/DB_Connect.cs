@@ -10,7 +10,7 @@ namespace DoAnCK_TTA.DAL
 {
     public class DB_Connect
     {
-        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-93FGSRM\SQLEXPRESS;Initial Catalog=UDQL1_DA;Integrated Security=True");
+        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-C8DU095;Initial Catalog=UDQL1_DA;Integrated Security=True");
 
         public void OpenConnection()
         {

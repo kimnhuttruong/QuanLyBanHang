@@ -57,7 +57,6 @@
             this.repositoryItemTokenEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.toolbarFormControl1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
@@ -168,6 +167,7 @@
             this.gridNhomphanquyen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
             this.gridView2});
+            this.gridNhomphanquyen.Click += new System.EventHandler(this.GridNhomphanquyen_Click);
             // 
             // gridView1
             // 
@@ -242,10 +242,9 @@
             this.barButtonItem2,
             this.btnSua,
             this.btnXoa,
-            this.btnDong,
-            this.barStaticItem1});
+            this.btnDong});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 9;
+            this.barManager1.MaxItemId = 8;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTokenEdit1});
             // 
@@ -368,12 +367,6 @@
             this.barButtonItem2.Caption = "barButtonItem2";
             this.barButtonItem2.Id = 4;
             this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "barStaticItem1";
-            this.barStaticItem1.Id = 8;
-            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // accordionControlElement1
             // 
@@ -572,6 +565,7 @@
             this.treePhanQuyen.ParentFieldName = "";
             this.treePhanQuyen.Size = new System.Drawing.Size(1131, 269);
             this.treePhanQuyen.TabIndex = 0;
+            this.treePhanQuyen.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.TreePhanQuyen_FocusedNodeChanged);
             // 
             // col_chucnang
             // 
@@ -805,6 +799,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
     }
 }

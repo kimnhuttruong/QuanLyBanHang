@@ -123,7 +123,6 @@
             this.btnDong.Size = new System.Drawing.Size(75, 30);
             this.btnDong.TabIndex = 2;
             this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnLuu
             // 
@@ -133,7 +132,6 @@
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmThongTinKhuVuc
             // 
@@ -145,9 +143,7 @@
             this.Controls.Add(this.groupControl1);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhuVuc";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông Tin Khu Vực";
-            this.Load += new System.EventHandler(this.frmThongTinKhuVuc_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

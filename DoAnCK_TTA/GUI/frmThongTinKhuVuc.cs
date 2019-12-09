@@ -8,8 +8,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DoAnCK_TTA.BUS;
-using DoAnCK_TTA.DTO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -18,59 +16,6 @@ namespace DoAnCK_TTA.GUI
         public frmThongTinKhuVuc()
         {
             InitializeComponent();
-            Sender = new SendMessage(GetMessage);
-        }
-        private void GetMessage(string ma,string ten,string mota,bool quanly)
-        {
-            txtMa.Text = ma;
-            txtTen.Text = ten;
-            txtGhiChu.Text = mota;
-            checkQuanLy.Checked = quanly;
-            if (ten == "")
-                isAdd = true;
-        }
-        bool isAdd=false;
-        public delegate void SendMessage(string ma, string ten, string mota, bool quanly);
-        public SendMessage Sender;
-        
-       
-        private void frmThongTinKhuVuc_Load(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void frmThongTinKhuVuc_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-
-            DTO_CUSTOMER_GROUP kv = new DTO_CUSTOMER_GROUP();
-            kv.Customer_Group_ID = txtMa.Text;
-            kv.Customer_Group_Name = txtTen.Text;
-            kv.Description = txtGhiChu.Text;
-            kv.Active = checkQuanLy.Checked;
-
-            BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
-            if (isAdd == true)
-            {
-                int kt = bus.ThemKhuVuc(kv);
-               
-            }
-            else
-            {
-                int kt = bus.CapNhatKhuVuc(kv);
-                
-            }
-            this.Close();
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
