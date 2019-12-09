@@ -32,7 +32,7 @@ namespace DoAnCK_TTA.GUI
         {
             DataTable dt = new DataTable();
             BUS_EMPLOYEE bus = new BUS_EMPLOYEE();
-            dt = bus.LayThongTinNhanVien();
+            dt = bus.LayDanhSachNhanVien();
 
             cbNhanVien.Properties.DataSource = dt;
             cbNhanVien.Properties.DisplayMember = "Employee_Name";

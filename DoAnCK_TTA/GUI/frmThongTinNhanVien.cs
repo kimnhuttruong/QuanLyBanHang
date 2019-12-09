@@ -8,129 +8,167 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
+using DoAnCK_TTA.BUS;
 
 namespace DoAnCK_TTA.GUI
 {
     public partial class frmThongTinNhanVien : DevExpress.XtraEditors.XtraForm
     {
-        public static DTO.DTO_EMPLOYEE value;
-        public static BUS.BUS_EMPLOYEE bus;
-        public frmThongTinNhanVien(DTO.DTO_EMPLOYEE em)
+        public frmThongTinNhanVien()
         {
-
             InitializeComponent();
+            Sender = new SendMessage(GetMessage);
 
-            value = new DTO.DTO_EMPLOYEE();
-            value = em;
+            if (txtMa.Text == "")
+            {
+                BUS_EMPLOYEE busnv = new BUS_EMPLOYEE();
+                _dtQuanLy = busnv.LayDanhSachNhanVien();
+
+                lookQuanLy.Properties.DataSource = _dtQuanLy;
+                lookQuanLy.Properties.DisplayMember = "Employee_Name";
+                lookQuanLy.Properties.ValueMember = "Employee_ID";
+
+                txtMa.Text = _dtQuanLy.Rows[_dtQuanLy.Rows.Count - 1][0].ToString();
+
+                txtMa.Text = txtMa.Text.Remove(0, 2);
+
+                txtMa.Text = (int.Parse(txtMa.Text) + 2).ToString("000000");
+                txtMa.Text = "NV" + txtMa.Text.ToString();
+            }
+
         }
+        
+        private void GetMessage(DTO_EMPLOYEE c)
+        {
+            txtMa.Text = c.Employee_ID;
+            txtTen.Text = c.Employee_Name;
+            txtChucVu.Text = c.Position_ID;
+            txtDiaChi.Text = c.Address;
+            txtEmail.Text = c.Email;
+            txtDienThoai.Text = c.O_Tel;
+            txtDiDong.Text = c.Mobile;
+            _idBoPhan = c.Department_ID;
+            _idQuanLy = c.Manager_ID;
 
+            //DataTable dt1 = new DataTable();
+
+            //lookBoPhan.EditValue = lookBoPhan.Properties.GetKeyValue(int.Parse(Department_ID.Remove(0, 2)) - 1);
+            //lookQuanLy.EditValue = lookBoPhan.Properties.GetKeyValue(int.Parse(Department_ID.Remove(0, 2)) - 1);
+            checkQuanLy.Checked = c.Active;
+            if (c.Employee_Name == null)
+                isAdd = true;
+            else
+                isAdd = false;
+        }
+       
+        bool isAdd = true;
+        public delegate void SendMessage(DTO_EMPLOYEE c);
+        public SendMessage Sender;
+        string _idBoPhan="",_idQuanLy="NV";
+        DataTable _dtBoPhan = new DataTable();
+        DataTable _dtQuanLy = new DataTable();
+        void formLoad()
+        {
+            BUS_DEPARTMENT bus = new BUS_DEPARTMENT();
+            _dtBoPhan = bus.LayDanhSachBoPhan();
+
+            lookBoPhan.Properties.DataSource = _dtBoPhan;
+            lookBoPhan.Properties.DisplayMember = "Department_Name";
+            lookBoPhan.Properties.ValueMember = "Department_ID";
+
+            for(int i=0;i< _dtBoPhan.Rows.Count-1;i++)
+            {
+                if (_idBoPhan == _dtBoPhan.Rows[i]["Department_ID"].ToString())
+                    _idBoPhan =  i.ToString();
+            }
+
+            if (_idBoPhan != "" && _idBoPhan != null)
+                lookBoPhan.EditValue = lookBoPhan.Properties.GetKeyValue(int.Parse(_idBoPhan));
+
+
+           
+
+
+
+            BUS_EMPLOYEE busnv = new BUS_EMPLOYEE();
+            _dtQuanLy = busnv.LayDanhSachNhanVien();
+
+            lookQuanLy.Properties.DataSource = _dtQuanLy;
+            lookQuanLy.Properties.DisplayMember = "Employee_Name";
+            lookQuanLy.Properties.ValueMember = "Employee_ID";
+
+            for (int i = 0; i < _dtQuanLy.Rows.Count - 1; i++)
+            {
+                if (_idQuanLy == _dtQuanLy.Rows[i]["Employee_ID"].ToString())
+                    _idQuanLy = i.ToString();
+            }
+
+            if (_idQuanLy != "" && _idQuanLy != null && _idQuanLy != "NV")
+                lookQuanLy.EditValue = lookQuanLy.Properties.GetKeyValue(int.Parse(_idQuanLy));
+
+        }
+        private void frmThongTinNhanVien_Load(object sender, EventArgs e)
+        {
+            formLoad();
+        }
 
         private void txtTen_EditValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void BtnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
+            BUS_EMPLOYEE bus = new BUS_EMPLOYEE();
+            DTO_EMPLOYEE c = new DTO_EMPLOYEE();
+            c.Employee_ID = txtMa.Text;
+            c.Employee_Name= txtTen.Text;
+            c.Position_ID= txtChucVu.Text;
+            c.Address= txtDiaChi.Text;
+            c.Email= txtEmail.Text;
+            c.H_Tel= txtDienThoai.Text;
+            c.Mobile= txtDiDong.Text;
+            c.Department_ID = lookBoPhan.EditValue.ToString();
+            c.Manager_ID= lookQuanLy.EditValue.ToString();
 
-            DTO.DTO_EMPLOYEE _EMPLOYEE = new DTO.DTO_EMPLOYEE();
-            _EMPLOYEE.Employee_ID1 = txtMa.Text;
-            _EMPLOYEE.Employee_Name1 = txtTen.Text;
-            _EMPLOYEE.Department_ID1 = txtChucVu.Text;
-            _EMPLOYEE.Address1 = txtDiaChi.Text;
-            _EMPLOYEE.Mobile1 = txtDienThoai.Text;
-            _EMPLOYEE.Fax1 = txtFax.Text;
-            DataRowView selectedDataRow = (DataRowView)lookBoPhan.GetSelectedDataRow();
-            DataRowView selectedDataRow1 = (DataRowView)lookQuanLy.GetSelectedDataRow();
 
-            _EMPLOYEE.Department_Name1 = selectedDataRow.Row[1].ToString();
-            _EMPLOYEE.Manager_ID1 = selectedDataRow1.Row[1].ToString();
-            if (bus.Detail(_EMPLOYEE.Employee_ID1).Rows.Count<0)
+            c.Active = checkQuanLy.Checked;
+            if (isAdd == true)
             {
-                if (bus.Insert(_EMPLOYEE) == 1)
-                    MessageBox.Show("Thanh cong");
-                else
-                    MessageBox.Show("That bai");
+                int kt = bus.ThemNhanVien(c);
+
             }
             else
-
             {
-                
-                if (bus.Delete(_EMPLOYEE.Employee_ID1)==1 && bus.Insert(_EMPLOYEE) == 1)
-                    MessageBox.Show("Thanh cong");
-                else
-                    MessageBox.Show("That bai");
-            }
-        }
+                int kt = bus.CapNhatNhanVien(c);
 
-        private void BtnDong_Click(object sender, EventArgs e)
-        {
+            }
             this.Close();
         }
-
-
-
-        private void BtnBoPhan_Click(object sender, EventArgs e)
+        bool _thembophan = false;
+        private void btnBoPhan_Click(object sender, EventArgs e)
         {
-            frmThemBoPhan bp = new frmThemBoPhan();
-            bp.ShowDialog();
+            Form bophan = new frmThemBoPhan();
+            bophan.ShowDialog();
+
+            _thembophan = true;
+
+            formLoad();
         }
 
-        private void BtnQuanLy_Click(object sender, EventArgs e)
+        private void btnQuanLy_Click(object sender, EventArgs e)
         {
            
 
+            Form them = new frmThongTinNhanVien();
+            them.ShowDialog();
+            formLoad();
         }
 
-        private void FrmThongTinNhanVien_Load_1(object sender, EventArgs e)
+        private void btnDong_Click(object sender, EventArgs e)
         {
-
-            DataTable dt2 = new DataTable();
-            BUS_EMPLOYEE bus = new BUS_EMPLOYEE();
-            dt2 = bus.getDEPARTMENT();
-
-            lookBoPhan.Properties.DataSource = dt2;
-            lookBoPhan.Properties.DisplayMember = "Department_Name";
-            lookBoPhan.Properties.ValueMember = "Department_ID";
-
-            DataTable dt1 = new DataTable();
-            BUS_EMPLOYEE bus1 = new BUS_EMPLOYEE();
-            dt1 = bus1.getManger();
-            lookQuanLy.Properties.DataSource = dt1;
-            lookQuanLy.Properties.DisplayMember = "Employee_Name";
-            lookQuanLy.Properties.ValueMember = "Employee_ID";
-
-
-
-            DataTable dt = new DataTable();
-
-            BUS.BUS_EMPLOYEE bUS_ = new BUS_EMPLOYEE();
-            dt = bUS_.Detail(value.Employee_ID1);
-
-            if (dt.Rows.Count > 0)
-            {
-                var em = new DTO.DTO_EMPLOYEE();
-                em.Employee_ID1 = dt.Rows[0][0].ToString();
-                em.Employee_Name1 = dt.Rows[0][1].ToString();
-                em.Department_ID1 = dt.Rows[0][2].ToString();
-                em.Address1 = dt.Rows[0][3].ToString();
-                em.Mobile1 = dt.Rows[0][4].ToString();
-                em.Fax1 = dt.Rows[0][5].ToString();
-                em.Department_Name1 = dt.Rows[0][6].ToString();
-                em.Manager_ID1 = dt.Rows[0][7].ToString();
-
-
-                txtMa.Text = em.Employee_ID1;
-                txtTen.Text = em.Employee_Name1;
-                txtChucVu.Text = em.Department_ID1;
-                txtDiaChi.Text = em.Address1;
-                txtDienThoai.Text = em.Mobile1;
-                lookBoPhan.Text = em.Department_Name1;
-                lookQuanLy.Text = em.Manager_ID1;
-
-            }
+            this.Close();
         }
     }
 }

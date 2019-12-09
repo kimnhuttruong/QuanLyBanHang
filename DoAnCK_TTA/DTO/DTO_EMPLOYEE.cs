@@ -8,36 +8,45 @@ namespace DoAnCK_TTA.DTO
 {
     public class DTO_EMPLOYEE
     {
-        public string ID { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Group_ID { get; set; }
-        public string Group_Name { get; set; }
-        public string Description { get; set; }
-        public string PartID { get; set; }
-        public bool Active { get; set; }
-
-        public string Employee_ID1 { get => Employee_ID; set => Employee_ID = value; }
-        public string Employee_Name1 { get => Employee_Name; set => Employee_Name = value; }
-        public string Department_ID1 { get => Department_ID; set => Department_ID = value; }
-        public string Address1 { get => Address; set => Address = value; }
-        public string Mobile1 { get => Mobile; set => Mobile = value; }
-        public string Fax1 { get => Fax; set => Fax = value; }
-        public string Department_Name1 { get => Department_Name; set => Department_Name = value; }
-        public string Manager_ID1 { get => Manager_ID; set => Manager_ID = value; }
-
-        string Employee_ID;
-        string Employee_Name;
-        string Department_ID;
-        string Address;
-        string Mobile;
-        string Fax;
-        string Department_Name;
-        string Manager_ID;
-
-
-
-
-
+        public string Employee_ID{get ; set; }
+        public string FirtName{get ; set; }
+        public string LastName{get ; set; }
+        public string Employee_Name{get ; set; }
+        public string Alias{get ; set; }
+        public string Sex{get ; set; }
+        public string Address{get ; set; }
+        public string Country_ID{get ; set; }
+        public string H_Tel{get ; set; }
+        public string O_Tel{get ; set; }
+        public string Mobile{get ; set; }
+        public string Fax{get ; set; }
+        public string Email{get ; set; }
+        public string Birthday{get ; set; }
+        public string Married{get ; set; }
+        public string Position_ID{get ; set; }
+        public string JobTitle_ID{get ; set; }
+        public string Branch_ID{get ; set; }
+        public string Department_ID{get ; set; }
+        public string Team_ID{get ; set; }
+        public string PersonalTax_ID{get ; set; }
+        public string City_ID{get ; set; }
+        public string District_ID{get ; set; }
+        public string Manager_ID{get ; set; }
+        public string EmployeeType{get ; set; }
+        public string BasicSalary{get ; set; }
+        public string Advance{get ; set; }
+        public string AdvanceOther{get ; set; }
+        public string Commission{get ; set; }
+        public string Discount{get ; set; }
+        public string ProfitRate{get ; set; }
+        public string IsPublic{get ; set; }
+        public string CreatedBy{get ; set; }
+        public string CreatedDate{get ; set; }
+        public string ModifiedBy{get ; set; }
+        public string ModifiedDate{get ; set; }
+        public string OwnerID{get ; set; }
+        public string Description{get ; set; }
+        public string Sorted{get ; set; }
+        public bool Active{get ; set; }
     }
 }

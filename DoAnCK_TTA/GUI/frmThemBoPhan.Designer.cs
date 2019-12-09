@@ -103,7 +103,7 @@
             // 
             this.labelControl3.Location = new System.Drawing.Point(11, 53);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(18, 13);
+            this.labelControl3.Size = new System.Drawing.Size(19, 13);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Tên";
             // 
@@ -123,7 +123,7 @@
             this.btnDong.Size = new System.Drawing.Size(75, 30);
             this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.BtnDong_Click);
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnLuu
             // 
@@ -133,7 +133,7 @@
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmThemBoPhan
             // 
@@ -146,6 +146,7 @@
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThemBoPhan";
             this.Text = "Thông Tin Bộ Phận";
+            this.Load += new System.EventHandler(this.frmThemBoPhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

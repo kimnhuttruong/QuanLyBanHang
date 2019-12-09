@@ -124,6 +124,7 @@
             this.btnDong.Size = new System.Drawing.Size(75, 30);
             this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnLuu
             // 
@@ -133,6 +134,7 @@
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmThongTinTyGia
             // 
@@ -145,6 +147,7 @@
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinTyGia";
             this.Text = "Thông Tin Tỷ Giá";
+            this.Load += new System.EventHandler(this.frmThongTinTyGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

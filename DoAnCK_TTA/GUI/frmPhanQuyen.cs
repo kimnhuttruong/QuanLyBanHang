@@ -199,16 +199,6 @@ namespace DoAnCK_TTA.GUI
             mainWindow.Show();
 
         }
-
-        private void TreePhanQuyen_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
-        {
-
-        }
-
-        private void GridNhomphanquyen_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

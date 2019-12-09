@@ -12,9 +12,10 @@ namespace DoAnCK_TTA.DTO
         string Name;
         int active;
 
-        public string ID1 { get => ID; set => ID = value; }
-        public string Name1 { get => Name; set => Name = value; }
-        public int Active { get => active; set => active = value; }
+        public string Department_ID { get; set; }
+        public string Department_Name { get; set; }
+        public string Description { get; set; }
+        public bool Active { get; set; }
 
 
     }
