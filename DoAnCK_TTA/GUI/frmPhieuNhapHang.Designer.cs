@@ -34,7 +34,7 @@
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.barButton = new DevExpress.XtraBars.Bar();
             this.btnTaoMoi = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnSaveAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -198,7 +198,7 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1});
+            this.barButton});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -223,19 +223,19 @@
             this.btnSaveClose});
             this.barManager1.MaxItemId = 16;
             // 
-            // bar1
+            // barButton
             // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.barButton.BarName = "Tools";
+            this.barButton.DockCol = 0;
+            this.barButton.DockRow = 0;
+            this.barButton.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.barButton.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnTaoMoi),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
-            this.bar1.Text = "Tools";
+            this.barButton.Text = "Tools";
             // 
             // btnTaoMoi
             // 
@@ -1211,7 +1211,7 @@
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.Bar barButton;
         private DevExpress.XtraBars.BarStaticItem btnTaoMoi;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem btnSaveAdd;

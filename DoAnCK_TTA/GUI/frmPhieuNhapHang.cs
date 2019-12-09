@@ -27,13 +27,16 @@ namespace DoAnCK_TTA.GUI
         {
             if (ma.Length > 0)
             {
-                load();
-
+                 load();
+                MessageBox.Show("GetMessage");
                 coma = ma;
                 DataTable dt = new DataTable();
                 BUS_STOCK_INWARD bUS_STOCK_INWARD = new BUS_STOCK_INWARD();
                 dt = bUS_STOCK_INWARD.LayThongTinBangKeChiTiet(ma);
 
+                //this.Controls.Remove(barDockControlTop);
+                barDockControlTop.Visible = false;
+                barButton.Visible = false;
 
                 txtPhieu.Text = dt.Rows[0]["Barcode"].ToString();
                 lookNhaCungCap.EditValue = dt.Rows[0]["Customer_ID"].ToString();
@@ -47,16 +50,26 @@ namespace DoAnCK_TTA.GUI
 
                 DataTable dt1 = new DataTable();
                 BUS_STOCK_INWARD_DETAIL bUS = new BUS_STOCK_INWARD_DETAIL();
-                dt1 = bUS.LayThongTinBangKeChiTiet(ma);
+                dt1.Columns.Add("Ma");
+                dt1.Columns.Add("Ten");
+                dt1.Columns.Add("DonVi");
+                dt1.Columns.Add("SoLuong");
+                dt1.Columns.Add("DonGia");
+                dt1.Columns.Add("ThanhTien");
+                dt1.Columns.Add("GhiChu");
+                dt1 = bUS.LayThongTinBangKeChiTietDataTable(ma);
 
-
+                gridPhieuNhapHang.RefreshDataSource();
                 for (int i = 0; i < dt1.Rows.Count; i++)
                 {
-                    //gridView5.SetRowCellValue(i, "Ma", dt1.Rows[i]["Product_ID"].ToString());
-                    //  gridView5.SetRowCellValue(i, lookMa, dt1.Rows[i]["Product_ID"].ToString());
-
+                    //Rows.Add(dt.Rows[i]["MaSV"].ToString(), dt.Rows[i]["HoTen"].ToString(),
+                    //     dt.Rows[i]["NgaySinh"].ToString(), dt.Rows[i]["Phai"].ToString(),
+                    //       dt.Rows[i]["Lop"].ToString(), dt.Rows[i]["DTB"].ToString()
+                    //    );
                     //    gridView5.SetRowCellValue(i, "GhiChu", dt1.Rows[i]["Product_ID"].ToString());
-                    gridView5.SetRowCellValue(i, "SoLuong", "xin chào");
+                    //gridView5.SetRowCellValue(i+1, "Ma", dt1.Rows[i]["Product_ID"].ToString());
+                    gridPhieuNhapHang.DataSource = dt1;
+
                 }
             }
         }
@@ -148,11 +161,11 @@ namespace DoAnCK_TTA.GUI
                 txtPhieu.Text = DateTime.Now.ToString().Replace(" ", "").Replace("/", "").Replace(":", "").Replace("AM", "").Replace("PM", "");
 
 
-
             //lookNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
             lookMa.ColumnEdit = riLookup_MA;
             lookTenHang.ColumnEdit = riLookup_TEN;
 
+            MessageBox.Show("2");
 
             DataTable dt = new DataTable();
             dt.Columns.Add("Ma");
@@ -171,8 +184,8 @@ namespace DoAnCK_TTA.GUI
         
         private void frmPhieuNhapHang_Load(object sender, EventArgs e)
         {
-
-            load();
+            if(coma.Length==0)
+                  load();
         }
 
         private void barStaticItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -521,7 +534,6 @@ namespace DoAnCK_TTA.GUI
                     int a = bus.ThemPhieuNhapHang(_DETAIL);
                     int b = inward.ThemPhieuNhapHang(phieu);
                     int c = inwarddetal.ThemPhieuNhapHang(dTO_STOCK_INWARD_DETAIL);
-
 
                 }
             }

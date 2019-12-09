@@ -100,5 +100,26 @@ namespace DoAnCK_TTA.DAL
                 return dt;
             }
         }
+        public DataTable LayThongTinBangKeChiTietDataTable(string ma)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select d.Inward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.ID and p.Product_ID=d.Product_ID and d.Inward_ID='" + ma + "' ";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
     }
 }

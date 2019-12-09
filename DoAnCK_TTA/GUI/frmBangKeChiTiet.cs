@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -34,14 +35,15 @@ namespace DoAnCK_TTA.GUI
             gridChiTiet.DataSource = _dt;
         }
 
-       
+
         private void btnTaoMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
 
             this.Hide();
             var banhang = new frmMuaHang();
-       //     banhang.Sender(c,d,_dt);    //Gọi
+            //     banhang.Sender(c,d,_dt);    //Gọi
+
             banhang.Show();
 
         }
@@ -60,10 +62,8 @@ namespace DoAnCK_TTA.GUI
                 Quantity = row["Quantity"].ToString();
             }
 
-            this.Hide();
-            var banhang = new frmMuaHang();
-            //     banhang.Sender(c,d,_dt);    //Gọi
-            banhang.Show();
+          //  this.Hide();
+           
 
 
             BUS_STOCK_INWARD_DETAIL bus = new BUS_STOCK_INWARD_DETAIL();
@@ -75,19 +75,28 @@ namespace DoAnCK_TTA.GUI
         private void btnSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string ma = "";
-         
+
             foreach (int i in gridView1.GetSelectedRows())
             {
                 DataRow row = gridView1.GetDataRow(i);
                 ma = row[0].ToString();
-             
+
             }
+            
 
-            this.Hide();
-            var banhang = new frmMuaHang();
-            banhang.Sender(ma);    //Gọi
-            banhang.Show();
+            var phieumuahang = new frmPhieuNhapHang();
+            
+            phieumuahang.Sender(ma);
+            Form window1 = new Form()
+            {
+                Text = "Sửa Phiếu Mua Hàng",
+                Width = 1130,
+                Height = 550,
+                AutoSize = false
 
+            };
+            window1.Controls.Add(phieumuahang);
+            window1.ShowDialog();
 
         }
     }

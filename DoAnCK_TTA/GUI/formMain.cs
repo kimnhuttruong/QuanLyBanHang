@@ -270,6 +270,7 @@ namespace DoAnCK_TTA.GUI
                 f.MdiParent = this;
                 f.Text = "Mua Hàng";
                 f.Show();
+                MessageBox.Show(f.Location.X.ToString() + " " + f.Location.Y.ToString());
             }
             else
             {
