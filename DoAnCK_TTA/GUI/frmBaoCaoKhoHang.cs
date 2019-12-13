@@ -45,8 +45,8 @@ namespace DoAnCK_TTA.GUI
         {
             if (e.Element == null) return;
             XtraUserControl userControl = e.Element.Text == "Employees" ? employeesUserControl : customersUserControl;
-            tabbedView.AddDocument(userControl);
-            tabbedView.ActivateDocument(userControl);
+            //tabbedView.AddDocument(userControl);
+            //tabbedView.ActivateDocument(userControl);
         }
         void barButtonNavigation_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -74,6 +74,31 @@ namespace DoAnCK_TTA.GUI
         {
             if (e.Document.Caption == "Employees") employeesUserControl = CreateUserControl("Employees");
             else customersUserControl = CreateUserControl("Customers");
+        }
+
+        private void frmBaoCaoKhoHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTonKhoTongHop_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+          frmTonKhoTongHop f = new frmTonKhoTongHop();
+            f.Text = "Tồn Kho Tổng Hợp";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnNhapXuatTon_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmNhapXuatTon f = new frmNhapXuatTon();
+            f.Text = "Tồn Kho Tổng Hợp";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
         }
     }
 }

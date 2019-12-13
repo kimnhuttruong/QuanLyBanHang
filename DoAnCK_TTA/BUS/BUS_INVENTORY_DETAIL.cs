@@ -23,5 +23,6 @@ namespace DoAnCK_TTA.BUS
             return dAL.ThemPhieuNhapHang(dTO);
 
         }
+      
     }
 }

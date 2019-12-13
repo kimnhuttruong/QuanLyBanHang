@@ -905,6 +905,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Product_ID", "Mã Hàng"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Product_Name", "Tên Hàng")});
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.NullText = "";
             this.repositoryItemLookUpEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             // 
             // lookTenHang
@@ -922,6 +923,7 @@
             this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
+            this.repositoryItemGridLookUpEdit1.NullText = "Gõ vào đây";
             this.repositoryItemGridLookUpEdit1.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.repositoryItemGridLookUpEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             // 
@@ -974,6 +976,8 @@
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:0.##}")});
+            this.txtThanhTien.UnboundExpression = "[DonGia] * [SoLuong]";
+            this.txtThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.txtThanhTien.Visible = true;
             this.txtThanhTien.VisibleIndex = 5;
             // 

@@ -105,7 +105,7 @@ namespace DoAnCK_TTA.GUI
         {
             tabbedView.Controller.CloseAll();
 
-            frmBangKeTongHop f = new frmBangKeTongHop();
+            BangKeTongHop_BanHang f = new BangKeTongHop_BanHang();
             f.Text = "Bảng Kê Tổng Hợp";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
@@ -115,7 +115,7 @@ namespace DoAnCK_TTA.GUI
         {
             tabbedView.Controller.CloseAll();
 
-            frmBangKeChiTiet f = new frmBangKeChiTiet();
+            frmBangKeChiTiet_BanHang f = new frmBangKeChiTiet_BanHang();
             f.Text = "Bảng Kê Chi Tiết";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);

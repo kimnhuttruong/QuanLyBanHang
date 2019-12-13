@@ -39,7 +39,6 @@
             this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem7 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -52,6 +51,7 @@
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -179,15 +179,6 @@
             this.barStaticItem1.Name = "barStaticItem1";
             this.barStaticItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barStaticItem4
-            // 
-            this.barStaticItem4.Caption = "Lập Phiếu Thu";
-            this.barStaticItem4.Id = 9;
-            this.barStaticItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.Image")));
-            this.barStaticItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.LargeImage")));
-            this.barStaticItem4.Name = "barStaticItem4";
-            this.barStaticItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // barStaticItem6
             // 
             this.barStaticItem6.Caption = "Xuất";
@@ -280,6 +271,15 @@
             this.barStaticItem3.Name = "barStaticItem3";
             this.barStaticItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
+            // barStaticItem4
+            // 
+            this.barStaticItem4.Caption = "Lập Phiếu Thu";
+            this.barStaticItem4.Id = 9;
+            this.barStaticItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.Image")));
+            this.barStaticItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.LargeImage")));
+            this.barStaticItem4.Name = "barStaticItem4";
+            this.barStaticItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // barStaticItem5
             // 
             this.barStaticItem5.Caption = "In";
@@ -291,7 +291,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 29);
+            this.gridControl1.Location = new System.Drawing.Point(3, 30);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1105, 484);
@@ -372,7 +372,7 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 7;
             // 
-            // DanhSachCongNoTongHop
+            // frmDanhSachCongNoTongHop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -381,8 +381,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "DanhSachCongNoTongHop";
+            this.Name = "frmDanhSachCongNoTongHop";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Load += new System.EventHandler(this.frmDanhSachCongNoTongHop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();

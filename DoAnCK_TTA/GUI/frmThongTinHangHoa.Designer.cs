@@ -36,6 +36,7 @@
             this.cbLoaiHangHoa = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnKhoMatDinh = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.picture = new DevExpress.XtraEditors.PictureEdit();
             this.btnDonVi = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -85,10 +86,10 @@
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.picture = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbLoaiHangHoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaVach.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtXuatXu.Properties)).BeginInit();
@@ -109,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhoMacDinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl13
@@ -208,6 +208,18 @@
             this.groupControl1.Size = new System.Drawing.Size(524, 236);
             this.groupControl1.TabIndex = 16;
             this.groupControl1.Text = "Thông Tin Chung";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // picture
+            // 
+            this.picture.Location = new System.Drawing.Point(279, 97);
+            this.picture.Name = "picture";
+            this.picture.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.picture.Size = new System.Drawing.Size(234, 134);
+            this.picture.TabIndex = 24;
+            this.picture.EditValueChanged += new System.EventHandler(this.picture_EditValueChanged);
+            this.picture.Click += new System.EventHandler(this.picture_Click);
             // 
             // btnDonVi
             // 
@@ -685,17 +697,6 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
-            // picture
-            // 
-            this.picture.Location = new System.Drawing.Point(279, 97);
-            this.picture.Name = "picture";
-            this.picture.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.picture.Size = new System.Drawing.Size(234, 134);
-            this.picture.TabIndex = 24;
-            this.picture.EditValueChanged += new System.EventHandler(this.picture_EditValueChanged);
-            this.picture.Click += new System.EventHandler(this.picture_Click);
-            // 
             // frmThongTinHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,6 +722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaVach.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtXuatXu.Properties)).EndInit();
@@ -742,7 +744,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhoMacDinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,18 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.LayThongTinBangKe();
 
         }
+        public DataTable LayThongTinBangKeCongNo()
+        {
+            DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinBangKeCongNo();
+
+        }
+        public DataTable LayThongTinBangKeThanhToanNgay()
+        {
+            DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinBangKeThanhToanNgay();
+
+        }
         public DataTable LayThongTinBangKeChiTiet(string ma)
         {
             DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();
@@ -41,5 +53,20 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.XoaPhieuNhapHang(ma,mahang, Quantity);
 
         }
+        public DataTable LayThongTinMuaHangTheoNgay()
+        {
+            DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinMuaHangTheoNgay();
+
+
+        }
+        public DataTable LayThongTinMuaHangTheoNCC()
+        {
+            DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinMuaHangTheoNCC();
+
+
+        }
+
     }
 }

@@ -105,7 +105,7 @@ namespace DoAnCK_TTA.GUI
         {
             tabbedView.Controller.CloseAll();
 
-            frmDanhSachPhieuTraNgay f = new frmDanhSachPhieuTraNgay();
+            frmBangKePhieuThanhToanNgay f = new frmBangKePhieuThanhToanNgay();
             f.Text = "Bãng Kê Phiếu Thanh Toán Ngay";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);

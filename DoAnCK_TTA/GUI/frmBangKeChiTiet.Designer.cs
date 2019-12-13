@@ -203,8 +203,8 @@
             // 
             this.btnSuaChua.Caption = "Sửa Chữa";
             this.btnSuaChua.Id = 8;
-            this.btnSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem3.ImageOptions.Image")));
-            this.btnSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem3.ImageOptions.LargeImage")));
+            this.btnSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaChua.ImageOptions.Image")));
+            this.btnSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSuaChua.ImageOptions.LargeImage")));
             this.btnSuaChua.Name = "btnSuaChua";
             this.btnSuaChua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaChua_ItemClick);

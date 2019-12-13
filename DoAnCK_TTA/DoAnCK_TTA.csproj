@@ -102,16 +102,23 @@
     <Compile Include="BUS\BUS_CURRENCY.cs" />
     <Compile Include="BUS\BUS_CUSTOMER.cs" />
     <Compile Include="BUS\BUS_CUSTOMER_GROUP.cs" />
+    <Compile Include="BUS\BUS_CUSTOMER_RECEIPT.cs" />
     <Compile Include="BUS\BUS_DEPARTMENT.cs" />
     <Compile Include="BUS\BUS_EMPLOYEE.cs" />
     <Compile Include="BUS\BUS_GROUP.cs" />
+    <Compile Include="BUS\BUS_INVENTORY.cs" />
     <Compile Include="BUS\BUS_INVENTORY_DETAIL.cs" />
     <Compile Include="BUS\BUS_PRODUCT.cs" />
     <Compile Include="BUS\BUS_PRODUCT_GROUP.cs" />
     <Compile Include="BUS\BUS_PROVIDER.cs" />
+    <Compile Include="BUS\BUS_PROVIDER_PAYMENT.cs" />
     <Compile Include="BUS\BUS_STOCK.cs" />
     <Compile Include="BUS\BUS_STOCK_INWARD.cs" />
     <Compile Include="BUS\BUS_STOCK_INWARD_DETAIL.cs" />
+    <Compile Include="BUS\BUS_STOCK_OUTWARD.cs" />
+    <Compile Include="BUS\BUS_STOCK_OUTWARD_DETAIL.cs" />
+    <Compile Include="BUS\BUS_STOCK_TRANSFER.cs" />
+    <Compile Include="BUS\BUS_STOCK_TRANSFER_DETAIL.cs" />
     <Compile Include="BUS\BUS_SYS_USER.cs" />
     <Compile Include="BUS\BUS_SYS_USER_RULE.cs" />
     <Compile Include="BUS\BUS_UNIT.cs" />
@@ -120,6 +127,7 @@
     <Compile Include="DAL\DAL_CURRENCY.cs" />
     <Compile Include="DAL\DAL_CUSTOMER.cs" />
     <Compile Include="DAL\DAL_CUSTOMER_GROUP.cs" />
+    <Compile Include="DAL\DAL_CUSTOMER_RECEIPT.cs" />
     <Compile Include="DAL\DAL_DEPARTMENT.cs" />
     <Compile Include="DAL\DAL_EMPLOYEE.cs" />
     <Compile Include="DAL\DAL_GROUP.cs" />
@@ -128,9 +136,14 @@
     <Compile Include="DAL\DAL_PRODUCT.cs" />
     <Compile Include="DAL\DAL_PRODUCT_GROUP.cs" />
     <Compile Include="DAL\DAL_PROVIDER.cs" />
+    <Compile Include="DAL\DAL_PROVIDER_PAYMENT.cs" />
     <Compile Include="DAL\DAL_STOCK.cs" />
     <Compile Include="DAL\DAL_STOCK_INWARD.cs" />
     <Compile Include="DAL\DAL_STOCK_INWARD_DETAIL.cs" />
+    <Compile Include="DAL\DAL_STOCK_OUTWARD.cs" />
+    <Compile Include="DAL\DAL_STOCK_OUTWARD_DETAIL.cs" />
+    <Compile Include="DAL\DAL_STOCK_TRANSFER.cs" />
+    <Compile Include="DAL\DAL_STOCK_TRANSFER_DETAIL.cs" />
     <Compile Include="DAL\DAL_SYS_USER.cs" />
     <Compile Include="DAL\DAL_SYS_USER_RULE.cs" />
     <Compile Include="DAL\DAL_UNIT.cs" />
@@ -140,6 +153,7 @@
     <Compile Include="DTO\DTO_CURRENCY.cs" />
     <Compile Include="DTO\DTO_CUSTOMER.cs" />
     <Compile Include="DTO\DTO_CUSTOMER_GROUP.cs" />
+    <Compile Include="DTO\DTO_CUSTOMER_RECEIPT.cs" />
     <Compile Include="DTO\DTO_DEPARTMENT.cs" />
     <Compile Include="DTO\DTO_EMPLOYEE.cs" />
     <Compile Include="DTO\DTO_GROUP.cs" />
@@ -148,17 +162,40 @@
     <Compile Include="DTO\DTO_PRODUCT.cs" />
     <Compile Include="DTO\DTO_PRODUCT_GROUP.cs" />
     <Compile Include="DTO\DTO_PROVIDER.cs" />
+    <Compile Include="DTO\DTO_PROVIDER_PAYMENT.cs" />
     <Compile Include="DTO\DTO_STOCK.cs" />
     <Compile Include="DTO\DTO_STOCK_INWARD.cs" />
     <Compile Include="DTO\DTO_STOCK_INWARD_DETAIL.cs" />
+    <Compile Include="DTO\DTO_STOCK_OUTWARD.cs" />
+    <Compile Include="DTO\DTO_STOCK_OUTWARD_DETAIL.cs" />
+    <Compile Include="DTO\DTO_STOCK_TRANSFER.cs" />
+    <Compile Include="DTO\DTO_STOCK_TRANSFER_DETAIL.cs" />
     <Compile Include="DTO\DTO_SYS_USER.cs" />
     <Compile Include="DTO\DTO_SYS_USER_RULE.cs" />
     <Compile Include="DTO\DTO_UNIT.cs" />
-    <Compile Include="GUI\frBaoCaoBanHang.cs">
+    <Compile Include="GUI\BangKeTongHop_BanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BangKeTongHop_BanHang.Designer.cs">
+      <DependentUpon>BangKeTongHop_BanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBaoCaoBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frBaoCaoBanHang.Designer.cs">
-      <DependentUpon>frBaoCaoBanHang.cs</DependentUpon>
+    <Compile Include="GUI\frmBaoCaoBanHang.Designer.cs">
+      <DependentUpon>frmBaoCaoBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBangKeChiTiet_BanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBangKeChiTiet_BanHang.Designer.cs">
+      <DependentUpon>frmBangKeChiTiet_BanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmBangKeChiTiet_ChuyenKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBangKeChiTiet_ChuyenKho.Designer.cs">
+      <DependentUpon>frmBangKeChiTiet_ChuyenKho.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmBangKePhieuThanhToanNgay.cs">
       <SubType>UserControl</SubType>
@@ -412,6 +449,12 @@
     <Compile Include="GUI\frmPhieuNhapHang.Designer.cs">
       <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPhieuThu.Designer.cs">
+      <DependentUpon>frmPhieuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmPhieuXuatHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -577,8 +620,17 @@
     <Compile Include="GUI\XtraReport1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\frBaoCaoBanHang.resx">
-      <DependentUpon>frBaoCaoBanHang.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\BangKeTongHop_BanHang.resx">
+      <DependentUpon>BangKeTongHop_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBaoCaoBanHang.resx">
+      <DependentUpon>frmBaoCaoBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBangKeChiTiet_BanHang.resx">
+      <DependentUpon>frmBangKeChiTiet_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBangKeChiTiet_ChuyenKho.resx">
+      <DependentUpon>frmBangKeChiTiet_ChuyenKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBangKePhieuThanhToanNgay.resx">
       <DependentUpon>frmBangKePhieuThanhToanNgay.cs</DependentUpon>
@@ -706,6 +758,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmPhieuNhapHang.resx">
       <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPhieuThu.resx">
+      <DependentUpon>frmPhieuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmPhieuXuatHang.resx">
       <DependentUpon>frmPhieuXuatHang.cs</DependentUpon>

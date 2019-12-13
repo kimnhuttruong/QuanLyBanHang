@@ -28,15 +28,20 @@ namespace DoAnCK_TTA.GUI
             if (ma.Length > 0)
             {
                  load();
-                MessageBox.Show("GetMessage");
                 coma = ma;
                 DataTable dt = new DataTable();
                 BUS_STOCK_INWARD bUS_STOCK_INWARD = new BUS_STOCK_INWARD();
                 dt = bUS_STOCK_INWARD.LayThongTinBangKeChiTiet(ma);
 
                 //this.Controls.Remove(barDockControlTop);
-                barDockControlTop.Visible = false;
-                barButton.Visible = false;
+                //barDockControlTop.Visible = false;
+                //barButton.Visible = false;
+                btnTaoMoi.Enabled = false;
+                btnSaveAdd.Enabled = false;
+                btnNapLai.Enabled = false;
+                btnDong.Enabled = false;
+                btnSaveClose.Caption = "Lưu";
+
 
                 txtPhieu.Text = dt.Rows[0]["Barcode"].ToString();
                 lookNhaCungCap.EditValue = dt.Rows[0]["Customer_ID"].ToString();
@@ -47,30 +52,38 @@ namespace DoAnCK_TTA.GUI
                 lookDieuKhoan.EditValue = dt.Rows[0]["TermID"].ToString();
                 lookHinhThucThanhToan.EditValue = dt.Rows[0]["PaymentMethod"].ToString();
                 lookHan.EditValue = dt.Rows[0]["PaymentDate"].ToString();
+             
+
+                BUS_PROVIDER busNCC = new BUS_PROVIDER();
+                txtDienThoai.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Tel"].ToString();
+                txtDiaChi.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["CustomerAddress"].ToString();
+                menoGhiChu.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Description"].ToString();
+
 
                 DataTable dt1 = new DataTable();
                 BUS_STOCK_INWARD_DETAIL bUS = new BUS_STOCK_INWARD_DETAIL();
-                dt1.Columns.Add("Ma");
-                dt1.Columns.Add("Ten");
-                dt1.Columns.Add("DonVi");
-                dt1.Columns.Add("SoLuong");
-                dt1.Columns.Add("DonGia");
-                dt1.Columns.Add("ThanhTien");
-                dt1.Columns.Add("GhiChu");
+                
                 dt1 = bUS.LayThongTinBangKeChiTietDataTable(ma);
-
-                gridPhieuNhapHang.RefreshDataSource();
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("Ma");
+                dt2.Columns.Add("Ten");
+                dt2.Columns.Add("DonVi");
+                dt2.Columns.Add("SoLuong");
+                dt2.Columns.Add("DonGia");
+                dt2.Columns.Add("ThanhTien");
+                dt2.Columns.Add("GhiChu");
+              
                 for (int i = 0; i < dt1.Rows.Count; i++)
                 {
-                    //Rows.Add(dt.Rows[i]["MaSV"].ToString(), dt.Rows[i]["HoTen"].ToString(),
-                    //     dt.Rows[i]["NgaySinh"].ToString(), dt.Rows[i]["Phai"].ToString(),
-                    //       dt.Rows[i]["Lop"].ToString(), dt.Rows[i]["DTB"].ToString()
-                    //    );
-                    //    gridView5.SetRowCellValue(i, "GhiChu", dt1.Rows[i]["Product_ID"].ToString());
-                    //gridView5.SetRowCellValue(i+1, "Ma", dt1.Rows[i]["Product_ID"].ToString());
-                    gridPhieuNhapHang.DataSource = dt1;
-
+                    dt2.Rows.Add(dt1.Rows[i]["Product_ID"].ToString(), dt1.Rows[i]["Product_ID"].ToString(),
+                         dt1.Rows[i]["Unit"].ToString(), dt1.Rows[i]["Quantity"].ToString(),
+                           dt1.Rows[i]["UnitPrice"].ToString(), (float.Parse(dt1.Rows[i]["Quantity"].ToString())* 
+                                                                        float.Parse(dt1.Rows[i]["UnitPrice"].ToString())).ToString()
+                        );
+                
                 }
+                
+                gridPhieuNhapHang.DataSource = dt2;
             }
         }
         public delegate void SendMessage(string ma);
@@ -95,6 +108,7 @@ namespace DoAnCK_TTA.GUI
             lookNhaCungCap.Properties.DataSource = _dtNhaCungCap;
             lookNhaCungCap.Properties.DisplayMember = "CustomerName";
             lookNhaCungCap.Properties.ValueMember = "Customer_ID";
+           
 
             lookMaNCC.Properties.DataSource = _dtNhaCungCap;
             lookMaNCC.Properties.DisplayMember = "Customer_ID";
@@ -147,11 +161,16 @@ namespace DoAnCK_TTA.GUI
             riLookup_TEN.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Product_ID", "Mã Hàng", 100));
 
             lookHinhThucThanhToan.EditValue = lookHinhThucThanhToan.Properties.GetKeyValue(0);
+            lookNhaCungCap.EditValue = lookNhaCungCap.Properties.GetKeyValue(0);
+            lookMaNCC.EditValue = lookMaNCC.Properties.GetKeyValue(0);
             lookDieuKhoan.EditValue = lookDieuKhoan.Properties.GetKeyValue(0);
             lookKho.EditValue = lookKho.Properties.GetKeyValue(0);
             lookNhanVien.EditValue = lookNhanVien.Properties.GetKeyValue(0);
             lookNgay.EditValue = DateTime.Today;
             lookHan.EditValue = DateTime.Today;
+            txtDienThoai.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Tel"].ToString();
+            txtDiaChi.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["CustomerAddress"].ToString();
+            menoGhiChu.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Description"].ToString();
             calcCK.Text = "0";
             calcTienCK.Text = "0";
             calcVat.Text = "0";
@@ -164,8 +183,6 @@ namespace DoAnCK_TTA.GUI
             //lookNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
             lookMa.ColumnEdit = riLookup_MA;
             lookTenHang.ColumnEdit = riLookup_TEN;
-
-            MessageBox.Show("2");
 
             DataTable dt = new DataTable();
             dt.Columns.Add("Ma");
@@ -260,9 +277,9 @@ namespace DoAnCK_TTA.GUI
                 string sl = row["SoLuong"].ToString();
                 string dg = row["DonGia"].ToString();
                 if(sl!="" && dg != "")
-                gridView5.SetRowCellValue(i, "ThanhTien", (float.Parse(sl) * float.Parse(dg)).ToString());
+                    gridView5.SetRowCellValue(i, "ThanhTien", (float.Parse(sl) * float.Parse(dg)).ToString());
 
-                if(row["ThanhTien"].ToString() != "")
+                if (row["ThanhTien"].ToString() != "")
                     a = a + float.Parse(row["ThanhTien"].ToString());
 
 
@@ -280,6 +297,8 @@ namespace DoAnCK_TTA.GUI
 
             if (txtThanhTien.SummaryText != "")
                 calcTienVat.Text = (float.Parse(calcVat.Text) / 100 * (a+ float.Parse(txtThanhTien.SummaryText))).ToString(); ;
+
+            
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -352,7 +371,11 @@ namespace DoAnCK_TTA.GUI
 
         private void gridView5_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
-
+            if (txtThanhTien.SummaryText != "")
+            {
+                calcTienVat.Text = (float.Parse(calcVat.Text) / 100 * float.Parse(txtThanhTien.SummaryText)).ToString(); ;
+                txtTongTien.Text = (float.Parse(txtThanhTien.SummaryText) - float.Parse(calcTienCK.Text) + float.Parse(calcTienVat.Text)).ToString();
+            }
         }
 
         private void gridView5_MouseUp(object sender, MouseEventArgs e)
@@ -385,17 +408,47 @@ namespace DoAnCK_TTA.GUI
         private void lookNhaCungCap_EditValueChanged(object sender, EventArgs e)
         {
             lookMaNCC.EditValue = lookNhaCungCap.EditValue;
+            BUS_PROVIDER busNCC = new BUS_PROVIDER();
+            txtDienThoai.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Tel"].ToString();
+            txtDiaChi.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["CustomerAddress"].ToString();
+            menoGhiChu.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Description"].ToString();
         }
 
         private void lookMaNCC_EditValueChanged(object sender, EventArgs e)
         {
             lookNhaCungCap.EditValue = lookMaNCC.EditValue;
+            BUS_PROVIDER busNCC = new BUS_PROVIDER();
+            txtDienThoai.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Tel"].ToString();
+            txtDiaChi.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["CustomerAddress"].ToString();
+            menoGhiChu.Text = busNCC.LayThongTinNhaCungCap(lookMaNCC.EditValue.ToString()).Rows[0]["Description"].ToString();
         }
 
         private void btnSaveAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DTO_INVENTORY_DETAIL _DETAIL = new DTO_INVENTORY_DETAIL();
             DTO_STOCK_INWARD phieu = new DTO_STOCK_INWARD();
+            phieu.ID = txtPhieu.Text;
+            phieu.RefDate = lookNgay.Text;
+            phieu.PaymentMethod = lookHinhThucThanhToan.EditValue.ToString();
+            phieu.TermID = lookDieuKhoan.EditValue.ToString();
+            phieu.PaymentDate = lookHan.EditValue.ToString();
+            phieu.Barcode = txtPhieu.Text;
+            phieu.Employee_ID = lookNhanVien.EditValue.ToString();
+            phieu.Stock_ID = lookKho.EditValue.ToString();
+            phieu.Customer_ID = lookMaNCC.EditValue.ToString();
+            phieu.CustomerName = lookNhaCungCap.Text.ToString();
+            phieu.CustomerAddress = txtDiaChi.Text;
+            phieu.Payment = txtThanhTien.SummaryText;
+            phieu.Vat = calcVat.Text;
+            phieu.VatAmount = calcTienVat.Text;
+            phieu.Amount = calcCK.Text;
+            phieu.FAmount = calcCK.Text;
+            phieu.Charge = txtThanhTien.SummaryText;
+            phieu.Description = menoGhiChu.Text;
+            phieu.Ref_OrgNo = txtSoPhieu.Text;
+            phieu.RefStatus = txtSoHoaDon.Text;
+            BUS_STOCK_INWARD inward = new BUS_STOCK_INWARD();
+            int b = inward.ThemPhieuNhapHang(phieu);
             for (int i = 0; i < gridView5.RowCount; i++)
             {
                 DataRow row = gridView5.GetDataRow(i);
@@ -418,26 +471,7 @@ namespace DoAnCK_TTA.GUI
                     _DETAIL.E_Amt = calcVat.Text;
                     _DETAIL.Description = menoGhiChu.Text;
 
-                    phieu.ID = txtPhieu.Text + i.ToString();
-                    phieu.RefDate = lookNgay.Text;
-                    phieu.PaymentMethod = lookHinhThucThanhToan.EditValue.ToString();
-                    phieu.TermID = lookDieuKhoan.EditValue.ToString();
-                    phieu.PaymentDate = lookHan.EditValue.ToString();
-                    phieu.Barcode = txtPhieu.Text;
-                    phieu.Employee_ID = lookNhanVien.EditValue.ToString();
-                    phieu.Stock_ID = lookKho.EditValue.ToString();
-                    phieu.Customer_ID = lookMaNCC.EditValue.ToString();
-                    phieu.CustomerName = lookNhaCungCap.Text.ToString();
-                    phieu.CustomerAddress = txtDiaChi.Text;
-                    phieu.Payment = txtThanhTien.SummaryText;
-                    phieu.Vat = calcVat.Text;
-                    phieu.VatAmount = calcTienVat.Text;
-                    phieu.Amount = calcCK.Text;
-                    phieu.FAmount = calcCK.Text;
-                    phieu.Charge = txtThanhTien.SummaryText;
-                    phieu.Description = menoGhiChu.Text ;
-                    phieu.Ref_OrgNo = txtSoPhieu.Text;
-                    phieu.RefStatus = txtSoHoaDon.Text;
+                   
 
                     DTO_STOCK_INWARD_DETAIL dTO_STOCK_INWARD_DETAIL = new DTO_STOCK_INWARD_DETAIL();
                    dTO_STOCK_INWARD_DETAIL.ID = txtPhieu.Text + i.ToString();
@@ -454,14 +488,27 @@ namespace DoAnCK_TTA.GUI
                    dTO_STOCK_INWARD_DETAIL.Description = menoGhiChu.Text;
 
 
-                    BUS_STOCK_INWARD inward = new BUS_STOCK_INWARD();
+                  
                     BUS_STOCK_INWARD_DETAIL inwarddetal = new BUS_STOCK_INWARD_DETAIL();
                     BUS_INVENTORY_DETAIL bus = new BUS_INVENTORY_DETAIL();
                     int a = bus.ThemPhieuNhapHang(_DETAIL);
-                    int b = inward.ThemPhieuNhapHang(phieu);
+                   
                     int c = inwarddetal.ThemPhieuNhapHang(dTO_STOCK_INWARD_DETAIL);
                 }
             }
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Ma");
+            dt.Columns.Add("Ten");
+            dt.Columns.Add("DonVi");
+            dt.Columns.Add("SoLuong");
+            dt.Columns.Add("DonGia");
+            dt.Columns.Add("ThanhTien");
+            dt.Columns.Add("GhiChu");
+            for (int i = 0; i < 20; i++)
+            {
+                dt.Rows.Add("", "", "", "", "", "", "");
+            }
+            gridPhieuNhapHang.DataSource = dt;
             gridPhieuNhapHang.Refresh();
         }
 
@@ -469,6 +516,28 @@ namespace DoAnCK_TTA.GUI
         {
             DTO_STOCK_INWARD phieu = new DTO_STOCK_INWARD();
             DTO_INVENTORY_DETAIL _DETAIL = new DTO_INVENTORY_DETAIL();
+            phieu.ID = txtPhieu.Text;
+            phieu.RefDate = lookNgay.Text;
+            phieu.PaymentMethod = lookHinhThucThanhToan.EditValue.ToString();
+            phieu.TermID = lookDieuKhoan.EditValue.ToString();
+            phieu.PaymentDate = lookHan.EditValue.ToString();
+            phieu.Barcode = txtPhieu.Text;
+            phieu.Employee_ID = lookNhanVien.EditValue.ToString();
+            phieu.Stock_ID = lookKho.EditValue.ToString();
+            phieu.Customer_ID = lookMaNCC.EditValue.ToString();
+            phieu.CustomerName = lookNhaCungCap.Text.ToString();
+            phieu.CustomerAddress = txtDiaChi.Text;
+            phieu.Payment = txtThanhTien.SummaryText;
+            phieu.Vat = calcVat.Text;
+            phieu.VatAmount = calcTienVat.Text;
+            phieu.Amount = calcCK.Text;
+            phieu.FAmount = calcCK.Text;
+            phieu.Charge = txtThanhTien.SummaryText;
+            phieu.Description = menoGhiChu.Text;
+            phieu.Ref_OrgNo = txtSoPhieu.Text;
+            phieu.RefStatus = txtSoHoaDon.Text;
+            BUS_STOCK_INWARD inward = new BUS_STOCK_INWARD();
+            int b = inward.ThemPhieuNhapHang(phieu);
             for (int i = 0; i < gridView5.RowCount; i++)
             {
                 DataRow row = gridView5.GetDataRow(i);
@@ -491,26 +560,7 @@ namespace DoAnCK_TTA.GUI
                     _DETAIL.E_Amt = calcVat.Text;
                     _DETAIL.Description = menoGhiChu.Text;
 
-                    phieu.ID = txtPhieu.Text + i.ToString();
-                    phieu.RefDate = lookNgay.Text;
-                    phieu.PaymentMethod = lookHinhThucThanhToan.EditValue.ToString();
-                    phieu.TermID = lookDieuKhoan.EditValue.ToString();
-                    phieu.PaymentDate = lookHan.EditValue.ToString();
-                    phieu.Barcode = txtPhieu.Text;
-                    phieu.Employee_ID = lookNhanVien.EditValue.ToString();
-                    phieu.Stock_ID = lookKho.EditValue.ToString();
-                    phieu.Customer_ID = lookMaNCC.EditValue.ToString();
-                    phieu.CustomerName = lookNhaCungCap.Text.ToString();
-                    phieu.CustomerAddress = txtDiaChi.Text;
-                    phieu.Payment = txtThanhTien.SummaryText;
-                    phieu.Vat = calcVat.Text;
-                    phieu.VatAmount = calcTienVat.Text;
-                    phieu.Amount = calcCK.Text;
-                    phieu.FAmount = calcCK.Text;
-                    phieu.Charge = txtThanhTien.SummaryText;
-                    phieu.Description = menoGhiChu.Text;
-                    phieu.Ref_OrgNo = txtSoPhieu.Text;
-                    phieu.RefStatus = txtSoHoaDon.Text;
+                 
 
 
                     DTO_STOCK_INWARD_DETAIL dTO_STOCK_INWARD_DETAIL = new DTO_STOCK_INWARD_DETAIL();
@@ -528,11 +578,11 @@ namespace DoAnCK_TTA.GUI
                     dTO_STOCK_INWARD_DETAIL.Description = menoGhiChu.Text;
 
 
-                    BUS_STOCK_INWARD inward = new BUS_STOCK_INWARD();
+                    
                     BUS_STOCK_INWARD_DETAIL inwarddetal = new BUS_STOCK_INWARD_DETAIL();
                     BUS_INVENTORY_DETAIL bus = new BUS_INVENTORY_DETAIL();
                     int a = bus.ThemPhieuNhapHang(_DETAIL);
-                    int b = inward.ThemPhieuNhapHang(phieu);
+                   
                     int c = inwarddetal.ThemPhieuNhapHang(dTO_STOCK_INWARD_DETAIL);
 
                 }
@@ -552,19 +602,7 @@ namespace DoAnCK_TTA.GUI
 
         private void gridView5_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            DataTable dt1 = new DataTable();
-            BUS_STOCK_INWARD_DETAIL bUS = new BUS_STOCK_INWARD_DETAIL();
-            dt1 = bUS.LayThongTinBangKeChiTiet(coma);
-
-
-            for (int i = 0; i < dt1.Rows.Count; i++)
-            {
-                //gridView5.SetRowCellValue(i, "Ma", dt1.Rows[i]["Product_ID"].ToString());
-                //  gridView5.SetRowCellValue(i, lookMa, dt1.Rows[i]["Product_ID"].ToString());
-
-                //    gridView5.SetRowCellValue(i, "GhiChu", dt1.Rows[i]["Product_ID"].ToString());
-                gridView5.SetRowCellValue(i, "SoLuong", "xin chào");
-            }
+            
         }
     }
 }

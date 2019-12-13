@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DoAnCK_TTA.BUS;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -21,6 +22,14 @@ namespace DoAnCK_TTA.GUI
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmDanhSachPhieuThu_Load(object sender, EventArgs e)
+        {
+            BUS_CUSTOMER_RECEIPT bus = new BUS_CUSTOMER_RECEIPT();
+            gridPhieuThu.DataSource = bus.LayDanhSachHoaDon();
+
+            
         }
     }
 }

@@ -607,6 +607,7 @@
             this.btnBaoCaoKhoHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoKhoHang.ImageOptions.Image")));
             this.btnBaoCaoKhoHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoKhoHang.ImageOptions.LargeImage")));
             this.btnBaoCaoKhoHang.Name = "btnBaoCaoKhoHang";
+            this.btnBaoCaoKhoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoKhoHang_ItemClick);
             // 
             // btnBaoCaoBanHang
             // 
@@ -615,6 +616,7 @@
             this.btnBaoCaoBanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoBanHang.ImageOptions.Image")));
             this.btnBaoCaoBanHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoBanHang.ImageOptions.LargeImage")));
             this.btnBaoCaoBanHang.Name = "btnBaoCaoBanHang";
+            this.btnBaoCaoBanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoBanHang_ItemClick);
             // 
             // btnHoTroTrucTuyen
             // 

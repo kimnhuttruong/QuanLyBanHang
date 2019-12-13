@@ -270,7 +270,7 @@ namespace DoAnCK_TTA.GUI
                 f.MdiParent = this;
                 f.Text = "Mua Hàng";
                 f.Show();
-                MessageBox.Show(f.Location.X.ToString() + " " + f.Location.Y.ToString());
+              
             }
             else
             {
@@ -348,19 +348,53 @@ namespace DoAnCK_TTA.GUI
 
         private void btnTraTien_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //Form form = IsActive(typeof());//kiểm tra có show hay không
+            Form form = IsActive(typeof(frmTraTien));//kiểm tra có show hay không
 
-            //if (form == null)
-            //{
-            //    frmThuTien f = new frmThuTien();
-            //    f.MdiParent = this;
-            //    f.Text = "Thu Tiền";
-            //    f.Show();
-            //}
-            //else
-            //{
-            //    form.Activate();
-            //}
+            if (form == null)
+            {
+                frmTraTien f = new frmTraTien();
+                f.MdiParent = this;
+                f.Text = "Phiếu Chi";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnBaoCaoKhoHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmBaoCaoKhoHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmBaoCaoKhoHang f = new frmBaoCaoKhoHang();
+                f.MdiParent = this;
+                f.Text = "Phiếu Chi";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void btnBaoCaoBanHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmBaoCaoBanHang));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmBaoCaoBanHang f = new frmBaoCaoBanHang();
+                f.MdiParent = this;
+                f.Text = "Báo CÁo Bán Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
         }
     }
 }

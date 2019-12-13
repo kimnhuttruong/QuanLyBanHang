@@ -14,7 +14,7 @@ namespace DoAnCK_TTA.DAL
         public int ThemPhieuXuatHang(DTO_STOCK_OUTWARD kv)
         {
             int active;
-            if (kv.Active1)
+            if (kv.Active)
                 active = 1;
             else
                 active = 0;
@@ -25,41 +25,56 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO dbo.STOCK_OUTWARD" + " VALUES (N'" + kv.ID1 + "'"
-                        + ",N'" + kv.RefStatus1 + "'"
-                        + ",N'" + kv.PaymentMethod1 + "'"
-                        + ",N'" + kv.PaymentDate1 + "'"
-                        + ",N'" + kv.Department_ID1 + "'"
-                        + ",N'" + kv.Employee_ID1 + "'"
-                        + ",N'" + kv.Stock_ID1 + "'"
-                        + ",N'" + kv.Customer_ID1 + "'"
-                        + ",N'" + kv.CustomerName1 + "'"
-                        + ",N'" + kv.CustomerAddress1 + "'"
-                        + ",N'" + kv.Contact1 + "'"
-                        + ",N'" + kv.Payment1 + "'"
-                        + ",N'" + kv.Currency_ID1 + "'"
-                        + ",N'" + kv.ExchangeRate1 + "'"
-                        + ",N'" + kv.Vat1 + "'"
-                        + ",N'" + kv.VatAmount1 + "'"
-                        + ",N'" + kv.Amount1 + "'"
-                        + ",N'" + kv.FAmount1 + "'"
-                        + ",N'" + kv.DiscountDate1 + "'"
-                        + ",N'" + kv.DiscountRate1 + "'"
-                        + ",N'" + kv.Discount1 + "'"
-                        + ",N'" + kv.OtherDiscount1 + "'"
-                        + ",N'" + kv.OtherDiscount1 + "'"
-                        + ",N'" + kv.Charge1 + "'"
-                        + ",N'" + kv.User_ID1 + "'"
-                        + ",N'" + kv.IsClose1 + "'"
-                        + ",N'" + kv.Description1 + "'"
-                        + "," + active + ")";
-
+            cmd.CommandText =  @"INSERT into  STOCK_OUTWARD (ID, RefDate, Ref_OrgNo, RefStatus, PaymentMethod, TermID, PaymentDate, Barcode, Employee_ID, Stock_ID, Customer_ID, CustomerName, CustomerAddress, Payment, Vat, VatAmount, Amount, FAmount, Charge, Description) " +
+                                              " VALUES (N'" + kv.ID + "','" + kv.RefDate + "','" + kv.Ref_OrgNo + "','" + kv.RefStatus + "','" + kv.PaymentMethod + "','" + kv.TermID + "',N'" + kv.PaymentDate + "',N'" + kv.Barcode + "',N'" + kv.Employee_ID + "',N'" + kv.Stock_ID + "',N'" + kv.Customer_ID + "',N'" + kv.CustomerName + "',N'" + kv.CustomerAddress + "',N'" + kv.Payment + "',N'" + kv.Vat + "',N'" + kv.VatAmount + "',N'" + kv.Amount + "',N'" + kv.FAmount + "',N'" + kv.Charge + "',N'" + kv.Description + "')";
             OpenConnection();
             cmd.ExecuteNonQuery();
             CloseConnection();
             return 1;
 
 
+        }
+        public DataTable LayThongTinBangKeChiTiet()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select s.* from STOCK_OUTWARD s";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinBangKeChiTiet(string ma)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select s.* from STOCK_OUTWARD s where s.Barcode='" + ma + "'";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
         }
     }
 }

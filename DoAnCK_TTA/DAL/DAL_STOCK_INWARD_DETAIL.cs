@@ -65,7 +65,91 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select d.Inward_ID,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.ID and p.Product_ID=d.Product_ID";
+            cmd.CommandText = "select d.Inward_ID,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit,d.Amount from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.Inward_ID and p.Product_ID=d.Product_ID";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinMuaHangTheoNgay()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select si.RefDate, Sum(cast(sid.amount as float)) as TienMua,Sum(cast(isnull(sod.amount,0) as float))/count(sod.amount) as TienBan from STOCK_INWARD_DETAIL sid,STOCK_INWARD si,STOCK_OUTWARD_DETAIL sod,STOCK_OUTWARD so where sid.Inward_ID = si.ID  and sod.Outward_ID = so.ID group by si.RefDate";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinMuaHangTheoNCC()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select si.Customer_ID,si.CustomerName,cg.Customer_Group_Name,sum(distinct(cast((sid.amount) as float))) as TienMua from STOCK_INWARD_DETAIL sid,STOCK_INWARD si,CUSTOMER_GROUP cg,PROVIDER p where sid.Inward_ID = si.ID  and p.Customer_Group_ID = cg.Customer_Group_ID  and si.Customer_ID = p.Customer_ID group by si.Customer_ID,si.CustomerName,cg.Customer_Group_Name";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinBangKeCongNo()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select d.Inward_ID,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,s.Customer_ID,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit,d.Amount ,cast(d.Quantity as float)*cast(d.UnitPrice as float) as Tien , 0 as Tra,d.Description   from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.Inward_ID and p.Product_ID=d.Product_ID and s.TermID='CN' ";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinBangKeThanhToanNgay()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select d.Inward_ID,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,s.Customer_ID,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit,d.Amount ,cast(d.Quantity as float)*cast(d.UnitPrice as float) as Tien , 0 as Tra,d.Description   from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.Inward_ID and p.Product_ID=d.Product_ID and s.TermID='TM' ";
             try
             {
                 OpenConnection();
@@ -86,7 +170,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select d.Inward_ID ,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.ID and p.Product_ID=d.Product_ID and d.Inward_ID='"+ma+"' ";
+            cmd.CommandText = "select d.Inward_ID ,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit ,s.Charge , 0 as Tra,d.Description  from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.Inward_ID and p.Product_ID=d.Product_ID and d.Inward_ID='" + ma+"' ";
             try
             {
                 OpenConnection();
@@ -107,7 +191,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select d.Inward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.ID and p.Product_ID=d.Product_ID and d.Inward_ID='" + ma + "' ";
+            cmd.CommandText = "select d.Inward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID  and p.Product_ID=d.Product_ID and d.Inward_ID='" + ma + "' ";
             try
             {
                 OpenConnection();

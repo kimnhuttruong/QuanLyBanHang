@@ -25,8 +25,8 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT into  STOCK_INWARD (ID  ,RefDate ,Ref_OrgNo,RefStatus ,PaymentMethod ,TermID  ,PaymentDate  ,Barcode ,Employee_ID  ,Stock_ID,Customer_ID,CustomerName,CustomerAddress,Payment,Vat,VatAmount,Amount,FAmount ,Charge,Description  ) " +
-                                              " VALUES (N'" + kv.ID+"','"+kv.RefDate+ "','" + kv.Ref_OrgNo + "','" + kv.RefStatus + "','" + kv.PaymentMethod+"','"+kv.TermID+"',N'"+kv.PaymentDate+"',N'"+kv.Barcode+"',N'"+kv.Employee_ID+"',N'"+kv.Stock_ID+"',N'"+kv.Customer_ID+"',N'"+kv.CustomerName+"',N'"+kv.CustomerAddress+"',N'"+kv.Payment+"',N'"+kv.Vat+"',N'"+kv.VatAmount+"',N'"+kv.Amount+"',N'"+kv.FAmount+"',N'"+kv.Charge+"',N'"+kv.Description+"')";
+            cmd.CommandText = "INSERT into  STOCK_INWARD (ID  ,RefDate ,Ref_OrgNo,RefStatus ,PaymentMethod ,TermID  ,PaymentDate  ,Barcode ,Employee_ID  ,Stock_ID,Customer_ID,CustomerName,CustomerAddress,Payment,Vat,VatAmount,Amount,FAmount ,Charge,Description , DeliveryDate) " +
+                                              " VALUES (N'" + kv.ID+"','"+kv.RefDate+ "','" + kv.Ref_OrgNo + "','" + kv.RefStatus + "','" + kv.PaymentMethod+"','"+kv.TermID+"',N'"+kv.PaymentDate+"',N'"+kv.Barcode+"',N'"+kv.Employee_ID+"',N'"+kv.Stock_ID+"',N'"+kv.Customer_ID+"',N'"+kv.CustomerName+"',N'"+kv.CustomerAddress+"',N'"+kv.Payment+"',N'"+kv.Vat+"',N'"+kv.VatAmount+"',N'"+kv.Amount+"',N'"+kv.FAmount+"',N'"+kv.Charge+"',N'"+kv.Description+"',N'"+kv.DeliveryDate+"')";
             try
             {
                 OpenConnection();

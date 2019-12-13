@@ -125,7 +125,7 @@ namespace DoAnCK_TTA.GUI
             {
                 if (f.Caption == type)
                 {
-                    MessageBox.Show(f.Caption);
+                  
                     return f;
                 }
                 

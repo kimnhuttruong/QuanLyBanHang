@@ -93,11 +93,11 @@ namespace DoAnCK_TTA.GUI
                 Width = 1130,
                 Height = 550,
                 AutoSize = false
-
+               
             };
             window1.Controls.Add(phieumuahang);
             window1.ShowDialog();
-
+            MessageBox.Show(ma);
         }
     }
 }

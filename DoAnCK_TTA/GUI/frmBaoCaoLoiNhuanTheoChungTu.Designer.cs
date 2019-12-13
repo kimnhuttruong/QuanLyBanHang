@@ -51,6 +51,15 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
@@ -175,7 +184,16 @@
             this.calc,
             this.calcDonGia,
             this.gridColumn8,
-            this.gridColumn9});
+            this.gridColumn9,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12});
             this.gridView5.GridControl = this.gridControl1;
             this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
@@ -186,7 +204,7 @@
             // 
             // lookMa
             // 
-            this.lookMa.Caption = "Mã Hàng";
+            this.lookMa.Caption = "Khách Hàng";
             this.lookMa.Name = "lookMa";
             this.lookMa.OptionsFilter.AllowFilter = false;
             this.lookMa.Visible = true;
@@ -194,42 +212,42 @@
             // 
             // lookTenHang
             // 
-            this.lookTenHang.Caption = "Tên Hàng";
+            this.lookTenHang.Caption = "Chứng Từ";
             this.lookTenHang.Name = "lookTenHang";
             this.lookTenHang.Visible = true;
             this.lookTenHang.VisibleIndex = 1;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "Đơn Vị";
+            this.gridColumn5.Caption = "Ngày";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 
             // calc
             // 
-            this.calc.Caption = "Số Lượng";
+            this.calc.Caption = "Mã Hàng";
             this.calc.Name = "calc";
             this.calc.Visible = true;
             this.calc.VisibleIndex = 3;
             // 
             // calcDonGia
             // 
-            this.calcDonGia.Caption = "Đơn Giá";
+            this.calcDonGia.Caption = "Đơn Vị";
             this.calcDonGia.Name = "calcDonGia";
             this.calcDonGia.Visible = true;
             this.calcDonGia.VisibleIndex = 4;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "Thành Tiền";
+            this.gridColumn8.Caption = "Số Lượng";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 5;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "Ghi Chú";
+            this.gridColumn9.Caption = "Giá Nhập";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
@@ -250,6 +268,69 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "T.Tiền Nhập";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Giá Xuất";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 8;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "T.Tiền Xuất";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 9;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Chênh Lệch";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 10;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Chiếc Khấu";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 11;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Thuế VAT";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 12;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Doanh Số";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 13;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Lợi Nhuận";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 14;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Ghi Chú";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 15;
             // 
             // frmBaoCaoLoiNhuanTheoChungTu
             // 
@@ -296,5 +377,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

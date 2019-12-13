@@ -45,8 +45,8 @@ namespace DoAnCK_TTA.GUI
         {
             if (e.Element == null) return;
             XtraUserControl userControl = e.Element.Text == "Employees" ? employeesUserControl : customersUserControl;
-            tabbedView.AddDocument(userControl);
-            tabbedView.ActivateDocument(userControl);
+            //tabbedView.AddDocument(userControl);
+            //tabbedView.ActivateDocument(userControl);
         }
         void barButtonNavigation_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -74,6 +74,51 @@ namespace DoAnCK_TTA.GUI
         {
             if (e.Document.Caption == "Employees") employeesUserControl = CreateUserControl("Employees");
             else customersUserControl = CreateUserControl("Customers");
+        }
+
+        private void btnDanhSachPhieuChi_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmDanhSachPhieuChi f = new frmDanhSachPhieuChi();
+            f.Text = "Danh Sách Phiếu Chi";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnDanhSachPhieuCongNo_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmDanhSachCongNoPhaiChi f = new frmDanhSachCongNoPhaiChi();
+            f.Text = "Danh Sách Phiếu Công Nợ Phải Chi";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnDanhSachPhieuTraNgay_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmDanhSachPhieuTraNgay f = new frmDanhSachPhieuTraNgay();
+            f.Text = "Bãng Kê Phiếu Thanh Toán Ngay";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnTheoDoiCongNo_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmTheoDoiCongNo f = new frmTheoDoiCongNo();
+            f.Text = "Theo Dõi Công Nợ";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnTongHopCongNo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

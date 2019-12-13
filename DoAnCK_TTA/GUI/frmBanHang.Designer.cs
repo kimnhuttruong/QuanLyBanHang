@@ -79,7 +79,7 @@
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.OriginalSize = new System.Drawing.Size(244, 200);
             this.dockPanel.Size = new System.Drawing.Size(244, 596);
-            this.dockPanel.Text = "Navigation";
+            this.dockPanel.Text = "Chức Năng";
             // 
             // dockPanel_Container
             // 

@@ -160,6 +160,7 @@ namespace DoAnCK_TTA.GUI
 
             BUS_PRODUCT bus = new BUS_PRODUCT();
             DTO_PRODUCT c = new DTO_PRODUCT();
+            BUS_INVENTORY_DETAIL iNVENTORY_DETAIL = new BUS_INVENTORY_DETAIL();
             c.Product_ID= txtMaHang.Text;
             c.Product_Name= txtTenHang.Text;
             c.Origin= txtXuatXu.Text;
@@ -180,12 +181,12 @@ namespace DoAnCK_TTA.GUI
             if (isAdd == true)
             {
                 int kt = bus.ThemHangHoa(c);
-
+                
             }
             else
             {
                 int kt = bus.CapNhatHangHoa(c);
-
+            
             }
             this.Close();
         }
@@ -228,6 +229,11 @@ namespace DoAnCK_TTA.GUI
             dialog.ShowDialog();
             picture1 = dialog.FileName;
             picture.Image = Image.FromFile(dialog.FileName);
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
