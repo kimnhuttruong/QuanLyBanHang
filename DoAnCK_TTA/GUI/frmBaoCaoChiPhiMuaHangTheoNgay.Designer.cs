@@ -180,6 +180,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsView.ShowFooter = true;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
             // lookMa
@@ -196,6 +197,8 @@
             this.lookTenHang.Caption = "Chi Phí Mua Hàng";
             this.lookTenHang.FieldName = "TienMua";
             this.lookTenHang.Name = "lookTenHang";
+            this.lookTenHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TienMua", "{0:0.##}")});
             this.lookTenHang.Visible = true;
             this.lookTenHang.VisibleIndex = 1;
             // 
@@ -204,6 +207,8 @@
             this.gridColumn5.Caption = "Doanh Số Bán Hàng";
             this.gridColumn5.FieldName = "TienBan";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TienBan", "{0:0.##}")});
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 

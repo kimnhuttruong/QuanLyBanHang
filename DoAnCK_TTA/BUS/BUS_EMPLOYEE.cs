@@ -42,6 +42,17 @@ namespace DoAnCK_TTA.BUS
             return dAL.LayDanhSachNhanVien();
 
         }
+        public DataTable BaoCaoDoanhSoNhanVien()
+        {
+            DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
+            return dAL.BaoCaoDoanhSoNhanVien();
 
+        }
+        public DataTable BaoCaoDoanhSoNhanVienChiTiet()
+        {
+            DAL_EMPLOYEE dAL = new DAL_EMPLOYEE();
+            return dAL.BaoCaoDoanhSoNhanVienChiTiet();
+
+        }
     }
 }

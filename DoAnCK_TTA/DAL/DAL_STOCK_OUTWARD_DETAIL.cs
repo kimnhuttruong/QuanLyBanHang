@@ -184,6 +184,69 @@ namespace DoAnCK_TTA.DAL
                 return dt;
             }
         }
+        public DataTable LayThongTinMuaHangTheoKH()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select so.Customer_ID,so.CustomerName,cg.Customer_Group_Name,sum(distinct(cast((sod.amount) as float))) as TienBan from STOCK_OUTWARD_DETAIL sod,STOCK_OUTWARD so, CUSTOMER_GROUP cg,CUSTOMER p where sod.OUTward_ID = so.ID  and p.Customer_Group_ID = cg.Customer_Group_ID  and so.Customer_ID = p.Customer_ID group by so.Customer_ID,so.CustomerName,cg.Customer_Group_Name";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinLoiNhuan()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select so.CustomerName ,sod.Outward_ID,so.RefDate,sod.Product_ID,p.Product_Name,sod.Unit,sod.Quantity,p.AverageCost,cast(sod.Quantity as float)*cast(p.AverageCost as float)as TTienNhap,sod.UnitPrice,cast(sod.Quantity as float)*cast(sod.UnitPrice as float)as TTienXuat,cast(sod.Quantity as float)*(cast(sod.UnitPrice as float) -cast(p.AverageCost as float)) as ChenhLech,so.FAmount,so.VatAmount from STOCK_OUTWARD_DETAIL sod,STOCK_OUTWARD so, PRODUCT p  where sod.Outward_ID = so.id and sod.Product_ID = p.Product_ID";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable LayThongTinLoiNhuanTheoHangHoa()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select st.Stock_Name,sod.Product_ID,p.Product_Name,sod.Unit,pg.ProductGroup_Name,Sum(cast(sod.Quantity as float)) as SoLuong,Sum(cast(sod.Quantity as float)*cast(sod.UnitPrice as float))as TTienXuat,p.AverageCost,Sum(cast(sod.Quantity as float)*cast(p.AverageCost as float))as TTienNhap from STOCK_OUTWARD_DETAIL sod,STOCK_OUTWARD so, PRODUCT p,STOCK st, PRODUCT_GROUP pg  where sod.Outward_ID = so.id and sod.Product_ID = p.Product_ID and sod.Stock_ID = st.Stock_ID and pg.ProductGroup_ID = p.Product_Group_ID group by st.Stock_Name,sod.Product_ID,p.Product_Name,sod.Unit,pg.ProductGroup_Name,p.AverageCost ";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
     }
 }
 

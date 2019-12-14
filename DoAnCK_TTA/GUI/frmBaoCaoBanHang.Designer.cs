@@ -156,6 +156,7 @@
             this.btnDoanhSoBanHangTheoNgay.Name = "btnDoanhSoBanHangTheoNgay";
             this.btnDoanhSoBanHangTheoNgay.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnDoanhSoBanHangTheoNgay.Text = "Theo Ngày";
+            this.btnDoanhSoBanHangTheoNgay.Click += new System.EventHandler(this.btnDoanhSoBanHangTheoNgay_Click);
             // 
             // btnDoanhSoBanHangTheoKH
             // 
@@ -163,6 +164,7 @@
             this.btnDoanhSoBanHangTheoKH.Name = "btnDoanhSoBanHangTheoKH";
             this.btnDoanhSoBanHangTheoKH.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnDoanhSoBanHangTheoKH.Text = "Theo Khách Hàng";
+            this.btnDoanhSoBanHangTheoKH.Click += new System.EventHandler(this.btnDoanhSoBanHangTheoKH_Click);
             // 
             // btnDoanhSoBanHangTheoNV
             // 
@@ -170,6 +172,7 @@
             this.btnDoanhSoBanHangTheoNV.Name = "btnDoanhSoBanHangTheoNV";
             this.btnDoanhSoBanHangTheoNV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnDoanhSoBanHangTheoNV.Text = "Theo Nhân Viên";
+            this.btnDoanhSoBanHangTheoNV.Click += new System.EventHandler(this.btnDoanhSoBanHangTheoNV_Click);
             // 
             // btnDoanhSoBanHangTheoHH
             // 
@@ -177,6 +180,7 @@
             this.btnDoanhSoBanHangTheoHH.Name = "btnDoanhSoBanHangTheoHH";
             this.btnDoanhSoBanHangTheoHH.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnDoanhSoBanHangTheoHH.Text = "Theo Hàng Hóa";
+            this.btnDoanhSoBanHangTheoHH.Click += new System.EventHandler(this.btnDoanhSoBanHangTheoHH_Click);
             // 
             // accordionControlElement3
             // 
@@ -193,6 +197,7 @@
             this.btnLoiNhuanTheoChungTu.Name = "btnLoiNhuanTheoChungTu";
             this.btnLoiNhuanTheoChungTu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnLoiNhuanTheoChungTu.Text = "Theo Chứng Từ";
+            this.btnLoiNhuanTheoChungTu.Click += new System.EventHandler(this.btnLoiNhuanTheoChungTu_Click);
             // 
             // btnLoiNhuanTheoHangHoa
             // 
@@ -200,6 +205,7 @@
             this.btnLoiNhuanTheoHangHoa.Name = "btnLoiNhuanTheoHangHoa";
             this.btnLoiNhuanTheoHangHoa.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnLoiNhuanTheoHangHoa.Text = "Theo Hàng Hóa";
+            this.btnLoiNhuanTheoHangHoa.Click += new System.EventHandler(this.btnLoiNhuanTheoHangHoa_Click);
             // 
             // tabbedView
             // 

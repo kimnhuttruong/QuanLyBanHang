@@ -94,5 +94,67 @@ namespace DoAnCK_TTA.GUI
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
         }
+
+        private void btnDoanhSoBanHangTheoNgay_Click(object sender, EventArgs e)
+        {
+
+            tabbedView.Controller.CloseAll();
+
+            frmBaoCaoDoanhSoTheoNgay f = new frmBaoCaoDoanhSoTheoNgay();
+            f.Text = "Báo Cáo Doanh Số Theo Ngày";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnDoanhSoBanHangTheoKH_Click(object sender, EventArgs e)
+        {
+
+            tabbedView.Controller.CloseAll();
+
+            frmBaoCaoDoanhSoTheoKhachHang f = new frmBaoCaoDoanhSoTheoKhachHang();
+            f.Text = "Báo Cáo Doanh Số Theo Khách Hàng";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnDoanhSoBanHangTheoNV_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmBaoCaoDoanhSoTheoNhanVien f = new frmBaoCaoDoanhSoTheoNhanVien();
+            f.Text = "Báo Cáo Doanh Số Theo Nhân Viên";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnLoiNhuanTheoChungTu_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmBaoCaoLoiNhuanTheoChungTu f = new frmBaoCaoLoiNhuanTheoChungTu();
+            f.Text = "Báo Cáo Lợi Nhuận Theo Chứng Từ";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnLoiNhuanTheoHangHoa_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmBaoCaoLoiNhuanTheoHangHoa f = new frmBaoCaoLoiNhuanTheoHangHoa();
+            f.Text = "Báo Cáo Lợi Nhuận Theo Chứng Từ";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
+
+        private void btnDoanhSoBanHangTheoHH_Click(object sender, EventArgs e)
+        {
+            tabbedView.Controller.CloseAll();
+
+            frmBaoCaoDoanhSoTheoHangHoa f = new frmBaoCaoDoanhSoTheoHangHoa();
+            f.Text = "Báo Cáo Doanh Số Bán Hàng Theo Hàng Hóa";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
     }
 }

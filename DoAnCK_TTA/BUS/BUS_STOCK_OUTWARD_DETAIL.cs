@@ -53,5 +53,25 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.XoaPhieuXuatHang(ma, mahang, Quantity);
 
         }
+        public DataTable LayThongTinMuaHangTheoKH()
+        {
+            DAL_STOCK_OUTWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_OUTWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinMuaHangTheoKH();
+
+        }
+        public DataTable LayThongTinLoiNhuan()
+        {
+            DAL_STOCK_OUTWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_OUTWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinLoiNhuan();
+
+        }
+        public DataTable LayThongTinLoiNhuanTheoHangHoa()
+        {
+            DAL_STOCK_OUTWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_OUTWARD_DETAIL();
+            return dAL_SYS_USER_RULE.LayThongTinLoiNhuanTheoHangHoa();
+
+        }
+
+
     }
 }

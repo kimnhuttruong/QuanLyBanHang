@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DoAnCK_TTA.BUS;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -16,6 +17,17 @@ namespace DoAnCK_TTA.GUI
         public frmBaoCaoDoanhSoTheoNgay()
         {
             InitializeComponent();
+        }
+
+        private void gridBaoCaoMuaHangTheoNgay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmBaoCaoDoanhSoTheoNgay_Load(object sender, EventArgs e)
+        {
+            BUS_STOCK_INWARD_DETAIL bus = new BUS_STOCK_INWARD_DETAIL();
+            gridBaoCaoMuaHangTheoNgay.DataSource = bus.LayThongTinMuaHangTheoNgay();
         }
     }
 }

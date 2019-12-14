@@ -108,6 +108,48 @@ namespace DoAnCK_TTA.DAL
                 return dt;
             }
         }
+           public DataTable BaoCaoDoanhSoNhanVien()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select si.Employee_ID,e.Employee_Name,e.Address,e.Mobile, Sum(cast(sid.Quantity as float)*cast(sid.UnitPrice as float)) as TienMua ,BangTam.TienBan from STOCK_INWARD_DETAIL sid,STOCK_INWARD si, EMPLOYEE e join(select so.Employee_ID, e.Employee_Name, e.Address, e.Mobile, Sum(cast(isnull(sod.amount,0) as float)) as TienBan from STOCK_OUTWARD_DETAIL sod,STOCK_OUTWARD so, EMPLOYEE e where sod.outward_ID = so.ID  and so.Employee_ID = e.Employee_ID group by so.Employee_ID,e.Employee_Name,e.Address,e.Mobile) as BangTam on BangTam.Employee_ID = e.Employee_ID where sid.Inward_ID = si.ID  and si.Employee_ID = e.Employee_ID group by si.Employee_ID,e.Employee_Name,e.Address,e.Mobile,BangTam.TienBan";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public DataTable BaoCaoDoanhSoNhanVienChiTiet()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "(select si.Employee_ID,N'Phiếu Mua' as PhieuMua,si.ID,si.RefDate,sid.Product_ID,p.Product_Name,sid.Unit,st.Stock_Name,sid.Quantity,sid.UnitPrice,cast(sid.Quantity as float)*cast(sid.UnitPrice as float) as ThanhTien,si.Amount,si.FAmount,cast(sid.Quantity as float)*cast(sid.UnitPrice as float) -si.FAmount as ThanhToan from STOCK_INWARD_DETAIL sid,STOCK_INWARD si, EMPLOYEE e,PRODUCT p, Stock st where sid.Inward_ID = si.ID and si.Employee_ID = e.Employee_ID and sid.Product_ID = p.Product_ID and st.Stock_ID = sid.Stock_ID) union (select si.Employee_ID, N'Phiếu Bán' as PhieuMua, si.ID, si.RefDate, sid.Product_ID, p.Product_Name, sid.Unit, st.Stock_Name, sid.Quantity, sid.UnitPrice, sid.Amount, sid.Discount, sid.DiscountRate, cast(sid.Quantity as float) * cast(sid.UnitPrice as float) - sid.DiscountRate as ThanhToan from STOCK_OUTWARD_DETAIL sid, STOCK_OUTWARD si, EMPLOYEE e, PRODUCT p, Stock st where sid.Outward_ID = si.ID   and si.Employee_ID = e.Employee_ID and sid.Product_ID = p.Product_ID and st.Stock_ID = sid.Stock_ID)";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
         public DataTable LayThongTinNhanVien(string id)
         {
             DataTable dt = new DataTable();

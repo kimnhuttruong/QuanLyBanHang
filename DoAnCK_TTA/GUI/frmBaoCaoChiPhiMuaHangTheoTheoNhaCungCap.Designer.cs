@@ -69,6 +69,7 @@
             this.gridColumn4});
             this.gridView1.GridControl = this.gridChiPhiMuaHang;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn2
@@ -92,6 +93,8 @@
             this.gridColumn4.Caption = "Thành Tiền";
             this.gridColumn4.FieldName = "Charge";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Charge", "{0:0.##}")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
             // 
