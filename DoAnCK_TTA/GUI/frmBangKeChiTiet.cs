@@ -24,6 +24,59 @@ namespace DoAnCK_TTA.GUI
 
         private void frmBangKeChiTiet_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
+            dt = bus.LayDanhSachPhanQuyen();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (this.Tag != null)
+                {
+                    if (this.Tag.ToString() == dt.Rows[i][0].ToString())
+                    {
+                        for (int j = 0; j < this.Controls.Count; j++)
+                        {
+                             if (this.Controls[j].Name != null)
+                             {
+                                 if (this.Controls[j].Name.ToString().IndexOf("Them") != -1 || this.Controls[j].Name.ToString().IndexOf("Moi") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowAdd"].ToString() == "False")
+                                         this.Controls[j].Visible = false;
+                                 }
+                                 if (this.Controls[j].Name.ToString().IndexOf("Xoa") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowDelete"].ToString() == "False")
+                                         this.Controls[j].Visible = false;
+                                 }
+                                 if (this.Controls[j].Name.ToString().IndexOf("Sua") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowEdit"].ToString() == "False")
+                                         this.Controls[j].Visible = false; ;
+                                 }
+                                 if (this.Controls[j].Name.ToString().IndexOf("Xem") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowAccess"].ToString() == "False")
+                                         this.Controls[j].Visible = false;
+                                 }
+                                 if (this.Controls[j].Name.ToString().IndexOf("In") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowPrint"].ToString() == "False")
+                                         this.Controls[j].Visible = false;
+                                 }
+                                 if (this.Controls[j].Name.ToString().IndexOf("Xuat") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowExport"].ToString() == "False")
+                                         this.Controls[j].Visible = false;
+                                 }
+                                 if (this.Controls[j].Name.ToString().IndexOf("Nhap") != -1)
+                                 {
+                                     if (dt.Rows[i]["AllowImport"].ToString() == "False")
+                                         this.Controls[j].Visible = false;
+                                 }
+                             }
+                        }
+                    }
+                }
+            }
             load();
         }
         DataTable _dt = new DataTable();

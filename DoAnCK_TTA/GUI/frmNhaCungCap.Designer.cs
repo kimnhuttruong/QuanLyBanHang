@@ -304,6 +304,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmNhaCungCap";
+            this.Tag = "bbiProvider";
             this.Text = "Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

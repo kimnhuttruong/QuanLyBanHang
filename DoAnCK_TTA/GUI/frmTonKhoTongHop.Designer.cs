@@ -267,6 +267,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmTonKhoTongHop";
             this.Size = new System.Drawing.Size(1112, 517);
+            this.Tag = "bbiInventorySummary";
             this.Load += new System.EventHandler(this.frmTonKhoTongHop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();

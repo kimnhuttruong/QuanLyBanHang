@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="accordionControlElement3.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDanhSachPhieuThu.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABd0RVh0VGl0
         bGUAQWdlbmRhO1NjaGVkdWxlcjvK+/QYAAAGnElEQVRYR7WXZ1CUVxSG7b2ll7+ZSRl/5EcmRh0Nmqhg
@@ -155,7 +155,7 @@
         T8b7/XCa++SfYzx6ji0+TvBM8H7ggpfB6zUUxspgn/viAVPMYcP/AGBDyOsdZH9HAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="accordionControlElement4.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDanhSachPhieuCongNo.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAANdEVYdFRpdGxlAFJlcG9ydDsMcqUZAAAIJElEQVRY
@@ -196,7 +196,7 @@
         9JtXaa66WTagqQQb4S/wnGngFbwWXlTa4O/xc3h6+Q/Ps/QARP8DdLpmR3nkCmQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="accordionControlElement5.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DanhSachPhieuTraNgay.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAANdEVYdFRpdGxlAFJlcG9ydDsMcqUZAAAIJElEQVRY
@@ -237,7 +237,7 @@
         9JtXaa66WTagqQQb4S/wnGngFbwWXlTa4O/xc3h6+Q/Ps/QARP8DdLpmR3nkCmQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="accordionControlElement6.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnTheoDoiCongNo.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAANdEVYdFRpdGxlAFJlcG9ydDsMcqUZAAAIJElEQVRY
@@ -278,7 +278,7 @@
         9JtXaa66WTagqQQb4S/wnGngFbwWXlTa4O/xc3h6+Q/Ps/QARP8DdLpmR3nkCmQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="accordionControlElement7.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnTongHopCongNo.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABd0RVh0VGl0
         bGUAQWdlbmRhO1NjaGVkdWxlcjvK+/QYAAAGnElEQVRYR7WXZ1CUVxSG7b2ll7+ZSRl/5EcmRh0Nmqhg

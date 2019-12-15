@@ -327,6 +327,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmHangHoa";
+            this.Tag = "bbiMaterial";
             this.Text = "Hàng Hóa";
             this.Load += new System.EventHandler(this.frmHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

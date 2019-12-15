@@ -63,7 +63,7 @@
             // 
             // btnBrown
             // 
-            this.btnBrown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBrown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBrown.ImageOptions.Image")));
             this.btnBrown.Location = new System.Drawing.Point(370, 59);
             this.btnBrown.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
             this.btnBrown.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -137,6 +137,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPhucHoi";
+            this.Tag = "bbiRestore";
             this.Text = "Phục Hồi Dữ Liệu";
             ((System.ComponentModel.ISupportInitialize)(this.txtTenTapTin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proTienTrinh.Properties)).EndInit();

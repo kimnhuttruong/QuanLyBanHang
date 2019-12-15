@@ -29,5 +29,11 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.LayThongTinBangKeChiTiet(ma);
 
         }
+        public DataTable LayThongTinBangKe()
+        {
+            DAL_STOCK_INWARD dAL_SYS_USER_RULE = new DAL_STOCK_INWARD();
+            return dAL_SYS_USER_RULE.LayThongTinBangKe();
+
+        }
     }
 }

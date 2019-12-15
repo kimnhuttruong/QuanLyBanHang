@@ -268,6 +268,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmTonKho";
+            this.Tag = "bbiInventory";
             this.Text = "frmTonKho";
             this.Load += new System.EventHandler(this.frmTonKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();

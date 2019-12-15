@@ -100,5 +100,16 @@ namespace DoAnCK_TTA.GUI
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
         }
+
+        private void btnLichSuHangHoa_Click(object sender, EventArgs e)
+        {
+
+            tabbedView.Controller.CloseAll();
+
+            frmLichSuHangHoa f = new frmLichSuHangHoa();
+            f.Text = "Lịch Sử Hàng Hóa";
+            tabbedView.AddDocument(f);
+            tabbedView.ActivateDocument(f);
+        }
     }
 }

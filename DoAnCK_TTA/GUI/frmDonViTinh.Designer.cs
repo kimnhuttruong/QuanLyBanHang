@@ -254,6 +254,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDonViTinh";
+            this.Tag = "bbiUnit";
             this.Text = "Đơn Vị Tính";
             this.Load += new System.EventHandler(this.frmDonViTinh1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

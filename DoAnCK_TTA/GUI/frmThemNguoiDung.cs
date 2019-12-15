@@ -82,5 +82,10 @@ namespace DoAnCK_TTA.GUI
         {
             this.Close();
         }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -62,10 +62,11 @@ namespace DoAnCK_TTA.GUI
             treeVaiTroNguoiDung.KeyFieldName = "GroupID";
 
         }
-      
+        string manhom = "";
         DataSet ds1 = new DataSet();
         private void treeList2_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
+            manhom = e.Node.GetValue("Group_ID").ToString();
             gridNhomphanquyen.DataSource = null;
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
@@ -96,29 +97,6 @@ namespace DoAnCK_TTA.GUI
             ds1.Tables.Add(dt);
             ds1.Tables.Add(dt2);
 
-            {
-                //dt2.Columns[0].Caption = "Tên Đăng Nhập";
-                //dt2.Columns[1].Caption = "Vai Trò";
-                //dt2.Columns[2].Caption = "Diễn Giải";
-                //dt2.Columns[3].Caption = "Kích Hoạt";
-                //dt2.Columns[4].ColumnMapping = MappingType.Hidden;
-
-
-
-                //var colMaster = ds1.Tables[0].Columns["Group_ID"];
-                //var colDetail = ds1.Tables[1].Columns["Group_ID"];
-                ////đưa relation vào dataset
-                // ds1.Relations.Add("List UserName", colMaster, colDetail);
-
-                //gridNhomphanquyen.DataSource = ds1;
-                // gridNhomphanquyen.DataMember = "Group";
-
-
-                //gridNhomphanquyen.DataSource = ds1;
-                //gridNhomphanquyen.DataMember = "Group";
-
-                // Get the context.
-            }
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -146,8 +124,6 @@ namespace DoAnCK_TTA.GUI
 
                 User.Group_Name = dt2.Rows[i]["Group_Name"].ToString();
                 dsUser.Add(User);
-
-
             }
             BUS_SYS_USER_RULE busRule = new BUS_SYS_USER_RULE();
             if (dt.Rows.Count > 0)
@@ -196,8 +172,15 @@ namespace DoAnCK_TTA.GUI
         private void btnThemNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var mainWindow = new frmThemNguoiDung();
-            mainWindow.Show();
+            mainWindow.ShowDialog();
 
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThemVaiTro f = new frmThemVaiTro();
+            f.Sender(manhom);
+            f.ShowDialog();
         }
     }
 

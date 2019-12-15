@@ -105,7 +105,7 @@
             // 
             // btnDongY
             // 
-            this.btnDongY.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnDongY.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDongY.ImageOptions.Image")));
             this.btnDongY.Location = new System.Drawing.Point(52, 167);
             this.btnDongY.Name = "btnDongY";
             this.btnDongY.Size = new System.Drawing.Size(88, 36);
@@ -114,7 +114,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.Location = new System.Drawing.Point(159, 167);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(92, 36);
@@ -153,6 +153,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "bbiChangepassword";
             this.Text = "    Đổi Mật Khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauCu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauMoi.Properties)).EndInit();

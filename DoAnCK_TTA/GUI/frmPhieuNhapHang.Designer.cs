@@ -1162,6 +1162,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPhieuNhapHang";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Tag = "bbiInward";
             this.Load += new System.EventHandler(this.frmPhieuNhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();

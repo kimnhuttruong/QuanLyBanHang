@@ -8,6 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using System.Diagnostics;
+using System.Net;
+using System.Runtime.InteropServices;
+using DoAnCK_TTA.BUS;
+using DevExpress.XtraBars.Ribbon;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -19,6 +24,65 @@ namespace DoAnCK_TTA.GUI
           
             
         InitializeComponent();
+            DataTable dt = new DataTable();
+            BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
+            dt = bus.LayDanhSachPhanQuyen();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                foreach (RibbonPage item in ribbon.Pages)
+                {
+                    foreach (RibbonPageGroup group in item.Groups)
+                    {
+                        if (group.Tag != null)
+                        {
+                            if (group.Tag.ToString() == dt.Rows[i][0].ToString() && dt.Rows[i][2].ToString() == "False")
+                            {
+
+                                group.Visible = false;
+                            }
+                        }
+
+                    }
+                }
+
+
+            }
+
+            this.bntKetThuc.Enabled = kiemtrachopheptruycap(bntKetThuc.Tag.ToString());
+            this.btnThongTin.Enabled = kiemtrachopheptruycap(btnThongTin.Tag.ToString());
+            this.btnPhanQuyen.Enabled = kiemtrachopheptruycap(btnPhanQuyen.Tag.ToString());
+            this.btnDoiMatKhau.Enabled = kiemtrachopheptruycap(btnDoiMatKhau.Tag.ToString());
+            this.btnNhatKyHeThong.Enabled = kiemtrachopheptruycap(btnNhatKyHeThong.Tag.ToString());
+            this.btnSaoLuu.Enabled = kiemtrachopheptruycap(btnSaoLuu.Tag.ToString());
+            this.btnPhucHoi.Enabled = kiemtrachopheptruycap(btnPhucHoi.Tag.ToString());
+            this.btnSuaChua.Enabled = kiemtrachopheptruycap(btnSuaChua.Tag.ToString());
+            this.btnKetChuyen.Enabled = kiemtrachopheptruycap(btnKetChuyen.Tag.ToString());
+            this.btnNhapDanhMucTuExcel.Enabled = kiemtrachopheptruycap(btnNhapDanhMucTuExcel.Tag.ToString());
+            this.btnKhuVuc.Enabled = kiemtrachopheptruycap(btnKhuVuc.Tag.ToString());
+            this.btnKhachHang.Enabled = kiemtrachopheptruycap(btnKhachHang.Tag.ToString());
+            this.btnNhaCungCap.Enabled = kiemtrachopheptruycap(btnNhaCungCap.Tag.ToString());
+            this.btnKhoHang.Enabled = kiemtrachopheptruycap(btnKhoHang.Tag.ToString());
+            this.btnDonViTinh.Enabled = kiemtrachopheptruycap(btnDonViTinh.Tag.ToString());
+            this.btnNhomHang.Enabled = kiemtrachopheptruycap(btnNhomHang.Tag.ToString());
+            this.btnHangHoa.Enabled = kiemtrachopheptruycap(btnHangHoa.Tag.ToString());
+            this.btnInMaVach.Enabled = kiemtrachopheptruycap(btnInMaVach.Tag.ToString());
+            this.btnTyGia.Enabled = kiemtrachopheptruycap(btnTyGia.Tag.ToString());
+            this.btnNhanVien.Enabled = kiemtrachopheptruycap(btnNhanVien.Tag.ToString());
+            this.btnMuaHang.Enabled = kiemtrachopheptruycap(btnMuaHang.Tag.ToString());
+            this.btnBanHang.Enabled = kiemtrachopheptruycap(btnBanHang.Tag.ToString());
+            this.btnTonKho.Enabled = kiemtrachopheptruycap(btnTonKho.Tag.ToString());
+            this.btnChuyenKho.Enabled = kiemtrachopheptruycap(btnChuyenKho.Tag.ToString());
+            this.btnNhapSoDuDauKy.Enabled = kiemtrachopheptruycap(btnNhapSoDuDauKy.Tag.ToString());
+            this.btnThuTien.Enabled = kiemtrachopheptruycap(btnThuTien.Tag.ToString());
+            this.btnTraTien.Enabled = kiemtrachopheptruycap(btnTraTien.Tag.ToString());
+            this.btnBaoCaoKhoHang.Enabled = kiemtrachopheptruycap(btnBaoCaoKhoHang.Tag.ToString());
+            this.btnBaoCaoBanHang.Enabled = kiemtrachopheptruycap(btnBaoCaoBanHang.Tag.ToString());
+            this.btnBoPhan.Enabled = kiemtrachopheptruycap(btnBoPhan.Tag.ToString());
+            this.btnChungTu.Enabled = kiemtrachopheptruycap(btnChungTu.Tag.ToString());
+
+
+
         }
 
 
@@ -74,9 +138,80 @@ namespace DoAnCK_TTA.GUI
             var mainWindow = new FrmDoiMatKhau();
             mainWindow.ShowDialog();
         }
+        bool kiemtrachopheptruycap(string mh)
+        {
+            BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
+            DataTable dt = new DataTable();
+            dt = bus.LayDanhSachPhanQuyenButton(mh);
+            if (dt.Rows.Count > 0)
+                return bool.Parse(dt.Rows[0][0].ToString());
+            else
+                return true;
 
+        }
         private void formMain_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
+            dt = bus.LayDanhSachPhanQuyen();
+            
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                foreach (RibbonPage item in ribbon.Pages)
+                {
+                    foreach (RibbonPageGroup group in item.Groups)
+                    {
+                        if (group.Tag != null)
+                        {
+                            if (group.Tag.ToString() == dt.Rows[i][0].ToString() && dt.Rows[i][2].ToString() == "False")
+                            {
+                                
+                                group.Visible = false;
+                            }
+                        }
+
+                    }
+                }
+
+
+            }
+
+            this.bntKetThuc.Enabled = kiemtrachopheptruycap(bntKetThuc.Tag.ToString());
+            this.btnThongTin.Enabled = kiemtrachopheptruycap(btnThongTin.Tag.ToString());
+            this.btnPhanQuyen.Enabled = kiemtrachopheptruycap(btnPhanQuyen.Tag.ToString());
+            this.btnDoiMatKhau.Enabled = kiemtrachopheptruycap(btnDoiMatKhau.Tag.ToString());
+            this.btnNhatKyHeThong.Enabled = kiemtrachopheptruycap(btnNhatKyHeThong.Tag.ToString());
+            this.btnSaoLuu.Enabled = kiemtrachopheptruycap(btnSaoLuu.Tag.ToString());
+            this.btnPhucHoi.Enabled = kiemtrachopheptruycap(btnPhucHoi.Tag.ToString());
+            this.btnSuaChua.Enabled = kiemtrachopheptruycap(btnSuaChua.Tag.ToString());
+            this.btnKetChuyen.Enabled = kiemtrachopheptruycap(btnKetChuyen.Tag.ToString());
+            this.btnNhapDanhMucTuExcel.Enabled = kiemtrachopheptruycap(btnNhapDanhMucTuExcel.Tag.ToString());
+            this.btnKhuVuc.Enabled = kiemtrachopheptruycap(btnKhuVuc.Tag.ToString());
+            this.btnKhachHang.Enabled = kiemtrachopheptruycap(btnKhachHang.Tag.ToString());
+            this.btnNhaCungCap.Enabled = kiemtrachopheptruycap(btnNhaCungCap.Tag.ToString());
+            this.btnKhoHang.Enabled = kiemtrachopheptruycap(btnKhoHang.Tag.ToString());
+            this.btnDonViTinh.Enabled = kiemtrachopheptruycap(btnDonViTinh.Tag.ToString());
+            this.btnNhomHang.Enabled = kiemtrachopheptruycap(btnNhomHang.Tag.ToString());
+            this.btnHangHoa.Enabled = kiemtrachopheptruycap(btnHangHoa.Tag.ToString());
+            this.btnInMaVach.Enabled = kiemtrachopheptruycap(btnInMaVach.Tag.ToString());
+            this.btnTyGia.Enabled = kiemtrachopheptruycap(btnTyGia.Tag.ToString());
+            this.btnNhanVien.Enabled = kiemtrachopheptruycap(btnNhanVien.Tag.ToString());
+            this.btnMuaHang.Enabled = kiemtrachopheptruycap(btnMuaHang.Tag.ToString());
+            this.btnBanHang.Enabled = kiemtrachopheptruycap(btnBanHang.Tag.ToString());
+            this.btnTonKho.Enabled = kiemtrachopheptruycap(btnTonKho.Tag.ToString());
+            this.btnChuyenKho.Enabled = kiemtrachopheptruycap(btnChuyenKho.Tag.ToString());
+            this.btnNhapSoDuDauKy.Enabled = kiemtrachopheptruycap(btnNhapSoDuDauKy.Tag.ToString());
+            this.btnThuTien.Enabled = kiemtrachopheptruycap(btnThuTien.Tag.ToString());
+            this.btnTraTien.Enabled = kiemtrachopheptruycap(btnTraTien.Tag.ToString());
+            this.btnBaoCaoKhoHang.Enabled = kiemtrachopheptruycap(btnBaoCaoKhoHang.Tag.ToString());
+            this.btnBaoCaoBanHang.Enabled = kiemtrachopheptruycap(btnBaoCaoBanHang.Tag.ToString());
+            this.btnBoPhan.Enabled = kiemtrachopheptruycap(btnBoPhan.Tag.ToString());
+            this.btnChungTu.Enabled = kiemtrachopheptruycap(btnChungTu.Tag.ToString());
+
+
+
+
+       
 
         }
 
@@ -389,6 +524,30 @@ namespace DoAnCK_TTA.GUI
                 frmBaoCaoBanHang f = new frmBaoCaoBanHang();
                 f.MdiParent = this;
                 f.Text = "Báo CÁo Bán Hàng";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+        [DllImport("user32.dll")]
+        static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
+        private void btnHoTroTrucTuyen_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            //Process p = Process.Start(@"TeamViewer.exe");
+        }
+
+        private void btnChungTu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(frmChungTu));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                frmChungTu f = new frmChungTu();
+                f.MdiParent = this;
+                f.Text = "Chứng Từ";
                 f.Show();
             }
             else

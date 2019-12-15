@@ -364,6 +364,7 @@
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "frmPhieuThu";
+            this.Tag = "rpgInvoice";
             this.Text = "Phiếu Thu";
             this.Load += new System.EventHandler(this.frmPhieuThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).EndInit();

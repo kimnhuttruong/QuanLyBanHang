@@ -88,7 +88,7 @@
             // 
             // btnTroGiup
             // 
-            this.btnTroGiup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnTroGiup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.ImageOptions.Image")));
             this.btnTroGiup.Location = new System.Drawing.Point(10, 222);
             this.btnTroGiup.Name = "btnTroGiup";
             this.btnTroGiup.Size = new System.Drawing.Size(80, 20);
@@ -128,6 +128,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSuaChua";
+            this.Tag = "bbiFix";
             this.Text = "Bảo Trì Dữ Liệu";
             ((System.ComponentModel.ISupportInitialize)(this.procBaoTri.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBaoTri)).EndInit();

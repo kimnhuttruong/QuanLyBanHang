@@ -81,6 +81,27 @@ namespace DoAnCK_TTA.DAL
                 return dt;
             }
         }
+        public DataTable LayThongTinBangKe()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select ID,si.RefDate,N'Phiếu Mua' as LoaiPhieu,Charge,si.Description from STOCK_INWARD si union select ID,si.RefDate,N'Phiếu Bán' as LoaiPhieu,Charge,si.Description from STOCK_OUTWARD si union select si.Transfer_ID,si.QtyConvert,N'Phiếu Chuyển Kho' as LoaiPhieu,Sum(cast(si.Amount as float)),si.Description from STOCK_TRANSFER_DETAIL si group by si.Transfer_ID,si.QtyConvert,si.Description";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
     }                                                                                                                                                                                
 }                                                                                                                                                                                    
                                                                                                                                                                                      

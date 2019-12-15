@@ -12,7 +12,7 @@ using DoAnCK_TTA.BUS;
 
 namespace DoAnCK_TTA.GUI
 {
-    public partial class frmBaoCaoChiPhiMuaHangTheoNgay : DevExpress.XtraEditors.XtraUserControl
+    public partial class frmBaoCaoChiPhiMuaHangTheoNgay : DevExpress.XtraEditors.XtraUserControl 
     {
         public frmBaoCaoChiPhiMuaHangTheoNgay()
         {

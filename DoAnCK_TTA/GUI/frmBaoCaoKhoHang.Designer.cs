@@ -155,6 +155,7 @@
             this.btnLichSuHangHoa.Name = "btnLichSuHangHoa";
             this.btnLichSuHangHoa.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnLichSuHangHoa.Text = "Lịch Sử Hàng Hóa";
+            this.btnLichSuHangHoa.Click += new System.EventHandler(this.btnLichSuHangHoa_Click);
             // 
             // tabbedView
             // 
@@ -175,6 +176,7 @@
             this.ClientSize = new System.Drawing.Size(790, 596);
             this.Controls.Add(this.dockPanel);
             this.Name = "frmBaoCaoKhoHang";
+            this.Tag = "bbiReport";
             this.Load += new System.EventHandler(this.frmBaoCaoKhoHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);

@@ -76,7 +76,6 @@
             this.btnDangKi = new DevExpress.XtraBars.BarButtonItem();
             this.bntThongTin_TroGiup = new DevExpress.XtraBars.BarButtonItem();
             this.btnCapNhat = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -119,6 +118,7 @@
             this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
             this.barButtonGroup4 = new DevExpress.XtraBars.BarButtonGroup();
             this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChungTu = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -151,6 +151,9 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.xtraTabbedMdiManager2 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barEditItem13 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTimeEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
@@ -177,6 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit3)).BeginInit();
             this.SuspendLayout();
             // 
             // t
@@ -185,8 +189,6 @@
             this.t.ItemLinks.Add(this.lbUser);
             this.t.ItemLinks.Add(this.lbServer);
             this.t.ItemLinks.Add(this.lbDataBase);
-            this.t.ItemLinks.Add(this.lbTime);
-            this.t.ItemLinks.Add(this.lbDate);
             this.t.Location = new System.Drawing.Point(0, 505);
             this.t.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.t.Name = "t";
@@ -208,7 +210,7 @@
             this.lbUser.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.team_32x32;
             this.lbUser.Name = "lbUser";
             this.lbUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.lbUser.Width = 100;
+            this.lbUser.Width = 150;
             // 
             // lbServer
             // 
@@ -218,7 +220,7 @@
             this.lbServer.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.computer;
             this.lbServer.Name = "lbServer";
             this.lbServer.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.lbServer.Width = 180;
+            this.lbServer.Width = 250;
             // 
             // lbDataBase
             // 
@@ -228,13 +230,15 @@
             this.lbDataBase.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.khohang;
             this.lbDataBase.Name = "lbDataBase";
             this.lbDataBase.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.lbDataBase.Width = 100;
+            this.lbDataBase.Width = 300;
             // 
             // lbTime
             // 
             this.lbTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.lbTime.Caption = "23:02:18";
             this.lbTime.Id = 107;
+            this.lbTime.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItem13)});
             this.lbTime.Name = "lbTime";
             // 
             // lbDate
@@ -289,7 +293,6 @@
             this.btnDangKi,
             this.bntThongTin_TroGiup,
             this.btnCapNhat,
-            this.barButtonGroup1,
             this.barEditItem1,
             this.barStaticItem1,
             this.barSubItem2,
@@ -325,10 +328,12 @@
             this.barButtonItem1,
             this.barButtonGroup3,
             this.barButtonGroup4,
-            this.btnBoPhan});
+            this.btnBoPhan,
+            this.btnChungTu,
+            this.barEditItem13});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbon.MaxItemId = 115;
+            this.ribbon.MaxItemId = 118;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -356,7 +361,8 @@
             this.repositoryItemBorderLineStyle1,
             this.repositoryItemHypertextLabel1,
             this.repositoryItemDateEdit1,
-            this.repositoryItemTimeEdit2});
+            this.repositoryItemTimeEdit2,
+            this.repositoryItemTimeEdit3});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbon.Size = new System.Drawing.Size(1320, 135);
             this.ribbon.StatusBar = this.t;
@@ -369,6 +375,7 @@
             this.bntKetThuc.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.power_off;
             this.bntKetThuc.LargeWidth = 60;
             this.bntKetThuc.Name = "bntKetThuc";
+            this.bntKetThuc.Tag = "rbpgClose";
             this.bntKetThuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bntKetThuc_ItemClick);
             // 
             // btnThongTin
@@ -378,6 +385,7 @@
             this.btnThongTin.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.infomation;
             this.btnThongTin.LargeWidth = 80;
             this.btnThongTin.Name = "btnThongTin";
+            this.btnThongTin.Tag = "bbiCompanyInfo";
             this.btnThongTin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTin_ItemClick);
             // 
             // btnPhanQuyen
@@ -388,6 +396,7 @@
             this.btnPhanQuyen.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.phanquyen;
             this.btnPhanQuyen.LargeWidth = 90;
             this.btnPhanQuyen.Name = "btnPhanQuyen";
+            this.btnPhanQuyen.Tag = "bbiPermission";
             this.btnPhanQuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhanQuyen_ItemClick);
             // 
             // btnDoiMatKhau
@@ -397,6 +406,7 @@
             this.btnDoiMatKhau.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.doimatkhau;
             this.btnDoiMatKhau.LargeWidth = 80;
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Tag = "bbiChangepassword";
             this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // btnNhatKyHeThong
@@ -406,6 +416,7 @@
             this.btnNhatKyHeThong.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.nhatky;
             this.btnNhatKyHeThong.LargeWidth = 60;
             this.btnNhatKyHeThong.Name = "btnNhatKyHeThong";
+            this.btnNhatKyHeThong.Tag = "bbiSysLog";
             // 
             // btnSaoLuu
             // 
@@ -414,6 +425,7 @@
             this.btnSaoLuu.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.saoluu;
             this.btnSaoLuu.LargeWidth = 60;
             this.btnSaoLuu.Name = "btnSaoLuu";
+            this.btnSaoLuu.Tag = "bbiBackup";
             // 
             // btnPhucHoi
             // 
@@ -422,6 +434,7 @@
             this.btnPhucHoi.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.phuchoi1;
             this.btnPhucHoi.LargeWidth = 60;
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.Tag = "bbiRestore";
             // 
             // btnSuaChua
             // 
@@ -430,6 +443,7 @@
             this.btnSuaChua.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.suachua;
             this.btnSuaChua.LargeWidth = 60;
             this.btnSuaChua.Name = "btnSuaChua";
+            this.btnSuaChua.Tag = "bbiFix";
             // 
             // btnKetChuyen
             // 
@@ -438,6 +452,7 @@
             this.btnKetChuyen.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.ketchuyen;
             this.btnKetChuyen.LargeWidth = 80;
             this.btnKetChuyen.Name = "btnKetChuyen";
+            this.btnKetChuyen.Tag = "bbiLock";
             // 
             // btnNhapDanhMucTuExcel
             // 
@@ -445,6 +460,7 @@
             this.btnNhapDanhMucTuExcel.Id = 44;
             this.btnNhapDanhMucTuExcel.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.phuchoi;
             this.btnNhapDanhMucTuExcel.Name = "btnNhapDanhMucTuExcel";
+            this.btnNhapDanhMucTuExcel.Tag = "bbiAdjustment";
             // 
             // btnKhuVuc
             // 
@@ -453,6 +469,7 @@
             this.btnKhuVuc.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.khuvuc;
             this.btnKhuVuc.LargeWidth = 80;
             this.btnKhuVuc.Name = "btnKhuVuc";
+            this.btnKhuVuc.Tag = "bbiCustomerGroup";
             this.btnKhuVuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhuVuc_ItemClick);
             // 
             // btnKhachHang
@@ -462,6 +479,7 @@
             this.btnKhachHang.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.khachhang;
             this.btnKhachHang.LargeWidth = 80;
             this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Tag = "bbiCustomer";
             this.btnKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachHang_ItemClick);
             // 
             // btnNhaCungCap
@@ -471,6 +489,7 @@
             this.btnNhaCungCap.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.nhacungcap;
             this.btnNhaCungCap.LargeWidth = 60;
             this.btnNhaCungCap.Name = "btnNhaCungCap";
+            this.btnNhaCungCap.Tag = "bbiProvider";
             this.btnNhaCungCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhaCungCap_ItemClick);
             // 
             // btnKhoHang
@@ -480,6 +499,7 @@
             this.btnKhoHang.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.khohang;
             this.btnKhoHang.LargeWidth = 80;
             this.btnKhoHang.Name = "btnKhoHang";
+            this.btnKhoHang.Tag = "bbiStock";
             this.btnKhoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoHang_ItemClick);
             // 
             // btnDonViTinh
@@ -489,6 +509,7 @@
             this.btnDonViTinh.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.donvitinh;
             this.btnDonViTinh.LargeWidth = 80;
             this.btnDonViTinh.Name = "btnDonViTinh";
+            this.btnDonViTinh.Tag = "bbiUnit";
             this.btnDonViTinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonViTinh_ItemClick);
             // 
             // btnNhomHang
@@ -498,6 +519,7 @@
             this.btnNhomHang.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.nhomhang;
             this.btnNhomHang.LargeWidth = 80;
             this.btnNhomHang.Name = "btnNhomHang";
+            this.btnNhomHang.Tag = "bbiItemGroup";
             this.btnNhomHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhomHang_ItemClick);
             // 
             // btnHangHoa
@@ -507,6 +529,7 @@
             this.btnHangHoa.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.hanghoa;
             this.btnHangHoa.LargeWidth = 80;
             this.btnHangHoa.Name = "btnHangHoa";
+            this.btnHangHoa.Tag = "bbiMaterial";
             this.btnHangHoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHangHoa_ItemClick);
             // 
             // btnInMaVach
@@ -516,6 +539,7 @@
             this.btnInMaVach.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.inmavach;
             this.btnInMaVach.LargeWidth = 80;
             this.btnInMaVach.Name = "btnInMaVach";
+            this.btnInMaVach.Tag = "bbiPrintBarcode";
             // 
             // btnTyGia
             // 
@@ -524,6 +548,7 @@
             this.btnTyGia.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.tygia;
             this.btnTyGia.LargeWidth = 80;
             this.btnTyGia.Name = "btnTyGia";
+            this.btnTyGia.Tag = "bbiExchangeRate";
             this.btnTyGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTyGia_ItemClick);
             // 
             // btnNhanVien
@@ -534,6 +559,7 @@
             this.btnNhanVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.ImageOptions.LargeImage")));
             this.btnNhanVien.LargeWidth = 80;
             this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Tag = "bbiEmployee";
             this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
             // barSubItem1
@@ -550,6 +576,7 @@
             this.btnMuaHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMuaHang.ImageOptions.Image")));
             this.btnMuaHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMuaHang.ImageOptions.LargeImage")));
             this.btnMuaHang.Name = "btnMuaHang";
+            this.btnMuaHang.Tag = "bbiPurchase";
             this.btnMuaHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMuaHang_ItemClick);
             // 
             // btnBanHang
@@ -559,6 +586,7 @@
             this.btnBanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBanHang.ImageOptions.Image")));
             this.btnBanHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBanHang.ImageOptions.LargeImage")));
             this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.Tag = "bbiSale";
             this.btnBanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBanHang_ItemClick);
             // 
             // btnTonKho
@@ -567,6 +595,7 @@
             this.btnTonKho.Id = 60;
             this.btnTonKho.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.tonkho;
             this.btnTonKho.Name = "btnTonKho";
+            this.btnTonKho.Tag = "bbiInventory";
             this.btnTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonKho_ItemClick);
             // 
             // btnChuyenKho
@@ -575,6 +604,7 @@
             this.btnChuyenKho.Id = 61;
             this.btnChuyenKho.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.chuyenkho;
             this.btnChuyenKho.Name = "btnChuyenKho";
+            this.btnChuyenKho.Tag = "bbiTransfer";
             this.btnChuyenKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChuyenKho_ItemClick);
             // 
             // btnNhapSoDuDauKy
@@ -583,6 +613,7 @@
             this.btnNhapSoDuDauKy.Id = 62;
             this.btnNhapSoDuDauKy.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.book;
             this.btnNhapSoDuDauKy.Name = "btnNhapSoDuDauKy";
+            this.btnNhapSoDuDauKy.Tag = "bbiInitInventory";
             // 
             // btnThuTien
             // 
@@ -590,6 +621,7 @@
             this.btnThuTien.Id = 63;
             this.btnThuTien.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.thutien;
             this.btnThuTien.Name = "btnThuTien";
+            this.btnThuTien.Tag = "bbiReciept";
             this.btnThuTien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuTien_ItemClick);
             // 
             // btnTraTien
@@ -598,6 +630,7 @@
             this.btnTraTien.Id = 64;
             this.btnTraTien.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.thutien;
             this.btnTraTien.Name = "btnTraTien";
+            this.btnTraTien.Tag = "bbiPayment";
             this.btnTraTien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraTien_ItemClick);
             // 
             // btnBaoCaoKhoHang
@@ -607,6 +640,7 @@
             this.btnBaoCaoKhoHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoKhoHang.ImageOptions.Image")));
             this.btnBaoCaoKhoHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoKhoHang.ImageOptions.LargeImage")));
             this.btnBaoCaoKhoHang.Name = "btnBaoCaoKhoHang";
+            this.btnBaoCaoKhoHang.Tag = "bbiReport";
             this.btnBaoCaoKhoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoKhoHang_ItemClick);
             // 
             // btnBaoCaoBanHang
@@ -616,6 +650,7 @@
             this.btnBaoCaoBanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoBanHang.ImageOptions.Image")));
             this.btnBaoCaoBanHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoBanHang.ImageOptions.LargeImage")));
             this.btnBaoCaoBanHang.Name = "btnBaoCaoBanHang";
+            this.btnBaoCaoBanHang.Tag = "bbiReportSale";
             this.btnBaoCaoBanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoBanHang_ItemClick);
             // 
             // btnHoTroTrucTuyen
@@ -624,6 +659,7 @@
             this.btnHoTroTrucTuyen.Id = 68;
             this.btnHoTroTrucTuyen.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.support;
             this.btnHoTroTrucTuyen.Name = "btnHoTroTrucTuyen";
+            this.btnHoTroTrucTuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoTroTrucTuyen_ItemClick);
             // 
             // btnHuongDanSuDung
             // 
@@ -670,13 +706,6 @@
             this.btnCapNhat.Id = 73;
             this.btnCapNhat.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.update;
             this.btnCapNhat.Name = "btnCapNhat";
-            // 
-            // barButtonGroup1
-            // 
-            this.barButtonGroup1.Caption = "barButtonGroup1";
-            this.barButtonGroup1.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.barButtonGroup1.Id = 74;
-            this.barButtonGroup1.Name = "barButtonGroup1";
             // 
             // barEditItem1
             // 
@@ -960,7 +989,18 @@
             this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
             this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
             this.btnBoPhan.Name = "btnBoPhan";
+            this.btnBoPhan.Tag = "bbiDepartment";
             this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
+            // 
+            // btnChungTu
+            // 
+            this.btnChungTu.Caption = "Chứng Từ";
+            this.btnChungTu.Id = 116;
+            this.btnChungTu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChungTu.ImageOptions.Image")));
+            this.btnChungTu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChungTu.ImageOptions.LargeImage")));
+            this.btnChungTu.Name = "btnChungTu";
+            this.btnChungTu.Tag = "bbiVoucherManager";
+            this.btnChungTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChungTu_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -971,6 +1011,7 @@
             this.ribbonPageGroup8,
             this.ribbonPageGroup7});
             this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Tag = "rbpSystem";
             this.ribbonPage1.Text = "Hệ Thống";
             // 
             // ribbonPageGroup5
@@ -980,6 +1021,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThongTin);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.State = DevExpress.XtraBars.Ribbon.RibbonPageGroupState.Expanded;
+            this.ribbonPageGroup5.Tag = "rbpSystem";
             this.ribbonPageGroup5.Text = "Hệ Thống";
             // 
             // ribbonPageGroup8
@@ -988,6 +1030,7 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.btnDoiMatKhau);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnNhatKyHeThong);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Tag = "rbpgSecurity";
             this.ribbonPageGroup8.Text = "Bảo Mật";
             // 
             // ribbonPageGroup7
@@ -997,6 +1040,7 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnSuaChua);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnKetChuyen);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Tag = "rbpgDatabase";
             this.ribbonPageGroup7.Text = "Dữ Liệu";
             // 
             // ribbonPage3
@@ -1009,6 +1053,7 @@
             this.ribbonPageGroup10,
             this.ribbonPageGroup11});
             this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Tag = "rbpDictionary";
             this.ribbonPage3.Text = "Danh Mục";
             // 
             // ribbonPageGroup2
@@ -1023,6 +1068,7 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.btnKhachHang);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnNhaCungCap);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Tag = "rbpgPartner";
             this.ribbonPageGroup9.Text = "Đối Tác";
             // 
             // ribbonPageGroup10
@@ -1034,6 +1080,7 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.btnInMaVach);
             this.ribbonPageGroup10.ItemLinks.Add(this.btnTyGia);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Tag = "rbpgDicStock";
             this.ribbonPageGroup10.Text = "Kho Hàng";
             // 
             // ribbonPageGroup11
@@ -1041,6 +1088,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnBoPhan);
             this.ribbonPageGroup11.ItemLinks.Add(this.btnNhanVien);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Tag = "rpgDeparment";
             this.ribbonPageGroup11.Text = "Tổ Chức";
             // 
             // ribbonPage4
@@ -1053,6 +1101,7 @@
             this.ribbonPageGroup13,
             this.ribbonPageGroup14});
             this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Tag = "rbpStock";
             this.ribbonPage4.Text = "Chức Năng";
             // 
             // ribbonPageGroup3
@@ -1060,6 +1109,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnMuaHang);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnBanHang);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Tag = "rbpgSale";
             this.ribbonPageGroup3.Text = "Nhập - Xuất";
             // 
             // ribbonPageGroup12
@@ -1068,6 +1118,7 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.btnChuyenKho);
             this.ribbonPageGroup12.ItemLinks.Add(this.btnNhapSoDuDauKy);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Tag = "rbpgDicStock";
             this.ribbonPageGroup12.Text = "Kho Hàng";
             // 
             // ribbonPageGroup13
@@ -1075,13 +1126,16 @@
             this.ribbonPageGroup13.ItemLinks.Add(this.btnThuTien);
             this.ribbonPageGroup13.ItemLinks.Add(this.btnTraTien);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Tag = "rpgDebt";
             this.ribbonPageGroup13.Text = "Công Nợ";
             // 
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.btnBaoCaoKhoHang);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnBaoCaoBanHang);
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnChungTu);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Tag = "rpgReport";
             this.ribbonPageGroup14.Text = "Báo Cáo";
             // 
             // ribbonPage5
@@ -1201,8 +1255,27 @@
             // 
             this.xtraTabbedMdiManager2.MdiParent = this;
             // 
+            // barEditItem13
+            // 
+            this.barEditItem13.Caption = "barEditItem13";
+            this.barEditItem13.Edit = this.repositoryItemTimeEdit3;
+            this.barEditItem13.Id = 117;
+            this.barEditItem13.Name = "barEditItem13";
+            // 
+            // repositoryItemTimeEdit3
+            // 
+            this.repositoryItemTimeEdit3.AutoHeight = false;
+            this.repositoryItemTimeEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit3.Name = "repositoryItemTimeEdit3";
+            // 
+            // realTimeSource1
+            // 
+            this.realTimeSource1.DisplayableProperties = null;
+            // 
             // formMain
             // 
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 10F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1246,6 +1319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1320,7 +1394,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
-        private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
         private DevExpress.XtraBars.BarEditItem barEditItem5;
@@ -1372,5 +1445,9 @@
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup3;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup4;
         private DevExpress.XtraBars.BarButtonItem btnBoPhan;
+        private DevExpress.XtraBars.BarButtonItem btnChungTu;
+        private DevExpress.XtraBars.BarEditItem barEditItem13;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit3;
+        private DevExpress.Data.RealTimeSource realTimeSource1;
     }
 }

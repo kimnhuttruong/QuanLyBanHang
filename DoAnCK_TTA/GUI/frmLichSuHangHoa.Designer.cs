@@ -40,22 +40,21 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lookMa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lookTenHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.calc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.calcDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridChungTu = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridChungTu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -82,8 +81,6 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem4)});
             this.bar1.Text = "Tools";
             // 
@@ -155,85 +152,6 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 489);
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(6, 59);
-            this.gridControl1.MainView = this.gridView5;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1101, 454);
-            this.gridControl1.TabIndex = 33;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
-            // 
-            // gridView5
-            // 
-            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.lookMa,
-            this.lookTenHang,
-            this.gridColumn5,
-            this.calc,
-            this.calcDonGia,
-            this.gridColumn8,
-            this.gridColumn9});
-            this.gridView5.GridControl = this.gridControl1;
-            this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsView.ShowGroupPanel = false;
-            // 
-            // lookMa
-            // 
-            this.lookMa.Caption = "Mã Hàng";
-            this.lookMa.Name = "lookMa";
-            this.lookMa.OptionsFilter.AllowFilter = false;
-            this.lookMa.Visible = true;
-            this.lookMa.VisibleIndex = 0;
-            // 
-            // lookTenHang
-            // 
-            this.lookTenHang.Caption = "Tên Hàng";
-            this.lookTenHang.Name = "lookTenHang";
-            this.lookTenHang.Visible = true;
-            this.lookTenHang.VisibleIndex = 1;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Đơn Vị";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            // 
-            // calc
-            // 
-            this.calc.Caption = "Số Lượng";
-            this.calc.Name = "calc";
-            this.calc.Visible = true;
-            this.calc.VisibleIndex = 3;
-            // 
-            // calcDonGia
-            // 
-            this.calcDonGia.Caption = "Đơn Giá";
-            this.calcDonGia.Name = "calcDonGia";
-            this.calcDonGia.Visible = true;
-            this.calcDonGia.VisibleIndex = 4;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Thành Tiền";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Ghi Chú";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
-            // 
             // gridLookUpEdit1
             // 
             this.gridLookUpEdit1.Location = new System.Drawing.Point(6, 33);
@@ -251,11 +169,83 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // gridChungTu
+            // 
+            this.gridChungTu.Location = new System.Drawing.Point(0, 59);
+            this.gridChungTu.MainView = this.gridView1;
+            this.gridChungTu.MenuManager = this.barManager1;
+            this.gridChungTu.Name = "gridChungTu";
+            this.gridChungTu.Size = new System.Drawing.Size(1109, 450);
+            this.gridChungTu.TabIndex = 38;
+            this.gridChungTu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
+            this.gridView1.GridControl = this.gridChungTu;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "STT";
+            this.gridColumn1.FieldName = "STT";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Chứng Từ";
+            this.gridColumn2.FieldName = "MaChungTu";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Ngày";
+            this.gridColumn3.FieldName = "Ngay";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Loại Chứng Từ";
+            this.gridColumn4.FieldName = "Loai";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Thành Tiền";
+            this.gridColumn5.FieldName = "ThanhTien";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Diễn Giải";
+            this.gridColumn6.FieldName = "DienGiai";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            // 
             // frmLichSuHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gridChungTu);
             this.Controls.Add(this.gridLookUpEdit1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -263,11 +253,13 @@
             this.Controls.Add(this.barDockControl2);
             this.Name = "frmLichSuHangHoa";
             this.Size = new System.Drawing.Size(1112, 517);
+            this.Tag = "bbiHistory";
+            this.Load += new System.EventHandler(this.frmLichSuHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridChungTu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,16 +277,15 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
-        private DevExpress.XtraGrid.Columns.GridColumn lookMa;
-        private DevExpress.XtraGrid.Columns.GridColumn lookTenHang;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn calc;
-        private DevExpress.XtraGrid.Columns.GridColumn calcDonGia;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.GridControl gridChungTu;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

@@ -36,6 +36,11 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.ThemNguoiDung(u);
 
         }
+        public int CapNhatNhom(string u)
+        {
+            DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
+            return dAL_SYS_USER_RULE.CapNhatNhom(u);
 
+        }
     }
 }

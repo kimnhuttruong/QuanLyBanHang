@@ -122,7 +122,7 @@
             // 
             // btnPhieuChuyenKho
             // 
-            this.btnPhieuChuyenKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
+            this.btnPhieuChuyenKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuChuyenKho.ImageOptions.Image")));
             this.btnPhieuChuyenKho.Name = "btnPhieuChuyenKho";
             this.btnPhieuChuyenKho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnPhieuChuyenKho.Text = "Phiếu Chuyển Kho";
@@ -139,7 +139,7 @@
             // 
             // btnTheoChungTu
             // 
-            this.btnTheoChungTu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
+            this.btnTheoChungTu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheoChungTu.ImageOptions.Image")));
             this.btnTheoChungTu.Name = "btnTheoChungTu";
             this.btnTheoChungTu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnTheoChungTu.Text = "Theo Chứng Từ";
@@ -147,7 +147,7 @@
             // 
             // btnTheoHangHoa
             // 
-            this.btnTheoHangHoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
+            this.btnTheoHangHoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheoHangHoa.ImageOptions.Image")));
             this.btnTheoHangHoa.Name = "btnTheoHangHoa";
             this.btnTheoHangHoa.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnTheoHangHoa.Text = "Theo Hàng Hóa";
@@ -165,7 +165,7 @@
             // 
             // btnThemHangHoa
             // 
-            this.btnThemHangHoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement7.ImageOptions.Image")));
+            this.btnThemHangHoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemHangHoa.ImageOptions.Image")));
             this.btnThemHangHoa.Name = "btnThemHangHoa";
             this.btnThemHangHoa.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnThemHangHoa.Text = "Hàng Hóa";
@@ -173,7 +173,7 @@
             // 
             // btnKhoHang
             // 
-            this.btnKhoHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement8.ImageOptions.Image")));
+            this.btnKhoHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKhoHang.ImageOptions.Image")));
             this.btnKhoHang.Name = "btnKhoHang";
             this.btnKhoHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnKhoHang.Text = "Kho Hàng";
@@ -181,7 +181,7 @@
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement9.ImageOptions.Image")));
+            this.btnNhanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.ImageOptions.Image")));
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnNhanVien.Text = "Nhân Viên";
@@ -206,6 +206,7 @@
             this.ClientSize = new System.Drawing.Size(790, 596);
             this.Controls.Add(this.dockPanel);
             this.Name = "frmChuyenKho";
+            this.Tag = "bbiTransfer";
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

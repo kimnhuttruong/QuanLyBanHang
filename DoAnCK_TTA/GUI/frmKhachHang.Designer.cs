@@ -389,6 +389,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmKhachHang";
+            this.Tag = "bbiCustomer";
             this.Text = "Khách Hàng";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

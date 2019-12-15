@@ -1064,6 +1064,7 @@
             this.Controls.Add(this.barDockControl1);
             this.Name = "frmPhieuXuatHang";
             this.Size = new System.Drawing.Size(1112, 517);
+            this.Tag = "bbiOutward";
             this.Load += new System.EventHandler(this.frmPhieuXuatHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();

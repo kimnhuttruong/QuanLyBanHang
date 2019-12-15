@@ -80,7 +80,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Description,Group_Name, Group_ID from SYS_GROUP";
+            cmd.CommandText = "select Description,Group_Name, Group_ID,Active from SYS_GROUP";
             try
             {
                 OpenConnection();
@@ -106,7 +106,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT [dbo].[SYS_GROUP] ([Group_ID], [Group_Name], [Group_NameEn], [Description], [Active]) VALUES ('"+g.Group_ID+"', N'"+g.Group_Name+"', N'', N'"+g.Description+"', "+active+")";
+            cmd.CommandText = "Delete  SYS_GROUP where Group_ID=N'"+ g.Group_ID + "'     INSERT [dbo].[SYS_GROUP] ([Group_ID], [Group_Name], [Group_NameEn], [Description], [Active]) VALUES ('" + g.Group_ID+"', N'"+g.Group_Name+"', N'', N'"+g.Description+"', "+active+")";
             try
             {
                 OpenConnection();

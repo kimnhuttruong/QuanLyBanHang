@@ -267,6 +267,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmTyGia";
+            this.Tag = "bbiExchangeRate";
             this.Text = "Tỷ Giá";
             this.Load += new System.EventHandler(this.frmTyGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

@@ -263,6 +263,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmTheKho";
             this.Size = new System.Drawing.Size(1112, 517);
+            this.Tag = "bbiInitInventory";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();

@@ -17,6 +17,18 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.LayDanhSachPhanQuyen(Group_ID);
 
         }
+        public DataTable LayDanhSachPhanQuyen()
+        {
+            DAL_SYS_USER_RULE dAL_SYS_USER_RULE = new DAL_SYS_USER_RULE();
+            return dAL_SYS_USER_RULE.LayDanhSachPhanQuyen();
+
+        }
+        public DataTable LayDanhSachPhanQuyenButton(string mahinh)
+        {
+            DAL_SYS_USER_RULE dAL_SYS_USER_RULE = new DAL_SYS_USER_RULE();
+            return dAL_SYS_USER_RULE.LayDanhSachPhanQuyenButton(mahinh);
+
+        }
         public int ThemDanhSachPhanQuyen(DTO_SYS_USER_RULE u)
         {
             DAL_SYS_USER_RULE dAL_SYS_USER_RULE = new DAL_SYS_USER_RULE();

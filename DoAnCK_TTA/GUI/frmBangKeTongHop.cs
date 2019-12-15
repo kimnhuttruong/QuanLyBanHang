@@ -14,7 +14,7 @@ using DoAnCK_TTA.BUS;
 
 namespace DoAnCK_TTA.GUI
 {
-    public partial class frmBangKeTongHop : DevExpress.XtraEditors.XtraUserControl
+    public partial class frmBangKeTongHop : DevExpress.XtraEditors.XtraUserControl 
     {
         public frmBangKeTongHop()
         {

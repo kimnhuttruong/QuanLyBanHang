@@ -233,6 +233,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmBoPhan";
+            this.Tag = "bbiDepartment";
             this.Text = "Bộ Phận";
             this.Load += new System.EventHandler(this.frmBoPhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

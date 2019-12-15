@@ -152,5 +152,10 @@ namespace DoAnCK_TTA.GUI
             Form khohang = new frmThongTinKhoHang();
             khohang.ShowDialog();
         }
+
+        private void frmBanHang_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

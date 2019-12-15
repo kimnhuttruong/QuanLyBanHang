@@ -33,29 +33,29 @@
             this.btnSaoLuu = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.wizardPage1 = new DevExpress.XtraWizard.WizardPage();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.completionWizardPage1 = new DevExpress.XtraWizard.CompletionWizardPage();
-            this.cbThoiDiemKetChuyen = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cbDauKySau = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPhieuNhap = new DevExpress.XtraEditors.TextEdit();
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.cbDonGia = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtPhieuNhap = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.cbDauKySau = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cbThoiDiemKetChuyen = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.cbDonGia = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbKhoNhap = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.completionWizardPage1 = new DevExpress.XtraWizard.CompletionWizardPage();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.welcomeWizardPage1.SuspendLayout();
             this.wizardPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhieuNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDauKySau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDauKySau.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhieuNhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhoNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
@@ -76,6 +76,7 @@
             this.completionWizardPage1});
             this.wizardControl1.PreviousText = "Quay Lại";
             this.wizardControl1.Size = new System.Drawing.Size(677, 432);
+            this.wizardControl1.Tag = "bbiLock";
             this.wizardControl1.Text = "Thiết Lập Tùy Chọn";
             this.wizardControl1.Click += new System.EventHandler(this.wizardControl1_Click);
             // 
@@ -132,20 +133,70 @@
             this.wizardPage1.Text = "Thiết Lập Tùy Chọn";
             this.wizardPage1.Click += new System.EventHandler(this.wizardPage1_Click);
             // 
-            // labelControl2
+            // listBoxControl1
             // 
-            this.labelControl2.Location = new System.Drawing.Point(24, 29);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(110, 13);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Thời điểm kết chuyển";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            this.listBoxControl1.Location = new System.Drawing.Point(24, 74);
+            this.listBoxControl1.Name = "listBoxControl1";
+            this.listBoxControl1.Size = new System.Drawing.Size(312, 116);
+            this.listBoxControl1.TabIndex = 3;
+            this.listBoxControl1.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
             // 
-            // completionWizardPage1
+            // txtPhieuNhap
             // 
-            this.completionWizardPage1.Name = "completionWizardPage1";
-            this.completionWizardPage1.Size = new System.Drawing.Size(460, 299);
-            this.completionWizardPage1.Click += new System.EventHandler(this.completionWizardPage1_Click);
+            this.txtPhieuNhap.Location = new System.Drawing.Point(352, 49);
+            this.txtPhieuNhap.Name = "txtPhieuNhap";
+            this.txtPhieuNhap.Size = new System.Drawing.Size(148, 20);
+            this.txtPhieuNhap.TabIndex = 2;
+            this.txtPhieuNhap.EditValueChanged += new System.EventHandler(this.txtPhieuNhap_EditValueChanged);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(352, 29);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(94, 13);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Phiếu nhập kì đầu";
+            this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(352, 151);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(50, 13);
+            this.labelControl6.TabIndex = 0;
+            this.labelControl6.Text = "Kho nhập";
+            this.labelControl6.Click += new System.EventHandler(this.labelControl6_Click);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(352, 90);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(108, 13);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "Đơn giá nhập đầu kỳ";
+            this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
+            // 
+            // cbDauKySau
+            // 
+            this.cbDauKySau.EditValue = null;
+            this.cbDauKySau.Location = new System.Drawing.Point(188, 48);
+            this.cbDauKySau.Name = "cbDauKySau";
+            this.cbDauKySau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbDauKySau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbDauKySau.Size = new System.Drawing.Size(148, 20);
+            this.cbDauKySau.TabIndex = 1;
+            this.cbDauKySau.EditValueChanged += new System.EventHandler(this.cbDauKySau_EditValueChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(188, 29);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(107, 13);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "Nhập vào đầu kỳ sau";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // cbThoiDiemKetChuyen
             // 
@@ -161,61 +212,14 @@
             this.cbThoiDiemKetChuyen.TabIndex = 1;
             this.cbThoiDiemKetChuyen.EditValueChanged += new System.EventHandler(this.cbThoiDiemKetChuyen_EditValueChanged);
             // 
-            // labelControl3
+            // labelControl2
             // 
-            this.labelControl3.Location = new System.Drawing.Point(188, 29);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(107, 13);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Nhập vào đầu kỳ sau";
-            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
-            // 
-            // cbDauKySau
-            // 
-            this.cbDauKySau.EditValue = null;
-            this.cbDauKySau.Location = new System.Drawing.Point(188, 48);
-            this.cbDauKySau.Name = "cbDauKySau";
-            this.cbDauKySau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbDauKySau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbDauKySau.Size = new System.Drawing.Size(148, 20);
-            this.cbDauKySau.TabIndex = 1;
-            this.cbDauKySau.EditValueChanged += new System.EventHandler(this.cbDauKySau_EditValueChanged);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(352, 29);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(94, 13);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Phiếu nhập kì đầu";
-            this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
-            // 
-            // txtPhieuNhap
-            // 
-            this.txtPhieuNhap.Location = new System.Drawing.Point(352, 49);
-            this.txtPhieuNhap.Name = "txtPhieuNhap";
-            this.txtPhieuNhap.Size = new System.Drawing.Size(148, 20);
-            this.txtPhieuNhap.TabIndex = 2;
-            this.txtPhieuNhap.EditValueChanged += new System.EventHandler(this.txtPhieuNhap_EditValueChanged);
-            // 
-            // listBoxControl1
-            // 
-            this.listBoxControl1.Location = new System.Drawing.Point(24, 74);
-            this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(312, 116);
-            this.listBoxControl1.TabIndex = 3;
-            this.listBoxControl1.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(352, 90);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(108, 13);
-            this.labelControl5.TabIndex = 0;
-            this.labelControl5.Text = "Đơn giá nhập đầu kỳ";
-            this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
+            this.labelControl2.Location = new System.Drawing.Point(24, 29);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(110, 13);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Thời điểm kết chuyển";
+            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // cbDonGia
             // 
@@ -230,15 +234,6 @@
             this.cbDonGia.Size = new System.Drawing.Size(148, 20);
             this.cbDonGia.TabIndex = 1;
             this.cbDonGia.SelectedIndexChanged += new System.EventHandler(this.cbDonGia_SelectedIndexChanged);
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(352, 151);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(50, 13);
-            this.labelControl6.TabIndex = 0;
-            this.labelControl6.Text = "Kho nhập";
-            this.labelControl6.Click += new System.EventHandler(this.labelControl6_Click);
             // 
             // cbKhoNhap
             // 
@@ -264,6 +259,12 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // completionWizardPage1
+            // 
+            this.completionWizardPage1.Name = "completionWizardPage1";
+            this.completionWizardPage1.Size = new System.Drawing.Size(460, 299);
+            this.completionWizardPage1.Click += new System.EventHandler(this.completionWizardPage1_Click);
+            // 
             // frmKetChuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,12 +283,12 @@
             this.welcomeWizardPage1.PerformLayout();
             this.wizardPage1.ResumeLayout(false);
             this.wizardPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhieuNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDauKySau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDauKySau.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhieuNhap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbThoiDiemKetChuyen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDonGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhoNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();

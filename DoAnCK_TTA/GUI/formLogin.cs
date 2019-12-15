@@ -45,7 +45,8 @@ namespace DoAnCK_TTA
             {
                 var mainWindow = new formMain();
                 mainWindow.Show();
-               
+                BUS_SYS_USER bus1 = new BUS_SYS_USER();
+                bus1.CapNhatNhom(cbUsername.Text);
             }
             else
                 MessageBox.Show("Username hoặc Password không đúng");

@@ -277,6 +277,7 @@
             this.btnThemVaiTro.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThemVaiTro.ImageOptions.SvgImage")));
             this.btnThemVaiTro.Name = "btnThemVaiTro";
             this.btnThemVaiTro.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThemVaiTro.Tag = "bbiUserRule";
             this.btnThemVaiTro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemVaiTro_ItemClick);
             // 
             // btnThemNguoiDung
@@ -286,6 +287,7 @@
             this.btnThemNguoiDung.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThemNguoiDung.ImageOptions.SvgImage")));
             this.btnThemNguoiDung.Name = "btnThemNguoiDung";
             this.btnThemNguoiDung.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThemNguoiDung.Tag = "bbiUser";
             this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick);
             // 
             // btnSua
@@ -296,6 +298,7 @@
             this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
             this.btnSua.Name = "btnSua";
             this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -722,6 +725,7 @@
             this.Name = "frmPhanQuyen";
             this.ShowText = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Tag = "bbiPermission";
             this.ToolbarFormControl = this.toolbarFormControl1;
             this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();

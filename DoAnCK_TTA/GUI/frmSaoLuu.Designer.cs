@@ -111,7 +111,7 @@
             // 
             // btnBrown
             // 
-            this.btnBrown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBrown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBrown.ImageOptions.Image")));
             this.btnBrown.Location = new System.Drawing.Point(388, 95);
             this.btnBrown.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
             this.btnBrown.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -166,6 +166,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSaoLuu";
+            this.Tag = "bbiBackup";
             this.Text = "Sao Lưu Dữ Liệu";
             this.Load += new System.EventHandler(this.frmSaoLuu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proTienTrinh.Properties)).EndInit();

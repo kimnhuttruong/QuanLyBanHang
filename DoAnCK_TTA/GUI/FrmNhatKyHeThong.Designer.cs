@@ -374,6 +374,7 @@
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.toolbarFormControl1);
             this.Name = "FrmNhatKyHeThong";
+            this.Tag = "bbiSysLog";
             this.Text = "Nhật Ký Hệ Thống";
             this.ToolbarFormControl = this.toolbarFormControl1;
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();

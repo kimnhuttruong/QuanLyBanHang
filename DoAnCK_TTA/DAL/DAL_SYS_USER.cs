@@ -78,12 +78,33 @@ namespace DoAnCK_TTA.DAL
                 active = 1;
             else
                 active = 0;
-
+            string ma= DateTime.Now.ToString().Replace(" ", "").Replace("/", "").Replace(":", "").Replace("AM", "").Replace("PM", "");
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT [dbo].[SYS_USER] VALUES ('" + u.UserID + "', N'" + u.UserName + "', N'"+u.Password+"', N'" +u.Group_ID+"',N'',N'',"+ active + ",'"+u.Employee_ID+"')";
+            cmd.CommandText = "INSERT [dbo].[SYS_USER] VALUES ('" + ma + "', N'" + u.UserName + "', N'"+u.Password+"', N'" +u.Group_ID+"',N'',N'',"+ active + ",'"+u.Employee_ID+"')";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+        public int CapNhatNhom(string u)
+        {
+           
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "  declare @nhom nvarchar(30) select @nhom = u.Group_ID from SYS_USER u where u.UserName = N'"+u+"'  update FOrm set Description = @nhom";
             try
             {
                 OpenConnection();

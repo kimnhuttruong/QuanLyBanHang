@@ -145,7 +145,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tên Đơn Vị";
             // 
@@ -163,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Điện Thoại";
             // 
@@ -208,7 +208,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(12, 210);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
+            this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 4;
             this.label9.Text = "Mã Số Thuế";
             // 
@@ -252,7 +252,7 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // frmThongTin1
+            // frmThongTinCongTy
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.Appearance.Options.UseBackColor = true;
@@ -286,8 +286,9 @@
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmThongTin1";
+            this.Name = "frmThongTinCongTy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "bbiCompanyInfo";
             this.Text = "Thông Tin";
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDonVi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();

@@ -18,9 +18,37 @@ namespace DoAnCK_TTA.GUI
         public frmThemVaiTro()
         {
             InitializeComponent();
+            Sender = new SendMessage(GetMessage);
         }
-        
+        string coma = "";
+        private void GetMessage(string ma)
+        {
+            coma = ma;
+            if (ma.Length > 0)
+            {
+                BUS_SYS_USER_RULE bUS_ = new BUS_SYS_USER_RULE();
+                treeVaiTro.DataSource = bUS_.LayDanhSachPhanQuyen(ma);
+                treeVaiTro.KeyFieldName = "Object_ID";
+                treeVaiTro.ParentFieldName = "Parent_ID";
 
+                BUS_GROUP bus = new BUS_GROUP();
+                DataTable dt2 = new DataTable();
+                dt2=bus.LayThongTinGroup();
+                for (int i = 0; i < dt2.Rows.Count; i++)
+                {
+                    if (ma == dt2.Rows[i]["Group_ID"].ToString())
+                    {
+                       txtMa.Text = dt2.Rows[i]["Group_ID"].ToString();
+                       txtTen.Text = dt2.Rows[i]["Group_Name"].ToString();
+                       txtDienGiai.Text = dt2.Rows[i]["Description"].ToString();
+                       check.Checked =bool.Parse( dt2.Rows[i]["Active"].ToString());
+                    }
+                }
+
+            }
+        }
+        public delegate void SendMessage(string ma);
+        public SendMessage Sender;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -29,12 +57,12 @@ namespace DoAnCK_TTA.GUI
         private void frmThemVaiTro_Load(object sender, EventArgs e)
         {
             BUS_SYS_USER_RULE bUS_ = new BUS_SYS_USER_RULE();
-            DataTable dt=
-            bUS_.LayDanhSachPhanQuyen("admin");
-            treeVaiTro.DataSource = dt;
-            treeVaiTro.KeyFieldName = "Object_ID";
-            treeVaiTro.ParentFieldName = "Parent_ID";
-
+            if (coma.Length == 0)
+            {
+                treeVaiTro.DataSource = bUS_.LayDanhSachPhanQuyen("admin");
+                treeVaiTro.KeyFieldName = "Object_ID";
+                treeVaiTro.ParentFieldName = "Parent_ID";
+            }
 
         }
         
@@ -145,7 +173,7 @@ namespace DoAnCK_TTA.GUI
                     bus1.Object_ID = treeVaiTro.Nodes[i].GetValue("Object_ID").ToString();
                     bus1.Rule_ID = treeVaiTro.Nodes[i].GetValue("Rule_ID").ToString();
 
-                    MessageBox.Show(i.ToString());
+                 
                     BUS_SYS_USER_RULE bUS_ = new BUS_SYS_USER_RULE();
                     int b = bUS_.ThemDanhSachPhanQuyen(bus1);
                     if (b == 0)
@@ -214,7 +242,6 @@ namespace DoAnCK_TTA.GUI
                         bus2.Object_ID = treeVaiTro.Nodes[i].Nodes[j].GetValue("Object_ID").ToString();
                         bus2.Rule_ID = treeVaiTro.Nodes[i].Nodes[j].GetValue("Rule_ID").ToString();
 
-                        MessageBox.Show(i.ToString());
                         BUS_SYS_USER_RULE bUS_1 = new BUS_SYS_USER_RULE();
                         b = bUS_1.ThemDanhSachPhanQuyen(bus2);
                         if (b == 0)
@@ -283,7 +310,6 @@ namespace DoAnCK_TTA.GUI
                             bus3.Object_ID = treeVaiTro.Nodes[i].Nodes[j].Nodes[z].GetValue("Object_ID").ToString();
                             bus3.Rule_ID = treeVaiTro.Nodes[i].Nodes[j].Nodes[z].GetValue("Rule_ID").ToString();
 
-                            MessageBox.Show(i.ToString());
                             BUS_SYS_USER_RULE bUS_2 = new BUS_SYS_USER_RULE();
                             b = bUS_2.ThemDanhSachPhanQuyen(bus3);
                             if (b == 0)
@@ -352,7 +378,6 @@ namespace DoAnCK_TTA.GUI
                                 bus4.Object_ID = treeVaiTro.Nodes[i].Nodes[j].Nodes[z].Nodes[k].GetValue("Object_ID").ToString();
                                 bus4.Rule_ID = treeVaiTro.Nodes[i].Nodes[j].Nodes[z].Nodes[k].GetValue("Rule_ID").ToString();
 
-                                MessageBox.Show(i.ToString());
                                 BUS_SYS_USER_RULE bUS_3 = new BUS_SYS_USER_RULE();
                                 b = bUS_3.ThemDanhSachPhanQuyen(bus4);
                                 if (b == 0)

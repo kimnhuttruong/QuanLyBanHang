@@ -145,6 +145,7 @@ namespace DoAnCK_TTA.GUI
                     dTO_STOCK_TRANSFER_DETAIL.RefType = txtChuyenTay.Text;
                     dTO_STOCK_TRANSFER_DETAIL.QtyConvert = lookNgay.Text.ToString();
 
+
                     BUS_STOCK_TRANSFER_DETAIL TRANSFERdetal = new BUS_STOCK_TRANSFER_DETAIL();
                     int c = TRANSFERdetal.ThemPhieuXuatHang(dTO_STOCK_TRANSFER_DETAIL);
                 }

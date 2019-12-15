@@ -305,6 +305,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemVaiTro.IconOptions.LargeImage")));
             this.Name = "frmThemVaiTro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "bbiUserRule";
             this.Text = "Thông Tin  Vai Trò";
             this.Load += new System.EventHandler(this.frmThemVaiTro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

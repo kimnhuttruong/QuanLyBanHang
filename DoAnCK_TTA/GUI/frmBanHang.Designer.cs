@@ -206,6 +206,8 @@
             this.ClientSize = new System.Drawing.Size(790, 596);
             this.Controls.Add(this.dockPanel);
             this.Name = "frmBanHang";
+            this.Tag = "bbiSale";
+            this.Load += new System.EventHandler(this.frmBanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

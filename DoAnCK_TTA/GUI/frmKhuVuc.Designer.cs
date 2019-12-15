@@ -355,6 +355,7 @@
             this.Controls.Add(this.toolbarFormControl1);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmKhuVuc";
+            this.Tag = "bbiCustomerGroup";
             this.Text = "Khu Vực";
             this.ToolbarFormControl = this.toolbarFormControl1;
             this.Load += new System.EventHandler(this.frmKhuVuc_Load);

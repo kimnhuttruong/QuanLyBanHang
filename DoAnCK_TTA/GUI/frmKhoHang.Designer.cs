@@ -285,6 +285,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmKhoHang";
+            this.Tag = "bbiStock";
             this.Text = "Kho Hàng";
             this.Load += new System.EventHandler(this.frmKhoHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

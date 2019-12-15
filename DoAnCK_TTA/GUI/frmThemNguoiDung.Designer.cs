@@ -91,6 +91,7 @@
             this.groupControl1.Size = new System.Drawing.Size(328, 240);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin bắt buộc";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // btnAdd
             // 
@@ -312,6 +313,7 @@
             this.MinimizeBox = false;
             this.Name = "frmThemNguoiDung";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "bbiUser";
             this.Text = "Thông Tin Người Dùng";
             this.Load += new System.EventHandler(this.frmThemNguoiDung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
