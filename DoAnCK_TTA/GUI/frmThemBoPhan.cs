@@ -56,6 +56,17 @@ namespace DoAnCK_TTA.GUI
                 int kt = bus.CapNhatBoPhan(c);
 
             }
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Lưu";
+            busLog.ThemLichSu(log);
+
             this.Close();
         }
 
@@ -66,6 +77,16 @@ namespace DoAnCK_TTA.GUI
 
         private void frmThemBoPhan_Load(object sender, EventArgs e)
         {
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
 
         }
     }

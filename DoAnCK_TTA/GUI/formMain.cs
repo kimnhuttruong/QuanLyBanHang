@@ -578,5 +578,22 @@ namespace DoAnCK_TTA.GUI
         {
            
         }
+
+        private void btnNhatKyHeThong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = IsActive(typeof(FrmNhatKyHeThong));//kiểm tra có show hay không
+
+            if (form == null)
+            {
+                FrmNhatKyHeThong f = new FrmNhatKyHeThong();
+                f.MdiParent = this;
+                f.Text = "Nhật Ký Hệ Thống";
+                f.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
     }
 }

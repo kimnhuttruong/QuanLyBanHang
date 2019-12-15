@@ -74,6 +74,18 @@ namespace DoAnCK_TTA.GUI
                 lookNhanVien.Properties.DataSource = dt1;
                 lookNhanVien.Properties.ValueMember = "Employee_ID";
                 lookNhanVien.Properties.DisplayMember = "Employee_Name";
+
+                BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+                DTO_SYS_LOG log = new DTO_SYS_LOG();
+                BUS_SYS_USER busform = new BUS_SYS_USER();
+                DataTable dtlog = new DataTable();
+                dtlog = busform.LayThongTinUSER();
+                log.MChine = dtlog.Rows[0][1].ToString();
+                log.UserID = dtlog.Rows[0][2].ToString();
+                log.Module = this.Tag.ToString();
+                log.Action_Name = "Xem";
+                busLog.ThemLichSu(log);
+
             }
         }
         public delegate void SendMessage(string ma,string phieu);
@@ -90,6 +102,16 @@ namespace DoAnCK_TTA.GUI
 
         private void frmPhieuThu_Load(object sender, EventArgs e)
         {
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
 
         }
 
@@ -146,6 +168,18 @@ namespace DoAnCK_TTA.GUI
                 BUS_PROVIDER_PAYMENT bus = new BUS_PROVIDER_PAYMENT();
                 int a = bus.ThemHoaDon(tt);
                 this.Close();
+
+                BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+                DTO_SYS_LOG log = new DTO_SYS_LOG();
+                BUS_SYS_USER busform = new BUS_SYS_USER();
+                DataTable dtlog = new DataTable();
+                dtlog = busform.LayThongTinUSER();
+                log.MChine = dtlog.Rows[0][1].ToString();
+                log.UserID = dtlog.Rows[0][2].ToString();
+                log.Module = this.Tag.ToString();
+                log.Action_Name = "Lưu";
+                busLog.ThemLichSu(log);
+
             }
         }
 

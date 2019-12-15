@@ -72,6 +72,10 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -84,10 +88,6 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -492,6 +492,34 @@
             // 
             this.gridColumn10.Name = "gridColumn10";
             // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Nợ";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 6;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Thu";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 7;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Còn Lại";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 8;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "Khách Hàng";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 9;
+            // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl2);
@@ -587,34 +615,6 @@
             // 
             this.gridColumn18.Name = "gridColumn18";
             // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "Nợ";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 6;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "Thu";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 7;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "Còn Lại";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 8;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "Khách Hàng";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 9;
-            // 
             // gridColumn23
             // 
             this.gridColumn23.Caption = "CK %";
@@ -672,6 +672,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmTheoDoiCongNo";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Load += new System.EventHandler(this.frmTheoDoiCongNo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();

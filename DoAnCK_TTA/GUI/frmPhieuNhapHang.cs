@@ -236,6 +236,17 @@ namespace DoAnCK_TTA.GUI
             }
             if (coma.Length==0)
                   load();
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void barStaticItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -527,6 +538,18 @@ namespace DoAnCK_TTA.GUI
                     int a = bus.ThemPhieuNhapHang(_DETAIL);
                    
                     int c = inwarddetal.ThemPhieuNhapHang(dTO_STOCK_INWARD_DETAIL);
+
+                    BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+                    DTO_SYS_LOG log = new DTO_SYS_LOG();
+                    BUS_SYS_USER busform = new BUS_SYS_USER();
+                    DataTable dtlog = new DataTable();
+                    dtlog = busform.LayThongTinUSER();
+                    log.MChine = dtlog.Rows[0][1].ToString();
+                    log.UserID = dtlog.Rows[0][2].ToString();
+                    log.Module = this.Tag.ToString();
+                    log.Action_Name = "Lưu";
+                    busLog.ThemLichSu(log);
+
                 }
             }
             DataTable dt = new DataTable();
@@ -617,6 +640,18 @@ namespace DoAnCK_TTA.GUI
                     int a = bus.ThemPhieuNhapHang(_DETAIL);
                    
                     int c = inwarddetal.ThemPhieuNhapHang(dTO_STOCK_INWARD_DETAIL);
+
+                    BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+                    DTO_SYS_LOG log = new DTO_SYS_LOG();
+                    BUS_SYS_USER busform = new BUS_SYS_USER();
+                    DataTable dtlog = new DataTable();
+                    dtlog = busform.LayThongTinUSER();
+                    log.MChine = dtlog.Rows[0][1].ToString();
+                    log.UserID = dtlog.Rows[0][2].ToString();
+                    log.Module = this.Tag.ToString();
+                    log.Action_Name = "Lưu";
+                    busLog.ThemLichSu(log);
+
 
                 }
             }

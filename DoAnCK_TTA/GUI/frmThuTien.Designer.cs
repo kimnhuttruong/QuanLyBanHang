@@ -189,6 +189,7 @@
             this.Controls.Add(this.dockPanel);
             this.Name = "frmThuTien";
             this.Tag = "bbiReciept";
+            this.Load += new System.EventHandler(this.frmThuTien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

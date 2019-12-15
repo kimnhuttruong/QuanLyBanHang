@@ -188,6 +188,7 @@
             this.Controls.Add(this.dockPanel);
             this.Name = "frmTraTien";
             this.Tag = "bbiPayment";
+            this.Load += new System.EventHandler(this.frmTraTien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

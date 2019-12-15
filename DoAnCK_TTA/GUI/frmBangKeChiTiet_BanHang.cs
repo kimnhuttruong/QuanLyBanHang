@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
+using DoAnCK_TTA.DTO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -25,6 +26,18 @@ namespace DoAnCK_TTA.GUI
             _dt = bus1.LayThongTinBangKe();
 
             gridChiTiet.DataSource = _dt;
+            
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
         private void btnTaoMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -33,6 +46,17 @@ namespace DoAnCK_TTA.GUI
             //     banhang.Sender(c,d,_dt);    //Gọi
 
             banhang.Show();
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Tạo Mới";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -60,6 +84,18 @@ namespace DoAnCK_TTA.GUI
             };
             window1.Controls.Add(phieumuahang);
             window1.ShowDialog();
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Sửa";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -82,6 +118,18 @@ namespace DoAnCK_TTA.GUI
             BUS_STOCK_OUTWARD_DETAIL bus = new BUS_STOCK_OUTWARD_DETAIL();
             bus.XoaPhieuXuatHang(ma, mahang, Quantity);
             load();
+            
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xóa";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

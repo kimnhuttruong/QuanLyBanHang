@@ -1,4 +1,5 @@
 ﻿using DoAnCK_TTA.BUS;
+using DoAnCK_TTA.DTO;
 using DoAnCK_TTA.GUI;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,18 @@ namespace DoAnCK_TTA
             }
             else
                 MessageBox.Show("Username hoặc Password không đúng");
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Đăng Nhập";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnKetThuc_Click(object sender, EventArgs e)

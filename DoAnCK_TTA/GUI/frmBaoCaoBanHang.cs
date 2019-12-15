@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
+using DoAnCK_TTA.BUS;
+using DoAnCK_TTA.DTO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -83,6 +85,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Chi Phí Mua Hàng Theo Ngày";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnChiPhiMuaHangTheoNCC_Click(object sender, EventArgs e)
@@ -93,6 +107,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Chi Phí Mua Hàng Theo Nhà Cung Cấp";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnDoanhSoBanHangTheoNgay_Click(object sender, EventArgs e)
@@ -104,6 +130,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Doanh Số Theo Ngày";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnDoanhSoBanHangTheoKH_Click(object sender, EventArgs e)
@@ -115,6 +153,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Doanh Số Theo Khách Hàng";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnDoanhSoBanHangTheoNV_Click(object sender, EventArgs e)
@@ -125,6 +175,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Doanh Số Theo Nhân Viên";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnLoiNhuanTheoChungTu_Click(object sender, EventArgs e)
@@ -135,6 +197,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Lợi Nhuận Theo Chứng Từ";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnLoiNhuanTheoHangHoa_Click(object sender, EventArgs e)
@@ -145,6 +219,18 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Lợi Nhuận Theo Chứng Từ";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Truy cập";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnDoanhSoBanHangTheoHH_Click(object sender, EventArgs e)
@@ -155,6 +241,33 @@ namespace DoAnCK_TTA.GUI
             f.Text = "Báo Cáo Doanh Số Bán Hàng Theo Hàng Hóa";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
+            
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "truy cập";
+            busLog.ThemLichSu(log);
+
+        }
+
+        private void frmBaoCaoBanHang_Load(object sender, EventArgs e)
+        {
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
     }
 }

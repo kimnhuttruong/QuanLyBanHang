@@ -290,6 +290,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiCompanyInfo";
             this.Text = "Thông Tin";
+            this.Load += new System.EventHandler(this.frmThongTinCongTy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDonVi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienThoai.Properties)).EndInit();

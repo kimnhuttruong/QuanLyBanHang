@@ -424,6 +424,7 @@
             this.btnNhatKyHeThong.LargeWidth = 60;
             this.btnNhatKyHeThong.Name = "btnNhatKyHeThong";
             this.btnNhatKyHeThong.Tag = "bbiSysLog";
+            this.btnNhatKyHeThong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhatKyHeThong_ItemClick);
             // 
             // btnSaoLuu
             // 
@@ -1378,6 +1379,7 @@
             this.Name = "formMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.t;
+            this.Tag = "fmain";
             this.Text = "Phần Mềm Quản lý Bán Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formMain_Load);

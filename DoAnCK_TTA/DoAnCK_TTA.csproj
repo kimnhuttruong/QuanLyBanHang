@@ -119,6 +119,7 @@
     <Compile Include="BUS\BUS_STOCK_OUTWARD_DETAIL.cs" />
     <Compile Include="BUS\BUS_STOCK_TRANSFER.cs" />
     <Compile Include="BUS\BUS_STOCK_TRANSFER_DETAIL.cs" />
+    <Compile Include="BUS\BUS_SYS_LOG.cs" />
     <Compile Include="BUS\BUS_SYS_USER.cs" />
     <Compile Include="BUS\BUS_SYS_USER_RULE.cs" />
     <Compile Include="BUS\BUS_UNIT.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="DAL\DAL_STOCK_OUTWARD_DETAIL.cs" />
     <Compile Include="DAL\DAL_STOCK_TRANSFER.cs" />
     <Compile Include="DAL\DAL_STOCK_TRANSFER_DETAIL.cs" />
+    <Compile Include="DAL\DAL_SYS_LOG.cs" />
     <Compile Include="DAL\DAL_SYS_USER.cs" />
     <Compile Include="DAL\DAL_SYS_USER_RULE.cs" />
     <Compile Include="DAL\DAL_UNIT.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="DTO\DTO_STOCK_OUTWARD_DETAIL.cs" />
     <Compile Include="DTO\DTO_STOCK_TRANSFER.cs" />
     <Compile Include="DTO\DTO_STOCK_TRANSFER_DETAIL.cs" />
+    <Compile Include="DTO\DTO_SYS_LOG.cs" />
     <Compile Include="DTO\DTO_SYS_USER.cs" />
     <Compile Include="DTO\DTO_SYS_USER_RULE.cs" />
     <Compile Include="DTO\DTO_UNIT.cs" />

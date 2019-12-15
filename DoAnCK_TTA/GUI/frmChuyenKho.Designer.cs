@@ -207,6 +207,7 @@
             this.Controls.Add(this.dockPanel);
             this.Name = "frmChuyenKho";
             this.Tag = "bbiTransfer";
+            this.Load += new System.EventHandler(this.frmChuyenKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

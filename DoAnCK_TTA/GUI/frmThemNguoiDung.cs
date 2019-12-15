@@ -45,6 +45,18 @@ namespace DoAnCK_TTA.GUI
             cbVaiTro.Properties.DataSource = dt1;
             cbVaiTro.Properties.DisplayMember = "Group_Name";
             cbVaiTro.Properties.ValueMember = "Group_ID";
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -76,6 +88,18 @@ namespace DoAnCK_TTA.GUI
             {
                 MessageBox.Show("Thêm thành công");
             }
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Lưu";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnDong_Click(object sender, EventArgs e)

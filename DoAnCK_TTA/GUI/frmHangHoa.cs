@@ -195,7 +195,20 @@ namespace DoAnCK_TTA.GUI
                         MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+
             }
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xuất";
+            busLog.ThemLichSu(log);
+
         }
 
         private void btnNhap_ItemClick(object sender, ItemClickEventArgs e)
@@ -243,6 +256,17 @@ namespace DoAnCK_TTA.GUI
                 }
             }
             formLoad();
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xem";
+            busLog.ThemLichSu(log);
+
         }
 
         private void treeHangHoa_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)

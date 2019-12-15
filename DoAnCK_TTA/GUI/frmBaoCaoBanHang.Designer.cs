@@ -227,6 +227,7 @@
             this.Controls.Add(this.dockPanel);
             this.Name = "frmBaoCaoBanHang";
             this.Tag = "bbiReportSale";
+            this.Load += new System.EventHandler(this.frmBaoCaoBanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

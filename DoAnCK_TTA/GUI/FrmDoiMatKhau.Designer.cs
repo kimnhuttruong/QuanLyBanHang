@@ -155,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiChangepassword";
             this.Text = "    Đổi Mật Khẩu";
+            this.Load += new System.EventHandler(this.FrmDoiMatKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauCu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauMoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhapLai.Properties)).EndInit();
