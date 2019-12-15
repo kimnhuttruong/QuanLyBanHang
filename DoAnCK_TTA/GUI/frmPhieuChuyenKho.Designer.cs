@@ -33,12 +33,12 @@
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
+            this.btnTaoMoi = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.btnSaveAdd = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem11 = new DevExpress.XtraBars.BarStaticItem();
+            this.btnIn = new DevExpress.XtraBars.BarStaticItem();
+            this.btnNapLai = new DevExpress.XtraBars.BarStaticItem();
+            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -142,14 +142,14 @@
             this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barHeaderItem3,
             this.barHeaderItem4,
-            this.barStaticItem8,
+            this.btnTaoMoi,
             this.barButtonItem5,
             this.barStaticItem12,
             this.barButtonItem6,
             this.barStaticItem13,
-            this.barStaticItem9,
-            this.barStaticItem10,
-            this.barStaticItem11,
+            this.btnIn,
+            this.btnNapLai,
+            this.btnDong,
             this.barToolbarsListItem3,
             this.barSubItem2,
             this.barToolbarsListItem4,
@@ -164,21 +164,21 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTaoMoi),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem10),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem11)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
             this.bar2.Text = "Tools";
             // 
-            // barStaticItem8
+            // btnTaoMoi
             // 
-            this.barStaticItem8.Caption = "Tạo Mới";
-            this.barStaticItem8.Id = 2;
-            this.barStaticItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
-            this.barStaticItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
-            this.barStaticItem8.Name = "barStaticItem8";
-            this.barStaticItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnTaoMoi.Caption = "Tạo Mới";
+            this.btnTaoMoi.Id = 2;
+            this.btnTaoMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
+            this.btnTaoMoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barSubItem2
             // 
@@ -195,36 +195,36 @@
             // 
             this.btnSaveAdd.Caption = "Lưu && Thêm";
             this.btnSaveAdd.Id = 14;
-            this.btnSaveAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnSaveAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveAdd.ImageOptions.Image")));
             this.btnSaveAdd.Name = "btnSaveAdd";
             this.btnSaveAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaveAdd_ItemClick);
             // 
-            // barStaticItem9
+            // btnIn
             // 
-            this.barStaticItem9.Caption = "In";
-            this.barStaticItem9.Id = 7;
-            this.barStaticItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem9.ImageOptions.Image")));
-            this.barStaticItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem9.ImageOptions.LargeImage")));
-            this.barStaticItem9.Name = "barStaticItem9";
-            this.barStaticItem9.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnIn.Caption = "In";
+            this.btnIn.Id = 7;
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem9.ImageOptions.Image")));
+            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem9.ImageOptions.LargeImage")));
+            this.btnIn.Name = "btnIn";
+            this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barStaticItem10
+            // btnNapLai
             // 
-            this.barStaticItem10.Caption = "Nạp Lại";
-            this.barStaticItem10.Id = 8;
-            this.barStaticItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem10.ImageOptions.Image")));
-            this.barStaticItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem10.ImageOptions.LargeImage")));
-            this.barStaticItem10.Name = "barStaticItem10";
-            this.barStaticItem10.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnNapLai.Caption = "Nạp Lại";
+            this.btnNapLai.Id = 8;
+            this.btnNapLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem10.ImageOptions.Image")));
+            this.btnNapLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem10.ImageOptions.LargeImage")));
+            this.btnNapLai.Name = "btnNapLai";
+            this.btnNapLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barStaticItem11
+            // btnDong
             // 
-            this.barStaticItem11.Caption = "Đóng";
-            this.barStaticItem11.Id = 9;
-            this.barStaticItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem11.ImageOptions.Image")));
-            this.barStaticItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem11.ImageOptions.LargeImage")));
-            this.barStaticItem11.Name = "barStaticItem11";
-            this.barStaticItem11.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDong.Caption = "Đóng";
+            this.btnDong.Id = 9;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem11.ImageOptions.Image")));
+            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem11.ImageOptions.LargeImage")));
+            this.btnDong.Name = "btnDong";
+            this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barDockControl1
             // 
@@ -817,12 +817,12 @@
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraBars.BarManager barManager2;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem8;
+        private DevExpress.XtraBars.BarStaticItem btnTaoMoi;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
         private DevExpress.XtraBars.BarButtonItem btnSaveAdd;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem9;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem10;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem11;
+        private DevExpress.XtraBars.BarStaticItem btnIn;
+        private DevExpress.XtraBars.BarStaticItem btnNapLai;
+        private DevExpress.XtraBars.BarStaticItem btnDong;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;

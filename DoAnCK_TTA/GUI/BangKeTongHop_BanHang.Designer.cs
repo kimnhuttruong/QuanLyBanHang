@@ -495,6 +495,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "BangKeTongHop_BanHang";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Tag = "bbiReportSale";
             this.Load += new System.EventHandler(this.BangKeTongHop_BanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridBangKeTongHop)).EndInit();

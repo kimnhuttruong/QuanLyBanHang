@@ -71,6 +71,27 @@ namespace DoAnCK_TTA.DAL
                 return dt;
             }
         }
+        public DataTable LayThongTinUSER()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from FORM";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
         public int ThemNguoiDung(DTO_SYS_USER u)
         {
             int active;
@@ -104,7 +125,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "  declare @nhom nvarchar(30) select @nhom = u.Group_ID from SYS_USER u where u.UserName = N'"+u+"'  update FOrm set Description = @nhom";
+            cmd.CommandText = "  declare @nhom nvarchar(30) select @nhom = u.Group_ID from SYS_USER u where u.UserName = N'"+u+ "'  update FOrm set Description = @nhom    update FOrm set ENCaption = N'" + u + "'      update FOrm set Form_Caption = @@SERVERNAME  ";
             try
             {
                 OpenConnection();

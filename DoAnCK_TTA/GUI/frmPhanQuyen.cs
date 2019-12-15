@@ -51,6 +51,42 @@ namespace DoAnCK_TTA.GUI
 
         private void frmPhanQuyen_Load(object sender, EventArgs e)
         {
+            DataTable dt3 = new DataTable();
+            BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
+            dt3 = bus.LayDanhSachPhanQuyen();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                if (this.Tag != null)
+                {
+                    if (this.Tag.ToString() == dt3.Rows[i][0].ToString())
+                    {
+
+
+                        if (dt3.Rows[i]["AllowAdd"].ToString() == "False")
+                        {
+                            btnThemNguoiDung.Enabled = false;
+                            btnThemVaiTro.Enabled = false;
+                        }
+
+                        if (dt3.Rows[i]["AllowDelete"].ToString() == "False")
+                            btnXoa.Enabled = false;
+                        if (dt3.Rows[i]["AllowEdit"].ToString() == "False")
+                            btnSuaChua.Enabled = false;
+                        //if (dt.Rows[i]["AllowAccess"].ToString() == "False")
+                        //    btnXem.Enabled = false;
+                        //if (dt.Rows[i]["AllowPrint"].ToString() == "False")
+                        //    btnIn.Enabled = false;
+                        //if (dt.Rows[i]["AllowExport"].ToString() == "False")
+                        //    btnXuat.Enabled = false;
+                        //if (dt.Rows[i]["AllowImport"].ToString() == "False")
+                        //    btnNhap.Enabled = false;
+                    }
+
+                }
+            }
+
+
+
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             BUS_GROUP bUS_ = new BUS_GROUP();

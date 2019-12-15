@@ -46,7 +46,7 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThemVaiTro = new DevExpress.XtraBars.BarSubItem();
             this.btnThemNguoiDung = new DevExpress.XtraBars.BarSubItem();
-            this.btnSua = new DevExpress.XtraBars.BarSubItem();
+            this.btnSuaChua = new DevExpress.XtraBars.BarSubItem();
             this.btnXoa = new DevExpress.XtraBars.BarSubItem();
             this.btnDong = new DevExpress.XtraBars.BarSubItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -240,7 +240,7 @@
             this.barEditItem1,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.btnSua,
+            this.btnSuaChua,
             this.btnXoa,
             this.btnDong,
             this.barStaticItem1});
@@ -260,7 +260,7 @@
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThemVaiTro),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThemNguoiDung),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSuaChua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
             this.bar2.OptionsBar.DrawBorder = false;
@@ -290,15 +290,15 @@
             this.btnThemNguoiDung.Tag = "bbiUser";
             this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick);
             // 
-            // btnSua
+            // btnSuaChua
             // 
-            this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 5;
-            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
-            this.btnSua.Name = "btnSua";
-            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
+            this.btnSuaChua.Caption = "Sửa";
+            this.btnSuaChua.Id = 5;
+            this.btnSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
+            this.btnSuaChua.Name = "btnSuaChua";
+            this.btnSuaChua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -765,7 +765,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
-        private DevExpress.XtraBars.BarSubItem btnSua;
+        private DevExpress.XtraBars.BarSubItem btnSuaChua;
         private DevExpress.XtraBars.BarSubItem btnXoa;
         private DevExpress.XtraBars.BarSubItem btnDong;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;

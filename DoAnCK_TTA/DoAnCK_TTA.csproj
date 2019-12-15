@@ -148,6 +148,12 @@
     <Compile Include="DAL\DAL_SYS_USER_RULE.cs" />
     <Compile Include="DAL\DAL_UNIT.cs" />
     <Compile Include="DAL\DB_Connect.cs" />
+    <Compile Include="DAL\frmButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DAL\frmButtons.Designer.cs">
+      <DependentUpon>frmButtons.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\DTO_CASH_METHOD.cs" />
     <Compile Include="DTO\DTO_CASH_TERM.cs" />
     <Compile Include="DTO\DTO_CURRENCY.cs" />
@@ -178,6 +184,12 @@
     </Compile>
     <Compile Include="GUI\BangKeTongHop_BanHang.Designer.cs">
       <DependentUpon>BangKeTongHop_BanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Buttons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Buttons.Designer.cs">
+      <DependentUpon>Buttons.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmBaoCaoBanHang.cs">
       <SubType>Form</SubType>
@@ -256,6 +268,12 @@
     </Compile>
     <Compile Include="GUI\frmBaoCaoLoiNhuanTheoHangHoa.Designer.cs">
       <DependentUpon>frmBaoCaoLoiNhuanTheoHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmButton.Designer.cs">
+      <DependentUpon>frmButton.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmChungTu.cs">
       <SubType>Form</SubType>
@@ -620,8 +638,14 @@
     <Compile Include="GUI\XtraReport1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DAL\frmButtons.resx">
+      <DependentUpon>frmButtons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BangKeTongHop_BanHang.resx">
       <DependentUpon>BangKeTongHop_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Buttons.resx">
+      <DependentUpon>Buttons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBaoCaoBanHang.resx">
       <DependentUpon>frmBaoCaoBanHang.cs</DependentUpon>
@@ -661,6 +685,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBaoCaoLoiNhuanTheoHangHoa.resx">
       <DependentUpon>frmBaoCaoLoiNhuanTheoHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmButton.resx">
+      <DependentUpon>frmButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmChungTu.resx">
       <DependentUpon>frmChungTu.cs</DependentUpon>

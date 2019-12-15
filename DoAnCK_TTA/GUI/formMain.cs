@@ -21,9 +21,23 @@ namespace DoAnCK_TTA.GUI
         public Bitmap ApplicationIcon { get; set; }
         public formMain()
         {
+           
+            InitializeComponent();
+            Sender = new SendMessage(GetMessage);
+
+           
+
           
+        }
+        private void GetMessage(string ma)
+        {
             
-        InitializeComponent();
+            lbUser.Caption = ma;
+            BUS_SYS_USER bususer = new BUS_SYS_USER();
+            DataTable dtbususer = new DataTable();
+            dtbususer = bususer.LayThongTinUSER();
+            lbServer.Caption = dtbususer.Rows[0]["Form_Caption"].ToString();
+
             DataTable dt = new DataTable();
             BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
             dt = bus.LayDanhSachPhanQuyen();
@@ -82,10 +96,9 @@ namespace DoAnCK_TTA.GUI
             this.btnChungTu.Enabled = kiemtrachopheptruycap(btnChungTu.Tag.ToString());
 
 
-
         }
-
-
+        public delegate void SendMessage(string ma);
+        public SendMessage Sender;
         private void barEditItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Width = 30;
@@ -149,8 +162,12 @@ namespace DoAnCK_TTA.GUI
                 return true;
 
         }
+       
         private void formMain_Load(object sender, EventArgs e)
         {
+           
+
+
             DataTable dt = new DataTable();
             BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
             dt = bus.LayDanhSachPhanQuyen();
@@ -210,8 +227,8 @@ namespace DoAnCK_TTA.GUI
 
 
 
+           
 
-       
 
         }
 
@@ -223,6 +240,7 @@ namespace DoAnCK_TTA.GUI
         private void bntKetThuc_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void btnKhuVuc_ItemClick(object sender, ItemClickEventArgs e)
@@ -554,6 +572,11 @@ namespace DoAnCK_TTA.GUI
             {
                 form.Activate();
             }
+        }
+
+        private void formMain_MouseDown(object sender, MouseEventArgs e)
+        {
+           
         }
     }
 }

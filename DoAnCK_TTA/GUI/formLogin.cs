@@ -44,9 +44,14 @@ namespace DoAnCK_TTA
             if (isKiemTra == true)
             {
                 var mainWindow = new formMain();
-                mainWindow.Show();
+                mainWindow.Sender(cbUsername.Text);
                 BUS_SYS_USER bus1 = new BUS_SYS_USER();
                 bus1.CapNhatNhom(cbUsername.Text);
+              
+                mainWindow.Show();
+                mainWindow.FormClosed += new FormClosedEventHandler(delegate { Close(); });
+                this.Hide();
+
             }
             else
                 MessageBox.Show("Username hoặc Password không đúng");

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoPhan));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.btnBoPhan = new DevExpress.XtraBars.BarStaticItem();
+            this.btnThem = new DevExpress.XtraBars.BarStaticItem();
             this.btnSuaChua = new DevExpress.XtraBars.BarStaticItem();
             this.btnXoa = new DevExpress.XtraBars.BarStaticItem();
             this.btnNapLai = new DevExpress.XtraBars.BarStaticItem();
@@ -61,7 +61,7 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btnBoPhan,
+            this.btnThem,
             this.btnSuaChua,
             this.btnXoa,
             this.btnNapLai,
@@ -76,7 +76,7 @@
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBoPhan),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSuaChua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
@@ -84,15 +84,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
             this.bar1.Text = "Tools";
             // 
-            // btnBoPhan
+            // btnThem
             // 
-            this.btnBoPhan.Caption = "Thêm";
-            this.btnBoPhan.Id = 0;
-            this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
-            this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
-            this.btnBoPhan.Name = "btnBoPhan";
-            this.btnBoPhan.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
+            this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
             // 
             // btnSuaChua
             // 
@@ -251,7 +251,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarStaticItem btnBoPhan;
+        private DevExpress.XtraBars.BarStaticItem btnThem;
         private DevExpress.XtraBars.BarStaticItem btnSuaChua;
         private DevExpress.XtraBars.BarStaticItem btnXoa;
         private DevExpress.XtraBars.BarStaticItem btnNapLai;

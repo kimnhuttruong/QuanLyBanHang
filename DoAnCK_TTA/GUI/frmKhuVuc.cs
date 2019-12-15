@@ -13,7 +13,7 @@ using System.IO;
 
 namespace DoAnCK_TTA.GUI
 {
-    public partial class frmKhuVuc : DevExpress.XtraBars.ToolbarForm.ToolbarForm
+    public partial class frmKhuVuc : DevExpress.XtraBars.ToolbarForm.ToolbarForm 
     {
         public frmKhuVuc()
         {
@@ -29,19 +29,7 @@ namespace DoAnCK_TTA.GUI
         string _id = "";
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var mainWindow = new frmThongTinKhuVuc();
 
-
-            _id = _dt.Rows[_dt.Rows.Count - 1][0].ToString();
-
-            _id = _id.Remove(0, 2);
-
-            _id = (int.Parse(_id) + 1).ToString("000000");
-            _id = "KV" + _id.ToString();
-
-            mainWindow.Sender(_id,"","",true);    //Gọi delegate
-            mainWindow.ShowDialog();
-            formLoad();
         }
 
         private void gridKhuVuc_Click(object sender, EventArgs e)
@@ -51,6 +39,36 @@ namespace DoAnCK_TTA.GUI
         DataTable _dt = new DataTable();
         private void frmKhuVuc_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
+            dt = bus.LayDanhSachPhanQuyen();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (this.Tag != null)
+                {
+                    if (this.Tag.ToString() == dt.Rows[i][0].ToString())
+                    {
+
+
+                        if (dt.Rows[i]["AllowAdd"].ToString() == "False")
+                            btnThem.Enabled = false;
+                        if (dt.Rows[i]["AllowDelete"].ToString() == "False")
+                            btnXoa.Enabled = false;
+                        if (dt.Rows[i]["AllowEdit"].ToString() == "False")
+                            btnSuaChua.Enabled = false;
+                        //if (dt.Rows[i]["AllowAccess"].ToString() == "False")
+                        //    btnXem.Enabled = false;
+                        //if (dt.Rows[i]["AllowPrint"].ToString() == "False")
+                        //    btnIn.Enabled = false;
+                        if (dt.Rows[i]["AllowExport"].ToString() == "False")
+                            btnXuat.Enabled = false;
+                        //    if (dt.Rows[i]["AllowImport"].ToString() == "False")
+                        //        btnNhap.Enabled = false;
+                    }
+                    //     }
+                    //}
+                }
+            }
             formLoad();
         }
         string ten, mota;
@@ -58,24 +76,6 @@ namespace DoAnCK_TTA.GUI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (int i in gridView1.GetSelectedRows())
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                _id = row[0].ToString();
-               
-            }
-              BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
-            DialogResult dialogResult = MessageBox.Show( "Bạn có muốn xóa không?","Thông Báo", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                int a = bus.XoaKhuVuc(_id);
-                formLoad();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                ;
-            }
-           
 
         }
 
@@ -91,82 +91,12 @@ namespace DoAnCK_TTA.GUI
 
         private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            using (SaveFileDialog saveDialog = new SaveFileDialog())
-            {
-                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
-                if (saveDialog.ShowDialog() != DialogResult.Cancel)
-                {
-                    string exportFilePath = saveDialog.FileName;
-                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
 
-                    switch (fileExtenstion)
-                    {
-                        case ".xls":
-                            gridKhuVuc.ExportToXls(exportFilePath);
-                            break;
-                        case ".xlsx":
-                            gridKhuVuc.ExportToXlsx(exportFilePath);
-                            break;
-                        case ".rtf":
-                            gridKhuVuc.ExportToRtf(exportFilePath);
-                            break;
-                        case ".pdf":
-                            gridKhuVuc.ExportToPdf(exportFilePath);
-                            break;
-                        case ".html":
-                            gridKhuVuc.ExportToHtml(exportFilePath);
-                            break;
-                        case ".mht":
-                            gridKhuVuc.ExportToMht(exportFilePath);
-                            break;
-                        default:
-                            break;
-                    }
-
-                    if (File.Exists(exportFilePath))
-                    {
-                        try
-                        {
-                            //Try to open the file and let windows decide how to open it.
-                            System.Diagnostics.Process.Start(exportFilePath);
-                        }
-                        catch
-                        {
-                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
-                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
-                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
         }
 
         private void btnSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var mainWindow = new frmThongTinKhuVuc();
 
-           
-            foreach (int i in gridView1.GetSelectedRows())
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                _id = row[0].ToString();
-                ten = row[1].ToString();
-                mota = row[2].ToString();
-
-                if (row[2].ToString().ToLower() == "1")
-                    check = true;
-                else
-                    check = false;
-            }
-
-
-            mainWindow.Sender(_id, ten, mota, check);    //Gọi delegate
-            mainWindow.ShowDialog();
-            formLoad();
         }
     }
 }

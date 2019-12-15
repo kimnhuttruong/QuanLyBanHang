@@ -145,7 +145,7 @@ namespace DoAnCK_TTA.GUI
             tabbedView.AddDocument(f);
            
         }
-
+       
         private void btnTheoChungTu_Click(object sender, EventArgs e)
         {
             tabbedView.Controller.CloseAll();

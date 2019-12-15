@@ -377,6 +377,7 @@
             this.Tag = "bbiSysLog";
             this.Text = "Nhật Ký Hệ Thống";
             this.ToolbarFormControl = this.toolbarFormControl1;
+            this.Load += new System.EventHandler(this.FrmNhatKyHeThong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

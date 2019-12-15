@@ -256,6 +256,7 @@
             this.Name = "frmInMaVach";
             this.Tag = "bbiPrintBarcode";
             this.Text = "In Mã Vạch";
+            this.Load += new System.EventHandler(this.frmInMaVach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeMaVach)).EndInit();
             this.ResumeLayout(false);

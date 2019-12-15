@@ -30,6 +30,12 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.LayThongTinVaiTro();
 
         }
+        public DataTable LayThongTinUSER()
+        {
+            DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
+            return dAL_SYS_USER_RULE.LayThongTinUSER();
+
+        }
         public int ThemNguoiDung(DTO_SYS_USER u)
         {
             DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
