@@ -147,6 +147,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmThongTinDonViTinh";
+            this.Tag = "bbiUnit";
             this.Text = "Thông Tin Đơn Vị Tính";
             this.Load += new System.EventHandler(this.FrmThongTinDonViTinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

@@ -89,6 +89,7 @@
             this.welcomeWizardPage1.Name = "welcomeWizardPage1";
             this.welcomeWizardPage1.ProceedText = "Sau khi sao lưu. Nhấn [Tiếp Theo] để tiếp tục";
             this.welcomeWizardPage1.Size = new System.Drawing.Size(460, 299);
+            this.welcomeWizardPage1.Tag = "bbiLock";
             this.welcomeWizardPage1.Text = "Kết chuyển số dư cuối kỳ";
             this.welcomeWizardPage1.Click += new System.EventHandler(this.welcomeWizardPage1_Click);
             // 

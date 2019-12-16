@@ -591,6 +591,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinKhachHang";
+            this.Tag = "bbiCustomer";
             this.Text = "Thông Tin Khách Hàng";
             this.Load += new System.EventHandler(this.frmThongTinKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checkQuanLy.Properties)).EndInit();

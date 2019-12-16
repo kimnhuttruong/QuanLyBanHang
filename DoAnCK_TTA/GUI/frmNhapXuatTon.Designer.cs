@@ -311,6 +311,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmNhapXuatTon";
             this.Size = new System.Drawing.Size(1112, 517);
+            this.Tag = "bbiInventorySummary";
             this.Load += new System.EventHandler(this.frmNhapXuatTon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridTonKho)).EndInit();

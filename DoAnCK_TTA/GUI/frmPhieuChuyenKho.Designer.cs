@@ -175,8 +175,8 @@
             // 
             this.btnTaoMoi.Caption = "Tạo Mới";
             this.btnTaoMoi.Id = 2;
-            this.btnTaoMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
-            this.btnTaoMoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
+            this.btnTaoMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoMoi.ImageOptions.Image")));
+            this.btnTaoMoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaoMoi.ImageOptions.LargeImage")));
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -203,8 +203,8 @@
             // 
             this.btnIn.Caption = "In";
             this.btnIn.Id = 7;
-            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem9.ImageOptions.Image")));
-            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem9.ImageOptions.LargeImage")));
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
+            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.LargeImage")));
             this.btnIn.Name = "btnIn";
             this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -212,8 +212,8 @@
             // 
             this.btnNapLai.Caption = "Nạp Lại";
             this.btnNapLai.Id = 8;
-            this.btnNapLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem10.ImageOptions.Image")));
-            this.btnNapLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem10.ImageOptions.LargeImage")));
+            this.btnNapLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNapLai.ImageOptions.Image")));
+            this.btnNapLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNapLai.ImageOptions.LargeImage")));
             this.btnNapLai.Name = "btnNapLai";
             this.btnNapLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -221,8 +221,8 @@
             // 
             this.btnDong.Caption = "Đóng";
             this.btnDong.Id = 9;
-            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem11.ImageOptions.Image")));
-            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem11.ImageOptions.LargeImage")));
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.LargeImage")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -774,6 +774,7 @@
             this.Controls.Add(this.barDockControl1);
             this.Name = "frmPhieuChuyenKho";
             this.Size = new System.Drawing.Size(1112, 517);
+            this.Tag = "rpgReport";
             this.Load += new System.EventHandler(this.frmPhieuChuyenKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();

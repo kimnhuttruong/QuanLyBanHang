@@ -50,7 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnKetThuc = new DevExpress.XtraEditors.SimpleButton();
             this.btnDongY = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDonVi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienThoai.Properties)).BeginInit();
@@ -60,7 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLinhVuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaSoThue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGPKD.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTenDonVi
@@ -241,16 +241,19 @@
             this.btnDongY.Size = new System.Drawing.Size(89, 32);
             this.btnDongY.TabIndex = 5;
             this.btnDongY.Text = "Đồng ý";
+            this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
             // 
-            // pictureBox1
+            // logo
             // 
-            this.pictureBox1.Image = global::DoAnCK_TTA.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(266, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.logo.Image = global::DoAnCK_TTA.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(266, 87);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(222, 140);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo.TabIndex = 2;
+            this.logo.TabStop = false;
+            this.logo.Tag = "DoAnCK_TTA";
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // frmThongTinCongTy
             // 
@@ -272,7 +275,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.logo);
             this.Controls.Add(this.txtGPKD);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtMaSoThue);
@@ -300,7 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLinhVuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaSoThue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGPKD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,7 +320,7 @@
         private DevExpress.XtraEditors.TextEdit txtLinhVuc;
         private DevExpress.XtraEditors.TextEdit txtMaSoThue;
         private DevExpress.XtraEditors.TextEdit txtGPKD;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

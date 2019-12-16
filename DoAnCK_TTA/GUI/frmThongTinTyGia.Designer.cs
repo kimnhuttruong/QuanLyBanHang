@@ -146,6 +146,7 @@
             this.Controls.Add(this.groupControl1);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinTyGia";
+            this.Tag = "bbiExchangeRate";
             this.Text = "Thông Tin Tỷ Giá";
             this.Load += new System.EventHandler(this.frmThongTinTyGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

@@ -48,10 +48,34 @@ namespace DoAnCK_TTA
                 mainWindow.Sender(cbUsername.Text);
                 BUS_SYS_USER bus1 = new BUS_SYS_USER();
                 bus1.CapNhatNhom(cbUsername.Text);
-              
-                mainWindow.Show();
-                mainWindow.FormClosed += new FormClosedEventHandler(delegate { Close(); });
-                this.Hide();
+
+                BUS_COMPANY ct = new BUS_COMPANY();
+                DataTable dt = new DataTable();
+                dt = ct.LayThongTinCongTy();
+                if (dt.Rows.Count > 0)
+                {
+                    mainWindow.Show();
+                    mainWindow.FormClosed += new FormClosedEventHandler(delegate { Close(); });
+                }
+                else
+                {
+                    frmThongTinCongTy frmCongTy = new frmThongTinCongTy();
+                    frmCongTy.ShowDialog();
+                  
+                }
+                BUS_COMPANY ct2 = new BUS_COMPANY();
+                DataTable dt2 = new DataTable();
+                dt2 = ct2.LayThongTinCongTy();
+                if (dt.Rows.Count > 0)
+                {
+                    mainWindow.Show();
+                    mainWindow.FormClosed += new FormClosedEventHandler(delegate { Close(); });
+                    this.Hide();
+                }
+               else
+                {
+                    this.Close();
+                }
 
             }
             else
@@ -64,8 +88,10 @@ namespace DoAnCK_TTA
             dtlog = busform.LayThongTinUSER();
             log.MChine = dtlog.Rows[0][1].ToString();
             log.UserID = dtlog.Rows[0][2].ToString();
+            if(this.Tag!=null)
             log.Module = this.Tag.ToString();
             log.Action_Name = "Đăng Nhập";
+            log.Created = DateTime.Now.ToString(); ;
             busLog.ThemLichSu(log);
 
         }

@@ -145,6 +145,7 @@
             this.Controls.Add(this.groupControl1);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThemBoPhan";
+            this.Tag = "bbiDepartment";
             this.Text = "Thông Tin Bộ Phận";
             this.Load += new System.EventHandler(this.frmThemBoPhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

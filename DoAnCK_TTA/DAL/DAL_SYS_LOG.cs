@@ -18,6 +18,7 @@ namespace DoAnCK_TTA.DAL
                 active = 1;
             else
                 active = 0;
+            u.Created = DateTime.Now.ToString();
             string ma = DateTime.Now.ToString().Replace(" ", "").Replace("/", "").Replace(":", "").Replace("AM", "").Replace("PM", "");
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand cmd = new SqlCommand();
@@ -44,7 +45,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from SYS_LOG";
+            cmd.CommandText = " select l.SYS_ID,l.MChine,l.UserID,CAST(Created as nvarchar(30)) as Created ,o.Object_Name ,Action_Name from SYS_LOG l ,SYS_OBJECT o where l.Module=o.Object_ID";
             try
             {
                 OpenConnection();

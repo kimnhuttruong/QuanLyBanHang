@@ -716,6 +716,7 @@
             this.Controls.Add(this.cbKhoMacDinh);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinHangHoa";
+            this.Tag = "bbiMaterial";
             this.Text = "Thông Tin Hàng Hóa";
             this.Load += new System.EventHandler(this.frmThongTinHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cbLoaiHangHoa.Properties)).EndInit();

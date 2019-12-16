@@ -148,6 +148,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinNhomHang";
+            this.Tag = "bbiItemGroup";
             this.Text = "Thông Tin Nhóm Hàng";
             this.Load += new System.EventHandler(this.frmThongTinNhomHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

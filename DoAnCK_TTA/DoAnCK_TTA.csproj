@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="BUS\BUS_CASH_METHOD.cs" />
     <Compile Include="BUS\BUS_CASH_TERM.cs" />
+    <Compile Include="BUS\BUS_COMPANY.cs" />
     <Compile Include="BUS\BUS_CURRENCY.cs" />
     <Compile Include="BUS\BUS_CUSTOMER.cs" />
     <Compile Include="BUS\BUS_CUSTOMER_GROUP.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="BUS\BUS_UNIT.cs" />
     <Compile Include="DAL\DAL_CASH_METHOD.cs" />
     <Compile Include="DAL\DAL_CASH_TERM.cs" />
+    <Compile Include="DAL\DAL_COMPANY.cs" />
     <Compile Include="DAL\DAL_CURRENCY.cs" />
     <Compile Include="DAL\DAL_CUSTOMER.cs" />
     <Compile Include="DAL\DAL_CUSTOMER_GROUP.cs" />
@@ -158,6 +160,7 @@
     </Compile>
     <Compile Include="DTO\DTO_CASH_METHOD.cs" />
     <Compile Include="DTO\DTO_CASH_TERM.cs" />
+    <Compile Include="DTO\DTO_COMPANY.cs" />
     <Compile Include="DTO\DTO_CURRENCY.cs" />
     <Compile Include="DTO\DTO_CUSTOMER.cs" />
     <Compile Include="DTO\DTO_CUSTOMER_GROUP.cs" />

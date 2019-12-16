@@ -383,6 +383,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmDanhSachCongNoTongHop";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Tag = "rpgDebt";
             this.Load += new System.EventHandler(this.frmDanhSachCongNoTongHop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();

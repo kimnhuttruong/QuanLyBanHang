@@ -383,6 +383,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmDanhSachCongNoTongHop_PhieuChi";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Tag = "rpgDebt";
             this.Load += new System.EventHandler(this.frmDanhSachCongNoTongHop_PhieuChi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

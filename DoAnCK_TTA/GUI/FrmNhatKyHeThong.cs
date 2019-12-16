@@ -64,9 +64,13 @@ namespace DoAnCK_TTA.GUI
             log.MChine = dtlog.Rows[0][1].ToString();
             log.UserID = dtlog.Rows[0][2].ToString();
             log.Module = this.Tag.ToString();
+            log.Created = DateTime.Now.ToString();;
             log.Action_Name = "Xem";
             busLog.ThemLichSu(log);
 
+
+            BUS_SYS_LOG bUS_SYS_LOG = new BUS_SYS_LOG();
+            gridNhatKy.DataSource = bUS_SYS_LOG.LayThongTinLog();
         }
     }
 }

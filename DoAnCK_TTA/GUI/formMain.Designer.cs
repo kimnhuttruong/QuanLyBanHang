@@ -162,6 +162,8 @@
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.xtraTabbedMdiManager2 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonGalleryBarItem2 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
@@ -333,17 +335,19 @@
             this.Clock,
             this.barEditItem14,
             this.barEditItem15,
-            this.barEditItem16});
+            this.barEditItem16,
+            this.barButtonItem2,
+            this.ribbonGalleryBarItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbon.MaxItemId = 122;
+            this.ribbon.MaxItemId = 124;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage3,
             this.ribbonPage4,
             this.ribbonPage5});
-            this.ribbon.QuickToolbarItemLinks.Add(this.btnPhanQuyen);
+            this.ribbon.QuickToolbarItemLinks.Add(this.ribbonGalleryBarItem2);
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
             this.repositoryItemImageComboBox1,
@@ -1362,6 +1366,25 @@
             // 
             this.realTimeSource1.DisplayableProperties = null;
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 122;
+            this.barButtonItem2.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.color;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // ribbonGalleryBarItem2
+            // 
+            this.ribbonGalleryBarItem2.Caption = "ribbonGalleryBarItem2";
+            // 
+            // 
+            // 
+            this.ribbonGalleryBarItem2.Gallery.Appearance.FilterPanelCaption.Options.UseImage = true;
+            this.ribbonGalleryBarItem2.Id = 123;
+            this.ribbonGalleryBarItem2.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonGalleryBarItem2.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.color;
+            this.ribbonGalleryBarItem2.Name = "ribbonGalleryBarItem2";
+            // 
             // formMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1379,8 +1402,8 @@
             this.Name = "formMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.t;
-            this.Tag = "fmain";
-            this.Text = "Phần Mềm Quản lý Bán Hàng";
+            this.Tag = "bbiLogin";
+            this.Text = "Quản Lý Bán Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formMain_MouseDown);
@@ -1555,5 +1578,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit4;
         private DevExpress.XtraBars.BarEditItem barEditItem16;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem2;
     }
 }

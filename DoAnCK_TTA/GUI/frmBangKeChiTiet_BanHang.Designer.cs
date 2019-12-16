@@ -496,6 +496,7 @@
             this.Controls.Add(this.barDockControl2);
             this.Name = "frmBangKeChiTiet_BanHang";
             this.Size = new System.Drawing.Size(1111, 517);
+            this.Tag = "bbiSale";
             this.Load += new System.EventHandler(this.frmBangKeChiTiet_BanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();

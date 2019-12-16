@@ -36,6 +36,7 @@ namespace DoAnCK_TTA.GUI
             log.UserID = dtlog.Rows[0][2].ToString();
             log.Module = this.Tag.ToString();
             log.Action_Name = "Xem";
+            log.Created = DateTime.Now.ToString(); ;
             busLog.ThemLichSu(log);
 
 
@@ -170,6 +171,7 @@ namespace DoAnCK_TTA.GUI
             log.UserID = dtlog.Rows[0][2].ToString();
             log.Module = this.Tag.ToString();
             log.Action_Name = "Xem";
+            log.Created = DateTime.Now.ToString(); ;
             busLog.ThemLichSu(log);
 
 

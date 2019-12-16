@@ -13,6 +13,8 @@ using System.Net;
 using System.Runtime.InteropServices;
 using DoAnCK_TTA.BUS;
 using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraBars.Helpers;
+using DevExpress.XtraBars.Localization;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -25,10 +27,26 @@ namespace DoAnCK_TTA.GUI
             InitializeComponent();
             Sender = new SendMessage(GetMessage);
 
-           
-
           
         }
+        public class MyBarLocalizer : BarLocalizer
+        {
+            public override string GetLocalizedString(BarString id)
+            {
+                if (id == BarString.SkinCaptions)
+                {
+                    //Default value for BarString.SkinCaptions:
+                    //"|DevExpress Style|Caramel|Money Twins|DevExpress Dark Style|iMaginary|Lilian|Black|Blue|Office 2010 Blue|Office 2010 Black|Office 2010 Silver|Office 2007 Blue|Office 2007 Black|Office 2007 Silver|Office 2007 Green|Office 2007 Pink|Seven|Seven Classic|Darkroom|McSkin|Sharp|Sharp Plus|Foggy|Dark Side|Xmas (Blue)|Springtime|Summer|Pumpkin|Valentine|Stardust|Coffee|Glass Oceans|High Contrast|Liquid Sky|London Liquid Sky|The Asphalt World|Blueprint|"
+                    string defaultSkinCaptions = base.GetLocalizedString(id);
+                    string newSkinCaptions = defaultSkinCaptions.Replace("|DevExpress Style|", "|My Favorite Skin|");
+                    return newSkinCaptions;
+                }
+                return base.GetLocalizedString(id);
+            }
+
+
+        }
+
         private void GetMessage(string ma)
         {
             
@@ -165,7 +183,10 @@ namespace DoAnCK_TTA.GUI
        
         private void formMain_Load(object sender, EventArgs e)
         {
-           
+            BarLocalizer.Active = new MyBarLocalizer();
+
+            SkinHelper.InitSkinGallery(ribbonGalleryBarItem2, true);
+            SkinHelper.InitSkinPopupMenu(popupMenu1);
 
 
             DataTable dt = new DataTable();

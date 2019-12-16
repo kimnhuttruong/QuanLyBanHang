@@ -138,6 +138,7 @@ namespace DoAnCK_TTA
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
             this.btnDangNhap.TabIndex = 10;
+            this.btnDangNhap.Tag = "Login";
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
@@ -259,6 +260,7 @@ namespace DoAnCK_TTA
             this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "bbiLogin";
             this.Text = "Quản lý bán hàng";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);

@@ -505,6 +505,7 @@
             this.Controls.Add(this.groupControl1);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinNhaCungCap";
+            this.Tag = "bbiProvider";
             this.Text = "Thông Tin Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmThongTinNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

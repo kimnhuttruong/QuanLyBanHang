@@ -146,6 +146,7 @@
             this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhuVuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "bbiCustomerGroup";
             this.Text = "Thông Tin Khu Vực";
             this.Load += new System.EventHandler(this.frmThongTinKhuVuc_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
