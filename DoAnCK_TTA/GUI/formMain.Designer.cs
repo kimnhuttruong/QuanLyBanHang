@@ -129,6 +129,8 @@
             this.repositoryItemDateEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barEditItem16 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTimeEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonGalleryBarItem2 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -162,8 +164,6 @@
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.xtraTabbedMdiManager2 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonGalleryBarItem2 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
@@ -438,6 +438,7 @@
             this.btnSaoLuu.LargeWidth = 60;
             this.btnSaoLuu.Name = "btnSaoLuu";
             this.btnSaoLuu.Tag = "bbiBackup";
+            this.btnSaoLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaoLuu_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -447,6 +448,7 @@
             this.btnPhucHoi.LargeWidth = 60;
             this.btnPhucHoi.Name = "btnPhucHoi";
             this.btnPhucHoi.Tag = "bbiRestore";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnSuaChua
             // 
@@ -1109,6 +1111,25 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemTimeEdit4.Name = "repositoryItemTimeEdit4";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 122;
+            this.barButtonItem2.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.color;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // ribbonGalleryBarItem2
+            // 
+            this.ribbonGalleryBarItem2.Caption = "ribbonGalleryBarItem2";
+            // 
+            // 
+            // 
+            this.ribbonGalleryBarItem2.Gallery.Appearance.FilterPanelCaption.Options.UseImage = true;
+            this.ribbonGalleryBarItem2.Id = 123;
+            this.ribbonGalleryBarItem2.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonGalleryBarItem2.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.color;
+            this.ribbonGalleryBarItem2.Name = "ribbonGalleryBarItem2";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
@@ -1365,25 +1386,6 @@
             // realTimeSource1
             // 
             this.realTimeSource1.DisplayableProperties = null;
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 122;
-            this.barButtonItem2.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.color;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // ribbonGalleryBarItem2
-            // 
-            this.ribbonGalleryBarItem2.Caption = "ribbonGalleryBarItem2";
-            // 
-            // 
-            // 
-            this.ribbonGalleryBarItem2.Gallery.Appearance.FilterPanelCaption.Options.UseImage = true;
-            this.ribbonGalleryBarItem2.Id = 123;
-            this.ribbonGalleryBarItem2.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonGalleryBarItem2.ImageOptions.Image = global::DoAnCK_TTA.Properties.Resources.color;
-            this.ribbonGalleryBarItem2.Name = "ribbonGalleryBarItem2";
             // 
             // formMain
             // 

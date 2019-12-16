@@ -616,5 +616,74 @@ namespace DoAnCK_TTA.GUI
                 form.Activate();
             }
         }
+
+        private void btnSaoLuu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string folderpath = "";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            DialogResult dr = fbd.ShowDialog();
+
+          
+            if (dr == DialogResult.OK)
+            {
+                folderpath = fbd.SelectedPath;
+                BUS_SYS bUS = new BUS_SYS();
+                
+                
+                DialogResult dialogResult = MessageBox.Show("Bạn Đã Cấp Quyền Cho Thư Mục Bạn Muốn Backup?", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string kt = bUS.SaoLuu(folderpath);
+                    if (kt != "1")
+                    {
+                        MessageBox.Show("Sao Lưu KHông Thành Công.Vui Lòng Cấp Quyền truy cập cho Folder Chứa file Backup\n Xóa File Backup vừa tạo: "+kt);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sao Lưu thành công");
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    ;
+                }
+
+               
+            }
+
+        }
+
+        private void btnPhucHoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "txt files (*.bak)|*.bak|All files (*.*)|*.*";
+            dialog.Title = "Please select an Backup file to encrypt.";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn Chắc Chắc Muốn Backup?", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    BUS_SYS bUS = new BUS_SYS();
+                    string kt = bUS.PhucHoi(dialog.FileName);
+                    if (kt != "1")
+                    {
+                        MessageBox.Show("Phục Hồi KHông Thành Công.Vui Lòng Cấp Quyền truy cập cho Folder Chứa file Backup\n Xóa File Backup vừa tạo: " + kt);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Phục Hồi thành công");
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    ;
+                }
+
+
+            }
+
+
+        }
     }
 }
