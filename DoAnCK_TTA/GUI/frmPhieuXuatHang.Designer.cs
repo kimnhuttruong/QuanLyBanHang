@@ -54,6 +54,9 @@
             this.TongThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.gridPhieuXuatHang = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memoGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.txtSoPhieu = new DevExpress.XtraEditors.TextEdit();
             this.txtSoHoaDon = new DevExpress.XtraEditors.TextEdit();
@@ -97,13 +100,13 @@
             this.lookDieuKhoan = new DevExpress.XtraEditors.GridLookUpEdit();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btnTaoMoi = new DevExpress.XtraBars.BarStaticItem();
+            this.btnTaoMoi = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.btnSaveAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnSaveClose = new DevExpress.XtraBars.BarButtonItem();
-            this.btnIn = new DevExpress.XtraBars.BarStaticItem();
-            this.btnNapLai = new DevExpress.XtraBars.BarStaticItem();
-            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNapLai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -129,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPhieuXuatHang)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memoGhiChu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoPhieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHoaDon.Properties)).BeginInit();
@@ -402,6 +406,7 @@
             // 
             // gridPhieuXuatHang
             // 
+            this.gridPhieuXuatHang.ContextMenuStrip = this.contextMenuStrip1;
             this.gridPhieuXuatHang.Location = new System.Drawing.Point(5, 162);
             this.gridPhieuXuatHang.MainView = this.gridView5;
             this.gridPhieuXuatHang.Name = "gridPhieuXuatHang";
@@ -414,6 +419,26 @@
             this.gridPhieuXuatHang.UseEmbeddedNavigator = true;
             this.gridPhieuXuatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
+            // 
+            // insertToolStripMenuItem
+            // 
+            this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.insertToolStripMenuItem.Text = "Insert";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // memoGhiChu
             // 
@@ -822,6 +847,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.Text = "Tools";
             // 
             // btnTaoMoi
@@ -1076,6 +1102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPhieuXuatHang)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.memoGhiChu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoPhieu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHoaDon.Properties)).EndInit();
@@ -1173,12 +1200,12 @@
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarManager barManager2;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarStaticItem btnTaoMoi;
+        private DevExpress.XtraBars.BarButtonItem btnTaoMoi;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
         private DevExpress.XtraBars.BarButtonItem btnSaveAdd;
-        private DevExpress.XtraBars.BarStaticItem btnIn;
-        private DevExpress.XtraBars.BarStaticItem btnNapLai;
-        private DevExpress.XtraBars.BarStaticItem btnDong;
+        private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem btnNapLai;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
@@ -1202,5 +1229,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit4;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit3;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

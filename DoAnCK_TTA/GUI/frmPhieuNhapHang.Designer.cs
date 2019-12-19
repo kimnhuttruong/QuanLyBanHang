@@ -35,13 +35,13 @@
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barButton = new DevExpress.XtraBars.Bar();
-            this.btnTaoMoi = new DevExpress.XtraBars.BarStaticItem();
+            this.btnTaoMoi = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnSaveAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnSaveClose = new DevExpress.XtraBars.BarButtonItem();
-            this.btnIn = new DevExpress.XtraBars.BarStaticItem();
-            this.btnNapLai = new DevExpress.XtraBars.BarStaticItem();
-            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNapLai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -235,6 +235,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.barButton.OptionsBar.DrawBorder = false;
             this.barButton.Text = "Tools";
             // 
             // btnTaoMoi
@@ -1217,12 +1218,12 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar barButton;
-        private DevExpress.XtraBars.BarStaticItem btnTaoMoi;
+        private DevExpress.XtraBars.BarButtonItem btnTaoMoi;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem btnSaveAdd;
-        private DevExpress.XtraBars.BarStaticItem btnIn;
-        private DevExpress.XtraBars.BarStaticItem btnNapLai;
-        private DevExpress.XtraBars.BarStaticItem btnDong;
+        private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem btnNapLai;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

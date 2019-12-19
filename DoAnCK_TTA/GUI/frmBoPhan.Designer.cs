@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoPhan));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.btnThem = new DevExpress.XtraBars.BarStaticItem();
-            this.btnSuaChua = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXoa = new DevExpress.XtraBars.BarStaticItem();
-            this.btnNapLai = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXuat = new DevExpress.XtraBars.BarStaticItem();
-            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNapLai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -47,6 +47,7 @@
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeBoPhan)).BeginInit();
             this.SuspendLayout();
@@ -82,14 +83,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
             // btnThem
             // 
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 0;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
-            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
@@ -222,6 +224,11 @@
             this.treeListColumn4.Visible = true;
             this.treeListColumn4.VisibleIndex = 3;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // frmBoPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,16 +258,17 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarStaticItem btnThem;
-        private DevExpress.XtraBars.BarStaticItem btnSuaChua;
-        private DevExpress.XtraBars.BarStaticItem btnXoa;
-        private DevExpress.XtraBars.BarStaticItem btnNapLai;
-        private DevExpress.XtraBars.BarStaticItem btnXuat;
-        private DevExpress.XtraBars.BarStaticItem btnDong;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnNapLai;
+        private DevExpress.XtraBars.BarButtonItem btnXuat;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraTreeList.TreeList treeBoPhan;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -43,10 +43,10 @@ namespace DoAnCK_TTA.GUI
 
             _id = _dt.Rows[_dt.Rows.Count - 1][0].ToString();
 
-            _id = _id.Remove(0, 3);
+            _id = _id.Remove(0, 2);
 
             _id = (int.Parse(_id) + 1).ToString("00000");
-            _id = "NCC" + _id.ToString();
+            _id = "KV" + _id.ToString();
 
             mainWindow.Sender(_id, "", "", true);    //Gọi delegate
             mainWindow.ShowDialog();

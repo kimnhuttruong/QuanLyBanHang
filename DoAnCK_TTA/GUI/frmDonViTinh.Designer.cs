@@ -84,6 +84,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
             // btnThem
@@ -92,6 +93,8 @@
             this.btnThem.Id = 0;
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.btnThem.ItemAppearance.Hovered.Options.UseForeColor = true;
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);

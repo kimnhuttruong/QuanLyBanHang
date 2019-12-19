@@ -231,6 +231,7 @@
             this.Controls.Add(this.dockPanel);
             this.Location = new System.Drawing.Point(-1359, -520);
             this.Name = "frmMuaHang";
+            this.Tag = "bbiPurchase";
             this.Text = "bbiPurchase";
             this.Load += new System.EventHandler(this.frmMuaHang_Load);
             this.Shown += new System.EventHandler(this.frmMuaHang_Shown);

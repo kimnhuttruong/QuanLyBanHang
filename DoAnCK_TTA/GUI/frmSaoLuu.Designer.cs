@@ -118,6 +118,7 @@
             this.btnBrown.Name = "btnBrown";
             this.btnBrown.Size = new System.Drawing.Size(19, 18);
             this.btnBrown.TabIndex = 4;
+            this.btnBrown.Click += new System.EventHandler(this.btnBrown_Click);
             // 
             // checkGhiDe
             // 
@@ -136,6 +137,7 @@
             this.btnThucHien.Size = new System.Drawing.Size(80, 20);
             this.btnThucHien.TabIndex = 6;
             this.btnThucHien.Text = "Thực Hiện";
+            this.btnThucHien.Click += new System.EventHandler(this.btnThucHien_Click);
             // 
             // btnDong
             // 

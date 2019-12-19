@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.btnThem = new DevExpress.XtraBars.BarStaticItem();
-            this.btnSuaChua = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXoa = new DevExpress.XtraBars.BarStaticItem();
-            this.btnNapLai = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXuat = new DevExpress.XtraBars.BarStaticItem();
-            this.btnNhap = new DevExpress.XtraBars.BarStaticItem();
-            this.bntDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNapLai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.bntDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.treeKhachHang = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -96,6 +96,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNhap),
             new DevExpress.XtraBars.LinkPersistInfo(this.bntDong)});
+            this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
             // btnThem
@@ -408,14 +409,14 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarStaticItem btnThem;
-        private DevExpress.XtraBars.BarStaticItem btnSuaChua;
-        private DevExpress.XtraBars.BarStaticItem btnXoa;
-        private DevExpress.XtraBars.BarStaticItem btnNapLai;
-        private DevExpress.XtraBars.BarStaticItem btnXuat;
-        private DevExpress.XtraBars.BarStaticItem btnNhap;
-        private DevExpress.XtraBars.BarStaticItem bntDong;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem5;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnNapLai;
+        private DevExpress.XtraBars.BarButtonItem btnXuat;
+        private DevExpress.XtraBars.BarButtonItem btnNhap;
+        private DevExpress.XtraBars.BarButtonItem bntDong;
+        private DevExpress.XtraBars.BarButtonItem barStaticItem5;
         private DevExpress.XtraTreeList.TreeList treeKhachHang;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;

@@ -84,6 +84,7 @@
             this.gridView1.GridControl = this.gridKhuVuc;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // gridColumn1
             // 
@@ -215,6 +216,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNapLai),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
             // btnThem

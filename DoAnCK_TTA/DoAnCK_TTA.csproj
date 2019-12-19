@@ -43,9 +43,11 @@
     <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.TreeMap.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -643,7 +645,24 @@
     <Compile Include="GUI\frmMuaHang.Designer.cs">
       <DependentUpon>frmMuaHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\XtraReport1.cs" />
+    <Compile Include="GUI\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\reportPhieuThu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\reportPhieuThu.Designer.cs">
+      <DependentUpon>reportPhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\XtraForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\XtraForm3.Designer.cs">
+      <DependentUpon>XtraForm3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DAL\frmButtons.resx">
@@ -877,6 +896,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMuaHang.resx">
       <DependentUpon>frmMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\reportPhieuThu.resx">
+      <DependentUpon>reportPhieuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

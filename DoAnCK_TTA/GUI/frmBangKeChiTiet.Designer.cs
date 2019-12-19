@@ -38,13 +38,13 @@
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.btnXem = new DevExpress.XtraBars.BarStaticItem();
-            this.btnTaoMoi = new DevExpress.XtraBars.BarStaticItem();
-            this.btnSuaChua = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXoa = new DevExpress.XtraBars.BarStaticItem();
-            this.btnIn = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXuat = new DevExpress.XtraBars.BarStaticItem();
-            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnXem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTaoMoi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -127,6 +127,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
             // barEditItem2
@@ -184,8 +185,8 @@
             // 
             this.btnXem.Caption = "Xem";
             this.btnXem.Id = 6;
-            this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem1.ImageOptions.Image")));
-            this.btnXem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem1.ImageOptions.LargeImage")));
+            this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.Image")));
+            this.btnXem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.LargeImage")));
             this.btnXem.Name = "btnXem";
             this.btnXem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -223,8 +224,8 @@
             // 
             this.btnIn.Caption = "In";
             this.btnIn.Id = 10;
-            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.Image")));
-            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.LargeImage")));
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
+            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.LargeImage")));
             this.btnIn.Name = "btnIn";
             this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -232,8 +233,8 @@
             // 
             this.btnXuat.Caption = "Xuất";
             this.btnXuat.Id = 11;
-            this.btnXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.Image")));
-            this.btnXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.LargeImage")));
+            this.btnXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.ImageOptions.Image")));
+            this.btnXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuat.ImageOptions.LargeImage")));
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -241,8 +242,8 @@
             // 
             this.btnDong.Caption = "Đóng";
             this.btnDong.Id = 12;
-            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem7.ImageOptions.Image")));
-            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem7.ImageOptions.LargeImage")));
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.LargeImage")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -252,7 +253,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1111, 28);
+            this.barDockControlTop.Size = new System.Drawing.Size(1111, 24);
             // 
             // barDockControlBottom
             // 
@@ -266,17 +267,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 493);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1111, 28);
+            this.barDockControlRight.Location = new System.Drawing.Point(1111, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
             // 
             // barEditItem1
             // 
@@ -469,13 +470,13 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarEditItem barEditItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
-        private DevExpress.XtraBars.BarStaticItem btnXem;
-        private DevExpress.XtraBars.BarStaticItem btnTaoMoi;
-        private DevExpress.XtraBars.BarStaticItem btnSuaChua;
-        private DevExpress.XtraBars.BarStaticItem btnXoa;
-        private DevExpress.XtraBars.BarStaticItem btnIn;
-        private DevExpress.XtraBars.BarStaticItem btnXuat;
-        private DevExpress.XtraBars.BarStaticItem btnDong;
+        private DevExpress.XtraBars.BarButtonItem btnXem;
+        private DevExpress.XtraBars.BarButtonItem btnTaoMoi;
+        private DevExpress.XtraBars.BarButtonItem btnSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem btnXuat;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

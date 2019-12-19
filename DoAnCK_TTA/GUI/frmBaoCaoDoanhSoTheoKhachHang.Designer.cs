@@ -47,10 +47,10 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.btnXem = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXuat = new DevExpress.XtraBars.BarStaticItem();
-            this.btnIn = new DevExpress.XtraBars.BarStaticItem();
-            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnXem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -232,6 +232,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
             // btnXem
@@ -328,10 +329,10 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarStaticItem btnXem;
-        private DevExpress.XtraBars.BarStaticItem btnXuat;
-        private DevExpress.XtraBars.BarStaticItem btnIn;
-        private DevExpress.XtraBars.BarStaticItem btnDong;
+        private DevExpress.XtraBars.BarButtonItem btnXem;
+        private DevExpress.XtraBars.BarButtonItem btnXuat;
+        private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

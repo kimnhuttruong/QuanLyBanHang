@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.IO;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
+using DevExpress.XtraBars;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -73,6 +74,8 @@ namespace DoAnCK_TTA.GUI
             log.Action_Name = "Xem";
             busLog.ThemLichSu(log);
 
+
+            
         }
         DataTable _dt = new DataTable();
         public void Init()
@@ -229,6 +232,15 @@ namespace DoAnCK_TTA.GUI
             log.Action_Name = "Xuất";
             busLog.ThemLichSu(log);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach(var item in bar1.Manager.Items)
+            {
+                BarButtonItem btn = (BarButtonItem)item;
+                btn.Enabled = false;
+            }
         }
     }
 }

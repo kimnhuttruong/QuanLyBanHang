@@ -39,13 +39,13 @@
             this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barEditItem7 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.btnXem = new DevExpress.XtraBars.BarStaticItem();
-            this.btnTaoMoi = new DevExpress.XtraBars.BarStaticItem();
-            this.btnSuaChua = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXoa = new DevExpress.XtraBars.BarStaticItem();
-            this.btnIn = new DevExpress.XtraBars.BarStaticItem();
-            this.btnXuat = new DevExpress.XtraBars.BarStaticItem();
-            this.btnDong = new DevExpress.XtraBars.BarStaticItem();
+            this.btnXem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTaoMoi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
@@ -88,9 +88,9 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 28);
+            this.barDockControl1.Location = new System.Drawing.Point(0, 24);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 489);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 493);
             // 
             // barManager2
             // 
@@ -139,6 +139,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDong)});
+            this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.Text = "Tools";
             // 
             // barEditItem5
@@ -268,7 +269,7 @@
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl2.Location = new System.Drawing.Point(0, 0);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1111, 28);
+            this.barDockControl2.Size = new System.Drawing.Size(1111, 24);
             // 
             // barDockControl3
             // 
@@ -282,9 +283,9 @@
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1111, 28);
+            this.barDockControl4.Location = new System.Drawing.Point(1111, 24);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 489);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 493);
             // 
             // barEditItem8
             // 
@@ -525,13 +526,13 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;
         private DevExpress.XtraBars.BarEditItem barEditItem7;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit4;
-        private DevExpress.XtraBars.BarStaticItem btnXem;
-        private DevExpress.XtraBars.BarStaticItem btnTaoMoi;
-        private DevExpress.XtraBars.BarStaticItem btnSuaChua;
-        private DevExpress.XtraBars.BarStaticItem btnXoa;
-        private DevExpress.XtraBars.BarStaticItem btnIn;
-        private DevExpress.XtraBars.BarStaticItem btnXuat;
-        private DevExpress.XtraBars.BarStaticItem btnDong;
+        private DevExpress.XtraBars.BarButtonItem btnXem;
+        private DevExpress.XtraBars.BarButtonItem btnTaoMoi;
+        private DevExpress.XtraBars.BarButtonItem btnSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem btnXuat;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;

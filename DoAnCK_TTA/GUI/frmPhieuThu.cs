@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
+using DevExpress.XtraReports.UI;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -185,7 +186,32 @@ namespace DoAnCK_TTA.GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-          
+            DataTable congty = new DataTable();
+            BUS_COMPANY bUS = new BUS_COMPANY();
+            congty = bUS.LayThongTinCongTy();
+
+            reportPhieuThu report = new reportPhieuThu();
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+            //Hide paramater
+            //foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+            //    p.Visible = false;
+            //Init data report
+            if (loaiphieu == "Phiếu Thu")
+            {
+                report.InitData("Thu", congty.Rows[0][1].ToString(), congty.Rows[0][2].ToString(), congty.Rows[0][4].ToString(), congty.Rows[0][5].ToString(), txtDateChungTu.Text, txtKhachHang.Text, "", txtLyDo.Text, calcSoTien.Value.ToString(), txtChungTu.Text, txtPhieu.Text, lookNhanVien.Text, congty.Rows[0][8].ToString());
+
+            }
+            else 
+            {
+                report.InitData("Chi", congty.Rows[0][1].ToString(), congty.Rows[0][2].ToString(), congty.Rows[0][4].ToString(), congty.Rows[0][5].ToString(), txtDateChungTu.Text, txtKhachHang.Text, "", txtLyDo.Text, calcSoTien.Value.ToString(), txtChungTu.Text, txtPhieu.Text, lookNhanVien.Text, congty.Rows[0][8].ToString());
+
+            }// documentViewer1.DocumentSource = report;
+
+            report.CreateDocument();
+
+            // Show the report's Print Preview in a dialog window.
+            printTool.ShowPreviewDialog();
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)

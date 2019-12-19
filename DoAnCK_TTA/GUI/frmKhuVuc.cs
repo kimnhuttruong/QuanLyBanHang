@@ -30,7 +30,12 @@ namespace DoAnCK_TTA.GUI
         string _id = "";
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            var mainWindow = new frmThongTinKhuVuc();
+            mainWindow.Sender("", "", "", true);
 
+
+            mainWindow.ShowDialog();
+            formLoad();
         }
 
         private void gridKhuVuc_Click(object sender, EventArgs e)
@@ -83,8 +88,6 @@ namespace DoAnCK_TTA.GUI
             busLog.ThemLichSu(log);
 
         }
-        string ten, mota;
-        bool check;
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -105,10 +108,33 @@ namespace DoAnCK_TTA.GUI
         {
 
         }
+      
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+         
+        }
 
         private void btnSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            string ma = "";
+            string ten = "";
+            string mota = "";
+            bool quanly = true;
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                ma=row[0].ToString();
+                ten = row[1].ToString();
+                mota = row[2].ToString();
+                quanly =bool.Parse(row[3].ToString());
+            }
+           
 
+            var mainWindow = new frmThongTinKhuVuc();
+            mainWindow.Sender(ma, ten, mota, quanly);
+
+            mainWindow.ShowDialog();
+            formLoad();
         }
     }
 }

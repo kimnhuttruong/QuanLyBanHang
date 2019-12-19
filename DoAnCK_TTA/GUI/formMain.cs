@@ -619,6 +619,8 @@ namespace DoAnCK_TTA.GUI
 
         private void btnSaoLuu_ItemClick(object sender, ItemClickEventArgs e)
         {
+          
+
             string folderpath = "";
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult dr = fbd.ShowDialog();
