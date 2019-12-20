@@ -30,6 +30,12 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.LayThongTinVaiTro();
 
         }
+        public int CapNhatMatKhau(string tk, string mkc, string mkm)
+        {
+            DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
+            return dAL_SYS_USER_RULE.CapNhatMatKhau(tk,mkc,mkm);
+
+        }
         public DataTable LayThongTinUSER()
         {
             DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();

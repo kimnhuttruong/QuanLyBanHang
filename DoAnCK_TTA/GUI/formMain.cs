@@ -46,7 +46,7 @@ namespace DoAnCK_TTA.GUI
 
 
         }
-
+       
         private void GetMessage(string ma)
         {
             
@@ -166,7 +166,7 @@ namespace DoAnCK_TTA.GUI
         private void btnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            var mainWindow = new FrmDoiMatKhau();
+            var mainWindow = new FrmDoiMatKhau(lbUser.Caption);
             mainWindow.ShowDialog();
         }
         bool kiemtrachopheptruycap(string mh)

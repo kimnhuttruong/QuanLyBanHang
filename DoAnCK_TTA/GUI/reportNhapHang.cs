@@ -6,6 +6,7 @@ using DevExpress.XtraReports.UI;
 using DevExpress.XtraPrinting;
 using DoAnCK_TTA.DTO;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -24,8 +25,8 @@ namespace DoAnCK_TTA.GUI
             txtDiaChi.Value = diaChiCT;
             txtDienThoai.Value = tel;
             txtFax.Value = fax;
-            txtPhieu.Value = chungtu;
-            txtNgay.Value = DateTime.Now.Date+"/"+ DateTime.Now.Month + "/"+ DateTime.Now.Year;
+            txtPhieu.Text = chungtu;
+            txtNgay.Text = DateTime.Today.Day+"/"+ DateTime.Today.Month + "/"+ DateTime.Today.Year;
             txtNhaCungCap.Value = KhachHang;
             txtDiaChiNCC.Value = DiaChi;
             txtGhiChu.Value = LyDo;
@@ -35,17 +36,27 @@ namespace DoAnCK_TTA.GUI
             TienVat.Value = tienVat;
             TongThanhTien.Value = tongSoTien;
 
-            for(int i=0;i<list.Count;i++)
+            DataTable dt = new DataTable();
+            dt.Columns.Add("STT");
+            dt.Columns.Add("MaHang");
+            dt.Columns.Add("TenHang");
+            dt.Columns.Add("DonVi");
+            dt.Columns.Add("SoLuong");
+            dt.Columns.Add("DonGia");
+            dt.Columns.Add("ThanhTien");
+            for (int i=0;i<list.Count;i++)
             {
-                STT.Value = i.ToString();
-                MaHang.Value = list[i].Product_ID.ToString();
-                TenHang.Value = list[i].ProductName.ToString();
-                DonVi.Value = list[i].Unit.ToString();
-                SoLuong.Value = list[i].Quantity.ToString();
-                DonGia.Value = list[i].UnitPrice.ToString();
-                ThanhTien.Value= list[i].Amount.ToString();
-            }
 
+                //dt.Row.Cells.AddRange(i.ToString())
+                dt.Rows.Add((i+1).ToString(),
+                 /* MaHang.Value = */list[i].Product_ID.ToString(),
+                 /* TenHang.Value =*/ list[i].ProductName.ToString(),
+                 /* DonVi.Value = */list[i].Unit.ToString(),
+                 /* SoLuong.Value =*/ list[i].Quantity.ToString(),
+                 /* DonGia.Value =*/ list[i].UnitPrice.ToString(),
+                  /*ThanhTien.Value =*/ float.Parse(list[i].Quantity.ToString()) * float.Parse(list[i].UnitPrice.ToString()));
+            }
+            dataTable.Report.DataSource = dt;
         }
     }
 }

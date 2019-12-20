@@ -385,7 +385,9 @@ namespace DoAnCK_TTA.GUI
                     dTO_STOCK_INWARD_DETAIL.Inward_ID = txtPhieu.Text;
                     dTO_STOCK_INWARD_DETAIL.Stock_ID = lookKho.EditValue.ToString();
                     dTO_STOCK_INWARD_DETAIL.Product_ID = row["Ma"].ToString();
-                    dTO_STOCK_INWARD_DETAIL.ProductName = row["Ten"].ToString();
+                    BUS_PRODUCT bUS_PRODUCT = new BUS_PRODUCT();
+                    DataTable dt = bUS_PRODUCT.LayThongTinHangHoa(row["Ma"].ToString());
+                    dTO_STOCK_INWARD_DETAIL.ProductName = dt.Rows[0][1].ToString();
                     dTO_STOCK_INWARD_DETAIL.Customer_ID = lookMaNCC.EditValue.ToString();
                     dTO_STOCK_INWARD_DETAIL.Unit = row["DonVi"].ToString();
                     dTO_STOCK_INWARD_DETAIL.UnitPrice = row["DonGia"].ToString();
@@ -403,8 +405,8 @@ namespace DoAnCK_TTA.GUI
             reportNhapHang report = new reportNhapHang();
             ReportPrintTool printTool = new ReportPrintTool(report);
 
-            
-         
+
+           
             report.InitData( congty.Rows[0][1].ToString(), congty.Rows[0][2].ToString(), congty.Rows[0][4].ToString(), congty.Rows[0][8].ToString(), congty.Rows[0][5].ToString(), txtPhieu.Text, lookNhaCungCap.Text,txtDiaChi.Text, menoGhiChu.Text, txtTongTien.Text,calcSoLuong.SummaryText,txtThanhTien.SummaryText,calcVat.Text,calcTienVat.Text,list);
 
             report.CreateDocument();
