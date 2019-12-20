@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuNhapHang));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.repositoryItemGridLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
@@ -109,7 +110,7 @@
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtDonVi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.calc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.calcSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.calcDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -312,7 +313,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1111, 28);
+            this.barDockControlTop.Size = new System.Drawing.Size(1111, 24);
             // 
             // barDockControlBottom
             // 
@@ -326,17 +327,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 493);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1111, 28);
+            this.barDockControlRight.Location = new System.Drawing.Point(1111, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
             // 
             // barHeaderItem1
             // 
@@ -839,6 +840,9 @@
             // 
             // gridPhieuNhapHang
             // 
+            gridLevelNode2.RelationName = "Level1";
+            this.gridPhieuNhapHang.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
             this.gridPhieuNhapHang.Location = new System.Drawing.Point(3, 162);
             this.gridPhieuNhapHang.MainView = this.gridView5;
             this.gridPhieuNhapHang.MenuManager = this.barManager1;
@@ -863,7 +867,7 @@
             this.lookMa,
             this.lookTenHang,
             this.txtDonVi,
-            this.calc,
+            this.calcSoLuong,
             this.calcDonGia,
             this.txtThanhTien,
             this.txtGhiChu});
@@ -950,16 +954,16 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
-            // calc
+            // calcSoLuong
             // 
-            this.calc.Caption = "Số Lượng";
-            this.calc.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.calc.FieldName = "SoLuong";
-            this.calc.Name = "calc";
-            this.calc.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.calcSoLuong.Caption = "Số Lượng";
+            this.calcSoLuong.ColumnEdit = this.repositoryItemCalcEdit1;
+            this.calcSoLuong.FieldName = "SoLuong";
+            this.calcSoLuong.Name = "calcSoLuong";
+            this.calcSoLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:0.##}")});
-            this.calc.Visible = true;
-            this.calc.VisibleIndex = 3;
+            this.calcSoLuong.Visible = true;
+            this.calcSoLuong.VisibleIndex = 3;
             // 
             // calcDonGia
             // 
@@ -1276,7 +1280,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn lookMa;
         private DevExpress.XtraGrid.Columns.GridColumn lookTenHang;
         private DevExpress.XtraGrid.Columns.GridColumn txtDonVi;
-        private DevExpress.XtraGrid.Columns.GridColumn calc;
+        private DevExpress.XtraGrid.Columns.GridColumn calcSoLuong;
         private DevExpress.XtraGrid.Columns.GridColumn calcDonGia;
         private DevExpress.XtraGrid.Columns.GridColumn txtThanhTien;
         private DevExpress.XtraGrid.Columns.GridColumn txtGhiChu;

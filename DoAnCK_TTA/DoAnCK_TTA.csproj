@@ -651,6 +651,12 @@
     <Compile Include="GUI\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\reportNhapHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\reportNhapHang.Designer.cs">
+      <DependentUpon>reportNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\reportPhieuThu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -896,6 +902,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMuaHang.resx">
       <DependentUpon>frmMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\reportNhapHang.resx">
+      <DependentUpon>reportNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\reportPhieuThu.resx">
       <DependentUpon>reportPhieuThu.cs</DependentUpon>

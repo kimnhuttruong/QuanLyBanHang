@@ -12,6 +12,7 @@ using DoAnCK_TTA.BUS;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraPrinting.Caching;
 using DoAnCK_TTA.DTO;
+using DevExpress.XtraReports.UI;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -371,7 +372,44 @@ namespace DoAnCK_TTA.GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridPhieuNhapHang.ShowPrintPreview();
+            //gridPhieuNhapHang.ShowPrintPreview();
+            List<DTO_STOCK_INWARD_DETAIL> list = new List<DTO_STOCK_INWARD_DETAIL>();
+
+            for (int i = 0; i < gridView5.RowCount; i++)
+            {
+                DataRow row = gridView5.GetDataRow(i);
+                if (row["Ma"].ToString() != "")
+                {
+                    DTO_STOCK_INWARD_DETAIL dTO_STOCK_INWARD_DETAIL = new DTO_STOCK_INWARD_DETAIL();
+                    dTO_STOCK_INWARD_DETAIL.ID = txtPhieu.Text + i.ToString();
+                    dTO_STOCK_INWARD_DETAIL.Inward_ID = txtPhieu.Text;
+                    dTO_STOCK_INWARD_DETAIL.Stock_ID = lookKho.EditValue.ToString();
+                    dTO_STOCK_INWARD_DETAIL.Product_ID = row["Ma"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.ProductName = row["Ten"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Customer_ID = lookMaNCC.EditValue.ToString();
+                    dTO_STOCK_INWARD_DETAIL.Unit = row["DonVi"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.UnitPrice = row["DonGia"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Quantity = row["SoLuong"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.UnitPrice = row["DonGia"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Amount = txtTongTien.Text;
+                    dTO_STOCK_INWARD_DETAIL.Description = menoGhiChu.Text;
+                    list.Add(dTO_STOCK_INWARD_DETAIL);
+                }
+            }
+            DataTable congty = new DataTable();
+            BUS_COMPANY bUS = new BUS_COMPANY();
+            congty = bUS.LayThongTinCongTy();
+
+            reportNhapHang report = new reportNhapHang();
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+            
+         
+            report.InitData( congty.Rows[0][1].ToString(), congty.Rows[0][2].ToString(), congty.Rows[0][4].ToString(), congty.Rows[0][8].ToString(), congty.Rows[0][5].ToString(), txtPhieu.Text, lookNhaCungCap.Text,txtDiaChi.Text, menoGhiChu.Text, txtTongTien.Text,calcSoLuong.SummaryText,txtThanhTien.SummaryText,calcVat.Text,calcTienVat.Text,list);
+
+            report.CreateDocument();
+            // Show the report's Print Preview in a dialog window.
+            printTool.ShowPreviewDialog();
         }
 
         private void calcCK_EditValueChanged(object sender, EventArgs e)
