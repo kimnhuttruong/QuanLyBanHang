@@ -86,6 +86,7 @@
             // 
             this.txtMatKhauCu.Location = new System.Drawing.Point(117, 54);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.Properties.PasswordChar = '*';
             this.txtMatKhauCu.Size = new System.Drawing.Size(185, 20);
             this.txtMatKhauCu.TabIndex = 2;
             // 
@@ -93,6 +94,7 @@
             // 
             this.txtMatKhauMoi.Location = new System.Drawing.Point(117, 89);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.Properties.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(185, 20);
             this.txtMatKhauMoi.TabIndex = 2;
             // 
@@ -100,6 +102,7 @@
             // 
             this.txtNhapLai.Location = new System.Drawing.Point(117, 126);
             this.txtNhapLai.Name = "txtNhapLai";
+            this.txtNhapLai.Properties.PasswordChar = '*';
             this.txtNhapLai.Size = new System.Drawing.Size(185, 20);
             this.txtNhapLai.TabIndex = 2;
             // 
@@ -111,6 +114,7 @@
             this.btnDongY.Size = new System.Drawing.Size(88, 36);
             this.btnDongY.TabIndex = 3;
             this.btnDongY.Text = "Đồng ý";
+            this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
             // 
             // btnThoat
             // 
