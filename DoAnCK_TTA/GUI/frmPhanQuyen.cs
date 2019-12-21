@@ -51,6 +51,10 @@ namespace DoAnCK_TTA.GUI
 
         private void frmPhanQuyen_Load(object sender, EventArgs e)
         {
+            load();
+        }
+        public void load()
+        { 
             DataTable dt3 = new DataTable();
             BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
             dt3 = bus.LayDanhSachPhanQuyen();
@@ -228,6 +232,45 @@ namespace DoAnCK_TTA.GUI
             frmThemVaiTro f = new frmThemVaiTro();
             f.Sender(manhom);
             f.ShowDialog();
+
+            load();
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Sữa chữa";
+            log.Description = manhom;
+            busLog.ThemLichSu(log);
+        }
+
+        private void btnXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            BUS_SYS_USER bus = new BUS_SYS_USER();
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int a = bus.XoaNguoiDung(manhom);
+                load();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                ;
+            }
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xóa group";
+            log.Description = manhom;
+            busLog.ThemLichSu(log);
         }
     }
 

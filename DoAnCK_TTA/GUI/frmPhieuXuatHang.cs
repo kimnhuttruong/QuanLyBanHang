@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
 using DevExpress.XtraEditors.Repository;
 using DoAnCK_TTA.DTO;
+using DevExpress.XtraReports.UI;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -337,7 +338,47 @@ namespace DoAnCK_TTA.GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridPhieuXuatHang.ShowPrintPreview();
+            //gridPhieuNhapHang.ShowPrintPreview();
+            List<DTO_STOCK_OUTWARD_DETAIL> list = new List<DTO_STOCK_OUTWARD_DETAIL>();
+
+            for (int i = 0; i < gridView5.RowCount; i++)
+            {
+                DataRow row = gridView5.GetDataRow(i);
+                if (row["Ma"].ToString() != "")
+                {
+                    DTO_STOCK_OUTWARD_DETAIL dTO_STOCK_INWARD_DETAIL = new DTO_STOCK_OUTWARD_DETAIL();
+                    dTO_STOCK_INWARD_DETAIL.ID = txtPhieu.Text + i.ToString();
+                    dTO_STOCK_INWARD_DETAIL.Outward_ID = txtPhieu.Text;
+                    dTO_STOCK_INWARD_DETAIL.Stock_ID = lookKho.EditValue.ToString();
+                    dTO_STOCK_INWARD_DETAIL.Product_ID = row["Ma"].ToString();
+                    BUS_PRODUCT bUS_PRODUCT = new BUS_PRODUCT();
+                    DataTable dt = bUS_PRODUCT.LayThongTinHangHoa(row["Ma"].ToString());
+                    dTO_STOCK_INWARD_DETAIL.ProductName = dt.Rows[0][1].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Unit = row["DonVi"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.UnitPrice = row["DonGia"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Quantity = row["SoLuong"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.UnitPrice = row["DonGia"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Discount = row["CK"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.DiscountRate = row["ChiecKhau"].ToString();
+                    dTO_STOCK_INWARD_DETAIL.Amount = txtTongTien.Text;
+                    dTO_STOCK_INWARD_DETAIL.Description = memoGhiChu.Text;
+                    list.Add(dTO_STOCK_INWARD_DETAIL);
+                }
+            }
+            DataTable congty = new DataTable();
+            BUS_COMPANY bUS = new BUS_COMPANY();
+            congty = bUS.LayThongTinCongTy();
+
+            reportPhieuXuat report = new reportPhieuXuat();
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+
+
+            report.InitData(calcCK.Text,calcTienCK.Text,txtDienThoai.Text,dateNgayGiao.Text,congty.Rows[0][1].ToString(), congty.Rows[0][2].ToString(), congty.Rows[0][4].ToString(), congty.Rows[0][8].ToString(), congty.Rows[0][5].ToString(), txtPhieu.Text, lookKhachHang.Text, txtDiaChi.Text, memoGhiChu.Text, txtTongTien.Text, calc.SummaryText, txtThanhTien.SummaryText, calcVat.Text, calcTienVat.Text, list);
+
+            report.CreateDocument();
+            // Show the report's Print Preview in a dialog window.
+            printTool.ShowPreviewDialog();
         }
 
         private void calcCK_EditValueChanged(object sender, EventArgs e)

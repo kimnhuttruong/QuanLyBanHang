@@ -12,6 +12,7 @@ using DoAnCK_TTA.BUS;
 using DevExpress.XtraGrid;
 using DoAnCK_TTA.DTO;
 using System.IO;
+using ExcelDataReader;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -135,7 +136,56 @@ namespace DoAnCK_TTA.GUI
 
         private void btnNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Excel Files(.xlsx)|*.xlsx";
+            openFileDialog1.Title = "Select an excel file";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string txtPath = openFileDialog1.FileName;
+                FileStream stream = File.Open(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
+                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                DataSet result = excelReader.AsDataSet();
+                DataTable dt = result.Tables[0];
 
+                for (int i = 1; i < dt.Rows.Count; i++)
+                {
+                    BUS_CUSTOMER bus = new BUS_CUSTOMER();
+                    DTO_CUSTOMER c = new DTO_CUSTOMER();
+                    c.Customer_ID = dt.Rows[i][0].ToString();
+                    c.OrderID = 0.ToString();
+                    c.CustomerName = dt.Rows[i][1].ToString();
+                   
+                    c.Customer_Group_ID = dt.Rows[i][20].ToString();
+                    c.CustomerAddress = dt.Rows[i][3].ToString();
+                   // c.Birthday = dt.Rows[i]["Birthday"].ToString();
+                    c.Barcode = dt.Rows[i][15].ToString();
+                    c.Tax = dt.Rows[i][4].ToString();
+                    c.Tel = dt.Rows[i][5].ToString();
+                    c.Fax = dt.Rows[i][8].ToString();
+                    c.Email = dt.Rows[i][7].ToString();
+                    c.Mobile = dt.Rows[i][6].ToString();
+                    c.Website = dt.Rows[i][14].ToString();
+                    c.Contact = dt.Rows[i][11].ToString();
+                    c.Position = dt.Rows[i][12].ToString();
+                    c.NickYM = dt.Rows[i][18].ToString();
+                    c.NickSky = dt.Rows[i][19].ToString();
+                    c.Area = dt.Rows[i][20].ToString();
+                    c.District = dt.Rows[i][20].ToString();
+                    c.Contry = dt.Rows[i][20].ToString();
+                    c.City = dt.Rows[i][20].ToString();
+                    c.BankAccount = dt.Rows[i][9].ToString();
+                    c.BankName = dt.Rows[i][10].ToString();
+                    c.CreditLimit = dt.Rows[i][16].ToString();
+                  //      c.Discount = dt.Rows[i]["Discount"].ToString();
+                   // c.IsDebt = dt.Rows[i]["IsDebt"].ToString();
+                 //   c.IsDebtDetail = dt.Rows[i]["IsDebtDetail"].ToString();
+                  //  c.IsProvider = dt.Rows[i]["IsProvider"].ToString();
+                    c.Description = dt.Rows[i][13].ToString();
+
+                    c.Active = true;
+                    bus.ThemKhachHang(c);
+                }
+            }
         }
 
         private void bntDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -190,37 +240,47 @@ namespace DoAnCK_TTA.GUI
         }
         private void treeKhachHang_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
-            c.Customer_ID = e.Node.GetValue("Customer_ID").ToString();
-            c.OrderID = e.Node.GetValue("OrderID").ToString();
-            c.CustomerName = e.Node.GetValue("CustomerName").ToString();
-            c.Customer_Type_ID = e.Node.GetValue("Customer_Type_ID").ToString();
-            c.Customer_Group_ID = e.Node.GetValue("Customer_Group_ID").ToString();
-            c.CustomerAddress = e.Node.GetValue("CustomerAddress").ToString();
-            c.Birthday = e.Node.GetValue("Birthday").ToString();
-            c.Barcode = e.Node.GetValue("Barcode").ToString();
-            c.Tax = e.Node.GetValue("Tax").ToString();
-            c.Tel = e.Node.GetValue("Tel").ToString();
-            c.Fax = e.Node.GetValue("Fax").ToString();
-            c.Email = e.Node.GetValue("Email").ToString();
-            c.Mobile = e.Node.GetValue("Mobile").ToString();
-            c.Website = e.Node.GetValue("Website").ToString();
-            c.Contact = e.Node.GetValue("Contact").ToString();
-            c.Position = e.Node.GetValue("Position").ToString();
-            c.NickYM = e.Node.GetValue("NickYM").ToString();
-            c.NickSky = e.Node.GetValue("NickSky").ToString();
-            c.Area = e.Node.GetValue("Area").ToString();
-            c.District = e.Node.GetValue("District").ToString();
-            c.Contry = e.Node.GetValue("Contry").ToString();
-            c.City = e.Node.GetValue("City").ToString();
-            c.BankAccount = e.Node.GetValue("BankAccount").ToString();
-            c.BankName = e.Node.GetValue("BankName").ToString();
-            c.CreditLimit = e.Node.GetValue("CreditLimit").ToString();
-            c.Discount = e.Node.GetValue("Discount").ToString();
-            c.IsDebt = e.Node.GetValue("IsDebt").ToString();
-            c.IsDebtDetail = e.Node.GetValue("IsDebtDetail").ToString();
-            c.IsProvider = e.Node.GetValue("IsProvider").ToString();
-            c.Description = e.Node.GetValue("Description").ToString();
-            c.Active = bool.Parse(e.Node.GetValue("Active").ToString());
+           
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                c.Customer_ID = row["Customer_ID"].ToString();
+                c.OrderID = row["OrderID"].ToString();
+                c.CustomerName = row["CustomerName"].ToString();
+                c.Customer_Type_ID = row["Customer_Type_ID"].ToString();
+                c.Customer_Group_ID = row["Customer_Group_ID"].ToString();
+                c.CustomerAddress = row["CustomerAddress"].ToString();
+                c.Birthday = row["Birthday"].ToString();
+                c.Barcode = row["Barcode"].ToString();
+                c.Tax = row["Tax"].ToString();
+                c.Tel = row["Tel"].ToString();
+                c.Fax = row["Fax"].ToString();
+                c.Email = row["Email"].ToString();
+                c.Mobile = row["Mobile"].ToString();
+                c.Website = row["Website"].ToString();
+                c.Contact = row["Contact"].ToString();
+                c.Position = row["Position"].ToString();
+                c.NickYM = row["NickYM"].ToString();
+                c.NickSky = row["NickSky"].ToString();
+                c.Area = row["Area"].ToString();
+                c.District = row["District"].ToString();
+                c.Contry = row["Contry"].ToString();
+                c.City = row["City"].ToString();
+                c.BankAccount = row["BankAccount"].ToString();
+                c.BankName = row["BankName"].ToString();
+                c.CreditLimit = row["CreditLimit"].ToString();
+                c.Discount = row["Discount"].ToString();
+                c.IsDebt = row["IsDebt"].ToString();
+                c.IsDebtDetail = row["IsDebtDetail"].ToString();
+                c.IsProvider = row["IsProvider"].ToString();
+                c.Description = row["Description"].ToString();
+                if (row["Active"].ToString().ToLower() != "")
+                    c.Active = bool.Parse(row["Active"].ToString().ToLower());
+            }
         }
     }
 }

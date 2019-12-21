@@ -48,10 +48,28 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.ThemNguoiDung(u);
 
         }
+        public int XoaNguoiDung(string u)
+        {
+            DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
+            return dAL_SYS_USER_RULE.XoaNguoiDung(u);
+
+        }
         public int CapNhatNhom(string u)
         {
             DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
             return dAL_SYS_USER_RULE.CapNhatNhom(u);
+
+        }
+        public int CapNhatLuu(bool isSave, string user, string password)
+        {
+            DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
+            return dAL_SYS_USER_RULE.CapNhatLuu(isSave, user,password);
+
+        }
+        public DataTable LayLoginLuu()
+        {
+            DAL_SYS_USER dAL_SYS_USER_RULE = new DAL_SYS_USER();
+            return dAL_SYS_USER_RULE.LayLoginLuu();
 
         }
     }

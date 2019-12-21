@@ -75,9 +75,15 @@ namespace DoAnCK_TTA.GUI
             lookKhuVuc.Properties.DisplayMember = "Customer_Group_Name";
             lookKhuVuc.Properties.ValueMember = "Customer_Group_ID";
 
-            if(id_group !=null)
-            lookKhuVuc.EditValue= lookKhuVuc.Properties.GetKeyValue(int.Parse(id_group.Remove(0,2))-1) ;
- 
+            if (id_group != null || id_group != "")
+                try
+                {
+                    lookKhuVuc.EditValue = lookKhuVuc.Properties.GetKeyValue(int.Parse(id_group.Remove(0, 2)) - 1);
+                }
+                catch
+                {
+                    ;
+                }
         }
 
         private void LookKhuVuc_Click(object sender, EventArgs e)
@@ -144,6 +150,7 @@ namespace DoAnCK_TTA.GUI
             c.Contry = calcNoHienTai.Text;
             c.NickYM = txtFacebook.Text;
             c.NickSky = txtZalo.Text;
+            c.Customer_Group_ID = lookKhuVuc.EditValue.ToString();
             //c.Customer_Type_ID = radioDaiLyBanLe.Properties.Items[1].Value("");
 
             c.Active = checkQuanLy.Checked;

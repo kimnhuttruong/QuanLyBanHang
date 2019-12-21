@@ -11,6 +11,7 @@ using DevExpress.XtraBars;
 using System.IO;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
+using ExcelDataReader;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -36,11 +37,11 @@ namespace DoAnCK_TTA.GUI
             var mainWindow = new frmThongTinHangHoa();
 
 
-            dTO_PRODUCT.Product_ID = _dt.Rows[_dt.Rows.Count - 1][0].ToString();
+            dTO_PRODUCT.Product_ID = _dt.Rows.Count.ToString();
 
-            dTO_PRODUCT.Product_ID = dTO_PRODUCT.Product_ID.Remove(0, 3);
 
             dTO_PRODUCT.Product_ID = (int.Parse(dTO_PRODUCT.Product_ID) + 1).ToString("000000");
+            
             dTO_PRODUCT.Product_ID = "HH" + dTO_PRODUCT.Product_ID.ToString();
 
             mainWindow.Sender(dTO_PRODUCT);    //Gọi delegate
@@ -213,7 +214,92 @@ namespace DoAnCK_TTA.GUI
 
         private void btnNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Excel Files(.xlsx)|*.xlsx";
+            openFileDialog1.Title = "Select an excel file";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string txtPath = openFileDialog1.FileName;
+                FileStream stream = File.Open(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
+                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                DataSet result = excelReader.AsDataSet();
+                DataTable dt = result.Tables[0];
 
+                for (int i = 1; i < dt.Rows.Count; i++)
+                {
+                    BUS_PRODUCT bus = new BUS_PRODUCT();
+                    DTO_PRODUCT c = new DTO_PRODUCT();
+                    BUS_INVENTORY_DETAIL iNVENTORY_DETAIL = new BUS_INVENTORY_DETAIL();
+                    c.Product_ID = dt.Rows[i][0].ToString();
+                    c.Product_Name = dt.Rows[i][1].ToString();
+                    c.Origin = 1.ToString();
+                    c.MinStock = dt.Rows[i][5].ToString();
+                    c.CurrentCost = dt.Rows[i][10].ToString();
+                    c.Barcode = dt.Rows[i][9].ToString();
+                    c.Org_Price = dt.Rows[i][4].ToString();
+                    c.Sale_Price = dt.Rows[i][11].ToString();
+                    c.Retail_Price = dt.Rows[i][10].ToString();
+                    BUS_STOCK s = new BUS_STOCK();
+                    DataTable bangKho = s.LayThongTinKhoHang();
+                    string ma = "MaNhapSai";
+
+                    for (int k = 0; k < bangKho.Rows.Count; k++)
+                    {
+                        if (dt.Rows[i][3].ToString() == bangKho.Rows[k][1].ToString())
+                        {
+                            ma = bangKho.Rows[k][0].ToString();
+                            break;
+                        }
+                    }
+                    c.Stock_ID = ma;
+                    BUS_PRODUCT_GROUP g = new BUS_PRODUCT_GROUP();
+                    DataTable bangNhomHang = g.LayDanhSachNhomHang();
+                     ma = "MaNhapSai";
+
+                    for (int k = 0; k < bangNhomHang.Rows.Count; k++)
+                    {
+                        if (dt.Rows[i][7].ToString() == bangNhomHang.Rows[k][1].ToString())
+                        {
+                            ma = bangNhomHang.Rows[k][0].ToString();
+                            break;
+                        }
+                    }
+                    c.Product_Group_ID = ma;
+                    BUS_UNIT u = new BUS_UNIT();
+                    DataTable bangUNIT = u.LayDanhSachDonViTinh();
+                    ma = "MaNhapSai";
+
+                    for (int k = 0; k < bangUNIT.Rows.Count; k++)
+                    {
+                        if (dt.Rows[i][2].ToString() == bangUNIT.Rows[k][1].ToString())
+                        {
+                            ma = bangUNIT.Rows[k][0].ToString();
+                            break;
+                        }
+                    }
+                    c.Unit = ma;
+                    BUS_PROVIDER p = new BUS_PROVIDER();
+                    DataTable bangPROVIDER = p.LayDanhSachNhaCungCap();
+                    ma = "MaNhapSai";
+
+                    for (int k = 0; k < bangPROVIDER.Rows.Count; k++)
+                    {
+                        if (dt.Rows[i][6].ToString() == bangPROVIDER.Rows[k][1].ToString())
+                        {
+                            ma = bangPROVIDER.Rows[k][0].ToString();
+                            break;
+                        }
+                    }
+                    c.Provider_ID = ma;
+
+
+                    c.Active = true;
+                   
+                    int kt = bus.ThemHangHoa(c);
+
+                }
+                formLoad();
+            }
         }
 
         private void btnDong_ItemClick(object sender, ItemClickEventArgs e)

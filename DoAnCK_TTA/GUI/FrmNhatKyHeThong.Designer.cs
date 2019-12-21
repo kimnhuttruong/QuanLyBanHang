@@ -129,7 +129,7 @@
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 43);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1361, 0);
             // 
@@ -145,17 +145,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 43);
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 452);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 456);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1361, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(1361, 43);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 452);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 456);
             // 
             // barManager1
             // 
@@ -263,7 +263,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 19);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1361, 28);
+            this.barDockControl1.Size = new System.Drawing.Size(1361, 24);
             // 
             // barDockControl2
             // 
@@ -277,17 +277,17 @@
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 47);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 43);
             this.barDockControl3.Manager = this.barManager1;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 452);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 456);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1361, 47);
+            this.barDockControl4.Location = new System.Drawing.Point(1361, 43);
             this.barDockControl4.Manager = this.barManager1;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 452);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 456);
             // 
             // gridNhatKy
             // 
@@ -359,7 +359,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Đối Tượng";
-            this.gridColumn6.FieldName = "Reference";
+            this.gridColumn6.FieldName = "Description";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;

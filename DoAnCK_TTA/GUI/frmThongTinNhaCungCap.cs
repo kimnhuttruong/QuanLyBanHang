@@ -91,10 +91,15 @@ namespace DoAnCK_TTA.GUI
             lookKhuVuc.Properties.DataSource = _dt;
             lookKhuVuc.Properties.DisplayMember = "Customer_Group_Name";
             lookKhuVuc.Properties.ValueMember = "Customer_Group_ID";
-
-            if (id_group != null)
-                lookKhuVuc.EditValue = lookKhuVuc.Properties.GetKeyValue(int.Parse(id_group.Remove(0, 2)) - 1);
-
+            try
+            {
+                if (id_group != null)
+                    lookKhuVuc.EditValue = lookKhuVuc.Properties.GetKeyValue(int.Parse(id_group.Remove(0, 2)) - 1);
+            }
+            catch
+            {
+                ;
+            }
         }
         string _id;
 
@@ -102,6 +107,7 @@ namespace DoAnCK_TTA.GUI
         {
             BUS_PROVIDER bus = new BUS_PROVIDER();
             DTO_PROVIDER c = new DTO_PROVIDER();
+            c.Customer_Group_ID = lookKhuVuc.EditValue.ToString();
             c.Customer_ID = txtMa.Text;
             c.CustomerName = txtTen.Text;
             c.CustomerAddress = txtDiaChi.Text;

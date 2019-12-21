@@ -143,6 +143,26 @@ namespace DoAnCK_TTA.DAL
             }
 
         }
+        public int XoaNguoiDung(string u)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Delete [dbo].[SYS_GROUP]  where Group_ID='" + u + "' and Group_ID !='admin'  Delete [dbo].[SYS_USER]  where Group_ID='" + u + "' and Group_ID !='admin'  ";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
         public int CapNhatNhom(string u)
         {
            
@@ -182,6 +202,56 @@ namespace DoAnCK_TTA.DAL
             catch
             {
                 return 0;
+            }
+
+        }
+        public int CapNhatLuu(bool isSave,string user,string password)
+        {
+            int save;
+            if (isSave)
+                save = 1;
+            else
+                save = 0;
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            if(isSave)
+                cmd.CommandText = "Delete SYS_USER_STOCK where UserID='"+ user + "'  Insert into SYS_USER_STOCK values ('"+user+"','"+password+"',1)";
+            else
+                cmd.CommandText = "Delete SYS_USER_STOCK where UserID='" + user + "'";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+        public DataTable LayLoginLuu()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from SYS_USER_STOCK ";
+            try
+            {
+                OpenConnection();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
             }
 
         }

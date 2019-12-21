@@ -23,7 +23,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT into  PROVIDER   VALUES ( '" + kv.Customer_ID + "' ,  '" + kv.OrderID + "' ,  N'" + kv.CustomerName + "' ,  N'" + kv.Customer_Type_ID + "' ,  N'" + kv.Customer_Group_ID + "' ,  N'" + kv.CustomerAddress + "' ,  '" + kv.Birthday + "' ,  '" + kv.Barcode + "' ,  '" + kv.Tax + "',  '" + kv.Tel + "',  '" + kv.Fax + "' ,  '" + kv.Email + "',  '" + kv.Mobile + "' ,  '" + kv.Website + "',  '" + kv.Contact + "',  '" + kv.Position + "',  '" + kv.NickYM + "',  '" + kv.NickSky + "' ,  '" + kv.Area + "',  '" + kv.District + "' ,  '" + kv.Contry + "' ,  '" + kv.City + "',  '" + kv.BankAccount + "' ,  '" + kv.BankName + "' ,  '" + kv.CreditLimit + "' ,  '" + kv.Discount + "' ,  '" + kv.IsDebt + "' ,  '" + kv.IsDebtDetail + "',  '" + kv.IsProvider + "' ,  '" + kv.Description + "' ,  " + active + ")";
+            cmd.CommandText = "INSERT into  PROVIDER   VALUES ( '" + kv.Customer_ID + "' ,  '" + kv.OrderID + "' ,  N'" + kv.CustomerName + "' ,  N'" + kv.Customer_Type_ID + "' ,  N'" + kv.Customer_Group_ID + "' ,  N'" + kv.CustomerAddress + "' ,  '" + kv.Birthday + "' ,  '" + kv.Barcode + "' ,  '" + kv.Tax + "',  '" + kv.Tel + "',  '" + kv.Fax + "' ,  '" + kv.Email + "',  '" + kv.Mobile + "' ,  '" + kv.Website + "',  N'" + kv.Contact + "',  N'" + kv.Position + "',  '" + kv.NickYM + "',  '" + kv.NickSky + "' ,  '" + kv.Area + "',  '" + kv.District + "' ,  '" + kv.Contry + "' ,  '" + kv.City + "',  '" + kv.BankAccount + "' ,  '" + kv.BankName + "' ,  '" + kv.CreditLimit + "' ,  '" + kv.Discount + "' ,  '" + kv.IsDebt + "' ,  '" + kv.IsDebtDetail + "',  '" + kv.IsProvider + "' ,  '" + kv.Description + "' ,  " + active + ")";
             try
             {
                 OpenConnection();
@@ -70,7 +70,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete PROVIDER  where Customer_ID= N'" + kv.Customer_ID + "'   INSERT into  PROVIDER   VALUES ( '" + kv.Customer_ID + "' ,  '" + kv.OrderID + "' ,  N'" + kv.CustomerName + "' ,  N'" + kv.Customer_Type_ID + "' ,  N'" + kv.Customer_Group_ID + "' ,  N'" + kv.CustomerAddress + "' ,  '" + kv.Birthday + "' ,  '" + kv.Barcode + "' ,  '" + kv.Tax + "',  '" + kv.Tel + "',  '" + kv.Fax + "' ,  '" + kv.Email + "',  '" + kv.Mobile + "' ,  '" + kv.Website + "',  '" + kv.Contact + "',  '" + kv.Position + "',  '" + kv.NickYM + "',  '" + kv.NickSky + "' ,  '" + kv.Area + "',  '" + kv.District + "' ,  '" + kv.Contry + "' ,  '" + kv.City + "',  '" + kv.BankAccount + "' ,  '" + kv.BankName + "' ,  '" + kv.CreditLimit + "' ,  '" + kv.Discount + "' ,  '" + kv.IsDebt + "' ,  '" + kv.IsDebtDetail + "',  '" + kv.IsProvider + "' ,  '" + kv.Description + "' ,  " + active + ")";
+            cmd.CommandText = "delete PROVIDER  where Customer_ID= N'" + kv.Customer_ID + "'   INSERT into  PROVIDER   VALUES ( '" + kv.Customer_ID + "' ,  '" + kv.OrderID + "' ,  N'" + kv.CustomerName + "' ,  N'" + kv.Customer_Type_ID + "' ,  N'" + kv.Customer_Group_ID + "' ,  N'" + kv.CustomerAddress + "' ,  '" + kv.Birthday + "' ,  '" + kv.Barcode + "' ,  '" + kv.Tax + "',  '" + kv.Tel + "',  '" + kv.Fax + "' ,  '" + kv.Email + "',  '" + kv.Mobile + "' ,  '" + kv.Website + "',  N'" + kv.Contact + "',  N'" + kv.Position + "',  '" + kv.NickYM + "',  '" + kv.NickSky + "' ,  '" + kv.Area + "',  '" + kv.District + "' ,  '" + kv.Contry + "' ,  '" + kv.City + "',  '" + kv.BankAccount + "' ,  '" + kv.BankName + "' ,  '" + kv.CreditLimit + "' ,  '" + kv.Discount + "' ,  '" + kv.IsDebt + "' ,  '" + kv.IsDebtDetail + "',  '" + kv.IsProvider + "' ,  '" + kv.Description + "' ,  " + active + ")";
             try
             {
                 OpenConnection();
@@ -91,7 +91,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM PROVIDER ";
+            cmd.CommandText = "SELECT p.*,g.Customer_Group_Name FROM PROVIDER p left join CUSTOMER_GROUP g on g.Customer_Group_ID=p.Customer_Group_ID";
             try
             {
                 OpenConnection();

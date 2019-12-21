@@ -91,7 +91,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT p.*,s.Stock_Name FROM PRODUCT p left join Stock s on p.Stock_ID=s.Stock_ID";
+            cmd.CommandText = "SELECT p.*,s.Stock_Name,g.ProductGroup_Name FROM PRODUCT p left join Stock s on p.Stock_ID = s.Stock_ID left join  PRODUCT_GROUP g on g.ProductGroup_ID = p.Product_Group_ID";
             try
             {
                 OpenConnection();

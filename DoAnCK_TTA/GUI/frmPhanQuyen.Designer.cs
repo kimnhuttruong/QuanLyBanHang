@@ -117,6 +117,7 @@
             this.gridColumn4});
             this.gridView2.GridControl = this.gridNhomphanquyen;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsPrint.ExpandAllDetails = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -181,6 +182,7 @@
             this.gridView1.GridControl = this.gridNhomphanquyen;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.ShowDetailTabs = false;
+            this.gridView1.OptionsPrint.ExpandAllDetails = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.MasterRowEmpty += new DevExpress.XtraGrid.Views.Grid.MasterRowEmptyEventHandler(this.gridView1_MasterRowEmpty);
             this.gridView1.MasterRowGetChildList += new DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventHandler(this.gridView1_MasterRowGetChildList);
@@ -307,6 +309,7 @@
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick_1);
             // 
             // btnDong
             // 
@@ -701,7 +704,7 @@
             // 
             // treeListColumn2
             // 
-            this.treeListColumn2.Caption = "treeListColumn2";
+            this.treeListColumn2.Caption = "Vai trò và người dùng";
             this.treeListColumn2.FieldName = "UserName";
             this.treeListColumn2.Name = "treeListColumn2";
             this.treeListColumn2.Visible = true;

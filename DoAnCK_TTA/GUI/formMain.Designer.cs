@@ -475,6 +475,7 @@
             this.btnNhapDanhMucTuExcel.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.phuchoi;
             this.btnNhapDanhMucTuExcel.Name = "btnNhapDanhMucTuExcel";
             this.btnNhapDanhMucTuExcel.Tag = "bbiAdjustment";
+            this.btnNhapDanhMucTuExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDanhMucTuExcel_ItemClick);
             // 
             // btnKhuVuc
             // 
@@ -1398,7 +1399,7 @@
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
-            this.IconOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.about_32x32;
+            this.IconOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.money;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "formMain";

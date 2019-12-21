@@ -35,26 +35,24 @@ namespace DoAnCK_TTA
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.checkSave = new DevExpress.XtraEditors.CheckEdit();
             this.btnKetThuc = new DevExpress.XtraEditors.SimpleButton();
             this.btnTuyChon = new DevExpress.XtraEditors.SimpleButton();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbUsername = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbUsername = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkSave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,12 +95,13 @@ namespace DoAnCK_TTA
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.cbUsername);
+            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(this.checkSave);
             this.panel2.Controls.Add(this.btnKetThuc);
             this.panel2.Controls.Add(this.btnTuyChon);
             this.panel2.Controls.Add(this.btnDangNhap);
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -113,6 +112,22 @@ namespace DoAnCK_TTA
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 182);
             this.panel2.TabIndex = 0;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(137, 104);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(180, 20);
+            this.txtPassword.TabIndex = 12;
+            // 
+            // checkSave
+            // 
+            this.checkSave.Location = new System.Drawing.Point(136, 130);
+            this.checkSave.Name = "checkSave";
+            this.checkSave.Properties.Caption = "Nhớ tài khoản và mật khẩu";
+            this.checkSave.Size = new System.Drawing.Size(167, 19);
+            this.checkSave.TabIndex = 11;
             // 
             // btnKetThuc
             // 
@@ -141,54 +156,6 @@ namespace DoAnCK_TTA
             this.btnDangNhap.Tag = "Login";
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(136, 130);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(155, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Nhớ tài khoản và mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(193)))), ((int)(((byte)(222)))));
-            this.panel4.Controls.Add(this.txtPassword);
-            this.panel4.Location = new System.Drawing.Point(136, 106);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(181, 19);
-            this.panel4.TabIndex = 7;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(1, 1);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(179, 17);
-            this.txtPassword.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(193)))), ((int)(((byte)(222)))));
-            this.panel3.Controls.Add(this.cbUsername);
-            this.panel3.Location = new System.Drawing.Point(136, 77);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(181, 20);
-            this.panel3.TabIndex = 6;
-            // 
-            // cbUsername
-            // 
-            this.cbUsername.Location = new System.Drawing.Point(1, 1);
-            this.cbUsername.Name = "cbUsername";
-            this.cbUsername.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cbUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbUsername.Size = new System.Drawing.Size(179, 18);
-            this.cbUsername.TabIndex = 8;
             // 
             // label6
             // 
@@ -246,6 +213,16 @@ namespace DoAnCK_TTA
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cbUsername
+            // 
+            this.cbUsername.Location = new System.Drawing.Point(136, 78);
+            this.cbUsername.Name = "cbUsername";
+            this.cbUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbUsername.Size = new System.Drawing.Size(181, 20);
+            this.cbUsername.TabIndex = 17;
+            this.cbUsername.SelectedValueChanged += new System.EventHandler(this.cbUsername_SelectedValueChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,6 +233,7 @@ namespace DoAnCK_TTA
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
@@ -266,11 +244,10 @@ namespace DoAnCK_TTA
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkSave.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,16 +263,14 @@ namespace DoAnCK_TTA
         private Label label4;
         private Label label3;
         private Label label2;
-        private Panel panel3;
         private Label label6;
         private Label label5;
-        private Panel panel4;
-        private TextBox txtPassword;
-        private DevExpress.XtraEditors.ComboBoxEdit cbUsername;
-        private CheckBox checkBox1;
         private DevExpress.XtraEditors.SimpleButton btnDangNhap;
         private DevExpress.XtraEditors.SimpleButton btnKetThuc;
         private DevExpress.XtraEditors.SimpleButton btnTuyChon;
+        private DevExpress.XtraEditors.CheckEdit checkSave;
+        private DevExpress.XtraEditors.TextEdit txtPassword;
+        private DevExpress.XtraEditors.ComboBoxEdit cbUsername;
     }
 }
 

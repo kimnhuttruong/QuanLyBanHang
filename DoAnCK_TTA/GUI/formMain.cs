@@ -687,5 +687,11 @@ namespace DoAnCK_TTA.GUI
 
 
         }
+
+        private void btnNhapDanhMucTuExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmNhapFile f = new frmNhapFile();
+            f.ShowDialog();
+        }
     }
 }

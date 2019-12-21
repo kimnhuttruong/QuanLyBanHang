@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,12 +20,23 @@ namespace DoAnCK_TTA
         {
             InitializeComponent();
         }
-
+       
         private void Login_Load(object sender, EventArgs e)
         {
-
+            
+            List<DTO_SYS_USER> ds = new List<DTO_SYS_USER>();
+            DataTable dt = new DataTable();
+            BUS_SYS_USER bus = new BUS_SYS_USER();
+            dt = bus.LayLoginLuu();
+            for(int i=0;i<dt.Rows.Count;i++)
+            {
+                DTO_SYS_USER dTO = new DTO_SYS_USER();
+                dTO.UserName = dt.Rows[i]["UserID"].ToString();
+                //dTO.Password = (dt.Rows[i]["Password"].ToString());
+                cbUsername.Properties.Items.Add(dt.Rows[i]["UserID"].ToString());
+            }
         }
-
+        
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -66,6 +78,11 @@ namespace DoAnCK_TTA
                 BUS_COMPANY ct2 = new BUS_COMPANY();
                 DataTable dt2 = new DataTable();
                 dt2 = ct2.LayThongTinCongTy();
+
+
+                bus1.CapNhatLuu(checkSave.Checked, cbUsername.Text, txtPassword.Text);
+               
+
                 if (dt.Rows.Count > 0)
                 {
                     mainWindow.Show();
@@ -99,6 +116,29 @@ namespace DoAnCK_TTA
         private void btnKetThuc_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbUsername_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+       
+        private void cbUsername_EditValueChanged_1(object sender, EventArgs e)
+        {
+        }
+
+        private void cbUsername_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            BUS_SYS_USER bus = new BUS_SYS_USER();
+            dt = bus.LayLoginLuu();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+               if(dt.Rows[i]["UserID"].ToString()==cbUsername.Text)
+                {
+                    txtPassword.Text = dt.Rows[i]["StockID"].ToString();
+                }
+            }
         }
     }
 }

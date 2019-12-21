@@ -56,19 +56,19 @@ namespace DoAnCK_TTA.GUI
                 txtDienThoai.Text = dt.Rows[0]["Tel"].ToString();
                 txtFax.Text = dt.Rows[0]["Fax"].ToString();
                 txtMaSoThue.Text = dt.Rows[0]["CompanyTax"].ToString();
-                txtWebsite.Text = dt.Rows[0]["CompanyTax"].ToString();
+                txtWebsite.Text = dt.Rows[0]["WebSite"].ToString();
                 txtEmail.Text = dt.Rows[0]["Email"].ToString();
                 logo.Image = Image.FromFile(dt.Rows[0]["Logo"].ToString());
-                txtTenDonVi.Text = txtDiaChi.Text = dt.Rows[0]["CompamyName"].ToString();
+                txtTenDonVi.Text =  dt.Rows[0]["CompamyName"].ToString();
             }
 
         }
-
+        BUS_COMPANY bUS_COMPANY = new BUS_COMPANY();
+        DTO_COMPANY ct = new DTO_COMPANY();
         private void btnDongY_Click(object sender, EventArgs e)
         {
             
-            BUS_COMPANY bUS_COMPANY = new BUS_COMPANY();
-            DTO_COMPANY ct = new DTO_COMPANY();
+           
             ct.CompanyID = txtLinhVuc.Text + "_" + txtGPKD.Text;
             ct.CompamyName = txtTenDonVi.Text;
             ct.Tel = txtDienThoai.Text;
@@ -76,11 +76,12 @@ namespace DoAnCK_TTA.GUI
             ct.CompanyTax = txtMaSoThue.Text;
             ct.WebSite = txtWebsite.Text;
             ct.Email = txtEmail.Text;
-            if (logo.Tag.ToString() == "DoAnCK_TTA")
-                ct.Logo = "DoAnCK_TTA";
-            else
-                 ct.Logo = logo.Tag.ToString();
-
+            
+                if (logo.Tag.ToString() == "DoAnCK_TTA")
+                   ct.Logo = "DoAnCK_TTA";
+                else
+                   ct.Logo = logo.Tag.ToString();
+           
             ct.CompanyAddress = txtDiaChi.Text;
            int kt= bUS_COMPANY.ThemCôngTy(ct);
             if(kt==1)
@@ -103,6 +104,7 @@ namespace DoAnCK_TTA.GUI
             {
                 logo.Load(dialog.FileName);
                 logo.Tag = dialog.FileName;
+                ct.Logo = dialog.FileName;
             }
         }
     }

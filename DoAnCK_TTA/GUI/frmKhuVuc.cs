@@ -36,6 +36,17 @@ namespace DoAnCK_TTA.GUI
 
             mainWindow.ShowDialog();
             formLoad();
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Thêm";
+            busLog.ThemLichSu(log);
+
         }
 
         private void gridKhuVuc_Click(object sender, EventArgs e)
@@ -91,12 +102,54 @@ namespace DoAnCK_TTA.GUI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (int i in gridView1.GetSelectedRows())
+                {
+                    string ma = "";
+                    DataRow row = gridView1.GetDataRow(i);
+                    ma = row[0].ToString();
+                    bus.XoaKhuVuc(ma);
 
+                    BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+                    DTO_SYS_LOG log = new DTO_SYS_LOG();
+                    BUS_SYS_USER busform = new BUS_SYS_USER();
+                    DataTable dtlog = new DataTable();
+                    dtlog = busform.LayThongTinUSER();
+                    log.MChine = dtlog.Rows[0][1].ToString();
+                    log.UserID = dtlog.Rows[0][2].ToString();
+                    log.Module = this.Tag.ToString();
+                    log.Action_Name = "Xóa";
+                    log.Description = ma;
+                    busLog.ThemLichSu(log);
+                }
+               
+
+                formLoad();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                ;
+            }
+           
+          
         }
 
         private void btnNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formLoad();
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Nạp lại";
+            busLog.ThemLichSu(log);
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -106,7 +159,65 @@ namespace DoAnCK_TTA.GUI
 
         private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    string exportFilePath = saveDialog.FileName;
+                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
 
+                    switch (fileExtenstion)
+                    {
+                        case ".xls":
+                            gridKhuVuc.ExportToXls(exportFilePath);
+                            break;
+                        case ".xlsx":
+                            gridKhuVuc.ExportToXlsx(exportFilePath);
+                            break;
+                        case ".rtf":
+                            gridKhuVuc.ExportToRtf(exportFilePath);
+                            break;
+                        case ".pdf":
+                            gridKhuVuc.ExportToPdf(exportFilePath);
+                            break;
+                        case ".html":
+                            gridKhuVuc.ExportToHtml(exportFilePath);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            //Try to open the file and let windows decide how to open it.
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xuất";
+            busLog.ThemLichSu(log);
         }
       
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -135,6 +246,17 @@ namespace DoAnCK_TTA.GUI
 
             mainWindow.ShowDialog();
             formLoad();
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Sữa chữa";
+            busLog.ThemLichSu(log);
         }
     }
 }

@@ -44,18 +44,21 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
-            this.treeNhaCungCap = new DevExpress.XtraTreeList.TreeList();
-            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeNhaCungCap = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.aaa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeNhaCungCap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -171,7 +174,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1361, 28);
+            this.barDockControlTop.Size = new System.Drawing.Size(1361, 24);
             // 
             // barDockControlBottom
             // 
@@ -185,17 +188,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 493);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 497);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1361, 28);
+            this.barDockControlRight.Location = new System.Drawing.Point(1361, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 497);
             // 
             // barHeaderItem1
             // 
@@ -205,94 +208,115 @@
             // 
             // treeNhaCungCap
             // 
-            this.treeNhaCungCap.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumn1,
-            this.treeListColumn2,
-            this.treeListColumn3,
-            this.treeListColumn4,
-            this.treeListColumn5,
-            this.treeListColumn6,
-            this.treeListColumn7,
-            this.treeListColumn8,
-            this.treeListColumn9});
-            this.treeNhaCungCap.Location = new System.Drawing.Point(0, 26);
+            this.treeNhaCungCap.Location = new System.Drawing.Point(0, 25);
+            this.treeNhaCungCap.MainView = this.gridView1;
             this.treeNhaCungCap.MenuManager = this.barManager1;
             this.treeNhaCungCap.Name = "treeNhaCungCap";
-            this.treeNhaCungCap.Size = new System.Drawing.Size(1361, 496);
-            this.treeNhaCungCap.TabIndex = 4;
-            this.treeNhaCungCap.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeList1_FocusedNodeChanged);
+            this.treeNhaCungCap.Size = new System.Drawing.Size(1361, 500);
+            this.treeNhaCungCap.TabIndex = 9;
+            this.treeNhaCungCap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // treeListColumn1
+            // gridView1
             // 
-            this.treeListColumn1.Caption = "Mã Số";
-            this.treeListColumn1.FieldName = "Customer_ID";
-            this.treeListColumn1.Name = "treeListColumn1";
-            this.treeListColumn1.Visible = true;
-            this.treeListColumn1.VisibleIndex = 0;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.aaa,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn1,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9});
+            this.gridView1.GridControl = this.treeNhaCungCap;
+            this.gridView1.GroupCount = 1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn9, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
-            // treeListColumn2
+            // aaa
             // 
-            this.treeListColumn2.Caption = "Tên Nhà Cung Cấp";
-            this.treeListColumn2.FieldName = "CustomerName";
-            this.treeListColumn2.Name = "treeListColumn2";
-            this.treeListColumn2.Visible = true;
-            this.treeListColumn2.VisibleIndex = 1;
+            this.aaa.Caption = "Mã Số";
+            this.aaa.FieldName = "Customer_ID";
+            this.aaa.Name = "aaa";
+            this.aaa.Visible = true;
+            this.aaa.VisibleIndex = 0;
             // 
-            // treeListColumn3
+            // gridColumn2
             // 
-            this.treeListColumn3.Caption = "Người Liên Hệ";
-            this.treeListColumn3.FieldName = "Contact";
-            this.treeListColumn3.Name = "treeListColumn3";
-            this.treeListColumn3.Visible = true;
-            this.treeListColumn3.VisibleIndex = 2;
+            this.gridColumn2.Caption = "Tên Nhà Cung Cấp";
+            this.gridColumn2.FieldName = "CustomerName";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
-            // treeListColumn4
+            // gridColumn3
             // 
-            this.treeListColumn4.Caption = "Chức Vụ";
-            this.treeListColumn4.FieldName = "Position";
-            this.treeListColumn4.Name = "treeListColumn4";
-            this.treeListColumn4.Visible = true;
-            this.treeListColumn4.VisibleIndex = 3;
+            this.gridColumn3.Caption = "Người Liên Hệ";
+            this.gridColumn3.FieldName = "Contact";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
             // 
-            // treeListColumn5
+            // gridColumn4
             // 
-            this.treeListColumn5.Caption = "Địa Chỉ";
-            this.treeListColumn5.FieldName = "CustomerAddress";
-            this.treeListColumn5.Name = "treeListColumn5";
-            this.treeListColumn5.Visible = true;
-            this.treeListColumn5.VisibleIndex = 4;
+            this.gridColumn4.Caption = "Chức Vụ";
+            this.gridColumn4.FieldName = "Contact";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
-            // treeListColumn6
+            // gridColumn1
             // 
-            this.treeListColumn6.Caption = "Điện Thoại";
-            this.treeListColumn6.FieldName = "Tel";
-            this.treeListColumn6.Name = "treeListColumn6";
-            this.treeListColumn6.Visible = true;
-            this.treeListColumn6.VisibleIndex = 5;
+            this.gridColumn1.Caption = "Địa Chỉ";
+            this.gridColumn1.FieldName = "CustomerAddress";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
             // 
-            // treeListColumn7
+            // gridColumn5
             // 
-            this.treeListColumn7.Caption = "Di Động";
-            this.treeListColumn7.FieldName = "Email";
-            this.treeListColumn7.Name = "treeListColumn7";
-            this.treeListColumn7.Visible = true;
-            this.treeListColumn7.VisibleIndex = 6;
+            this.gridColumn5.Caption = "Điện Thoại";
+            this.gridColumn5.FieldName = "Tel";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
             // 
-            // treeListColumn8
+            // gridColumn6
             // 
-            this.treeListColumn8.Caption = "Fax";
-            this.treeListColumn8.FieldName = "Fax";
-            this.treeListColumn8.Name = "treeListColumn8";
-            this.treeListColumn8.Visible = true;
-            this.treeListColumn8.VisibleIndex = 7;
+            this.gridColumn6.Caption = "Email";
+            this.gridColumn6.FieldName = "Email";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 6;
             // 
-            // treeListColumn9
+            // gridColumn7
             // 
-            this.treeListColumn9.Caption = "Còn Quản Lý";
-            this.treeListColumn9.FieldName = "Active";
-            this.treeListColumn9.Name = "treeListColumn9";
-            this.treeListColumn9.Visible = true;
-            this.treeListColumn9.VisibleIndex = 8;
+            this.gridColumn7.Caption = "Fax";
+            this.gridColumn7.FieldName = "Fax";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 7;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Còn Quản Lý";
+            this.gridColumn8.FieldName = "Active";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 8;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Khu Vực";
+            this.gridColumn9.FieldName = "Customer_Group_Name";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 9;
             // 
             // frmNhaCungCap
             // 
@@ -310,6 +334,7 @@
             this.Load += new System.EventHandler(this.frmNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeNhaCungCap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,16 +355,18 @@
         private DevExpress.XtraBars.BarButtonItem btnXuat;
         private DevExpress.XtraBars.BarButtonItem btnNhap;
         private DevExpress.XtraBars.BarButtonItem btnDong;
-        private DevExpress.XtraTreeList.TreeList treeNhaCungCap;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
+        private DevExpress.XtraGrid.GridControl treeNhaCungCap;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn aaa;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

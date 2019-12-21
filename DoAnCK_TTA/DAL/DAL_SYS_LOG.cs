@@ -24,7 +24,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT [dbo].[SYS_LOG]  (SYS_ID,UserID,MChine,Created,Module,Action_Name,Reference) VALUES ('" + ma + "', N'" + u.UserID + "', N'" + u.MChine + "', N'" + u.Created + "',N'"+u.Module+"',N'"+u.Action_Name+ "',N'" + u.Reference + "')";
+            cmd.CommandText = "INSERT [dbo].[SYS_LOG]  (SYS_ID,UserID,MChine,Created,Module,Action_Name,Description) VALUES ('" + ma + "', N'" + u.UserID + "', N'" + u.MChine + "', N'" + u.Created + "',N'"+u.Module+"',N'"+u.Action_Name+ "',N'" + u.Description + "')";
             try
             {
                 OpenConnection();

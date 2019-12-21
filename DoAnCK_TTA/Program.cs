@@ -19,6 +19,7 @@ namespace DoAnCK_TTA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+           
         }
     }
 }
