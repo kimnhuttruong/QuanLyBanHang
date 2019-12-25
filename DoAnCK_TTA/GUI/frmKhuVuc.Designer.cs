@@ -327,7 +327,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl5);
             this.Controls.Add(this.toolbarFormControl1);
-            this.IconOptions.ShowIcon = false;
+ //           this.IconOptions.ShowIcon = false;
             this.Name = "frmKhuVuc";
             this.Tag = "bbiCustomerGroup";
             this.Text = "Khu Vực";

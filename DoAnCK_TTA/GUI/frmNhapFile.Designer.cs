@@ -62,6 +62,7 @@
             this.wizardControl.Controls.Add(this.wizardPage2);
             this.wizardControl.Controls.Add(this.completionWizardPage1);
             this.wizardControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wizardControl.Location = new System.Drawing.Point(0, 0);
             this.wizardControl.Name = "wizardControl";
             this.wizardControl.Pages.AddRange(new DevExpress.XtraWizard.BaseWizardPage[] {
             this.welcomeWizardPage1,
@@ -146,6 +147,7 @@
             this.listSheet.Name = "listSheet";
             this.listSheet.Size = new System.Drawing.Size(642, 239);
             this.listSheet.TabIndex = 3;
+            this.listSheet.SelectedIndexChanged += new System.EventHandler(this.listSheet_SelectedIndexChanged);
             // 
             // label1
             // 

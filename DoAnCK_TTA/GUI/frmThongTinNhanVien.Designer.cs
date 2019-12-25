@@ -389,7 +389,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-            this.IconOptions.ShowIcon = false;
+ //           this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinNhanVien";

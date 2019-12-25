@@ -308,7 +308,7 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
-            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemNguoiDung.IconOptions.LargeImage")));
+ //           this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemNguoiDung.IconOptions.LargeImage")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThemNguoiDung";

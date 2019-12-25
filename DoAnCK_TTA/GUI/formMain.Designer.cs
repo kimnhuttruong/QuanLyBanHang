@@ -1145,7 +1145,7 @@
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+     //       this.ribbonPageGroup5.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup5.ItemLinks.Add(this.bntKetThuc);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThongTin);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
@@ -1399,7 +1399,7 @@
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
-            this.IconOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.money;
+         //   this.IconOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.money;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "formMain";

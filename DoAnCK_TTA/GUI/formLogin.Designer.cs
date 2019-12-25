@@ -35,6 +35,7 @@ namespace DoAnCK_TTA
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbUsername = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.checkSave = new DevExpress.XtraEditors.CheckEdit();
             this.btnKetThuc = new DevExpress.XtraEditors.SimpleButton();
@@ -46,13 +47,12 @@ namespace DoAnCK_TTA
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbUsername = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -112,6 +112,16 @@ namespace DoAnCK_TTA
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 182);
             this.panel2.TabIndex = 0;
+            // 
+            // cbUsername
+            // 
+            this.cbUsername.Location = new System.Drawing.Point(136, 78);
+            this.cbUsername.Name = "cbUsername";
+            this.cbUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbUsername.Size = new System.Drawing.Size(181, 20);
+            this.cbUsername.TabIndex = 17;
+            this.cbUsername.SelectedValueChanged += new System.EventHandler(this.cbUsername_SelectedValueChanged);
             // 
             // txtPassword
             // 
@@ -213,16 +223,6 @@ namespace DoAnCK_TTA
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cbUsername
-            // 
-            this.cbUsername.Location = new System.Drawing.Point(136, 78);
-            this.cbUsername.Name = "cbUsername";
-            this.cbUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbUsername.Size = new System.Drawing.Size(181, 20);
-            this.cbUsername.TabIndex = 17;
-            this.cbUsername.SelectedValueChanged += new System.EventHandler(this.cbUsername_SelectedValueChanged);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,10 +244,10 @@ namespace DoAnCK_TTA
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSave.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbUsername.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

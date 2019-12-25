@@ -152,7 +152,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-            this.IconOptions.ShowIcon = false;
+          //  this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmDoiMatKhau";

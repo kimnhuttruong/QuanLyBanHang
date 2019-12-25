@@ -362,7 +362,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-            this.IconOptions.ShowIcon = false;
+    //        this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhoHang";
             this.Tag = "rbpgDicStock";
             this.Text = "Thông Tin Kho";

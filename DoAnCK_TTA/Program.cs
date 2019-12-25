@@ -18,6 +18,11 @@ namespace DoAnCK_TTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.Skins.SkinManager.EnableMdiFormSkins();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Blue";
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
            
         }

@@ -714,7 +714,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cbLoaiHangHoa);
             this.Controls.Add(this.cbKhoMacDinh);
-            this.IconOptions.ShowIcon = false;
+          //  this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinHangHoa";
             this.Tag = "bbiMaterial";
             this.Text = "Thông Tin Hàng Hóa";

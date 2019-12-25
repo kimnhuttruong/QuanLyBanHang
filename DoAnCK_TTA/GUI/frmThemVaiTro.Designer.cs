@@ -302,7 +302,7 @@
             this.ClientSize = new System.Drawing.Size(645, 565);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemVaiTro.IconOptions.LargeImage")));
+   //         this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemVaiTro.IconOptions.LargeImage")));
             this.Name = "frmThemVaiTro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiUserRule";

@@ -17,6 +17,8 @@ using DevExpress.XtraGrid.Views.Layout.Drawing;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraCharts;
+using DevExpress.ClipboardSource.SpreadsheetML;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -26,42 +28,30 @@ namespace DoAnCK_TTA.GUI
         {
             InitializeComponent();
         }
-        public static List<string> sheets;
-        public static IEnumerable<string> GetExcelSheetNames(string excelFile)
-        {
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlApp.Workbooks.Open(excelFile); ;
-            String[] excelSheets = new String[xlWorkBook.Worksheets.Count];
-            int i = 0;
-            foreach (Microsoft.Office.Interop.Excel.Worksheet wSheet in xlWorkBook.Worksheets)
-            {
-                excelSheets[i] = wSheet.Name;
-                sheets.Add(wSheet.Name);
-                i++;
-            }
-            xlWorkBook.Close();
-            xlApp.Quit();
-            return excelSheets;
-        }
+      
+        DataSet result;
         DataTable dt = new DataTable();
         private void txtDuongDan_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Excel Files(.xlsx)|*.xlsx";
             openFileDialog1.Title = "Select an excel file";
+            
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 txtDuongDan.Text = openFileDialog1.FileName;
                 string txtPath = openFileDialog1.FileName;
                 FileStream stream = File.Open(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
                 IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-                DataSet result = excelReader.AsDataSet();
-                dt = result.Tables[0];
+                result = excelReader.AsDataSet();
+              
+                var sheets = result.Tables
+                                        .OfType<DataTable>()
+                                        .Select(c => c.TableName)
+                                        .ToArray();
+                listSheet.DataSource = sheets;
             }
-            gridNoiDung.DataSource = dt;
-
-            GetExcelSheetNames(txtDuongDan.Text);
-            listSheet.DataSource = sheets;
+            
 
         }
 
@@ -294,6 +284,14 @@ namespace DoAnCK_TTA.GUI
         private void gridNoiDung_MouseDown(object sender, MouseEventArgs e)
         {
            
+        }
+
+        private void listSheet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+           
+            gridNoiDung.DataSource = result.Tables[listSheet.SelectedIndex];
+            dt= result.Tables[listSheet.SelectedIndex];
         }
     }
 }

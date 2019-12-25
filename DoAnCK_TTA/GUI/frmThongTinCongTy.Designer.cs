@@ -286,7 +286,7 @@
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtTenDonVi);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-            this.IconOptions.ShowIcon = false;
+   //         this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinCongTy";

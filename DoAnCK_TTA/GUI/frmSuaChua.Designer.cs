@@ -124,7 +124,7 @@
             this.Controls.Add(this.procKiemLoi);
             this.Controls.Add(this.procBaoTri);
             this.Controls.Add(this.labelControl1);
-            this.IconOptions.ShowIcon = false;
+  //          this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSuaChua";

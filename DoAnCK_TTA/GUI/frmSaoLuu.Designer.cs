@@ -164,7 +164,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtDuongDan);
-            this.IconOptions.ShowIcon = false;
+ //           this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSaoLuu";

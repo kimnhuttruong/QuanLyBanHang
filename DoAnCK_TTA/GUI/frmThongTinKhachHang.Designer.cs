@@ -587,7 +587,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.radioDaiLyBanLe);
             this.Controls.Add(this.checkQuanLy);
-            this.IconOptions.ShowIcon = false;
+        //    this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinKhachHang";

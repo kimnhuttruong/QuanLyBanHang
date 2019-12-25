@@ -143,7 +143,7 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
-            this.IconOptions.ShowIcon = false;
+   //         this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhuVuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiCustomerGroup";
