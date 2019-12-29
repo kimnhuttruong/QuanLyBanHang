@@ -68,28 +68,28 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn quản lý";
             this.checkQuanLy.Size = new System.Drawing.Size(90, 19);
-            this.checkQuanLy.TabIndex = 9;
+            this.checkQuanLy.TabIndex = 3;
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(62, 96);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(198, 20);
-            this.txtGhiChu.TabIndex = 6;
+            this.txtGhiChu.TabIndex = 2;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(62, 59);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(198, 20);
-            this.txtTen.TabIndex = 7;
+            this.txtTen.TabIndex = 1;
             // 
             // txtMa
             // 
             this.txtMa.Location = new System.Drawing.Point(62, 24);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(198, 20);
-            this.txtMa.TabIndex = 8;
+            this.txtMa.TabIndex = 0;
             // 
             // labelControl4
             // 
@@ -131,7 +131,7 @@
             this.btnLuu.Location = new System.Drawing.Point(106, 155);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 3;
+            this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -143,7 +143,6 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
-   //         this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhuVuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiCustomerGroup";

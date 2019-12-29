@@ -88,7 +88,7 @@
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.Properties.PasswordChar = '*';
             this.txtMatKhauCu.Size = new System.Drawing.Size(185, 20);
-            this.txtMatKhauCu.TabIndex = 2;
+            this.txtMatKhauCu.TabIndex = 0;
             // 
             // txtMatKhauMoi
             // 
@@ -96,7 +96,7 @@
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Properties.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(185, 20);
-            this.txtMatKhauMoi.TabIndex = 2;
+            this.txtMatKhauMoi.TabIndex = 1;
             // 
             // txtNhapLai
             // 
@@ -122,7 +122,7 @@
             this.btnThoat.Location = new System.Drawing.Point(159, 167);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(92, 36);
-            this.btnThoat.TabIndex = 3;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -152,7 +152,6 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-          //  this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmDoiMatKhau";

@@ -58,7 +58,11 @@ namespace DoAnCK_TTA.GUI
                 txtMaSoThue.Text = dt.Rows[0]["CompanyTax"].ToString();
                 txtWebsite.Text = dt.Rows[0]["WebSite"].ToString();
                 txtEmail.Text = dt.Rows[0]["Email"].ToString();
-                logo.Image = Image.FromFile(dt.Rows[0]["Logo"].ToString());
+                try
+                {
+                    logo.Image = Image.FromFile(dt.Rows[0]["Logo"].ToString());
+                }
+                catch {; }
                 txtTenDonVi.Text =  dt.Rows[0]["CompamyName"].ToString();
             }
 

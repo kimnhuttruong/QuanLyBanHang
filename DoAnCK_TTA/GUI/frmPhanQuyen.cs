@@ -35,8 +35,8 @@ namespace DoAnCK_TTA.GUI
         private void btnThemVaiTro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var mainWindow = new frmThemVaiTro();
-            mainWindow.Show();
-
+            mainWindow.ShowDialog();
+            load();
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,7 +111,7 @@ namespace DoAnCK_TTA.GUI
             treeVaiTroNguoiDung.DataSource = dt;
             treeVaiTroNguoiDung.ParentFieldName = "Group_ID";
             treeVaiTroNguoiDung.KeyFieldName = "GroupID";
-
+            treeVaiTroNguoiDung.ExpandAll();
         }
         string manhom = "";
         DataSet ds1 = new DataSet();
@@ -183,6 +183,8 @@ namespace DoAnCK_TTA.GUI
                 treePhanQuyen.DataSource = dt;
                 treePhanQuyen.ParentFieldName = "Parent_ID";
                 treePhanQuyen.KeyFieldName = "Object_ID";
+                treePhanQuyen.ExpandAll();
+                gridView1.ExpandAllGroups();
             }
             gridNhomphanquyen.DataSource = dsGroup;
         }
@@ -224,7 +226,7 @@ namespace DoAnCK_TTA.GUI
         {
             var mainWindow = new frmThemNguoiDung();
             mainWindow.ShowDialog();
-
+            load();
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

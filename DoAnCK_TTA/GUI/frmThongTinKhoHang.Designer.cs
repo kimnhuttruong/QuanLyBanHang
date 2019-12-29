@@ -101,14 +101,14 @@
             this.txtTen.Location = new System.Drawing.Point(84, 47);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(302, 20);
-            this.txtTen.TabIndex = 13;
+            this.txtTen.TabIndex = 2;
             // 
             // txtKyHieu
             // 
             this.txtKyHieu.Location = new System.Drawing.Point(266, 21);
             this.txtKyHieu.Name = "txtKyHieu";
             this.txtKyHieu.Size = new System.Drawing.Size(120, 20);
-            this.txtKyHieu.TabIndex = 14;
+            this.txtKyHieu.TabIndex = 1;
             // 
             // labelControl5
             // 
@@ -123,7 +123,7 @@
             this.txtMa.Location = new System.Drawing.Point(84, 21);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(120, 20);
-            this.txtMa.TabIndex = 14;
+            this.txtMa.TabIndex = 0;
             // 
             // labelControl3
             // 
@@ -182,7 +182,7 @@
             this.lookNguoiQuanLy.Properties.NullText = "";
             this.lookNguoiQuanLy.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookNguoiQuanLy.Size = new System.Drawing.Size(302, 20);
-            this.lookNguoiQuanLy.TabIndex = 13;
+            this.lookNguoiQuanLy.TabIndex = 3;
             // 
             // gridLookUpEdit1View
             // 
@@ -227,7 +227,7 @@
             this.groupControl2.Location = new System.Drawing.Point(2, 108);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(396, 149);
-            this.groupControl2.TabIndex = 0;
+            this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Thông Tin Bắt Buộc";
             this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
@@ -236,42 +236,42 @@
             this.txtNguoiLienHe.Location = new System.Drawing.Point(84, 21);
             this.txtNguoiLienHe.Name = "txtNguoiLienHe";
             this.txtNguoiLienHe.Size = new System.Drawing.Size(302, 20);
-            this.txtNguoiLienHe.TabIndex = 13;
+            this.txtNguoiLienHe.TabIndex = 0;
             // 
             // txtDienGiai
             // 
             this.txtDienGiai.Location = new System.Drawing.Point(83, 125);
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(302, 20);
-            this.txtDienGiai.TabIndex = 13;
+            this.txtDienGiai.TabIndex = 5;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(84, 47);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(302, 20);
-            this.txtDiaChi.TabIndex = 13;
+            this.txtDiaChi.TabIndex = 1;
             // 
             // txtFax
             // 
             this.txtFax.Location = new System.Drawing.Point(265, 73);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(120, 20);
-            this.txtFax.TabIndex = 14;
+            this.txtFax.TabIndex = 3;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(83, 73);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(120, 20);
-            this.txtDienThoai.TabIndex = 14;
+            this.txtDienThoai.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(83, 99);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(302, 20);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 4;
             // 
             // labelControl11
             // 
@@ -331,7 +331,7 @@
             this.btnDong.Location = new System.Drawing.Point(318, 263);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 30);
-            this.btnDong.TabIndex = 11;
+            this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
             // 
             // btnLuu
@@ -340,7 +340,7 @@
             this.btnLuu.Location = new System.Drawing.Point(237, 263);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 12;
+            this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -350,7 +350,7 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn quản lý";
             this.checkQuanLy.Size = new System.Drawing.Size(101, 19);
-            this.checkQuanLy.TabIndex = 13;
+            this.checkQuanLy.TabIndex = 2;
             // 
             // frmThongTinKhoHang
             // 
@@ -362,7 +362,6 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-    //        this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinKhoHang";
             this.Tag = "rbpgDicStock";
             this.Text = "Thông Tin Kho";

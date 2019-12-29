@@ -165,7 +165,7 @@
             "Hàng Hóa",
             "Dịch Vụ"});
             this.cbLoaiHangHoa.Size = new System.Drawing.Size(155, 22);
-            this.cbLoaiHangHoa.TabIndex = 13;
+            this.cbLoaiHangHoa.TabIndex = 0;
             // 
             // btnKhoMatDinh
             // 
@@ -217,7 +217,7 @@
             this.picture.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.picture.Size = new System.Drawing.Size(234, 134);
-            this.picture.TabIndex = 24;
+            this.picture.TabIndex = 8;
             this.picture.EditValueChanged += new System.EventHandler(this.picture_EditValueChanged);
             this.picture.Click += new System.EventHandler(this.picture_Click);
             // 
@@ -257,28 +257,28 @@
             this.txtMaVach.Location = new System.Drawing.Point(354, 46);
             this.txtMaVach.Name = "txtMaVach";
             this.txtMaVach.Size = new System.Drawing.Size(160, 20);
-            this.txtMaVach.TabIndex = 18;
+            this.txtMaVach.TabIndex = 2;
             // 
             // txtTenHang
             // 
             this.txtTenHang.Location = new System.Drawing.Point(109, 71);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(405, 20);
-            this.txtTenHang.TabIndex = 19;
+            this.txtTenHang.TabIndex = 3;
             // 
             // txtXuatXu
             // 
             this.txtXuatXu.Location = new System.Drawing.Point(109, 123);
             this.txtXuatXu.Name = "txtXuatXu";
             this.txtXuatXu.Size = new System.Drawing.Size(155, 20);
-            this.txtXuatXu.TabIndex = 19;
+            this.txtXuatXu.TabIndex = 5;
             // 
             // txtMaHang
             // 
             this.txtMaHang.Location = new System.Drawing.Point(109, 45);
             this.txtMaHang.Name = "txtMaHang";
             this.txtMaHang.Size = new System.Drawing.Size(160, 20);
-            this.txtMaHang.TabIndex = 19;
+            this.txtMaHang.TabIndex = 1;
             // 
             // labelControl14
             // 
@@ -394,7 +394,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcTonHienTai.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcTonHienTai.Size = new System.Drawing.Size(155, 20);
-            this.calcTonHienTai.TabIndex = 19;
+            this.calcTonHienTai.TabIndex = 7;
             // 
             // calcTonKhoToiThieu
             // 
@@ -404,7 +404,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcTonKhoToiThieu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcTonKhoToiThieu.Size = new System.Drawing.Size(155, 20);
-            this.calcTonKhoToiThieu.TabIndex = 19;
+            this.calcTonKhoToiThieu.TabIndex = 6;
             // 
             // lookPhanLoai
             // 
@@ -418,7 +418,7 @@
             this.lookPhanLoai.Properties.PopupSizeable = false;
             this.lookPhanLoai.Properties.PopupView = this.gridView1;
             this.lookPhanLoai.Size = new System.Drawing.Size(405, 20);
-            this.lookPhanLoai.TabIndex = 14;
+            this.lookPhanLoai.TabIndex = 0;
             // 
             // gridView1
             // 
@@ -458,7 +458,7 @@
             this.lookDonVi.Properties.PopupSizeable = false;
             this.lookDonVi.Properties.PopupView = this.gridView2;
             this.lookDonVi.Size = new System.Drawing.Size(155, 20);
-            this.lookDonVi.TabIndex = 22;
+            this.lookDonVi.TabIndex = 4;
             // 
             // gridView2
             // 
@@ -510,7 +510,7 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn Quản Lý";
             this.checkQuanLy.Size = new System.Drawing.Size(115, 19);
-            this.checkQuanLy.TabIndex = 24;
+            this.checkQuanLy.TabIndex = 5;
             // 
             // labelControl17
             // 
@@ -539,7 +539,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcBanLe.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcBanLe.Size = new System.Drawing.Size(155, 20);
-            this.calcBanLe.TabIndex = 19;
+            this.calcBanLe.TabIndex = 3;
             // 
             // calcBanSi
             // 
@@ -549,7 +549,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcBanSi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcBanSi.Size = new System.Drawing.Size(155, 20);
-            this.calcBanSi.TabIndex = 19;
+            this.calcBanSi.TabIndex = 2;
             // 
             // calcGiaMua
             // 
@@ -559,7 +559,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcGiaMua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcGiaMua.Size = new System.Drawing.Size(155, 20);
-            this.calcGiaMua.TabIndex = 19;
+            this.calcGiaMua.TabIndex = 1;
             // 
             // labelControl18
             // 
@@ -574,7 +574,7 @@
             this.labelControl20.Location = new System.Drawing.Point(295, 50);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(53, 13);
-            this.labelControl20.TabIndex = 17;
+            this.labelControl20.TabIndex = 4;
             this.labelControl20.Text = "Giá Bán Lẻ";
             // 
             // labelControl19
@@ -597,7 +597,7 @@
             this.lookNhaCungCap.Properties.PopupSizeable = false;
             this.lookNhaCungCap.Properties.PopupView = this.gridView3;
             this.lookNhaCungCap.Size = new System.Drawing.Size(405, 20);
-            this.lookNhaCungCap.TabIndex = 22;
+            this.lookNhaCungCap.TabIndex = 0;
             // 
             // gridView3
             // 
@@ -631,7 +631,7 @@
             this.btnDong.Location = new System.Drawing.Point(453, 380);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 30);
-            this.btnDong.TabIndex = 18;
+            this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
@@ -641,7 +641,7 @@
             this.btnLuu.Location = new System.Drawing.Point(372, 380);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 19;
+            this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -651,7 +651,7 @@
             this.btnLichSu.Location = new System.Drawing.Point(2, 380);
             this.btnLichSu.Name = "btnLichSu";
             this.btnLichSu.Size = new System.Drawing.Size(139, 30);
-            this.btnLichSu.TabIndex = 19;
+            this.btnLichSu.TabIndex = 2;
             this.btnLichSu.Text = "Lịch Sử Giao Dịch";
             this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
             // 
@@ -669,7 +669,7 @@
             this.cbKhoMacDinh.Properties.PopupSizeable = false;
             this.cbKhoMacDinh.Properties.PopupView = this.gridLookUpEdit1View;
             this.cbKhoMacDinh.Size = new System.Drawing.Size(155, 22);
-            this.cbKhoMacDinh.TabIndex = 14;
+            this.cbKhoMacDinh.TabIndex = 1;
             // 
             // gridLookUpEdit1View
             // 
@@ -714,7 +714,6 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cbLoaiHangHoa);
             this.Controls.Add(this.cbKhoMacDinh);
-          //  this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinHangHoa";
             this.Tag = "bbiMaterial";
             this.Text = "Thông Tin Hàng Hóa";

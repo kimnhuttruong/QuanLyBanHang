@@ -90,7 +90,7 @@
             this.groupControl1.Location = new System.Drawing.Point(1, 4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(396, 75);
-            this.groupControl1.TabIndex = 1;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Cơ Bản";
             // 
             // checkQuanLy
@@ -99,14 +99,14 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn quản lý";
             this.checkQuanLy.Size = new System.Drawing.Size(90, 19);
-            this.checkQuanLy.TabIndex = 15;
+            this.checkQuanLy.TabIndex = 1;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(43, 47);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(343, 20);
-            this.txtTen.TabIndex = 13;
+            this.txtTen.TabIndex = 2;
             this.txtTen.EditValueChanged += new System.EventHandler(this.txtTen_EditValueChanged);
             // 
             // txtMa
@@ -114,7 +114,7 @@
             this.txtMa.Location = new System.Drawing.Point(43, 21);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(161, 20);
-            this.txtMa.TabIndex = 14;
+            this.txtMa.TabIndex = 0;
             // 
             // labelControl3
             // 
@@ -164,7 +164,7 @@
             this.groupControl2.Location = new System.Drawing.Point(1, 84);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(396, 192);
-            this.groupControl2.TabIndex = 2;
+            this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Thông Tin Bắt Buộc";
             // 
             // btnQuanLy
@@ -194,35 +194,35 @@
             this.txtChucVu.Location = new System.Drawing.Point(84, 21);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(302, 20);
-            this.txtChucVu.TabIndex = 13;
+            this.txtChucVu.TabIndex = 0;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(84, 72);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(302, 20);
-            this.txtEmail.TabIndex = 13;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(84, 47);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(302, 20);
-            this.txtDiaChi.TabIndex = 13;
+            this.txtDiaChi.TabIndex = 1;
             // 
             // txtDiDong
             // 
             this.txtDiDong.Location = new System.Drawing.Point(265, 97);
             this.txtDiDong.Name = "txtDiDong";
             this.txtDiDong.Size = new System.Drawing.Size(120, 20);
-            this.txtDiDong.TabIndex = 14;
+            this.txtDiDong.TabIndex = 4;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(83, 97);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(120, 20);
-            this.txtDienThoai.TabIndex = 14;
+            this.txtDienThoai.TabIndex = 3;
             // 
             // labelControl11
             // 
@@ -292,7 +292,7 @@
             this.lookBoPhan.Properties.PopupSizeable = false;
             this.lookBoPhan.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookBoPhan.Size = new System.Drawing.Size(303, 20);
-            this.lookBoPhan.TabIndex = 16;
+            this.lookBoPhan.TabIndex = 5;
             // 
             // gridLookUpEdit1View
             // 
@@ -332,7 +332,7 @@
             this.lookQuanLy.Properties.PopupSizeable = false;
             this.lookQuanLy.Properties.PopupView = this.gridView1;
             this.lookQuanLy.Size = new System.Drawing.Size(303, 20);
-            this.lookQuanLy.TabIndex = 16;
+            this.lookQuanLy.TabIndex = 6;
             // 
             // gridView1
             // 
@@ -366,7 +366,7 @@
             this.btnDong.Location = new System.Drawing.Point(322, 282);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 30);
-            this.btnDong.TabIndex = 20;
+            this.btnDong.TabIndex = 3;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
@@ -376,7 +376,7 @@
             this.btnLuu.Location = new System.Drawing.Point(241, 282);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 21;
+            this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -389,7 +389,6 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
- //           this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinNhanVien";

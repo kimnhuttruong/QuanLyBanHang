@@ -59,7 +59,7 @@
             this.groupControl1.Location = new System.Drawing.Point(1, 1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(270, 147);
-            this.groupControl1.TabIndex = 1;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin";
             // 
             // checkQuanLy
@@ -68,28 +68,28 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn quản lý";
             this.checkQuanLy.Size = new System.Drawing.Size(90, 19);
-            this.checkQuanLy.TabIndex = 9;
+            this.checkQuanLy.TabIndex = 3;
             // 
             // txtTyGiaQuyDoi
             // 
             this.txtTyGiaQuyDoi.Location = new System.Drawing.Point(86, 96);
             this.txtTyGiaQuyDoi.Name = "txtTyGiaQuyDoi";
             this.txtTyGiaQuyDoi.Size = new System.Drawing.Size(174, 20);
-            this.txtTyGiaQuyDoi.TabIndex = 6;
+            this.txtTyGiaQuyDoi.TabIndex = 2;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(86, 59);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(174, 20);
-            this.txtTen.TabIndex = 7;
+            this.txtTen.TabIndex = 1;
             // 
             // txtMa
             // 
             this.txtMa.Location = new System.Drawing.Point(86, 24);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(174, 20);
-            this.txtMa.TabIndex = 8;
+            this.txtMa.TabIndex = 0;
             this.txtMa.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // labelControl4
@@ -122,7 +122,7 @@
             this.btnDong.Location = new System.Drawing.Point(194, 156);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 30);
-            this.btnDong.TabIndex = 4;
+            this.btnDong.TabIndex = 2;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
@@ -132,7 +132,7 @@
             this.btnLuu.Location = new System.Drawing.Point(113, 156);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 5;
+            this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -144,7 +144,6 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
- //           this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinTyGia";
             this.Tag = "bbiExchangeRate";
             this.Text = "Thông Tin Tỷ Giá";

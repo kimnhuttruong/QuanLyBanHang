@@ -88,7 +88,7 @@
             this.txtKhachHang.Location = new System.Drawing.Point(78, 29);
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.Size = new System.Drawing.Size(337, 20);
-            this.txtKhachHang.TabIndex = 1;
+            this.txtKhachHang.TabIndex = 0;
             // 
             // groupControl1
             // 
@@ -104,7 +104,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(628, 91);
-            this.groupControl1.TabIndex = 2;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
@@ -147,7 +147,7 @@
             this.txtPhieu.Location = new System.Drawing.Point(462, 29);
             this.txtPhieu.Name = "txtPhieu";
             this.txtPhieu.Size = new System.Drawing.Size(161, 20);
-            this.txtPhieu.TabIndex = 1;
+            this.txtPhieu.TabIndex = 3;
             // 
             // txtNgay
             // 
@@ -165,7 +165,7 @@
             this.txtNgay.Properties.Mask.EditMask = "";
             this.txtNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtNgay.Size = new System.Drawing.Size(161, 20);
-            this.txtNgay.TabIndex = 1;
+            this.txtNgay.TabIndex = 4;
             // 
             // txtDateChungTu
             // 
@@ -183,7 +183,7 @@
             this.txtDateChungTu.Properties.Mask.EditMask = "";
             this.txtDateChungTu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtDateChungTu.Size = new System.Drawing.Size(161, 20);
-            this.txtDateChungTu.TabIndex = 1;
+            this.txtDateChungTu.TabIndex = 2;
             // 
             // groupControl2
             // 
@@ -200,7 +200,7 @@
             this.groupControl2.Location = new System.Drawing.Point(3, 111);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(628, 156);
-            this.groupControl2.TabIndex = 2;
+            this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Chi Tiết";
             this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
@@ -257,7 +257,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcPhaiTra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcPhaiTra.Size = new System.Drawing.Size(211, 20);
-            this.calcPhaiTra.TabIndex = 1;
+            this.calcPhaiTra.TabIndex = 2;
             this.calcPhaiTra.EditValueChanged += new System.EventHandler(this.calcEdit1_EditValueChanged);
             // 
             // calcNo
@@ -279,14 +279,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcSoTien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcSoTien.Size = new System.Drawing.Size(211, 20);
-            this.calcSoTien.TabIndex = 1;
+            this.calcSoTien.TabIndex = 0;
             // 
             // txtLyDo
             // 
             this.txtLyDo.Location = new System.Drawing.Point(389, 29);
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Size = new System.Drawing.Size(228, 81);
-            this.txtLyDo.TabIndex = 1;
+            this.txtLyDo.TabIndex = 4;
             // 
             // lookNhanVien
             // 
@@ -297,7 +297,7 @@
             this.lookNhanVien.Properties.NullText = "";
             this.lookNhanVien.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookNhanVien.Size = new System.Drawing.Size(511, 20);
-            this.lookNhanVien.TabIndex = 97;
+            this.lookNhanVien.TabIndex = 3;
             this.lookNhanVien.EditValueChanged += new System.EventHandler(this.lookNhanVien_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -331,7 +331,7 @@
             this.btnLuu.Location = new System.Drawing.Point(345, 287);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 3;
+            this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -349,7 +349,7 @@
             this.btnBoQua.Location = new System.Drawing.Point(545, 287);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(75, 23);
-            this.btnBoQua.TabIndex = 3;
+            this.btnBoQua.TabIndex = 4;
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 

@@ -138,7 +138,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(578, 286);
-            this.groupControl1.TabIndex = 7;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Chung";
             // 
             // btnKhuVuc
@@ -158,84 +158,84 @@
             this.txtChucVu.Location = new System.Drawing.Point(354, 259);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(215, 20);
-            this.txtChucVu.TabIndex = 8;
+            this.txtChucVu.TabIndex = 16;
             // 
             // txtNguoiLienHe
             // 
             this.txtNguoiLienHe.Location = new System.Drawing.Point(91, 259);
             this.txtNguoiLienHe.Name = "txtNguoiLienHe";
             this.txtNguoiLienHe.Size = new System.Drawing.Size(170, 20);
-            this.txtNguoiLienHe.TabIndex = 8;
+            this.txtNguoiLienHe.TabIndex = 10;
             // 
             // txtNganHang
             // 
             this.txtNganHang.Location = new System.Drawing.Point(354, 181);
             this.txtNganHang.Name = "txtNganHang";
             this.txtNganHang.Size = new System.Drawing.Size(215, 20);
-            this.txtNganHang.TabIndex = 8;
+            this.txtNganHang.TabIndex = 14;
             // 
             // txtWebsite
             // 
             this.txtWebsite.Location = new System.Drawing.Point(354, 154);
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Size = new System.Drawing.Size(215, 20);
-            this.txtWebsite.TabIndex = 8;
+            this.txtWebsite.TabIndex = 13;
             // 
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.Location = new System.Drawing.Point(91, 181);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(170, 20);
-            this.txtTaiKhoan.TabIndex = 8;
+            this.txtTaiKhoan.TabIndex = 7;
             // 
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(354, 128);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(215, 20);
-            this.txtMobile.TabIndex = 8;
+            this.txtMobile.TabIndex = 12;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(91, 154);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(170, 20);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtFax
             // 
             this.txtFax.Location = new System.Drawing.Point(354, 102);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(215, 20);
-            this.txtFax.TabIndex = 8;
+            this.txtFax.TabIndex = 11;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(91, 128);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(170, 20);
-            this.txtDienThoai.TabIndex = 8;
+            this.txtDienThoai.TabIndex = 5;
             // 
             // txtMaSoThue
             // 
             this.txtMaSoThue.Location = new System.Drawing.Point(91, 102);
             this.txtMaSoThue.Name = "txtMaSoThue";
             this.txtMaSoThue.Size = new System.Drawing.Size(170, 20);
-            this.txtMaSoThue.TabIndex = 8;
+            this.txtMaSoThue.TabIndex = 4;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(91, 74);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(478, 20);
-            this.txtDiaChi.TabIndex = 8;
+            this.txtDiaChi.TabIndex = 3;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(91, 46);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(478, 20);
-            this.txtTen.TabIndex = 8;
+            this.txtTen.TabIndex = 2;
             // 
             // labelControl21
             // 
@@ -250,7 +250,7 @@
             this.txtMa.Location = new System.Drawing.Point(91, 20);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(185, 20);
-            this.txtMa.TabIndex = 8;
+            this.txtMa.TabIndex = 0;
             // 
             // labelControl20
             // 
@@ -427,7 +427,7 @@
             this.lookKhuVuc.Properties.PopupSizeable = false;
             this.lookKhuVuc.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookKhuVuc.Size = new System.Drawing.Size(175, 20);
-            this.lookKhuVuc.TabIndex = 8;
+            this.lookKhuVuc.TabIndex = 1;
             // 
             // gridLookUpEdit1View
             // 
@@ -444,7 +444,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcChiecKhau.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcChiecKhau.Size = new System.Drawing.Size(170, 20);
-            this.calcChiecKhau.TabIndex = 8;
+            this.calcChiecKhau.TabIndex = 9;
             // 
             // calcGioiHanNo
             // 
@@ -464,7 +464,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcNoHienTai.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.calcNoHienTai.Size = new System.Drawing.Size(215, 20);
-            this.calcNoHienTai.TabIndex = 8;
+            this.calcNoHienTai.TabIndex = 15;
             // 
             // btnDong
             // 
@@ -472,7 +472,7 @@
             this.btnDong.Location = new System.Drawing.Point(506, 293);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 30);
-            this.btnDong.TabIndex = 9;
+            this.btnDong.TabIndex = 3;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
@@ -482,7 +482,7 @@
             this.btnLuu.Location = new System.Drawing.Point(425, 293);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 10;
+            this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -492,7 +492,7 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn quản lý";
             this.checkQuanLy.Size = new System.Drawing.Size(101, 19);
-            this.checkQuanLy.TabIndex = 11;
+            this.checkQuanLy.TabIndex = 1;
             // 
             // frmThongTinNhaCungCap
             // 
@@ -503,7 +503,6 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
-   //         this.IconOptions.ShowIcon = false;
             this.Name = "frmThongTinNhaCungCap";
             this.Tag = "bbiProvider";
             this.Text = "Thông Tin Nhà Cung Cấp";

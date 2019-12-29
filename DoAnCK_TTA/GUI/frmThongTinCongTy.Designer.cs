@@ -79,56 +79,56 @@
             this.txtDiaChi.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.txtDiaChi.Properties.Appearance.Options.UseBackColor = true;
             this.txtDiaChi.Size = new System.Drawing.Size(402, 20);
-            this.txtDiaChi.TabIndex = 0;
+            this.txtDiaChi.TabIndex = 1;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(87, 87);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(174, 20);
-            this.txtDienThoai.TabIndex = 1;
+            this.txtDienThoai.TabIndex = 2;
             // 
             // txtFax
             // 
             this.txtFax.Location = new System.Drawing.Point(87, 111);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(174, 20);
-            this.txtFax.TabIndex = 1;
+            this.txtFax.TabIndex = 3;
             // 
             // txtWebsite
             // 
             this.txtWebsite.Location = new System.Drawing.Point(87, 135);
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Size = new System.Drawing.Size(174, 20);
-            this.txtWebsite.TabIndex = 1;
+            this.txtWebsite.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(87, 159);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(174, 20);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtLinhVuc
             // 
             this.txtLinhVuc.Location = new System.Drawing.Point(87, 183);
             this.txtLinhVuc.Name = "txtLinhVuc";
             this.txtLinhVuc.Size = new System.Drawing.Size(174, 20);
-            this.txtLinhVuc.TabIndex = 1;
+            this.txtLinhVuc.TabIndex = 6;
             // 
             // txtMaSoThue
             // 
             this.txtMaSoThue.Location = new System.Drawing.Point(87, 207);
             this.txtMaSoThue.Name = "txtMaSoThue";
             this.txtMaSoThue.Size = new System.Drawing.Size(174, 20);
-            this.txtMaSoThue.TabIndex = 1;
+            this.txtMaSoThue.TabIndex = 7;
             // 
             // txtGPKD
             // 
             this.txtGPKD.Location = new System.Drawing.Point(87, 231);
             this.txtGPKD.Name = "txtGPKD";
             this.txtGPKD.Size = new System.Drawing.Size(402, 20);
-            this.txtGPKD.TabIndex = 1;
+            this.txtGPKD.TabIndex = 8;
             // 
             // label1
             // 
@@ -228,7 +228,7 @@
             this.btnKetThuc.Location = new System.Drawing.Point(180, 257);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(89, 32);
-            this.btnKetThuc.TabIndex = 5;
+            this.btnKetThuc.TabIndex = 10;
             this.btnKetThuc.Text = "Kết Thúc";
             this.btnKetThuc.Click += new System.EventHandler(this.btnKetThuc_Click);
             // 
@@ -239,7 +239,7 @@
             this.btnDongY.Location = new System.Drawing.Point(87, 257);
             this.btnDongY.Name = "btnDongY";
             this.btnDongY.Size = new System.Drawing.Size(89, 32);
-            this.btnDongY.TabIndex = 5;
+            this.btnDongY.TabIndex = 9;
             this.btnDongY.Text = "Đồng ý";
             this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
             // 
@@ -286,10 +286,10 @@
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtTenDonVi);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-   //         this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinCongTy";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiCompanyInfo";
             this.Text = "Thông Tin";

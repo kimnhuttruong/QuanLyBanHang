@@ -42,15 +42,15 @@
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.treeVaiTro = new DevExpress.XtraTreeList.TreeList();
-            this.col_chucnang = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_tatca = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_truycap = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_them = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_xoa = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_sua = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_print = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_nhap = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.col_xuat = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn10 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn11 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.check.Properties)).BeginInit();
@@ -149,9 +149,9 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.treeVaiTro);
             this.groupControl2.Controls.Add(this.btnDong);
             this.groupControl2.Controls.Add(this.btnLuu);
-            this.groupControl2.Controls.Add(this.treeVaiTro);
             this.groupControl2.Location = new System.Drawing.Point(3, 94);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(639, 467);
@@ -180,120 +180,120 @@
             // 
             // treeVaiTro
             // 
+            this.treeVaiTro.Appearance.FixedLine.BackColor = System.Drawing.Color.Black;
+            this.treeVaiTro.Appearance.FixedLine.Options.UseBackColor = true;
+            this.treeVaiTro.Appearance.TreeLine.BackColor = System.Drawing.Color.Silver;
+            this.treeVaiTro.Appearance.TreeLine.Options.UseBackColor = true;
             this.treeVaiTro.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.col_chucnang,
-            this.col_tatca,
-            this.col_truycap,
-            this.col_them,
-            this.col_xoa,
-            this.col_sua,
-            this.col_print,
-            this.col_nhap,
-            this.col_xuat});
+            this.treeListColumn3,
+            this.treeListColumn4,
+            this.treeListColumn5,
+            this.treeListColumn6,
+            this.treeListColumn7,
+            this.treeListColumn8,
+            this.treeListColumn9,
+            this.treeListColumn10,
+            this.treeListColumn11});
             this.treeVaiTro.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeVaiTro.KeyFieldName = "_ma";
-            this.treeVaiTro.Location = new System.Drawing.Point(0, 20);
+            this.treeVaiTro.Location = new System.Drawing.Point(0, 25);
             this.treeVaiTro.Name = "treeVaiTro";
-            this.treeVaiTro.ParentFieldName = "_cha";
-            this.treeVaiTro.Size = new System.Drawing.Size(639, 407);
-            this.treeVaiTro.TabIndex = 0;
+            this.treeVaiTro.ParentFieldName = "";
+            this.treeVaiTro.Size = new System.Drawing.Size(639, 403);
+            this.treeVaiTro.TabIndex = 2;
             // 
-            // col_chucnang
+            // treeListColumn3
             // 
-            this.col_chucnang.Caption = "Chức Năng";
-            this.col_chucnang.FieldName = "Object_Name";
-            this.col_chucnang.Name = "col_chucnang";
-            this.col_chucnang.Visible = true;
-            this.col_chucnang.VisibleIndex = 0;
-            this.col_chucnang.Width = 208;
+            this.treeListColumn3.Caption = "Chức Năng";
+            this.treeListColumn3.FieldName = "Object_Name";
+            this.treeListColumn3.Name = "treeListColumn3";
+            this.treeListColumn3.Visible = true;
+            this.treeListColumn3.VisibleIndex = 0;
+            this.treeListColumn3.Width = 247;
             // 
-            // col_tatca
+            // treeListColumn4
             // 
-            this.col_tatca.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_tatca.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_tatca.Caption = "Tất Cả";
-            this.col_tatca.FieldName = "AllowAll";
-            this.col_tatca.Name = "col_tatca";
-            this.col_tatca.Visible = true;
-            this.col_tatca.VisibleIndex = 1;
-            this.col_tatca.Width = 51;
+            this.treeListColumn4.Caption = "Tất Cả";
+            this.treeListColumn4.FieldName = "TatCa";
+            this.treeListColumn4.Name = "treeListColumn4";
+            this.treeListColumn4.UnboundExpression = "[AllowPrint] And [AllowExport] And [AllowEdit] And [AllowAccess] And [AllowDelete" +
+    "] And [AllowImport]";
+            this.treeListColumn4.UnboundType = DevExpress.XtraTreeList.Data.UnboundColumnType.Boolean;
+            this.treeListColumn4.Visible = true;
+            this.treeListColumn4.VisibleIndex = 1;
+            this.treeListColumn4.Width = 47;
             // 
-            // col_truycap
+            // treeListColumn5
             // 
-            this.col_truycap.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_truycap.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_truycap.Caption = "Truy Cập";
-            this.col_truycap.FieldName = "AllowAccess";
-            this.col_truycap.Name = "col_truycap";
-            this.col_truycap.Visible = true;
-            this.col_truycap.VisibleIndex = 2;
-            this.col_truycap.Width = 51;
+            this.treeListColumn5.Caption = "Truy Cập";
+            this.treeListColumn5.FieldName = "AllowAccess";
+            this.treeListColumn5.Name = "treeListColumn5";
+            this.treeListColumn5.UnboundExpression = "[TatCa] And [AllowAccess]";
+            this.treeListColumn5.UnboundType = DevExpress.XtraTreeList.Data.UnboundColumnType.Boolean;
+            this.treeListColumn5.Visible = true;
+            this.treeListColumn5.VisibleIndex = 2;
+            this.treeListColumn5.Width = 61;
             // 
-            // col_them
+            // treeListColumn6
             // 
-            this.col_them.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_them.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_them.Caption = "Thêm";
-            this.col_them.FieldName = "AllowAdd";
-            this.col_them.Name = "col_them";
-            this.col_them.Visible = true;
-            this.col_them.VisibleIndex = 3;
-            this.col_them.Width = 51;
+            this.treeListColumn6.Caption = "Thêm";
+            this.treeListColumn6.FieldName = "AllowAdd";
+            this.treeListColumn6.Name = "treeListColumn6";
+            this.treeListColumn6.UnboundExpression = "[TatCa] And [AllowAdd]";
+            this.treeListColumn6.UnboundType = DevExpress.XtraTreeList.Data.UnboundColumnType.Boolean;
+            this.treeListColumn6.Visible = true;
+            this.treeListColumn6.VisibleIndex = 3;
+            this.treeListColumn6.Width = 56;
             // 
-            // col_xoa
+            // treeListColumn7
             // 
-            this.col_xoa.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_xoa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_xoa.Caption = "Xóa ";
-            this.col_xoa.FieldName = "AllowDelete";
-            this.col_xoa.Name = "col_xoa";
-            this.col_xoa.Visible = true;
-            this.col_xoa.VisibleIndex = 4;
-            this.col_xoa.Width = 52;
+            this.treeListColumn7.Caption = "Sửa";
+            this.treeListColumn7.FieldName = "AllowEdit";
+            this.treeListColumn7.Name = "treeListColumn7";
+            this.treeListColumn7.UnboundExpression = "[TatCa] And [AllowEdit]";
+            this.treeListColumn7.Visible = true;
+            this.treeListColumn7.VisibleIndex = 4;
+            this.treeListColumn7.Width = 51;
             // 
-            // col_sua
+            // treeListColumn8
             // 
-            this.col_sua.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_sua.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_sua.Caption = "Sửa";
-            this.col_sua.FieldName = "AllowEdit";
-            this.col_sua.Name = "col_sua";
-            this.col_sua.Visible = true;
-            this.col_sua.VisibleIndex = 5;
-            this.col_sua.Width = 52;
+            this.treeListColumn8.Caption = "Xóa";
+            this.treeListColumn8.FieldName = "AllowDelete";
+            this.treeListColumn8.Name = "treeListColumn8";
+            this.treeListColumn8.UnboundExpression = "[TatCa] And [AllowDelete]";
+            this.treeListColumn8.Visible = true;
+            this.treeListColumn8.VisibleIndex = 5;
+            this.treeListColumn8.Width = 48;
             // 
-            // col_print
+            // treeListColumn9
             // 
-            this.col_print.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_print.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_print.Caption = "In";
-            this.col_print.FieldName = "AllowPrint";
-            this.col_print.Name = "col_print";
-            this.col_print.Visible = true;
-            this.col_print.VisibleIndex = 6;
-            this.col_print.Width = 52;
+            this.treeListColumn9.Caption = "In";
+            this.treeListColumn9.FieldName = "AllowPrint";
+            this.treeListColumn9.Name = "treeListColumn9";
+            this.treeListColumn9.UnboundExpression = "[TatCa] And [AllowPrint]";
+            this.treeListColumn9.Visible = true;
+            this.treeListColumn9.VisibleIndex = 6;
+            this.treeListColumn9.Width = 36;
             // 
-            // col_nhap
+            // treeListColumn10
             // 
-            this.col_nhap.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_nhap.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_nhap.Caption = "Nhập";
-            this.col_nhap.FieldName = "AllowImport";
-            this.col_nhap.Name = "col_nhap";
-            this.col_nhap.Visible = true;
-            this.col_nhap.VisibleIndex = 7;
-            this.col_nhap.Width = 52;
+            this.treeListColumn10.Caption = "Nhập";
+            this.treeListColumn10.FieldName = "AllowImport";
+            this.treeListColumn10.Name = "treeListColumn10";
+            this.treeListColumn10.UnboundExpression = "[TatCa] And [AllowImport]";
+            this.treeListColumn10.Visible = true;
+            this.treeListColumn10.VisibleIndex = 7;
+            this.treeListColumn10.Width = 37;
             // 
-            // col_xuat
+            // treeListColumn11
             // 
-            this.col_xuat.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_xuat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_xuat.Caption = "Xuất";
-            this.col_xuat.FieldName = "AllowExport";
-            this.col_xuat.Name = "col_xuat";
-            this.col_xuat.Visible = true;
-            this.col_xuat.VisibleIndex = 8;
-            this.col_xuat.Width = 52;
+            this.treeListColumn11.Caption = "Xuất";
+            this.treeListColumn11.FieldName = "AllowExport";
+            this.treeListColumn11.Name = "treeListColumn11";
+            this.treeListColumn11.UnboundExpression = "[TatCa] And [AllowExport]";
+            this.treeListColumn11.Visible = true;
+            this.treeListColumn11.VisibleIndex = 8;
+            this.treeListColumn11.Width = 37;
             // 
             // frmThemVaiTro
             // 
@@ -302,8 +302,8 @@
             this.ClientSize = new System.Drawing.Size(645, 565);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-   //         this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemVaiTro.IconOptions.LargeImage")));
             this.Name = "frmThemVaiTro";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiUserRule";
             this.Text = "Thông Tin  Vai Trò";
@@ -332,21 +332,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraTreeList.TreeList treeVaiTro;
-      
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_chucnang;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_tatca;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_truycap;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_them;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_xoa;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_sua;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_print;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_nhap;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col_xuat;
        
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.CheckEdit check;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraTreeList.TreeList treeVaiTro;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn10;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn11;
     }
 }

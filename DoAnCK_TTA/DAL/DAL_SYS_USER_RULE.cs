@@ -18,7 +18,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Object_Name,u.Object_ID,o.Parent_ID,u.AllowAccess,AllowAdd,AllowDelete,AllowEdit,AllowPrint,AllowExport,AllowImport from SYS_USER_RULE u join SYS_OBJECT o on o.Object_ID = u.Object_ID where u.Goup_ID = '"+admin+"'";
+            cmd.CommandText = "select Object_Name,u.Object_ID,o.Parent_ID,cast(cast(u.AllowAccess as int)*cast(AllowAdd as int)*cast(AllowDelete as int)*cast(AllowEdit as int)*cast(AllowPrint as int)*cast(AllowExport as int)*cast(AllowImport as int) as bit) as AllowAll,u.AllowAccess,AllowAdd,AllowDelete,AllowEdit,AllowPrint,AllowExport,AllowImport from SYS_USER_RULE u join SYS_OBJECT o on o.Object_ID = u.Object_ID where u.Goup_ID = '" + admin+"'";
             OpenConnection();
             da.SelectCommand = cmd;
             da.Fill(dt);

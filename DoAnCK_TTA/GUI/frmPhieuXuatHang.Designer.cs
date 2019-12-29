@@ -209,7 +209,7 @@
             this.btnBoPhan.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnBoPhan.Name = "btnBoPhan";
             this.btnBoPhan.Size = new System.Drawing.Size(49, 18);
-            this.btnBoPhan.TabIndex = 49;
+            this.btnBoPhan.TabIndex = 1;
             this.btnBoPhan.Text = "Tạo";
             // 
             // label12
@@ -233,7 +233,7 @@
             this.lookKhachHang.Properties.PopupSizeable = false;
             this.lookKhachHang.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookKhachHang.Size = new System.Drawing.Size(533, 20);
-            this.lookKhachHang.TabIndex = 48;
+            this.lookKhachHang.TabIndex = 0;
             this.lookKhachHang.EditValueChanged += new System.EventHandler(this.lookKhachHang_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -415,7 +415,7 @@
             this.repositoryItemCalcEdit4,
             this.repositoryItemCalcEdit5});
             this.gridPhieuXuatHang.Size = new System.Drawing.Size(1101, 313);
-            this.gridPhieuXuatHang.TabIndex = 63;
+            this.gridPhieuXuatHang.TabIndex = 16;
             this.gridPhieuXuatHang.UseEmbeddedNavigator = true;
             this.gridPhieuXuatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -445,35 +445,35 @@
             this.memoGhiChu.Location = new System.Drawing.Point(97, 84);
             this.memoGhiChu.Name = "memoGhiChu";
             this.memoGhiChu.Size = new System.Drawing.Size(533, 46);
-            this.memoGhiChu.TabIndex = 62;
+            this.memoGhiChu.TabIndex = 3;
             // 
             // txtSoPhieu
             // 
             this.txtSoPhieu.Location = new System.Drawing.Point(722, 110);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.Size = new System.Drawing.Size(126, 20);
-            this.txtSoPhieu.TabIndex = 59;
+            this.txtSoPhieu.TabIndex = 10;
             // 
             // txtSoHoaDon
             // 
             this.txtSoHoaDon.Location = new System.Drawing.Point(722, 84);
             this.txtSoHoaDon.Name = "txtSoHoaDon";
             this.txtSoHoaDon.Size = new System.Drawing.Size(126, 20);
-            this.txtSoHoaDon.TabIndex = 58;
+            this.txtSoHoaDon.TabIndex = 9;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(722, 58);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(126, 20);
-            this.txtDienThoai.TabIndex = 57;
+            this.txtDienThoai.TabIndex = 8;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(97, 58);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(533, 20);
-            this.txtDiaChi.TabIndex = 56;
+            this.txtDiaChi.TabIndex = 2;
             // 
             // label7
             // 
@@ -602,7 +602,7 @@
             this.calcVat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcVat.Size = new System.Drawing.Size(74, 20);
-            this.calcVat.TabIndex = 70;
+            this.calcVat.TabIndex = 20;
             this.calcVat.EditValueChanged += new System.EventHandler(this.calcVat_EditValueChanged);
             // 
             // label16
@@ -621,7 +621,7 @@
             this.calcCK.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcCK.Size = new System.Drawing.Size(74, 20);
-            this.calcCK.TabIndex = 69;
+            this.calcCK.TabIndex = 19;
             this.calcCK.EditValueChanged += new System.EventHandler(this.calcCK_EditValueChanged);
             // 
             // label15
@@ -639,7 +639,7 @@
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Caption = "Sử dụng mã vạch";
             this.checkEdit2.Size = new System.Drawing.Size(114, 19);
-            this.checkEdit2.TabIndex = 65;
+            this.checkEdit2.TabIndex = 18;
             // 
             // checkEdit1
             // 
@@ -647,7 +647,7 @@
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "In sau khi lưu";
             this.checkEdit1.Size = new System.Drawing.Size(99, 19);
-            this.checkEdit1.TabIndex = 64;
+            this.checkEdit1.TabIndex = 17;
             // 
             // label8
             // 
@@ -674,7 +674,7 @@
             this.lookNgay.Properties.Mask.EditMask = "";
             this.lookNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.lookNgay.Size = new System.Drawing.Size(179, 20);
-            this.lookNgay.TabIndex = 51;
+            this.lookNgay.TabIndex = 13;
             // 
             // lookNhanVien
             // 
@@ -685,7 +685,7 @@
             this.lookNhanVien.Properties.NullText = "";
             this.lookNhanVien.Properties.PopupView = this.gridLookUpEdit3View;
             this.lookNhanVien.Size = new System.Drawing.Size(179, 20);
-            this.lookNhanVien.TabIndex = 52;
+            this.lookNhanVien.TabIndex = 14;
             // 
             // gridView7
             // 
@@ -712,7 +712,7 @@
             this.lookHinhThucThanhToan.Properties.NullText = "";
             this.lookHinhThucThanhToan.Properties.PopupView = this.gridView4;
             this.lookHinhThucThanhToan.Size = new System.Drawing.Size(110, 20);
-            this.lookHinhThucThanhToan.TabIndex = 61;
+            this.lookHinhThucThanhToan.TabIndex = 5;
             // 
             // lookMaKH
             // 
@@ -723,7 +723,7 @@
             this.lookMaKH.Properties.NullText = "";
             this.lookMaKH.Properties.PopupView = this.gridView7;
             this.lookMaKH.Size = new System.Drawing.Size(126, 20);
-            this.lookMaKH.TabIndex = 50;
+            this.lookMaKH.TabIndex = 7;
             this.lookMaKH.EditValueChanged += new System.EventHandler(this.lookMaKH_EditValueChanged);
             // 
             // txtPhieu
@@ -731,7 +731,7 @@
             this.txtPhieu.Location = new System.Drawing.Point(928, 33);
             this.txtPhieu.Name = "txtPhieu";
             this.txtPhieu.Size = new System.Drawing.Size(179, 20);
-            this.txtPhieu.TabIndex = 53;
+            this.txtPhieu.TabIndex = 12;
             // 
             // dateNgayGiao
             // 
@@ -749,7 +749,7 @@
             this.dateNgayGiao.Properties.Mask.EditMask = "";
             this.dateNgayGiao.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateNgayGiao.Size = new System.Drawing.Size(126, 20);
-            this.dateNgayGiao.TabIndex = 60;
+            this.dateNgayGiao.TabIndex = 11;
             // 
             // lookKho
             // 
@@ -760,7 +760,7 @@
             this.lookKho.Properties.NullText = "";
             this.lookKho.Properties.PopupView = this.gridView6;
             this.lookKho.Size = new System.Drawing.Size(179, 20);
-            this.lookKho.TabIndex = 55;
+            this.lookKho.TabIndex = 15;
             // 
             // gridView8
             // 
@@ -805,7 +805,7 @@
             this.lookDieuKhoan.Properties.NullText = "";
             this.lookDieuKhoan.Properties.PopupView = this.gridView8;
             this.lookDieuKhoan.Size = new System.Drawing.Size(110, 20);
-            this.lookDieuKhoan.TabIndex = 54;
+            this.lookDieuKhoan.TabIndex = 4;
             // 
             // barManager2
             // 
@@ -926,7 +926,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(1112, 28);
+            this.barDockControl1.Size = new System.Drawing.Size(1112, 26);
             // 
             // barDockControl2
             // 
@@ -940,17 +940,17 @@
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 28);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 26);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 489);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 491);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1112, 28);
+            this.barDockControl4.Location = new System.Drawing.Point(1112, 26);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 489);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 491);
             // 
             // barHeaderItem3
             // 
@@ -1036,7 +1036,7 @@
             this.lookHan.Properties.Mask.EditMask = "";
             this.lookHan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.lookHan.Size = new System.Drawing.Size(110, 20);
-            this.lookHan.TabIndex = 61;
+            this.lookHan.TabIndex = 6;
             // 
             // frmPhieuXuatHang
             // 

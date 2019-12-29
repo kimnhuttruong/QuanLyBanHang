@@ -75,11 +75,12 @@ namespace DoAnCK_TTA.GUI
             u.PartID = "";
             u.Description = txtDienGiai.Text;
             u.Active = true;
-
-
-
-            BUS_SYS_USER bUS = new BUS_SYS_USER();
-            int a = bUS.ThemNguoiDung(u);
+            int a = 0;
+            if (u.UserName != u.Group_ID)
+            {
+                BUS_SYS_USER bUS = new BUS_SYS_USER();
+                 a = bUS.ThemNguoiDung(u);
+            }
             if(a==0)
             {
                 MessageBox.Show("Thêm không thành công");

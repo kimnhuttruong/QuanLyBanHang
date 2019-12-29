@@ -233,7 +233,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(1112, 28);
+            this.barDockControl1.Size = new System.Drawing.Size(1112, 26);
             // 
             // barDockControl2
             // 
@@ -247,17 +247,17 @@
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 28);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 26);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 489);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 491);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1112, 28);
+            this.barDockControl4.Location = new System.Drawing.Point(1112, 26);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 489);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 491);
             // 
             // barHeaderItem3
             // 
@@ -399,7 +399,7 @@
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "In sau khi lưu";
             this.checkEdit1.Size = new System.Drawing.Size(99, 19);
-            this.checkEdit1.TabIndex = 104;
+            this.checkEdit1.TabIndex = 9;
             // 
             // txtPhieuCK
             // 
@@ -417,7 +417,7 @@
             this.txtPhieuCK.Properties.Mask.EditMask = "";
             this.txtPhieuCK.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtPhieuCK.Size = new System.Drawing.Size(163, 20);
-            this.txtPhieuCK.TabIndex = 91;
+            this.txtPhieuCK.TabIndex = 5;
             // 
             // checkEdit2
             // 
@@ -425,7 +425,7 @@
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Caption = "Sử dụng mã vạch";
             this.checkEdit2.Size = new System.Drawing.Size(114, 19);
-            this.checkEdit2.TabIndex = 105;
+            this.checkEdit2.TabIndex = 10;
             // 
             // label5
             // 
@@ -476,7 +476,7 @@
             this.lookKhoXuat.Properties.NullText = "";
             this.lookKhoXuat.Properties.PopupView = this.gridLookUpEdit1View;
             this.lookKhoXuat.Size = new System.Drawing.Size(423, 20);
-            this.lookKhoXuat.TabIndex = 96;
+            this.lookKhoXuat.TabIndex = 0;
             // 
             // gridLookUpEdit1View
             // 
@@ -494,7 +494,7 @@
             this.lookKhoNhan.Properties.NullText = "";
             this.lookKhoNhan.Properties.PopupView = this.gridView1;
             this.lookKhoNhan.Size = new System.Drawing.Size(423, 20);
-            this.lookKhoNhan.TabIndex = 102;
+            this.lookKhoNhan.TabIndex = 1;
             // 
             // gridView1
             // 
@@ -508,7 +508,7 @@
             this.txtGhiChu.Location = new System.Drawing.Point(98, 82);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(742, 20);
-            this.txtGhiChu.TabIndex = 94;
+            this.txtGhiChu.TabIndex = 2;
             // 
             // lookNguoiChuyen
             // 
@@ -519,7 +519,7 @@
             this.lookNguoiChuyen.Properties.NullText = "";
             this.lookNguoiChuyen.Properties.PopupView = this.gridView2;
             this.lookNguoiChuyen.Size = new System.Drawing.Size(228, 20);
-            this.lookNguoiChuyen.TabIndex = 97;
+            this.lookNguoiChuyen.TabIndex = 3;
             // 
             // gridView2
             // 
@@ -538,7 +538,7 @@
             this.lookNguoiNhan.Properties.NullText = "";
             this.lookNguoiNhan.Properties.PopupView = this.gridView3;
             this.lookNguoiNhan.Size = new System.Drawing.Size(228, 20);
-            this.lookNguoiNhan.TabIndex = 98;
+            this.lookNguoiNhan.TabIndex = 4;
             // 
             // gridView3
             // 
@@ -552,7 +552,7 @@
             this.txtChuyenTay.Location = new System.Drawing.Point(944, 56);
             this.txtChuyenTay.Name = "txtChuyenTay";
             this.txtChuyenTay.Size = new System.Drawing.Size(163, 20);
-            this.txtChuyenTay.TabIndex = 92;
+            this.txtChuyenTay.TabIndex = 6;
             // 
             // lookNgay
             // 
@@ -570,7 +570,7 @@
             this.lookNgay.Properties.Mask.EditMask = "";
             this.lookNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.lookNgay.Size = new System.Drawing.Size(163, 20);
-            this.lookNgay.TabIndex = 95;
+            this.lookNgay.TabIndex = 7;
             // 
             // gridChuyenKho
             // 
@@ -584,7 +584,7 @@
             this.repositoryItemLookUpEdit1,
             this.repositoryItemTextEdit1});
             this.gridChuyenKho.Size = new System.Drawing.Size(1101, 313);
-            this.gridChuyenKho.TabIndex = 110;
+            this.gridChuyenKho.TabIndex = 8;
             this.gridChuyenKho.UseEmbeddedNavigator = true;
             this.gridChuyenKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
