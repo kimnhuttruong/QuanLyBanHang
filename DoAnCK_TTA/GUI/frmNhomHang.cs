@@ -23,13 +23,10 @@ namespace DoAnCK_TTA.GUI
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
             var mainWindow = new frmThongTinNhomHang();
+            BUS_PRODUCT_GROUP bUS = new BUS_PRODUCT_GROUP();
+            
 
-
-            dTO_PRODUCT_GROUP.ProductGroup_ID = _dt.Rows[_dt.Rows.Count - 1][0].ToString();
-
-            dTO_PRODUCT_GROUP.ProductGroup_ID = dTO_PRODUCT_GROUP.ProductGroup_ID.Remove(0, 2);
-
-            dTO_PRODUCT_GROUP.ProductGroup_ID = (int.Parse(dTO_PRODUCT_GROUP.ProductGroup_ID) + 1).ToString("000000");
+            dTO_PRODUCT_GROUP.ProductGroup_ID = (bUS.LayDanhSachNhomHang().Rows.Count + 1).ToString("000000");
             dTO_PRODUCT_GROUP.ProductGroup_ID = "NH" + dTO_PRODUCT_GROUP.ProductGroup_ID.ToString();
 
             mainWindow.Sender(dTO_PRODUCT_GROUP);    //Gọi delegate

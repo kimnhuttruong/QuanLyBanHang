@@ -23,6 +23,12 @@ namespace DoAnCK_TTA.BUS
             return dAL.ThemPhieuNhapHang(dTO);
 
         }
-      
+        public int XoaPhieuNhapHang(string dTO)
+        {
+            DAL_INVENTORY_DETAIL dAL = new DAL_INVENTORY_DETAIL();
+            return dAL.XoaPhieuNhapHang(dTO);
+
+        }
+
     }
 }

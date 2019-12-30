@@ -39,8 +39,6 @@
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.txtMa = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
-            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.treeVaiTro = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -51,6 +49,8 @@
             this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn10 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn11 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.check.Properties)).BeginInit();
@@ -131,14 +131,14 @@
             this.txtDienGiai.Location = new System.Drawing.Point(379, 25);
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(253, 20);
-            this.txtDienGiai.TabIndex = 0;
+            this.txtDienGiai.TabIndex = 2;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(67, 54);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(235, 20);
-            this.txtTen.TabIndex = 0;
+            this.txtTen.TabIndex = 1;
             // 
             // txtMa
             // 
@@ -157,26 +157,6 @@
             this.groupControl2.Size = new System.Drawing.Size(639, 467);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Quyền Hạn";
-            // 
-            // btnDong
-            // 
-            this.btnDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDong.ImageOptions.SvgImage")));
-            this.btnDong.Location = new System.Drawing.Point(428, 434);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(158, 28);
-            this.btnDong.TabIndex = 1;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click_1);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(264, 434);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(158, 28);
-            this.btnLuu.TabIndex = 1;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // treeVaiTro
             // 
@@ -200,7 +180,7 @@
             this.treeVaiTro.Name = "treeVaiTro";
             this.treeVaiTro.ParentFieldName = "";
             this.treeVaiTro.Size = new System.Drawing.Size(639, 403);
-            this.treeVaiTro.TabIndex = 2;
+            this.treeVaiTro.TabIndex = 0;
             // 
             // treeListColumn3
             // 
@@ -294,6 +274,26 @@
             this.treeListColumn11.Visible = true;
             this.treeListColumn11.VisibleIndex = 8;
             this.treeListColumn11.Width = 37;
+            // 
+            // btnDong
+            // 
+            this.btnDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDong.ImageOptions.SvgImage")));
+            this.btnDong.Location = new System.Drawing.Point(428, 434);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(158, 28);
+            this.btnDong.TabIndex = 1;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click_1);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(264, 434);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(158, 28);
+            this.btnLuu.TabIndex = 1;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmThemVaiTro
             // 

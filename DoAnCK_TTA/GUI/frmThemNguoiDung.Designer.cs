@@ -110,14 +110,14 @@
             this.checkQuanLy.Name = "checkQuanLy";
             this.checkQuanLy.Properties.Caption = "Còn quản lý";
             this.checkQuanLy.Size = new System.Drawing.Size(89, 19);
-            this.checkQuanLy.TabIndex = 3;
+            this.checkQuanLy.TabIndex = 6;
             // 
             // txtDienGiai
             // 
             this.txtDienGiai.Location = new System.Drawing.Point(75, 172);
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(241, 20);
-            this.txtDienGiai.TabIndex = 2;
+            this.txtDienGiai.TabIndex = 5;
             // 
             // txtPrePassword
             // 
@@ -125,7 +125,7 @@
             this.txtPrePassword.Name = "txtPrePassword";
             this.txtPrePassword.Properties.PasswordChar = '*';
             this.txtPrePassword.Size = new System.Drawing.Size(241, 20);
-            this.txtPrePassword.TabIndex = 2;
+            this.txtPrePassword.TabIndex = 3;
             // 
             // txtPassword
             // 
@@ -140,7 +140,7 @@
             this.txtUserName.Location = new System.Drawing.Point(75, 52);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(241, 20);
-            this.txtUserName.TabIndex = 2;
+            this.txtUserName.TabIndex = 1;
             // 
             // label6
             // 
@@ -243,7 +243,7 @@
             this.cbNhanVien.Properties.PopupSizeable = false;
             this.cbNhanVien.Properties.PopupView = this.gridView1;
             this.cbNhanVien.Size = new System.Drawing.Size(241, 20);
-            this.cbNhanVien.TabIndex = 1;
+            this.cbNhanVien.TabIndex = 0;
             // 
             // gridView1
             // 
@@ -296,7 +296,7 @@
             this.btnDong.Location = new System.Drawing.Point(229, 259);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 30);
-            this.btnDong.TabIndex = 1;
+            this.btnDong.TabIndex = 2;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
@@ -308,7 +308,6 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
- //           this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThemNguoiDung.IconOptions.LargeImage")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThemNguoiDung";

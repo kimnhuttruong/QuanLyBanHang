@@ -24,8 +24,30 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT into  STOCK_INWARD_DETAIL (ID  ,Inward_ID ,Product_ID,ProductName ,Unit ,Stock_ID  ,Amount  ,UnitPrice ,Charge  ,Quantity ) " +
+            cmd.CommandText = "   INSERT into  STOCK_INWARD_DETAIL (ID  ,Inward_ID ,Product_ID,ProductName ,Unit ,Stock_ID  ,Amount  ,UnitPrice ,Charge  ,Quantity ) " +
                                               " VALUES (N'" + kv.ID + "','" + kv.Inward_ID + "','" + kv.Product_ID + "',N'" + kv.ProductName + "','" + kv.Unit + "','" + kv.Stock_ID + "',N'" + kv.Amount + "',N'" + kv.UnitPrice + "',N'" + kv.Charge + "',N'" + kv.Quantity + "')";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int XoaFullPhieuNhapHang(string kv)
+        {
+          
+
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete STOCK_INWARD_DETAIL where Inward_ID='" + kv + "'  ";
             try
             {
                 OpenConnection();
@@ -191,7 +213,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select d.Inward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID  and p.Product_ID=d.Product_ID and d.Inward_ID='" + ma + "' ";
+            cmd.CommandText = "select d.Inward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit,s.Vat,s.VatAmount,s.Amount,s.FAmount,d.Amount as Tong from STOCK_INWARD s ,STOCK_INWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID  and s.Barcode=d.Inward_ID   and p.Product_ID=d.Product_ID and d.Inward_ID='" + ma + "' ";
             try
             {
                 OpenConnection();

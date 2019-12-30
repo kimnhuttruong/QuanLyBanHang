@@ -83,7 +83,14 @@ namespace DoAnCK_TTA.GUI
                         );
                 
                 }
-                
+                if (dt1.Rows.Count > 0)
+                {
+                    calcCK.Text = dt1.Rows[0]["Amount"].ToString();
+                    calcVat.Text = dt1.Rows[0]["Vat"].ToString();
+                    txtTongTien.Text = dt1.Rows[0]["Tong"].ToString();
+                    calcTienCK.Text = dt1.Rows[0]["FAmount"].ToString();
+                    calcTienVat.Text = dt1.Rows[0]["VatAmount"].ToString();
+                }
                 gridPhieuNhapHang.DataSource = dt2;
             }
         }
@@ -219,8 +226,8 @@ namespace DoAnCK_TTA.GUI
                             btnSaveAdd.Enabled = false;
                             btnSaveClose.Enabled = false;
                         }
-                        //if (dt.Rows[i]["AllowDelete"].ToString() == "False")
-                        //    btnXoa.Enabled = false;
+                        if (dt.Rows[i]["AllowAdd"].ToString() == "False")
+                            btnTaoMoi.Enabled = false;
                         //if (dt.Rows[i]["AllowEdit"].ToString() == "False")
                         //    btnSuaChua.Enabled = false;
                         //if (dt.Rows[i]["AllowAccess"].ToString() == "False")
@@ -634,9 +641,17 @@ namespace DoAnCK_TTA.GUI
             phieu.RefStatus = txtSoHoaDon.Text;
             BUS_STOCK_INWARD inward = new BUS_STOCK_INWARD();
             int b = inward.ThemPhieuNhapHang(phieu);
+
+            BUS_STOCK_INWARD_DETAIL inwarddetal = new BUS_STOCK_INWARD_DETAIL();
+            inwarddetal.XoaFullPhieuNhapHang(phieu.ID);
+            BUS_INVENTORY_DETAIL bus = new BUS_INVENTORY_DETAIL();
+            bus.XoaPhieuNhapHang(phieu.ID);
             for (int i = 0; i < gridView5.RowCount; i++)
             {
                 DataRow row = gridView5.GetDataRow(i);
+              
+
+
                 if (row["Ma"].ToString() != "")
                 {
                     _DETAIL.ID = txtPhieu.Text + i.ToString();
@@ -675,8 +690,7 @@ namespace DoAnCK_TTA.GUI
 
 
                     
-                    BUS_STOCK_INWARD_DETAIL inwarddetal = new BUS_STOCK_INWARD_DETAIL();
-                    BUS_INVENTORY_DETAIL bus = new BUS_INVENTORY_DETAIL();
+                  
                     int a = bus.ThemPhieuNhapHang(_DETAIL);
                    
                     int c = inwarddetal.ThemPhieuNhapHang(dTO_STOCK_INWARD_DETAIL);

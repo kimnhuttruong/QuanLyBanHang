@@ -95,5 +95,10 @@ namespace DoAnCK_TTA.GUI
             public string ThanhTien { get; set; }
             public string DienGiai { get; set; }
         }
+
+        private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

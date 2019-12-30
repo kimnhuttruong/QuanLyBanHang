@@ -120,7 +120,7 @@ namespace DoAnCK_TTA
             this.cbUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbUsername.Size = new System.Drawing.Size(181, 20);
-            this.cbUsername.TabIndex = 17;
+            this.cbUsername.TabIndex = 0;
             this.cbUsername.SelectedValueChanged += new System.EventHandler(this.cbUsername_SelectedValueChanged);
             // 
             // txtPassword
@@ -129,7 +129,7 @@ namespace DoAnCK_TTA
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(180, 20);
-            this.txtPassword.TabIndex = 12;
+            this.txtPassword.TabIndex = 1;
             // 
             // checkSave
             // 
@@ -137,14 +137,14 @@ namespace DoAnCK_TTA
             this.checkSave.Name = "checkSave";
             this.checkSave.Properties.Caption = "Nhớ tài khoản và mật khẩu";
             this.checkSave.Size = new System.Drawing.Size(167, 19);
-            this.checkSave.TabIndex = 11;
+            this.checkSave.TabIndex = 2;
             // 
             // btnKetThuc
             // 
             this.btnKetThuc.Location = new System.Drawing.Point(236, 151);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(75, 23);
-            this.btnKetThuc.TabIndex = 10;
+            this.btnKetThuc.TabIndex = 4;
             this.btnKetThuc.Text = "Kết Thúc";
             this.btnKetThuc.Click += new System.EventHandler(this.btnKetThuc_Click);
             // 
@@ -162,7 +162,7 @@ namespace DoAnCK_TTA
             this.btnDangNhap.Location = new System.Drawing.Point(150, 151);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
-            this.btnDangNhap.TabIndex = 10;
+            this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Tag = "Login";
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);

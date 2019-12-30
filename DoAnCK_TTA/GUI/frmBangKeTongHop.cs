@@ -148,5 +148,44 @@ namespace DoAnCK_TTA.GUI
         {
 
         }
+
+        private void btnSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string ma = "";
+
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                ma = row[0].ToString();
+
+            }
+
+
+            var phieumuahang = new frmPhieuNhapHang();
+
+            phieumuahang.Sender(ma);
+            Form window1 = new Form()
+            {
+                Text = "Sửa Phiếu Mua Hàng",
+                Width = 1130,
+                Height = 550,
+                AutoSize = false
+
+            };
+            window1.Controls.Add(phieumuahang);
+            window1.ShowDialog();
+
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Sửa";
+            busLog.ThemLichSu(log);
+        }
     }
 }

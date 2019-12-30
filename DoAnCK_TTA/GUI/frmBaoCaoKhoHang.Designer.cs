@@ -38,8 +38,6 @@
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnTonKhoTongHop = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnNhapXuatTon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btnTheKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btnSoChiTietHangHoa = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnLichSuHangHoa = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
@@ -81,9 +79,9 @@
             // dockPanel_Container
             // 
             this.dockPanel_Container.Controls.Add(this.accordionControl);
-            this.dockPanel_Container.Location = new System.Drawing.Point(3, 19);
+            this.dockPanel_Container.Location = new System.Drawing.Point(3, 29);
             this.dockPanel_Container.Name = "dockPanel_Container";
-            this.dockPanel_Container.Size = new System.Drawing.Size(237, 574);
+            this.dockPanel_Container.Size = new System.Drawing.Size(237, 564);
             this.dockPanel_Container.TabIndex = 0;
             // 
             // accordionControl
@@ -95,7 +93,7 @@
             this.accordionControlElement1});
             this.accordionControl.Location = new System.Drawing.Point(0, 0);
             this.accordionControl.Name = "accordionControl";
-            this.accordionControl.Size = new System.Drawing.Size(237, 574);
+            this.accordionControl.Size = new System.Drawing.Size(237, 564);
             this.accordionControl.TabIndex = 0;
             this.accordionControl.Text = "accordionControl";
             this.accordionControl.SelectedElementChanged += new DevExpress.XtraBars.Navigation.SelectedElementChangedEventHandler(this.accordionControl_SelectedElementChanged);
@@ -112,8 +110,6 @@
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnTonKhoTongHop,
             this.btnNhapXuatTon,
-            this.btnTheKho,
-            this.btnSoChiTietHangHoa,
             this.btnLichSuHangHoa});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
@@ -134,20 +130,6 @@
             this.btnNhapXuatTon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnNhapXuatTon.Text = "Nhập-Xuất-Tồn";
             this.btnNhapXuatTon.Click += new System.EventHandler(this.btnNhapXuatTon_Click);
-            // 
-            // btnTheKho
-            // 
-            this.btnTheKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheKho.ImageOptions.Image")));
-            this.btnTheKho.Name = "btnTheKho";
-            this.btnTheKho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnTheKho.Text = "Thẻ Kho";
-            // 
-            // btnSoChiTietHangHoa
-            // 
-            this.btnSoChiTietHangHoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSoChiTietHangHoa.ImageOptions.Image")));
-            this.btnSoChiTietHangHoa.Name = "btnSoChiTietHangHoa";
-            this.btnSoChiTietHangHoa.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnSoChiTietHangHoa.Text = "Sổ Chi Tiết Hàng Hóa";
             // 
             // btnLichSuHangHoa
             // 
@@ -199,8 +181,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnTonKhoTongHop;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnNhapXuatTon;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btnTheKho;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btnSoChiTietHangHoa;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnLichSuHangHoa;
     }
 }

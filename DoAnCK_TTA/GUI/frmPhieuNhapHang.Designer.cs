@@ -962,6 +962,7 @@
             this.calcSoLuong.Name = "calcSoLuong";
             this.calcSoLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:0.##}")});
+            this.calcSoLuong.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.calcSoLuong.Visible = true;
             this.calcSoLuong.VisibleIndex = 3;
             // 
@@ -971,6 +972,7 @@
             this.calcDonGia.ColumnEdit = this.repositoryItemCalcEdit2;
             this.calcDonGia.FieldName = "DonGia";
             this.calcDonGia.Name = "calcDonGia";
+            this.calcDonGia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.calcDonGia.Visible = true;
             this.calcDonGia.VisibleIndex = 4;
             // 
@@ -982,7 +984,7 @@
             this.txtThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:0.##}")});
             this.txtThanhTien.UnboundExpression = "[DonGia] * [SoLuong]";
-            this.txtThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.txtThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.txtThanhTien.Visible = true;
             this.txtThanhTien.VisibleIndex = 5;
             // 

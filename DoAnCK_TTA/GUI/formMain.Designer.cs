@@ -69,7 +69,6 @@
             this.btnBaoCaoBanHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoTroTrucTuyen = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuongDanSuDung = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnLienHe = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangKi = new DevExpress.XtraBars.BarButtonItem();
             this.bntThongTin_TroGiup = new DevExpress.XtraBars.BarButtonItem();
@@ -156,6 +155,7 @@
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemImageEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemImageComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -165,7 +165,6 @@
             this.xtraTabbedMdiManager2 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
@@ -195,6 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager2)).BeginInit();
@@ -679,18 +679,12 @@
             // btnHuongDanSuDung
             // 
             this.btnHuongDanSuDung.ActAsDropDown = true;
-            this.btnHuongDanSuDung.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.btnHuongDanSuDung.Caption = "Hướng Dẫn Sử Dụng";
-            this.btnHuongDanSuDung.DropDownControl = this.popupMenu1;
             this.btnHuongDanSuDung.Id = 69;
             this.btnHuongDanSuDung.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDanSuDung.ImageOptions.Image")));
             this.btnHuongDanSuDung.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHuongDanSuDung.ImageOptions.LargeImage")));
             this.btnHuongDanSuDung.Name = "btnHuongDanSuDung";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbon;
+            this.btnHuongDanSuDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuongDanSuDung_ItemClick);
             // 
             // btnLienHe
             // 
@@ -698,6 +692,7 @@
             this.btnLienHe.Id = 70;
             this.btnLienHe.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.contact;
             this.btnLienHe.Name = "btnLienHe";
+            this.btnLienHe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLienHe_ItemClick);
             // 
             // btnDangKi
             // 
@@ -705,6 +700,7 @@
             this.btnDangKi.Id = 71;
             this.btnDangKi.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.key;
             this.btnDangKi.Name = "btnDangKi";
+            this.btnDangKi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangKi_ItemClick);
             // 
             // bntThongTin_TroGiup
             // 
@@ -714,6 +710,7 @@
             this.bntThongTin_TroGiup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bntThongTin_TroGiup.ImageOptions.LargeImage")));
             this.bntThongTin_TroGiup.LargeWidth = 60;
             this.bntThongTin_TroGiup.Name = "bntThongTin_TroGiup";
+            this.bntThongTin_TroGiup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bntThongTin_TroGiup_ItemClick);
             // 
             // btnCapNhat
             // 
@@ -721,6 +718,7 @@
             this.btnCapNhat.Id = 73;
             this.btnCapNhat.ImageOptions.LargeImage = global::DoAnCK_TTA.Properties.Resources.update;
             this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapNhat_ItemClick);
             // 
             // barEditItem1
             // 
@@ -1351,6 +1349,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemImageComboBox2.Name = "repositoryItemImageComboBox2";
             // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbon;
+            // 
             // popupMenu2
             // 
             this.popupMenu2.Name = "popupMenu2";
@@ -1410,7 +1413,6 @@
             this.Load += new System.EventHandler(this.formMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formMain_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
@@ -1440,6 +1442,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager2)).EndInit();

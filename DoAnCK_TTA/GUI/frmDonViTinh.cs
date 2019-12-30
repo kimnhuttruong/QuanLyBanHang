@@ -143,11 +143,11 @@ namespace DoAnCK_TTA.GUI
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
+            BUS_UNIT bus = new BUS_UNIT();
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                int a = bus.XoaKhuVuc(c.Unit_ID);
+                int a = bus.XoaDonViTinh(c.Unit_ID);
                 Init();
             }
             else if (dialogResult == DialogResult.No)

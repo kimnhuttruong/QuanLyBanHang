@@ -703,6 +703,7 @@
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.dataTable});
+            this.Detail.DrillDownExpanded = false;
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
             // 

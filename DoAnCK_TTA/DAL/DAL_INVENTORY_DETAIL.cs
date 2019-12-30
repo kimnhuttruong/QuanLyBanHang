@@ -46,7 +46,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT into  INVENTORY_DETAIL   VALUES (" + id + ",N'" + kv.RefNo + "',N'" + kv.RefDate + "','',N'" + kv.RefType + "',N'" + kv.RefStatus + "',N'" + kv.StoreID + "',N'" + kv.Stock_ID + "',N'" + kv.Product_ID + "',N'" + kv.Product_Name + "',N'" + kv.Customer_ID + "',N'" + kv.Employee_ID + "',N'" + kv.Batch + "',N'" + kv.Serial + "',N'" + kv.Unit+"',"  + float.Parse(kv.Price) + "," + float.Parse(kv.Quantity) + "," + float.Parse(kv.UnitPrice) + "," + float.Parse(kv.Amount) + "," + float.Parse(kv.E_Qty) + "," + float.Parse(kv.E_Amt)+ ",N'" + kv.Description + "',0,0" +")";
+            cmd.CommandText = " INSERT into  INVENTORY_DETAIL   VALUES (" + id + ",N'" + kv.RefNo + "',N'" + kv.RefDate + "','',N'" + kv.RefType + "',N'" + kv.RefStatus + "',N'" + kv.StoreID + "',N'" + kv.Stock_ID + "',N'" + kv.Product_ID + "',N'" + kv.Product_Name + "',N'" + kv.Customer_ID + "',N'" + kv.Employee_ID + "',N'" + kv.Batch + "',N'" + kv.Serial + "',N'" + kv.Unit+"',"  + float.Parse(kv.Price) + "," + float.Parse(kv.Quantity) + "," + float.Parse(kv.UnitPrice) + "," + float.Parse(kv.Amount) + "," + float.Parse(kv.E_Qty) + "," + float.Parse(kv.E_Amt)+ ",N'" + kv.Description + "',0,0" +")";
 
             OpenConnection();
             cmd.ExecuteNonQuery();
@@ -54,6 +54,24 @@ namespace DoAnCK_TTA.DAL
             return 1;
 
         }
-      
+        public int XoaPhieuNhapHang(string kv)
+        {
+          
+
+        
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete INVENTORY_DETAIL where RefNo='" + kv + "'";
+
+            OpenConnection();
+            cmd.ExecuteNonQuery();
+            CloseConnection();
+            return 1;
+
+        }
+
     }
 }

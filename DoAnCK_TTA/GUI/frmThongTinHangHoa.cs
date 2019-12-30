@@ -22,34 +22,40 @@ namespace DoAnCK_TTA.GUI
         }
         private void GetMessage(DTO_PRODUCT c)
         {
-            txtMaHang.Text = c.Product_ID;
-            txtTenHang.Text = c.Product_Name;
-            txtXuatXu.Text = c.Origin;
-            calcTonKhoToiThieu.Text = c.MinStock;
-            calcTonHienTai.Text = c.CurrentCost;
-            txtMaVach.Text = c.Barcode;
-            calcGiaMua.Text = c.Org_Price;
-            calcBanSi.Text = c.Sale_Price;
-            calcBanLe.Text = c.Retail_Price;
-            if (c.Photo != null && c.Photo !="\0")
+            BUS_PRODUCT busp = new BUS_PRODUCT();
+            if (c.Product_ID == null || c.Product_ID == "")
+                txtMaHang.Text = "HH" + (busp.LayDanhSachHangHoa().Rows.Count + 1).ToString();
+            else
             {
-                try
+                txtMaHang.Text = c.Product_ID;
+                txtTenHang.Text = c.Product_Name;
+                txtXuatXu.Text = c.Origin;
+                calcTonKhoToiThieu.Text = c.MinStock;
+                calcTonHienTai.Text = c.CurrentCost;
+                txtMaVach.Text = c.Barcode;
+                calcGiaMua.Text = c.Org_Price;
+                calcBanSi.Text = c.Sale_Price;
+                calcBanLe.Text = c.Retail_Price;
+                if (c.Photo != null && c.Photo != "\0")
                 {
-                    picture.Image = Image.FromFile(c.Photo);
+                    try
+                    {
+                        picture.Image = Image.FromFile(c.Photo);
+                    }
+                    catch
+                    {
+                        ;
+                    }
                 }
-                catch
-                {
-                    ;
-                }
+                _idKhoHang = c.Stock_ID;
+                _idPhanLoai = c.Product_Group_ID;
+                _idDonVi = c.Unit;
+                _idNhaCungCap = c.Provider_ID;
+
+
+
+                checkQuanLy.Checked = c.Active;
             }
-            _idKhoHang = c.Stock_ID;
-            _idPhanLoai = c.Product_Group_ID;
-            _idDonVi = c.Unit;
-            _idNhaCungCap = c.Provider_ID;
-            
-
-
-            checkQuanLy.Checked = c.Active;
             if (c.Product_Name == null || c.Product_Name=="")
                 isAdd = true;
             else
@@ -178,16 +184,11 @@ namespace DoAnCK_TTA.GUI
             
 
             c.Active = checkQuanLy.Checked;
-            if (isAdd == true)
-            {
-                int kt = bus.ThemHangHoa(c);
-                
-            }
-            else
-            {
+           
+          
                 int kt = bus.CapNhatHangHoa(c);
             
-            }
+           
 
             BUS_SYS_LOG busLog = new BUS_SYS_LOG();
             DTO_SYS_LOG log = new DTO_SYS_LOG();
@@ -240,7 +241,15 @@ namespace DoAnCK_TTA.GUI
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.ShowDialog();
             picture1 = dialog.FileName;
-            picture.Image = Image.FromFile(dialog.FileName);
+            try
+            {
+                picture.Image = Image.FromFile(dialog.FileName);
+            }
+            catch
+            {
+                XtraMessageBox.Show("Ảnh chọn không hợp lệ");
+            }
+           
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -273,7 +282,12 @@ namespace DoAnCK_TTA.GUI
 
         private void btnLichSu_Click(object sender, EventArgs e)
         {
-
+            Form hh = new Form();
+            hh.Text = "Lịch Sử Hàng Hóa";
+            frmLichSuHangHoa a = new frmLichSuHangHoa();
+            hh.Controls.Add(a);
+            hh.ShowDialog();
+        
         }
     }
 }

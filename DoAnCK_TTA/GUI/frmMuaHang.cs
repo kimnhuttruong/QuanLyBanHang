@@ -180,7 +180,9 @@ namespace DoAnCK_TTA.GUI
 
         private void btnThemHangHoa_Click(object sender, EventArgs e)
         {
-            Form hang = new frmThongTinHangHoa();
+            DTO_PRODUCT dTO_PRODUCT = new DTO_PRODUCT();
+            frmThongTinHangHoa hang = new frmThongTinHangHoa();
+            hang.Sender(dTO_PRODUCT);
             hang.ShowDialog();
         }
 

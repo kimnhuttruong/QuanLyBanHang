@@ -47,6 +47,12 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.ThemPhieuNhapHang(a);
 
         }
+        public int XoaFullPhieuNhapHang(string a)
+        {
+            DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();
+            return dAL_SYS_USER_RULE.XoaFullPhieuNhapHang(a);
+
+        }
         public int XoaPhieuNhapHang(string ma,string mahang,string Quantity)
         {
             DAL_STOCK_INWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_INWARD_DETAIL();

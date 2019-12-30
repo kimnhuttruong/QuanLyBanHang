@@ -15,6 +15,8 @@ using DoAnCK_TTA.BUS;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Localization;
+using System.Net.Mail;
+using DevExpress.XtraEditors;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -574,8 +576,7 @@ namespace DoAnCK_TTA.GUI
         static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
         private void btnHoTroTrucTuyen_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-            //Process p = Process.Start(@"TeamViewer.exe");
+            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\TeamViewer\TeamViewer.exe");
         }
 
         private void btnChungTu_ItemClick(object sender, ItemClickEventArgs e)
@@ -692,6 +693,66 @@ namespace DoAnCK_TTA.GUI
         {
             frmNhapFile f = new frmNhapFile();
             f.ShowDialog();
+        }
+
+        private void btnHuongDanSuDung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("Chrome", Uri.EscapeDataString(@"E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\DoAnCK_TTA\HDSD\HDSD.html"));
+        }
+
+        private void btnLienHe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThongTinCongTy f = new frmThongTinCongTy();
+            f.ShowDialog();
+        }
+
+        private void btnCapNhat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            System.Diagnostics.Process.Start("https://github.com/kimnhuttruonghcmus/QuanLyBanHang.git");
+
+        }
+
+        private void bntThongTin_TroGiup_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            System.Diagnostics.Process.Start("Chrome", Uri.EscapeDataString(@"E:\17CK2_KHTN\HK1 (2019-2020)\LTUDQL1\DoAnCK_TTA\DoAnPerfectSoftware\QuanLyBaHang\TTA Team\index.html"));
+
+        }
+
+        private void btnDangKi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BUS_COMPANY bUS = new BUS_COMPANY();
+            DataTable dataTable = new DataTable();
+            string ct = "tên công ty";
+            dataTable = bUS.LayThongTinCongTy();
+            if (dataTable.Rows.Count > 0)
+                ct = dataTable.Rows[0][1].ToString() +"   "+ dataTable.Rows[0][4].ToString() + "   " + dataTable.Rows[0][7].ToString();
+            var fromAddress = new MailAddress("toantoantoan321@gmail.com", "phung nguyen");
+            var toAddress = new MailAddress("star.knt.8@gmail.com", "Nhựt Trường Kim");
+            const string fromPassword = "toan12345";
+            const string subject = "Đăng Kí Tái Khoản";
+            string body = ct;
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                
+                smtp.Send(message);
+            }
+            XtraMessageBox.Show("Chúng tôi đã nhận được thư đăng kí của bạn,chúng tôi sẽ liên hệ bạn trong thời gian gần nhật");
         }
     }
 }
