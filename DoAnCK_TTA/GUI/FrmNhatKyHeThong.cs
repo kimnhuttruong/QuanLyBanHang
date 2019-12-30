@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
+using System.IO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -24,8 +25,7 @@ namespace DoAnCK_TTA.GUI
         {
 
         }
-
-        private void FrmNhatKyHeThong_Load(object sender, EventArgs e)
+        public void load()
         {
             DataTable dt = new DataTable();
             BUS_SYS_USER_RULE bus = new BUS_SYS_USER_RULE();
@@ -64,13 +64,102 @@ namespace DoAnCK_TTA.GUI
             log.MChine = dtlog.Rows[0][1].ToString();
             log.UserID = dtlog.Rows[0][2].ToString();
             log.Module = this.Tag.ToString();
-            log.Created = DateTime.Now.ToString();;
+            log.Created = DateTime.Now.ToString(); ;
             log.Action_Name = "Xem";
             busLog.ThemLichSu(log);
 
 
             BUS_SYS_LOG bUS_SYS_LOG = new BUS_SYS_LOG();
             gridNhatKy.DataSource = bUS_SYS_LOG.LayThongTinLog();
+        }
+        private void FrmNhatKyHeThong_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    string exportFilePath = saveDialog.FileName;
+                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
+
+                    switch (fileExtenstion)
+                    {
+                        case ".xls":
+                            gridNhatKy.ExportToXls(exportFilePath);
+                            break;
+                        case ".xlsx":
+                            gridNhatKy.ExportToXlsx(exportFilePath);
+                            break;
+                        case ".rtf":
+                            gridNhatKy.ExportToRtf(exportFilePath);
+                            break;
+                        case ".pdf":
+                            gridNhatKy.ExportToPdf(exportFilePath);
+                            break;
+                        case ".html":
+                            gridNhatKy.ExportToHtml(exportFilePath);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            //Try to open the file and let windows decide how to open it.
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnXem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            load();
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string ma = "";
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                ma = row["SYS_ID"].ToString();
+            }
+            BUS_SYS_LOG bUS_SYS_LOG = new BUS_SYS_LOG();
+            DialogResult dialogResult = XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int a = bUS_SYS_LOG.XoaLichSu(ma);
+                load();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                ;
+            }
+
         }
     }
 }

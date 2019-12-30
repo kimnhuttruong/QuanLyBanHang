@@ -38,14 +38,14 @@ namespace DoAnCK_TTA.DAL
             //    return 0;
             //}
         }
-        public int XoaPhieuXuatHang(string ma, string mahang, string Quantity)
+        public int XoaPhieuXuatHang(string ma)
         {
 
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Delete STOCK_OUTWARD_DETAIL where  Outward_ID='" + ma + "' and Product_ID='" + mahang + "' and Quantity='" + Quantity + "'";
+            cmd.CommandText = "Delete STOCK_OUTWARD_DETAIL where  Outward_ID='" + ma + "'";
             try
             {
                 OpenConnection();
@@ -170,7 +170,7 @@ namespace DoAnCK_TTA.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select d.Outward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_OUTWARD s ,STOCK_OUTWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.ID and p.Product_ID=d.Product_ID and d.Outward_ID='" + ma + "' ";
+            cmd.CommandText = "select d.Outward_ID as Ma,s.RefDate ,p.Product_ID,p.Product_Name,s.CustomerName,st.Stock_Name,d.Quantity,d.UnitPrice, st.Stock_ID, st.Stock_Name,d.Unit from STOCK_OUTWARD s ,STOCK_OUTWARD_DETAIL d ,PRODUCT p, STOCK st where st.Stock_ID=s.Stock_ID and s.ID = d.Outward_ID and p.Product_ID=d.Product_ID and s.ID='" + ma + "' ";
             try
             {
                 OpenConnection();

@@ -144,7 +144,7 @@ namespace DoAnCK_TTA.GUI
         {
 
             BUS_UNIT bus = new BUS_UNIT();
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int a = bus.XoaDonViTinh(c.Unit_ID);

@@ -715,6 +715,7 @@
             this.Controls.Add(this.cbLoaiHangHoa);
             this.Controls.Add(this.cbKhoMacDinh);
             this.Name = "frmThongTinHangHoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiMaterial";
             this.Text = "Thông Tin Hàng Hóa";
             this.Load += new System.EventHandler(this.frmThongTinHangHoa_Load);

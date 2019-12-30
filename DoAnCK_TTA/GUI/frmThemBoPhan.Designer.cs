@@ -144,6 +144,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
             this.Name = "frmThemBoPhan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiDepartment";
             this.Text = "Thông Tin Bộ Phận";
             this.Load += new System.EventHandler(this.frmThemBoPhan_Load);

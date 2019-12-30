@@ -145,6 +145,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
             this.Name = "frmThongTinTyGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiExchangeRate";
             this.Text = "Thông Tin Tỷ Giá";
             this.Load += new System.EventHandler(this.frmThongTinTyGia_Load);

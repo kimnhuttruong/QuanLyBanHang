@@ -504,6 +504,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
             this.Name = "frmThongTinNhaCungCap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiProvider";
             this.Text = "Thông Tin Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmThongTinNhaCungCap_Load);

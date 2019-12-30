@@ -1,4 +1,5 @@
-﻿using DoAnCK_TTA.BUS;
+﻿using DevExpress.XtraEditors;
+using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
 using DoAnCK_TTA.GUI;
 using System;
@@ -46,7 +47,7 @@ namespace DoAnCK_TTA
         {
            
 
-            MessageBox.Show("Tùy CHọn");
+            XtraMessageBox.Show("Tùy CHọn");
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -96,7 +97,7 @@ namespace DoAnCK_TTA
 
             }
             else
-                MessageBox.Show("Username hoặc Password không đúng");
+                XtraMessageBox.Show("Username hoặc Password không đúng");
 
             BUS_SYS_LOG busLog = new BUS_SYS_LOG();
             DTO_SYS_LOG log = new DTO_SYS_LOG();

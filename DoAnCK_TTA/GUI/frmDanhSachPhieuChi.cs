@@ -71,5 +71,15 @@ namespace DoAnCK_TTA.GUI
             busLog.ThemLichSu(log);
 
         }
+
+        private void gridPhieuThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

@@ -62,7 +62,7 @@ namespace DoAnCK_TTA.GUI
         {
           
             BUS_CUSTOMER bus = new BUS_CUSTOMER();
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int a = bus.XoaKhachHang(c.Customer_ID);

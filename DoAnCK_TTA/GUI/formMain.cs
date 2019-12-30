@@ -633,17 +633,17 @@ namespace DoAnCK_TTA.GUI
                 BUS_SYS bUS = new BUS_SYS();
                 
                 
-                DialogResult dialogResult = MessageBox.Show("Bạn Đã Cấp Quyền Cho Thư Mục Bạn Muốn Backup?", "Thông Báo", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = XtraMessageBox.Show("Bạn Đã Cấp Quyền Cho Thư Mục Bạn Muốn Backup?", "Thông Báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     string kt = bUS.SaoLuu(folderpath);
                     if (kt != "1")
                     {
-                        MessageBox.Show("Sao Lưu KHông Thành Công.Vui Lòng Cấp Quyền truy cập cho Folder Chứa file Backup\n Xóa File Backup vừa tạo: "+kt);
+                        XtraMessageBox.Show("Sao Lưu KHông Thành Công.Vui Lòng Cấp Quyền truy cập cho Folder Chứa file Backup\n Xóa File Backup vừa tạo: "+kt);
                     }
                     else
                     {
-                        MessageBox.Show("Sao Lưu thành công");
+                        XtraMessageBox.Show("Sao Lưu thành công");
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -664,18 +664,18 @@ namespace DoAnCK_TTA.GUI
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn Chắc Chắc Muốn Backup?", "Thông Báo", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = XtraMessageBox.Show("Bạn Chắc Chắc Muốn Backup?", "Thông Báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     BUS_SYS bUS = new BUS_SYS();
                     string kt = bUS.PhucHoi(dialog.FileName);
                     if (kt != "1")
                     {
-                        MessageBox.Show("Phục Hồi KHông Thành Công.Vui Lòng Cấp Quyền truy cập cho Folder Chứa file Backup\n Xóa File Backup vừa tạo: " + kt);
+                        XtraMessageBox.Show("Phục Hồi KHông Thành Công.Vui Lòng Cấp Quyền truy cập cho Folder Chứa file Backup\n Xóa File Backup vừa tạo: " + kt);
                     }
                     else
                     {
-                        MessageBox.Show("Phục Hồi thành công");
+                        XtraMessageBox.Show("Phục Hồi thành công");
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -727,32 +727,92 @@ namespace DoAnCK_TTA.GUI
             string ct = "tên công ty";
             dataTable = bUS.LayThongTinCongTy();
             if (dataTable.Rows.Count > 0)
-                ct = dataTable.Rows[0][1].ToString() +"   "+ dataTable.Rows[0][4].ToString() + "   " + dataTable.Rows[0][7].ToString();
-            var fromAddress = new MailAddress("toantoantoan321@gmail.com", "phung nguyen");
-            var toAddress = new MailAddress("star.knt.8@gmail.com", "Nhựt Trường Kim");
-            const string fromPassword = "toan12345";
-            const string subject = "Đăng Kí Tái Khoản";
-            string body = ct;
+                ct = dataTable.Rows[0][1].ToString() + "   " + dataTable.Rows[0][4].ToString() + "   " + dataTable.Rows[0][7].ToString();
+            // var fromAddress = new MailAddress("toantoantoan321@gmail.com", "phung nguyen");
+            //var toAddress = new MailAddress("star.knt.8@gmail.com", "Nhựt Trường Kim");
+            //const string fromPassword = "toan12345";
+            //const string subject = "Đăng Kí Tái Khoản";
+            //string body = ct;
 
-            var smtp = new SmtpClient
+            //var smtp = new SmtpClient
+            //{
+            //    Host = "smtp.gmail.com",
+            //    Port = 587,
+            //    EnableSsl = true,
+            //    DeliveryMethod = SmtpDeliveryMethod.Network,
+            //    UseDefaultCredentials = false,
+            //    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            //};
+            //using (var message = new MailMessage(fromAddress, toAddress)
+            //{
+            //    Subject = subject,
+            //    Body = body
+            //})
+            //{
+
+            //    smtp.Send(message);
+            //}
+            
+            // Command-line argument must be the SMTP host.
+            SmtpClient client = new SmtpClient();
+            // Specify the email sender.
+            // Create a mailing address that includes a UTF8 character
+            // in the display name.
+            MailAddress from = new MailAddress("toantoantoan321@gmail.com", "phung nguyen",
+            System.Text.Encoding.UTF8);
+            // Set destinations for the email message.
+            MailAddress to = new MailAddress("star.knt.8@gmail.com");
+            // Specify the message content.
+            MailMessage message = new MailMessage(from, to);
+            message.Body = ct;
+            // Include some non-ASCII characters in body and subject.
+            string someArrows = new string(new char[] { '\u2190', '\u2191', '\u2192', '\u2193' });
+            message.Body += Environment.NewLine + someArrows;
+            
+            message.BodyEncoding = System.Text.Encoding.UTF8;
+            message.Subject = "Đăng Kí Tái Khoản" + someArrows;
+            message.SubjectEncoding = System.Text.Encoding.UTF8;
+            // Set the method that is called back when the send operation ends.
+            client.SendCompleted += new
+            SendCompletedEventHandler(SendCompletedCallback);
+            // The userState can be any object that allows your callback 
+            // method to identify this send operation.
+            // For this example, the userToken is a string constant.
+            string userState = "test message1";
+            client.Host = "smtp.gmail.com";
+            client.Port = 587;
+            client.SendAsync(message, userState);
+
+
+            // If the user canceled the send, and mail hasn't been sent yet,
+            // then cancel the pending operation.
+            if ( mailSent == false)
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
-            using (var message = new MailMessage(fromAddress, toAddress)
-            {
-                Subject = subject,
-                Body = body
-            })
-            {
-                
-                smtp.Send(message);
+                client.SendAsyncCancel();
             }
+            // Clean up.
+            message.Dispose();
             XtraMessageBox.Show("Chúng tôi đã nhận được thư đăng kí của bạn,chúng tôi sẽ liên hệ bạn trong thời gian gần nhật");
+        }
+        static bool mailSent = false;
+        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            // Get the unique identifier for this asynchronous operation.
+            String token = (string)e.UserState;
+
+            if (e.Cancelled)
+            {
+                Console.WriteLine("[{0}] Send canceled.", token);
+            }
+            if (e.Error != null)
+            {
+                Console.WriteLine("[{0}] {1}", token, e.Error.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Message sent.");
+            }
+            mailSent = true;
         }
     }
 }

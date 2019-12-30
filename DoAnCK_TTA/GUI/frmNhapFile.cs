@@ -293,5 +293,10 @@ namespace DoAnCK_TTA.GUI
             gridNoiDung.DataSource = result.Tables[listSheet.SelectedIndex];
             dt= result.Tables[listSheet.SelectedIndex];
         }
+
+        private void frmNhapFile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

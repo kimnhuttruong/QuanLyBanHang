@@ -18,6 +18,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
 using DoAnCK_TTA.DTO;
+using DevExpress.XtraEditors;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -41,7 +42,7 @@ namespace DoAnCK_TTA.GUI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("btnXoa_ItemClick");
+            XtraMessageBox.Show("btnXoa_ItemClick");
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -252,7 +253,7 @@ namespace DoAnCK_TTA.GUI
         private void btnXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BUS_SYS_USER bus = new BUS_SYS_USER();
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int a = bus.XoaNguoiDung(manhom);

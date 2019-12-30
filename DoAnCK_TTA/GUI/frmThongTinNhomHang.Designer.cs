@@ -147,6 +147,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinNhomHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiItemGroup";
             this.Text = "Thông Tin Nhóm Hàng";
             this.Load += new System.EventHandler(this.frmThongTinNhomHang_Load);

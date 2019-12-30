@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
 using DevExpress.XtraGrid.Views.Grid;
+using System.IO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -174,6 +175,64 @@ namespace DoAnCK_TTA.GUI
         private void gridBaoCaoDoanhThuNhanVien_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    string exportFilePath = saveDialog.FileName;
+                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
+
+                    switch (fileExtenstion)
+                    {
+                        case ".xls":
+                            gridBaoCaoDoanhThuNhanVien.ExportToXls(exportFilePath);
+                            break;
+                        case ".xlsx":
+                            gridBaoCaoDoanhThuNhanVien.ExportToXlsx(exportFilePath);
+                            break;
+                        case ".rtf":
+                            gridBaoCaoDoanhThuNhanVien.ExportToRtf(exportFilePath);
+                            break;
+                        case ".pdf":
+                            gridBaoCaoDoanhThuNhanVien.ExportToPdf(exportFilePath);
+                            break;
+                        case ".html":
+                            gridBaoCaoDoanhThuNhanVien.ExportToHtml(exportFilePath);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            //Try to open the file and let windows decide how to open it.
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -38,6 +38,26 @@ namespace DoAnCK_TTA.DAL
             }
 
         }
+        public int XoaLichSu(string u)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete SYS_LOG where  SYS_ID='"+u+"' ";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
         public DataTable LayThongTinLog()
         {
             DataTable dt = new DataTable();

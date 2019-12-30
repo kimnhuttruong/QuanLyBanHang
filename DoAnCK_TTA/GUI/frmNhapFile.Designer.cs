@@ -216,6 +216,7 @@
             this.Name = "frmNhapFile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Dữ Liệu Từ File";
+            this.Load += new System.EventHandler(this.frmNhapFile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl)).EndInit();
             this.wizardControl.ResumeLayout(false);
             this.welcomeWizardPage1.ResumeLayout(false);

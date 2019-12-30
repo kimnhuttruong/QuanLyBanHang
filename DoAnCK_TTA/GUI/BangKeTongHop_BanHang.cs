@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
 using DevExpress.XtraGrid.Views.Grid;
+using System.IO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -19,6 +20,7 @@ namespace DoAnCK_TTA.GUI
         public BangKeTongHop_BanHang()
         {
             InitializeComponent();
+            
         }
       
         private void frmBangKeTongHop_Load(object sender, EventArgs e)
@@ -148,8 +150,8 @@ namespace DoAnCK_TTA.GUI
                             btnXoa.Enabled = false;
                         if (dt.Rows[i]["AllowEdit"].ToString() == "False")
                             btnSuaChua.Enabled = false;
-                        if (dt.Rows[i]["AllowAccess"].ToString() == "False")
-                            btnXem.Enabled = false;
+                        //if (dt.Rows[i]["AllowAccess"].ToString() == "False")
+                        //    btnXem.Enabled = false;
                         if (dt.Rows[i]["AllowPrint"].ToString() == "False")
                             btnIn.Enabled = false;
                         if (dt.Rows[i]["AllowExport"].ToString() == "False")
@@ -177,6 +179,144 @@ namespace DoAnCK_TTA.GUI
 
             load();
             gridBangKeTongHop.DataSource = dsGroup;
+        }
+
+        private void btnSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            string ma = "";
+            string mahang = "";
+            string Quantity = "";
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                ma = (i).ToString();
+            }
+
+            ma = dsGroup[int.Parse(ma)].ID;
+
+            var phieumuahang = new frmPhieuXuatHang();
+
+            phieumuahang.Sender(ma);
+            Form window1 = new Form()
+            {
+                Text = "Sửa Phiếu Bán Hàng",
+                Width = 1130,
+                Height = 550,
+                AutoSize = false
+
+            };
+            window1.Controls.Add(phieumuahang);
+            window1.ShowDialog();
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Sửa";
+            busLog.ThemLichSu(log);
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string ma = "";
+            string ma1 = "";
+            string mahang = "";
+            string Quantity = "";
+            
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                ma = (i).ToString();
+            }
+            try
+            {
+                ma = dsDetail[int.Parse(ma)].Outward_ID;
+            }
+            catch {;
+            }
+            ma1 = dsGroup[int.Parse(ma)].ID;
+
+
+
+            BUS_STOCK_OUTWARD_DETAIL bus = new BUS_STOCK_OUTWARD_DETAIL();
+            bus.XoaPhieuXuatHang(ma);
+            BUS_STOCK_OUTWARD bus1 = new BUS_STOCK_OUTWARD();
+            bus1.XoaPhieuXuatHang(ma);
+            load();
+
+            BUS_SYS_LOG busLog = new BUS_SYS_LOG();
+            DTO_SYS_LOG log = new DTO_SYS_LOG();
+            BUS_SYS_USER busform = new BUS_SYS_USER();
+            DataTable dtlog = new DataTable();
+            dtlog = busform.LayThongTinUSER();
+            log.MChine = dtlog.Rows[0][1].ToString();
+            log.UserID = dtlog.Rows[0][2].ToString();
+            log.Module = this.Tag.ToString();
+            log.Action_Name = "Xóa";
+            busLog.ThemLichSu(log);
+        }
+
+        private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    string exportFilePath = saveDialog.FileName;
+                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
+
+                    switch (fileExtenstion)
+                    {
+                        case ".xls":
+                            gridBangKeTongHop.ExportToXls(exportFilePath);
+                            break;
+                        case ".xlsx":
+                            gridBangKeTongHop.ExportToXlsx(exportFilePath);
+                            break;
+                        case ".rtf":
+                            gridBangKeTongHop.ExportToRtf(exportFilePath);
+                            break;
+                        case ".pdf":
+                            gridBangKeTongHop.ExportToPdf(exportFilePath);
+                            break;
+                        case ".html":
+                            gridBangKeTongHop.ExportToHtml(exportFilePath);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            //Try to open the file and let windows decide how to open it.
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

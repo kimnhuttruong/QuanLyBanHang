@@ -34,6 +34,30 @@ namespace DoAnCK_TTA.DAL
 
 
         }
+        public int XoaPhieuXuatHang(string kv)
+        {
+           
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = @"delete STOCK_OUTWARD where ID='"+kv+"' ";
+            try
+            {
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+
+        }
         public DataTable LayThongTinBangKeChiTiet()
         {
             DataTable dt = new DataTable();

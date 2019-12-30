@@ -363,6 +363,7 @@
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "frmThongTinKhoHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "rbpgDicStock";
             this.Text = "Thông Tin Kho";
             this.Load += new System.EventHandler(this.frmThongTinKhoHang_Load);

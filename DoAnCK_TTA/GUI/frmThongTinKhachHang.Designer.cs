@@ -590,6 +590,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "bbiCustomer";
             this.Text = "Thông Tin Khách Hàng";
             this.Load += new System.EventHandler(this.frmThongTinKhachHang_Load);

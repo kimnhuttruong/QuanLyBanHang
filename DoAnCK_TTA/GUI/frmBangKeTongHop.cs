@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DoAnCK_TTA.DTO;
 using DoAnCK_TTA.BUS;
+using System.IO;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -155,11 +156,9 @@ namespace DoAnCK_TTA.GUI
 
             foreach (int i in gridView1.GetSelectedRows())
             {
-                DataRow row = gridView1.GetDataRow(i);
-                ma = row[0].ToString();
-
+                ma = (i).ToString();
             }
-
+            ma = dsGroup[int.Parse(ma)].ID;
 
             var phieumuahang = new frmPhieuNhapHang();
 
@@ -186,6 +185,74 @@ namespace DoAnCK_TTA.GUI
             log.Module = this.Tag.ToString();
             log.Action_Name = "Sửa";
             busLog.ThemLichSu(log);
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    string exportFilePath = saveDialog.FileName;
+                    string fileExtenstion = new FileInfo(exportFilePath).Extension;
+
+                    switch (fileExtenstion)
+                    {
+                        case ".xls":
+                            gridBangKeTongHop.ExportToXls(exportFilePath);
+                            break;
+                        case ".xlsx":
+                            gridBangKeTongHop.ExportToXlsx(exportFilePath);
+                            break;
+                        case ".rtf":
+                            gridBangKeTongHop.ExportToRtf(exportFilePath);
+                            break;
+                        case ".pdf":
+                            gridBangKeTongHop.ExportToPdf(exportFilePath);
+                            break;
+                        case ".html":
+                            gridBangKeTongHop.ExportToHtml(exportFilePath);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            //Try to open the file and let windows decide how to open it.
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

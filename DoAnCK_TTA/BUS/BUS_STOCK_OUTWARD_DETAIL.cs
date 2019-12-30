@@ -47,10 +47,10 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.ThemPhieuXuatHang(a);
 
         }
-        public int XoaPhieuXuatHang(string ma, string mahang, string Quantity)
+        public int XoaPhieuXuatHang(string ma)
         {
             DAL_STOCK_OUTWARD_DETAIL dAL_SYS_USER_RULE = new DAL_STOCK_OUTWARD_DETAIL();
-            return dAL_SYS_USER_RULE.XoaPhieuXuatHang(ma, mahang, Quantity);
+            return dAL_SYS_USER_RULE.XoaPhieuXuatHang(ma);
 
         }
         public DataTable LayThongTinMuaHangTheoKH()

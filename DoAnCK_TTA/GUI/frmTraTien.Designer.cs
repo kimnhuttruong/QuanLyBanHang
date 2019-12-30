@@ -40,8 +40,6 @@
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnDanhSachPhieuCongNo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnDanhSachPhieuTraNgay = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btnTheoDoiCongNo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btnTongHopCongNo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
@@ -82,9 +80,9 @@
             // dockPanel_Container
             // 
             this.dockPanel_Container.Controls.Add(this.accordionControl);
-            this.dockPanel_Container.Location = new System.Drawing.Point(3, 19);
+            this.dockPanel_Container.Location = new System.Drawing.Point(3, 29);
             this.dockPanel_Container.Name = "dockPanel_Container";
-            this.dockPanel_Container.Size = new System.Drawing.Size(237, 574);
+            this.dockPanel_Container.Size = new System.Drawing.Size(237, 564);
             this.dockPanel_Container.TabIndex = 0;
             // 
             // accordionControl
@@ -97,7 +95,7 @@
             this.accordionControlElement2});
             this.accordionControl.Location = new System.Drawing.Point(0, 0);
             this.accordionControl.Name = "accordionControl";
-            this.accordionControl.Size = new System.Drawing.Size(237, 574);
+            this.accordionControl.Size = new System.Drawing.Size(237, 564);
             this.accordionControl.TabIndex = 0;
             this.accordionControl.Text = "accordionControl";
             this.accordionControl.SelectedElementChanged += new DevExpress.XtraBars.Navigation.SelectedElementChangedEventHandler(this.accordionControl_SelectedElementChanged);
@@ -129,9 +127,7 @@
             // 
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnDanhSachPhieuCongNo,
-            this.btnDanhSachPhieuTraNgay,
-            this.btnTheoDoiCongNo,
-            this.btnTongHopCongNo});
+            this.btnDanhSachPhieuTraNgay});
             this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Bảng Kê";
@@ -151,22 +147,6 @@
             this.btnDanhSachPhieuTraNgay.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnDanhSachPhieuTraNgay.Text = "Danh Sách Phiếu Trả Ngay";
             this.btnDanhSachPhieuTraNgay.Click += new System.EventHandler(this.btnDanhSachPhieuTraNgay_Click);
-            // 
-            // btnTheoDoiCongNo
-            // 
-            this.btnTheoDoiCongNo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheoDoiCongNo.ImageOptions.Image")));
-            this.btnTheoDoiCongNo.Name = "btnTheoDoiCongNo";
-            this.btnTheoDoiCongNo.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnTheoDoiCongNo.Text = "Theo Dõi Công Nợ";
-            this.btnTheoDoiCongNo.Click += new System.EventHandler(this.btnTheoDoiCongNo_Click);
-            // 
-            // btnTongHopCongNo
-            // 
-            this.btnTongHopCongNo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTongHopCongNo.ImageOptions.Image")));
-            this.btnTongHopCongNo.Name = "btnTongHopCongNo";
-            this.btnTongHopCongNo.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnTongHopCongNo.Text = "Tổng Hợp Công Nợ";
-            this.btnTongHopCongNo.Click += new System.EventHandler(this.btnTongHopCongNo_Click);
             // 
             // tabbedView
             // 
@@ -212,7 +192,5 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnDanhSachPhieuCongNo;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnDanhSachPhieuTraNgay;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btnTheoDoiCongNo;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btnTongHopCongNo;
     }
 }

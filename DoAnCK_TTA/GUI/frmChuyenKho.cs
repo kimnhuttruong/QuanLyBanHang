@@ -92,7 +92,7 @@ namespace DoAnCK_TTA.GUI
         {
             tabbedView.Controller.CloseAll();
 
-            frmBangKeTongHop f = new frmBangKeTongHop();
+            frmBangKeChiTiet_ChuyenKho f = new frmBangKeChiTiet_ChuyenKho();
             f.Text = "Bảng Kê Tổng Hợp";
             tabbedView.AddDocument(f);
             tabbedView.ActivateDocument(f);
@@ -181,6 +181,11 @@ namespace DoAnCK_TTA.GUI
             log.Action_Name = "Xem";
             busLog.ThemLichSu(log);
 
+        }
+
+        private void frmChuyenKho_Shown(object sender, EventArgs e)
+        {
+            this.btnPhieuChuyenKho_Click(null, null);
         }
     }
 }

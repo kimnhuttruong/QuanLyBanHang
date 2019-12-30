@@ -11,6 +11,7 @@ using DevExpress.XtraBars;
 using DoAnCK_TTA.BUS;
 using DoAnCK_TTA.DTO;
 using System.IO;
+using DevExpress.XtraEditors;
 
 namespace DoAnCK_TTA.GUI
 {
@@ -52,7 +53,7 @@ namespace DoAnCK_TTA.GUI
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
         {
             BUS_EMPLOYEE bus = new BUS_EMPLOYEE();
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int a = bus.XoaNhanVien(c.Employee_ID);

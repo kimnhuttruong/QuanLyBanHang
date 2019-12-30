@@ -17,6 +17,12 @@ namespace DoAnCK_TTA.BUS
             return dAL_SYS_USER_RULE.ThemLichSu(u);
 
         }
+        public int XoaLichSu(string u)
+        {
+            DAL_SYS_LOG dAL_SYS_USER_RULE = new DAL_SYS_LOG();
+            return dAL_SYS_USER_RULE.XoaLichSu(u);
+
+        }
         public DataTable LayThongTinLog()
         {
             DAL_SYS_LOG dAL_SYS_USER_RULE = new DAL_SYS_LOG();

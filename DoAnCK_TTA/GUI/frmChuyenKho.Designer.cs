@@ -84,9 +84,9 @@
             // dockPanel_Container
             // 
             this.dockPanel_Container.Controls.Add(this.accordionControl);
-            this.dockPanel_Container.Location = new System.Drawing.Point(3, 19);
+            this.dockPanel_Container.Location = new System.Drawing.Point(3, 29);
             this.dockPanel_Container.Name = "dockPanel_Container";
-            this.dockPanel_Container.Size = new System.Drawing.Size(237, 574);
+            this.dockPanel_Container.Size = new System.Drawing.Size(237, 564);
             this.dockPanel_Container.TabIndex = 0;
             // 
             // accordionControl
@@ -100,7 +100,7 @@
             this.accordionControlElement3});
             this.accordionControl.Location = new System.Drawing.Point(0, 0);
             this.accordionControl.Name = "accordionControl";
-            this.accordionControl.Size = new System.Drawing.Size(237, 574);
+            this.accordionControl.Size = new System.Drawing.Size(237, 564);
             this.accordionControl.TabIndex = 0;
             this.accordionControl.Text = "accordionControl";
             this.accordionControl.SelectedElementChanged += new DevExpress.XtraBars.Navigation.SelectedElementChangedEventHandler(this.accordionControl_SelectedElementChanged);
@@ -208,6 +208,7 @@
             this.Name = "frmChuyenKho";
             this.Tag = "bbiTransfer";
             this.Load += new System.EventHandler(this.frmChuyenKho_Load);
+            this.Shown += new System.EventHandler(this.frmChuyenKho_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanel.ResumeLayout(false);
             this.dockPanel_Container.ResumeLayout(false);

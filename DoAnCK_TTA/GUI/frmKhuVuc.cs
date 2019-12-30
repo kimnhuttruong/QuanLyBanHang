@@ -103,7 +103,7 @@ namespace DoAnCK_TTA.GUI
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BUS_CUSTOMER_GROUP bus = new BUS_CUSTOMER_GROUP();
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 foreach (int i in gridView1.GetSelectedRows())
